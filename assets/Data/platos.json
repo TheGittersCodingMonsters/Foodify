@@ -1,5 +1,338 @@
 [
  {
+   "id": 1,
+   "nombre": "01 - Noodles de trigo, ragú asiático y verduras",
+   "foto": "/assets/platos/Noodles_de_trigo,_ragu_asiatico_y_verduras.jpg",
+   "categoria": "Pasta",
+   "orden": "Primero",
+   "descripcion": "Este plato combina la suavidad y textura de los noodles de trigo con un sabroso ragú asiático, una mezcla de sabores intensos y especiados que aportan un toque exótico. Las verduras frescas y crujientes añaden un contraste de texturas y colores, haciendo de cada bocado una explosión de sabores. Es una opción perfecta para aquellos que buscan una comida reconfortante y llena de matices.",
+   "precio": "10",
+   "calorias": 400,
+   "vegano": "No"
+ },
+ {
+   "id": 2,
+   "nombre": "02 - Cazuela creole de pavo y langostinos",
+   "foto": "/assets/platos/Cazuela_creole_de_pavo_y_langostinos.jpg",
+   "categoria": "Carne",
+   "orden": "Segundo",
+   "descripcion": "La cazuela creole de pavo y langostinos es una exquisita combinación de sabores y texturas que evocan los vibrantes y ricos platos de la cocina creole. El pavo se cocina hasta quedar tierno y jugoso, absorbiendo las especias aromáticas típicas de la región, mientras que los langostinos aportan un toque marino fresco y suculento. La mezcla se enriquece con una selección de verduras frescas y crujientes, todo ello cocinado a fuego lento en una cazuela que permite que los sabores se integren a la perfección. Es un plato reconfortante y robusto, ideal para disfrutar en cualquier ocasión.",
+   "precio": "15",
+   "calorias": 350,
+   "vegano": "No"
+ },
+ {
+   "id": 3,
+   "nombre": "03 - Dhal de lentejas rojas",
+   "foto": "/assets/platos/Dhal_de_lentejas_rojas.jpg",
+   "categoria": "Legumbres",
+   "orden": "Primero",
+   "descripcion": "El dhal de lentejas rojas es un plato reconfortante y nutritivo, originario de la cocina india. Se elabora con lentejas rojas cocidas a fuego lento junto con una mezcla de especias aromáticas como el comino, la cúrcuma, el cilantro y el jengibre. El resultado es un guiso cremoso y fragante, lleno de sabor y ligeramente picante.",
+   "precio": "10",
+   "calorias": 374,
+   "vegano": "Si"
+ },
+ {
+   "id": 4,
+   "nombre": "04 - Gratinado de berenjena, ricotta y calabacín ",
+   "foto": "/assets/platos/Gratinado_de_berenjena,_ricotta_y_calabacin_.jpg",
+   "categoria": "Verduras",
+   "orden": "Primero",
+   "descripcion": "El gratinado de berenjena, ricotta y calabacín es una combinación perfecta de sabores y texturas. Las rodajas de berenjena y calabacín se intercalan en capas con una mezcla cremosa de ricotta, enriquecida con ajo, hierbas frescas y un toque de queso parmesano rallado. Al hornearse, las verduras se vuelven tiernas y jugosas, mientras que la cobertura de queso se gratina hasta quedar dorada y crujiente. Este plato no solo es delicioso, sino que también es visualmente atractivo, con sus vibrantes capas de colores.",
+   "precio": "11",
+   "calorias": 230,
+   "vegano": "Si"
+ },
+ {
+   "id": 5,
+   "nombre": "05 - Salmón con salsa mimosa, patatas, brócoli y champiñones",
+   "foto": "/assets/platos/Salmon_con_salsa_mimosa,_patatas,_brocoli_y_champinones.jpg",
+   "categoria": "Pescado",
+   "orden": "Segundo",
+   "descripcion": "El salmón con salsa mimosa, patatas, brócoli y champiñones es una auténtica delicia gourmet. El salmón, rico y jugoso, se cocina a la perfección, acompañado por una suave y cremosa salsa mimosa, hecha con una base de huevo duro y limón que añade un toque fresco y cítrico al plato.",
+   "precio": "15",
+   "calorias": 634,
+   "vegano": "No"
+ },
+ {
+   "id": 6,
+   "nombre": "06 - Albóndigas con salsa de níscalos, parmentier y champiñones",
+   "foto": "/assets/platos/Albondigas_con_salsa_de_niscalos,_parmentier_y_champinones.jpg",
+   "categoria": "Carne",
+   "orden": "Segundo",
+   "descripcion": "Las albóndigas con salsa de níscalos, parmentier y champiñones es un plato que combina lo mejor de la cocina tradicional con un toque gourmet. Las albóndigas, jugosas y bien sazonadas, se bañan en una rica salsa de níscalos, hongos que aportan un sabor profundo y terroso. La parmentier, una crema de patatas suave y aterciopelada, complementa a la perfección las albóndigas, mientras que los champiñones añaden textura y un sabor umami adicional.",
+   "precio": "14",
+   "calorias": 480,
+   "vegano": "No"
+ },
+ {
+   "id": 7,
+   "nombre": "07 - Salmón con salsa mimosa, patatas, brócoli y champiñones",
+   "foto": "/assets/platos/Pavo_con_salsa_de_mantequilla_y_limon,_patatas,_brocoli_y_zanahorias.jpg",
+   "categoria": "Pescado",
+   "orden": "Segundo",
+   "descripcion": "El salmón con salsa mimosa, patatas, brócoli y champiñones es una auténtica delicia gourmet. El salmón, rico y jugoso, se cocina a la perfección, acompañado por una suave y cremosa salsa mimosa, hecha con una base de huevo duro y limón que añade un toque fresco y cítrico al plato.",
+   "precio": "16",
+   "calorias": 634,
+   "vegano": "No"
+ },
+ {
+   "id": 8,
+   "nombre": "08 - Pavo con salsa huancaína, patatas y verduras juliana",
+   "foto": "/assets/platos/Pavo_con_salsa_huancaina,_patatas_y_verduras_juliana.jpg",
+   "categoria": "Carne",
+   "orden": "Segundo",
+   "descripcion": "El pavo con salsa huancaína, patatas y verduras juliana es una propuesta culinaria que fusiona sabores tradicionales con un toque de elegancia. El pavo, tierno y jugoso, se cubre con una salsa huancaína, una exquisita mezcla de ají amarillo, queso fresco, leche y galletas saladas, que aporta un sabor cremoso y ligeramente picante.",
+   "precio": "14",
+   "calorias": 450,
+   "vegano": "No"
+ },
+ {
+   "id": 9,
+   "nombre": "09 - Garbanzos thai con curry",
+   "foto": "/assets/platos/Garbanzos_thai_con_curry.jpg",
+   "categoria": "Legumbres",
+   "orden": "Primero",
+   "descripcion": "El plato de garbanzos thai con curry es una explosión de sabores exóticos y reconfortantes. Los garbanzos, ricos en proteínas y fibra, se combinan con una fragante salsa de curry tailandés que incluye leche de coco, pasta de curry y una variedad de especias aromáticas como el jengibre, el ajo y el cilantro.",
+   "precio": "11",
+   "calorias": 320,
+   "vegano": "Si"
+ },
+ {
+   "id": 10,
+   "nombre": "10 - Cerdo con salsa moruna, cous cous y verdura juliana",
+   "foto": "/assets/platos/Cerdo_con_salsa_moruna,_cous_cous_y_verdura_juliana.jpg",
+   "categoria": "Carne",
+   "orden": "Segundo",
+   "descripcion": "El cerdo con salsa moruna, cous cous y verdura juliana es una delicia que combina la riqueza y profundidad de los sabores marroquíes con la frescura de las verduras y la ligereza del cous cous. El cerdo, sazonado con una mezcla de especias morunas, se cocina hasta estar tierno y jugoso, absorbiendo todos los matices aromáticos de la salsa. La salsa moruna suele incluir ingredientes como comino, cilantro, pimentón, ajo y limón, creando un sabor complejo y delicioso.",
+   "precio": "14",
+   "calorias": 520,
+   "vegano": "No"
+ },
+ {
+   "id": 11,
+   "nombre": "11 - Legumbreta al estilo asiático, verduras y noodles de boniato",
+   "foto": "/assets/platos/Legumbreta_al_estilo_asiatico,_verduras_y_noodles_de_boniato.jpg",
+   "categoria": "Legumbres",
+   "orden": "Primero",
+   "descripcion": "La legumbreta al estilo asiático con verduras y noodles de boniato es una auténtica maravilla culinaria que combina lo mejor de la cocina asiática con ingredientes nutritivos. Las legumbres, como los garbanzos, las lentejas o los frijoles, se cocinan con una mezcla de especias asiáticas, como el jengibre, el ajo, la salsa de soja y el sésamo, creando un sabor profundo y aromático.",
+   "precio": "13",
+   "calorias": 410,
+   "vegano": "Si"
+ },
+ {
+   "id": 12,
+   "nombre": "12 - Merluza con salsa marinera, patatas, brócoli, zanahorias y pimientos",
+   "foto": "/assets/platos/Merluza_con_salsa_marinera,_patatas,_brocoli,_zanahorias_y_pimientos.jpg",
+   "categoria": "Pescado",
+   "orden": "Segundo",
+   "descripcion": "La merluza con salsa marinera, patatas, brócoli, zanahorias y pimientos es un plato que evoca los sabores del mar con un toque de frescura vegetal. La merluza, un pescado blanco y suave, se cocina en una deliciosa salsa marinera hecha a base de tomate, vino blanco, ajo y hierbas frescas. Esta salsa aporta un sabor profundo y aromático que realza la delicadeza del pescado.",
+   "precio": "13",
+   "calorias": 350,
+   "vegano": "No"
+ },
+ {
+   "id": 13,
+   "nombre": "13 - Contramuslo con salsa piri piri, arroz y verduras",
+   "foto": "/assets/platos/Contramuslo_con_salsa_piri_piri,_arroz_y_verduras.jpg",
+   "categoria": "Carne",
+   "orden": "Segundo",
+   "descripcion": "El contramuslo con salsa piri piri, arroz y verduras es una explosión de sabores picantes y aromáticos. El contramuslo de pollo, jugoso y tierno, se marina en una vibrante salsa piri piri, hecha a base de chiles, ajo, limón y diversas especias, creando un sabor intenso y ligeramente picante que despierta los sentidos.",
+   "precio": "13",
+   "calorias": 380,
+   "vegano": "No"
+ },
+ {
+   "id": 14,
+   "nombre": "14 - Guiso de ternera, arroz y verduras",
+   "foto": "/assets/platos/Guiso_de_ternera,_arroz_y_verduras.jpg",
+   "categoria": "Carne",
+   "orden": "Segundo",
+   "descripcion": "El guiso de ternera con arroz y verduras es un plato clásico y reconfortante que combina la riqueza de la carne de ternera con la frescura de las verduras y la suavidad del arroz. La ternera se cocina a fuego lento hasta que queda tierna y jugosa, impregnada de los sabores de un caldo aromático con hierbas y especias.",
+   "precio": "13",
+   "calorias": 400,
+   "vegano": "No"
+ },
+ {
+   "id": 15,
+   "nombre": "15 - Piccata de pavo, panaderas, champiñones y zanahorias",
+   "foto": "/assets/platos/Piccata_de_pavo,_panaderas,_champinones_y_zanahorias.jpg",
+   "categoria": "Carne",
+   "orden": "Segundo",
+   "descripcion": "La piccata de pavo con patatas panaderas, champiñones y zanahorias es un plato que combina sabores delicados con una presentación atractiva. El pavo se cocina a la perfección, empanado ligeramente y dorado, luego se cubre con una salsa de limón, mantequilla y alcaparras que añade un toque de frescura y acidez.",
+   "precio": "14",
+   "calorias": 370,
+   "vegano": "No"
+ },
+ {
+   "id": 16,
+   "nombre": "16 - Terrina glaseada de codillo",
+   "foto": "/assets/platos/Terrina_glaseada_de_codillo.jpg",
+   "categoria": "Carne",
+   "orden": "Segundo",
+   "descripcion": "La terrina glaseada de codillo es un plato exquisito que combina la suculencia de la carne de codillo con un glaseado dulce y aromático. La carne se cocina lentamente hasta quedar tierna y jugosa, y luego se prensa en una terrina, formando una presentación compacta y elegante. El glaseado, que puede incluir ingredientes como miel, mostaza, vino o especias, aporta un brillo atractivo y un sabor adicional que realza la riqueza de la carne.",
+   "precio": "13",
+   "calorias": 540,
+   "vegano": "No"
+ },
+ {
+   "id": 17,
+   "nombre": "17 - Tacos de cochinita pibil",
+   "foto": "/assets/platos/Tacos_de_cochinita_pibil.jpg",
+   "categoria": "Carne",
+   "orden": "Segundo",
+   "descripcion": "Los tacos de cochinita pibil son una joya de la gastronomía yucateca. La cochinita pibil es un platillo tradicional de cerdo marinado en achiote, jugo de naranja agria y especias, luego cocido lentamente hasta que queda extremadamente tierno. Este cerdo se deshebra y se sirve en tortillas de maíz recién hechas, creando un taco lleno de sabor y tradición.",
+   "precio": "10",
+   "calorias": 450,
+   "vegano": "No"
+ },
+ {
+   "id": 18,
+   "nombre": "18 - Arroz meloso de marisco",
+   "foto": "/assets/platos/Arroz_meloso_de_marisco.jpg",
+   "categoria": "Arroz",
+   "orden": "Segundo",
+   "descripcion": "El arroz meloso de marisco es un plato emblemático que combina la riqueza del marisco con la cremosidad de un arroz bien cocido. Este plato se elabora con una base de sofrito de cebolla, ajo y pimientos, a la que se añaden tomates triturados y caldo de pescado o marisco, creando una base aromática y sabrosa.",
+   "precio": "13",
+   "calorias": 480,
+   "vegano": "No"
+ },
+ {
+   "id": 19,
+   "nombre": "19 - Penne integral con salsa cremosa de níscalos",
+   "foto": "/assets/platos/Penne_integral_con_salsa_cremosa_de_niscalos.jpg",
+   "categoria": "Pasta",
+   "orden": "Segundo",
+   "descripcion": "El penne integral con salsa cremosa de níscalos es un plato que combina la salud del penne integral con la riqueza de una salsa de hongos. Los níscalos, conocidos por su sabor terroso y profundo, se cocinan en una salsa cremosa hecha a base de nata, ajo y hierbas frescas. Esta salsa envuelve perfectamente el penne integral, dando como resultado un plato cremoso y lleno de sabor.",
+   "precio": "12",
+   "calorias": 400,
+   "vegano": "Si"
+ },
+ {
+   "id": 20,
+   "nombre": "20 - Pasta al pesto veggie",
+   "foto": "/assets/platos/Pasta_al_pesto_veggie.jpg",
+   "categoria": "Pasta",
+   "orden": "Segundo",
+   "descripcion": "La pasta al pesto veggie es una opción deliciosa y saludable que combina la frescura de las verduras con la intensidad del pesto. La pasta, cocida al dente, se mezcla con un pesto vibrante hecho a base de albahaca fresca, piñones, ajo, queso parmesano y aceite de oliva virgen extra.",
+   "precio": "9",
+   "calorias": 360,
+   "vegano": "Si"
+ },
+ {
+   "id": 21,
+   "nombre": "21 - Heura con salsa satay y verduras",
+   "foto": "/assets/platos/Heura_con_salsa_satay_y_verduras.jpg",
+   "categoria": "Carne",
+   "orden": "Segundo",
+   "descripcion": "La Heura con salsa satay y verduras es un plato innovador y delicioso que combina proteínas vegetales con sabores intensos. La Heura, un producto a base de soja que imita la textura y sabor del pollo, se cocina hasta quedar jugosa y dorada. La salsa satay, hecha a base de cacahuetes, leche de coco y especias, aporta una cremosidad y un sabor exótico que complementa a la perfección la Heura.",
+   "precio": "14",
+   "calorias": 390,
+   "vegano": "No"
+ },
+ {
+   "id": 22,
+   "nombre": "22 - Solomillo a la pimienta",
+   "foto": "/assets/platos/Solomillo_a_la_pimienta.jpg",
+   "categoria": "Carne",
+   "orden": "Segundo",
+   "descripcion": "El solomillo a la pimienta es un clásico de la cocina que combina la ternura y jugosidad del solomillo con el sabor potente y aromático de la pimienta. El solomillo se cocina a la perfección, quedando dorado por fuera y rosado y jugoso por dentro. La salsa a la pimienta, elaborada con granos de pimienta negra, nata, caldo de carne y un toque de brandy, aporta un sabor intenso y un toque de calor que resalta la riqueza del solomillo.",
+   "precio": "15",
+   "calorias": 500,
+   "vegano": "No"
+ },
+ {
+   "id": 23,
+   "nombre": "23 - Lasaña de merluza y pulpo",
+   "foto": "/assets/platos/Lasana_de_merluza_y_pulpo.jpg",
+   "categoria": "Pasta",
+   "orden": "Segundo",
+   "descripcion": "La lasaña de merluza y pulpo es una propuesta culinaria innovadora y deliciosa que combina los sabores del mar con la suavidad de la pasta. Las capas de pasta se intercalan con una mezcla de merluza y pulpo, cocidos a la perfección y desmenuzados, creando un relleno jugoso y lleno de sabor. La salsa bechamel, enriquecida con un toque de nuez moscada, aporta una cremosidad que une todos los ingredientes de manera armoniosa.",
+   "precio": "11",
+   "calorias": 410,
+   "vegano": "No"
+ },
+ {
+   "id": 24,
+   "nombre": "24 - Linguine a la putanesca",
+   "foto": "/assets/platos/Linguine_a_la_putanesca.jpg",
+   "categoria": "Pasta",
+   "orden": "Segundo",
+   "descripcion": "El linguine a la putanesca es un plato italiano lleno de sabor y carácter. Esta receta combina la pasta linguine, cocida al dente, con una salsa putanesca vibrante y aromática. La salsa se elabora con ingredientes como tomates triturados, aceitunas negras, alcaparras, anchoas, ajo y un toque de guindilla, creando un equilibrio perfecto entre lo salado, lo ácido y lo ligeramente picante.",
+   "precio": "9",
+   "calorias": 450,
+   "vegano": "Si"
+ },
+ {
+   "id": 25,
+   "nombre": "25 - Arroz meloso de boletus y butifarra",
+   "foto": "/assets/platos/Arroz_meloso_de_boletus_y_butifarra.jpg",
+   "categoria": "Arroz",
+   "orden": "Segundo",
+   "descripcion": "El arroz meloso de boletus y butifarra es un plato que combina la riqueza de los hongos con la robustez de la butifarra en una preparación cremosa y llena de sabor. Este guiso se elabora con un sofrito de cebolla, ajo y pimientos, al que se añaden los boletus troceados para liberar todo su aroma y sabor.",
+   "precio": "12",
+   "calorias": 460,
+   "vegano": "No"
+ },
+ {
+   "id": 26,
+   "nombre": "26 - Dorada con noodles de trigo y salsa tonkatsu",
+   "foto": "/assets/platos/Dorada_con_noodles_de_trigo_y_salsa_tonkatsu.jpg",
+   "categoria": "Pescado",
+   "orden": "Segundo",
+   "descripcion": "La dorada con noodles de trigo y salsa tonkatsu es un plato que fusiona lo mejor de la cocina japonesa con un toque de mar. La dorada, un pescado de carne blanca y suave, se cocina hasta quedar perfectamente dorada y jugosa. La salsa tonkatsu, una mezcla de sabores umami, dulces y ligeramente ácidos, añade una profundidad de sabor que complementa maravillosamente al pescado.",
+   "precio": "14",
+   "calorias": 430,
+   "vegano": "No"
+ },
+ {
+   "id": 27,
+   "nombre": "27 - Penne, pomodoro e salsiccia rossa",
+   "foto": "/assets/platos/Penne,_pomodoro_e_salsiccia_rossa.jpg",
+   "categoria": "Pasta",
+   "orden": "Segundo",
+   "descripcion": "El penne, pomodoro e salsiccia rossa es un clásico de la cocina italiana que combina pasta al dente con una sabrosa salsa de tomate y salchicha roja. El penne, una pasta tubular perfecta para atrapar la salsa, se cocina hasta el punto justo, conservando su firmeza y textura.",
+   "precio": "8",
+   "calorias": 480,
+   "vegano": "No"
+ },
+ {
+   "id": 28,
+   "nombre": "28 - Café",
+   "foto": "/assets/platos/Cafe.jpg",
+   "categoria": "Postre",
+   "orden": "Postre",
+   "descripcion": "El café, esa mágica bebida que nos despierta por las mañanas y nos acompaña en muchos momentos del día. 🌟 Ya sea que prefieras un espresso fuerte y cargado, un suave latte, o quizás algo más exótico como un café turco, siempre hay una manera de disfrutar de esta deliciosa infusión.",
+   "precio": "1,5",
+   "calorias": 2,
+   "vegano": "No"
+ },
+ {
+   "id": 29,
+   "nombre": "29 - Helado dos sabores",
+   "foto": "/assets/platos/Helado_dos_sabores.jpg",
+   "categoria": "Postre",
+   "orden": "Postre",
+   "descripcion": "El helado de dos sabores es una delicia que combina lo mejor de dos mundos en un solo postre. Puedes elegir tus sabores favoritos y disfrutarlos juntos en cada bocado, creando una experiencia única y refrescante. Algunas combinaciones clásicas son vainilla y chocolate, fresa y mango, o pistacho y chocolate. La elección de los sabores depende de tus preferencias, pero la mezcla de texturas y sabores hará que cada cucharada sea un placer.",
+   "precio": "2",
+   "calorias": 200,
+   "vegano": "No"
+ },
+ {
+   "id": 30,
+   "nombre": "30 - Tarta de frambuesas",
+   "foto": "/assets/platos/Tarta_de_frambuesas.jpg",
+   "categoria": "Postre",
+   "orden": "Postre",
+   "descripcion": "La tarta de frambuesas es un postre elegante y delicioso, perfecto para cualquier ocasión especial o simplemente para disfrutar de un capricho dulce. Esta tarta se compone de una base crujiente de masa, rellena con una crema suave y sedosa que puede ser de vainilla, limón o incluso queso crema.",
+   "precio": "3",
+   "calorias": 350,
+   "vegano": "No"
+ }
+]
+=======
+[
+ {
    "id": "01",
    "nombre": "Noodles de trigo, ragu asiatico y verduras",
    "foto": "https://drive.google.com/file/d/1lrNj5ChBsvnN-rsCIFpdiwGyq83Midji/view?usp=drive_link",
