@@ -30,7 +30,7 @@
     </div>
     
     <div class="formulario">
-    <form action="contacto.php" method="get">
+    <form id="formContacto" action="contacto.php" method="get">
         
         <label for="nombre_contacto">Nombre:</label>
             <input type="text" name="nombre_contacto" id="nombre_contacto" placeholder="Nombre" required>
@@ -59,12 +59,12 @@
         </div>
         </label><br>
         <input type="checkbox" name="rgpd" id="rgpd" required>
-        <label for="rgpd">Acepto las <a href="../rgpd/rgpd.html" target="_blank"> <b>políticas de privacidad</b></a>
+        <label for="rgpd">Acepto las <a href="rgpd.html" target="_blank"> <b>políticas de privacidad</b></a>
         </label><br>
        
         <div class="botones">
         <button class="boton_cancelar" type="reset">Cancelar</button>
-        <button class="boton_enviar" type="submit">Enviar</button>
+        <button id="submit"class="boton_enviar" type="submit">Enviar</button>
         </div>  
     </form>
 
@@ -79,6 +79,6 @@
         </ul>
     </footer>
 
-    <script src="script.js"></script>
+    <script src="scripts/contacto.js"></script>
 </body>
 </html>
