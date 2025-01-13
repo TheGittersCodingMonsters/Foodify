@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta name="description" content="FoodyFly: Delicious prepared meals delivered to your doorstep.">
+    <meta name="keywords" content="food delivery, prepared meals, FoodyFly">
+    <meta name="author" content="FoodyFly Team">
+    
+    <!-- Open Graph para redes sociales -->
+    <meta property="og:title" content="FoodyFly">
+    <meta property="og:description" content="Delicious prepared meals delivered to your doorstep.">
+    <meta property="og:image" content="image.jpg">
+    <meta property="og:url" content="https://foodyfly.com">
+    <meta property="og:type" content="website">
+    
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+
+
+    <link rel="stylesheet" href="style.css">
+   
+    <title>FoodyFly</title>
+</head>
+
+<body>
+    <header role="banner">
+        <div class="logo">
+            <img src="logo.png" alt="FoodyFly Logo">
+        </div>
+        <nav role="navigation">
+            <ul>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#menu">Menu</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main role="main">
+        <section id="cart-section">
+            <div class="container">
+                <h1>Your Cart</h1>
+                <div id="cartItems">
+                    <!-- Los items del carrito dinamicamente van a ser insertados aqui -->
+                </div>
+                <div class="cart-footer">
+                    <p class="total">Total: $<span id="totalPrice">0.00</span></p>
+                    <button class="checkout-button" onclick="goToCheckout()">Proceed to Checkout</button>
+                </div>
+            </div>     
+        <script>
+                // funcion para importar datos de un archivo y en este caso son los productos del archivo platos.json
+                async function fetchCartData() {
+
+                // usar fetch para importar datos del archivo platos.json
+                const response = await fetch('platos.json'); 
+
+                // await hace una pausa hasta que la importacion de esos datos esta hecha
+                // .json convierte el archivo json a un object utilizable de javascript
+                const cartData = await response.json(); 
+                
+                // llamar otra funcion para mostrar los items del carrito en la pagina
+                renderCartItems(cartData); 
+            }
+
+            // funcion para mostrar los items del carrito en el HTML
+            function renderCartItems(cartData) {
+
+                // este para sostener el HTML, para todos los items del carrito
+                let cartItemsHTML = ''; 
+            
+                // este va a trackear el total del precio de todos los items
+                let total = 0; 
+            
+                // para hacer un loop que ira dentro de cada producto en la lista (uno por uno)
+                for (let i = 0; i < cartData.length; i++) { 
+
+                    // consigue el producto actual (e.g., nombre, precio y cantidad)
+                    let item = cartData[i]; 
+                
+                    // añade el bloque de HTML para el producto (nombre, precio, cantidad)
+                    cartItemsHTML += `
+                        <div class="cart-item">
+                            <span class="item-name">${item.name}</span>
+                            <span>$${item.price.toFixed(2)}</span>
+                            <span>x ${item.quantity}</span>
+                        </div>`; 
+                    
+                    // añade el coste del producto al precio total
+                    // Ejemplo: Si el precio = 10€ y de cantidad = 2, añade 10 * 2 = 20
+                    total += item.price * item.quantity; 
+                }
+            
+                // Inserta los items del carrito del HTML dentro del elemento #cartItems 
+                document.getElementById('cartItems').innerHTML = cartItemsHTML; 
+            
+                // actualizar el precio total en el elemento #totalPrice
+                document.getElementById('totalPrice').textContent = total.toFixed(2); 
+            }
+
+            // funcion que se ejecuta una vez el button de "Proceed to checkout" es clicado
+            function goToCheckout() {
+
+                async function fetchCartData () {
+                    const response = await fetch('platos.json');
+                    const cartData = await response.json();
+
+                alert("Proceeding to checkout..."); 
+
+                // Guardar el carrito en el localStorage
+                localStorage.setItem('cartData', JSON.stringify(cartData))
+            
+                // te manda al checkout una vez que le des click al boton
+                window.location.href = 'checkout.html'; 
+            }
+
+            // automaticamente obtene y muestra los datos del carrito cuando se carga la pagina
+            fetchCartData(); 
+        }
+
+         
+        </script>
+            <style>         
+        /* Cart Section Styles */
+        .container {
+            max-width: 800px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: #fff;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+        }
+
+        .cart-section h1 {
+            text-align: center;
+            color: #333;
+        }
+
+        .cart-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 0;
+            border-bottom: 1px solid #ddd;
+        }
+
+        .cart-item:last-child {
+            border-bottom: none;
+        }
+
+        .item-name {
+            font-weight: bold;
+            color: #555;
+        }
+
+        .cart-footer {
+            text-align: right;
+            margin-top: 20px;
+        }
+
+        .total {
+            font-size: 18px;
+            font-weight: bold;
+        }
+
+        .checkout-button {
+            margin-top: 10px;
+            padding: 10px 20px;
+            font-size: 16px;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .checkout-button:hover {
+            background-color: #0056b3;
+        }
+            </style>
+        </section>
+    </main>
+
+    <footer role="contentinfo">
+        <p>&copy; 2025 FoodyFly. All rights reserved.</p>
+        <ul>
+            <li><a href="#privacy">Privacy Policy</a></li>
+            <li><a href="#terms">Terms of Service</a></li>
+        </ul>
+    </footer>
+
+    <script>
+        
+    </script>
+</body>
+</html>
