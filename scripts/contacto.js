@@ -1,5 +1,7 @@
 formContacto = document.getElementById ("formContacto");
-addEventListener ("submit", function(){
+enviarButton = document.getElementById ("enviarButton");
+
+enviarButton.addEventListener ("click", function(){
     let
 
 })
