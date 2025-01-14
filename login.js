@@ -6,7 +6,8 @@ const contraseña = document.getElementById('password');
 //CONST USUARIO
 const usuarios = [
     {usuario: "usuario1", password: "contraseña1"},
-    {usuario: "usuario2", password: "contraseña2"}
+    {usuario: "usuario2", password: "contraseña2"},
+    {usuario: "belen", password:"2002"}
 ];
 
 // Function inicio sesión
