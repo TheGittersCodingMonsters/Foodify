@@ -122,7 +122,7 @@
 
     <script>
 async function fetchCartData() {
-    const response = await fetch('platos.json');
+    const response = await fetch('assets/Data/platos.json');
     const cartData = await response.json();
 
     // Handle empty cart
@@ -155,7 +155,7 @@ function renderCartItems(cartData) {
 }
 
 async function goToCheckout() {
-    const response = await fetch('platos.json');
+    const response = await fetch('assets/Data/platos.json');
     const cartData = await response.json();
 
     // Prevent checkout if cart is empty
