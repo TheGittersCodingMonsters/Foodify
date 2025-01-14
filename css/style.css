@@ -1,10 +1,48 @@
-
 :root {
 --titulos: #ff4d4dff;
---fondo2: #873008ff;
+--marron: #873008ff;
 --fondo: #fbcb7bff;
---detalles: #33eb55ff;
---footer: #8c184aff;
+--verde: #33eb55ff;
+--verdeClaro: #beebc6;
+--morado: #8c184aff;
 --letra: #0000
 }
+/* Reset CSS */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    height: 100%;
+    font-family: Arial, sans-serif;
+    background-color: var(--fondo);
+    font-size: 62.5%; /* para que 1rem sea igual a 10px */
+}
+
+body  {
+    font-size: 1.6rem;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+ul {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+/* Header */
+
+
+
+
 
