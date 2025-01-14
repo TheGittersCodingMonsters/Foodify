@@ -1,178 +1,11 @@
-<img source="">
-<section class="checkout-section">
-    <div class="container">
-        <h1>Checkout</h1>
-        <div class="checkout-container">
-            <!-- Left Column (Main Content) -->
-            <div class="checkout-left">
-                <div class="form-section">
-                    <h2>Customer Information</h2>
-                    <input type="email" placeholder="Email Address" id="email" required>
-                    <input type="text" placeholder="Full Name" id="fullName" required>
-                    <input type="tel" placeholder="Phone Number" id="phone" required>
-                </div>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Checkout</title>
+</head>
 
-                <div class="form-section">
-                    <h2>Shipping Address</h2>
-                    <input type="text" placeholder="Street Address" id="streetAddress" required>
-                    <input type="text" placeholder="City" id="city" required>
-                    <input type="text" placeholder="State/Province" id="state" required>
-                    <input type="text" placeholder="ZIP/Postal Code" id="zipCode" required>
-                    <input type="text" placeholder="Country" id="country" required>
-                </div>
-                
-                <div class="form-section">
-                    <h2>Shipping Method</h2>
-                    <select id="shippingMethod" required>
-                        <option value="standard">Envio standard (2-3 days) - Gratis</option>
-                    </select>
-                </div>
-
-                <div class="form-section">
-                    <h2>Payment Method</h2>
-                    <select id="paymentMethod" required>
-                        <option value="creditCard">Credit Card</option>
-                        <option value="otros">No esta disponible ningun otro metodo de pago</option>
-                    </select>
-
-                    <!-- Credit Card Input Fields -->
-                    <div id="creditCardDetails" class="payment-details">
-                        <input type="text" placeholder="Card Number" id="cardNumber" required>
-                        <input type="text" placeholder="Expiration Date (MM/YY)" id="expirationDate" required>
-                        <input type="text" placeholder="CVV" id="cvv" required>
-                    </div>
-                </div>
-
-                <!-- Confirm Checkout Button -->
-                <div class="form-section">
-                    <button class="checkout-button" onclick="confirmCheckout()">Confirm Checkout</button>
-                </div>
-            </div>
-
-            <!-- Right Column (Order Summary) -->
-            <div class="checkout-right">
-                <h2>Order Summary</h2>
-                <div id="checkoutCartItems">
-                    <!-- Cart items will be dynamically inserted here -->
-                </div>
-                
-                <div class="summary-item">
-                    <p>Subtotal</p>
-                    <p id="subtotal">$0.00</p>
-                </div>
-                <div class="summary-item">
-                    <p>Total</p>
-                    <p id="totalPrice">$0.00</p>
-                </div>
-                <div class="summary-item">
-                    <p>Discount Code</p>
-                    <input type="text" id="discountCode" placeholder="Enter discount code">
-                    <button id="applyDiscount" onclick="applyDiscount()">Apply</button>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
-
-<script>
-    // Fetch cart data from products.json
-    async function fetchCartData() {
-        try {
-            const response = await fetch('products.json');
-            const cartData = await response.json();
-            renderCheckoutItems(cartData);
-        } catch (error) {
-            console.error("Error fetching cart data:", error);
-        }
-    }
-
-    // Render cart items in the checkout page
-    function renderCheckoutItems(cartData) {
-        let checkoutItemsHTML = '';
-        let subtotal = 0;
-
-        for (let i = 0; i < cartData.length; i++) {
-            let item = cartData[i];
-
-            checkoutItemsHTML += `
-                <div class="checkout-item">
-                    <div class="product-details">
-                        <img src="${item.image}" alt="${item.name}" class="product-image">
-                        <div class="product-info">
-                            <p class="item-name">${item.name}</p>
-                            <p>Price: $${item.price.toFixed(2)}</p>
-                            <p>Quantity: ${item.quantity}</p>
-                        </div>
-                    </div>
-                    <p class="item-total">$${(item.price * item.quantity).toFixed(2)}</p>
-                </div>
-            `;
-
-            subtotal += item.price * item.quantity;
-        }
-
-        // Set subtotal
-        document.getElementById('checkoutCartItems').innerHTML = checkoutItemsHTML;
-        document.getElementById('subtotal').textContent = `$${subtotal.toFixed(2)}`;
-        document.getElementById('totalPrice').textContent = `$${(subtotal + 5.00).toFixed(2)}`;  // Assuming $5 shipping
-    }
-
-    // Handle discount code
-    function applyDiscount() {
-        const discountCode = document.getElementById('discountCode').value;
-        let subtotal = parseFloat(document.getElementById('subtotal').textContent.replace('$', ''));
-
-        if (discountCode === 'DISCOUNT10') {
-            let discountAmount = subtotal * 0.1;  // Apply 10% discount
-            subtotal -= discountAmount;
-            document.getElementById('totalPrice').textContent = `$${(subtotal + 5.00).toFixed(2)}`;  // Update total price
-            alert('Discount applied successfully!');
-        } else {
-            alert('Invalid discount code.');
-        }
-    }
-
-    // Confirm checkout
-    function confirmCheckout() {
-        const email = document.getElementById('email').value;
-        const fullName = document.getElementById('fullName').value;
-        const phone = document.getElementById('phone').value;
-        const streetAddress = document.getElementById('streetAddress').value;
-        const city = document.getElementById('city').value;
-        const state = document.getElementById('state').value;
-        const zipCode = document.getElementById('zipCode').value;
-        const country = document.getElementById('country').value;
-        const shippingMethod = document.getElementById('shippingMethod').value;
-        const paymentMethod = document.getElementById('paymentMethod').value;
-        let cardNumber, expirationDate, cvv;
-
-        if (paymentMethod === 'creditCard') {
-            cardNumber = document.getElementById('cardNumber').value;
-            expirationDate = document.getElementById('expirationDate').value;
-            cvv = document.getElementById('cvv').value;
-        }
-
-        // Validate required fields (could be enhanced with better validation logic)
-        if (!email || !fullName || !phone || !streetAddress || !city || !state || !zipCode || !country || !shippingMethod || !paymentMethod) {
-            alert("Please fill in all required fields.");
-            return;
-        }
-
-        if (paymentMethod === 'creditCard' && (!cardNumber || !expirationDate || !cvv)) {
-            alert("Please fill in credit card details.");
-            return;
-        }
-
-        // Simulate checkout confirmation
-        alert("Checkout confirmed! Proceeding to payment...");
-        // Redirect to payment page or complete the checkout process here
-        // Example: window.location.href = 'payment.html';
-        window.location.href = "confirmation.html";
-    }
-
-    // Call fetchCartData on page load
-    fetchCartData();
-</script>
 
 <style>
     /* Checkout Page Styles */
@@ -309,4 +142,198 @@
     .product-info p {
         margin: 5px 0;
     }
+
+    .bannercheckout {
+        height: 200px;
+        margin: 0 auto;
+        display: block;
+    }
+
 </style>
+
+<body>
+    
+<img src="assets/img/logotipos/BannerCheckout.png" class="bannercheckout">
+<section class="checkout-section">
+    <div class="container">
+        <h1>Checkout</h1>
+        <div class="checkout-container">
+            <!-- Left Column (Main Content) -->
+            <div class="checkout-left">
+                <div class="form-section">
+                    <h2>Customer Information</h2>
+                    <input type="email" placeholder="Email Address" id="email" required>
+                    <input type="text" placeholder="Nombre Completo" id="fullName" required>
+                    <input type="tel" placeholder="Numero Telefono" id="phone" required>
+                </div>
+
+                <div class="form-section">
+                    <h2>Shipping Address</h2>
+                    <input type="text" placeholder="Direccion de la calle" id="streetAddress" required>
+                    <input type="text" placeholder="City" id="Cuidad" required>
+                    <input type="text" placeholder="Estado/Provincia" id="state" required>
+                    <input type="text" placeholder="ZIP/Codigo Postal" id="zipCode" required>
+                    <input type="text" placeholder="Pais" id="country" required>
+                </div>
+                
+                <div class="form-section">
+                    <h2>Shipping Method</h2>
+                    <select id="shippingMethod" required>
+                        <option value="standard">Envio standard (2-3 days) - Gratis</option>
+                    </select>
+                </div>
+
+                <div class="form-section">
+                    <h2>Payment Method</h2>
+                    <select id="paymentMethod" required>
+                        <option value="creditCard">Credit Card</option>
+                        <option value="otros">No esta disponible ningun otro metodo de pago</option>
+                    </select>
+
+                    <!-- Credit Card Input Fields -->
+                    <div id="creditCardDetails" class="payment-details">
+                        <input type="text" placeholder="Card Number" id="cardNumber" required>
+                        <input type="text" placeholder="Expiration Date (MM/YY)" id="expirationDate" required>
+                        <input type="text" placeholder="CVV" id="cvv" required>
+                    </div>
+                </div>
+
+                <!-- Confirm Checkout Button -->
+                <div class="form-section">
+                    <button class="checkout-button" onclick="confirmCheckout()">Confirm Checkout</button>
+                </div>
+            </div>
+
+            <!-- Right Column (Order Summary) -->
+            <div class="checkout-right">
+                <h2>Order Summary</h2>
+                <div id="checkoutCartItems">
+                    <!-- Cart items will be dynamically inserted here -->
+                </div>
+                
+                <div class="summary-item">
+                    <p>Subtotal</p>
+                    <p id="subtotal">$0.00</p>
+                </div>
+                <div class="summary-item">
+                    <p>Total</p>
+                    <p id="totalPrice">$0.00</p>
+                </div>
+                <div class="summary-item">
+                    <p>Discount Code</p>
+                    <input type="text" id="discountCode" placeholder="Enter discount code">
+                    <button id="applyDiscount" onclick="applyDiscount()">Apply</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+    // Fetch cart data from products.json
+    async function fetchCartData() {
+        try {
+            // Fetching the JSON file
+            const response = await fetch('assets/Data/platos.json');
+            if (!response.ok) {
+                throw new Error(`HTTP error! Status: ${response.status}`);
+            }
+
+            // Parsing the JSON response
+            const cartData = await response.json();
+
+            // Debugging the cart data
+            console.log("Cart Data fetched successfully:", cartData);
+
+            // Render the items on the checkout page
+            renderCheckoutItems(cartData);
+        } catch (error) {
+            console.error("Error fetching cart data:", error);
+            alert("Unable to fetch cart data. Please try again later.");
+        }
+    }
+
+    // Render cart items in the checkout page
+    function renderCheckoutItems(cartData) {
+        let checkoutItemsHTML = '';
+        let subtotal = 0;
+
+        cartData.forEach(item => {
+            // Ensure the item has the required properties
+            if (!item.image || !item.name || !item.price || !item.quantity) {
+                console.error("Missing properties in item:", item);
+                return;
+            }
+
+            checkoutItemsHTML += `
+                <div class="checkout-item">
+                    <div class="product-details">
+                        <img src="${item.image}" alt="${item.name}" class="product-image">
+                        <div class="product-info">
+                            <p class="item-name">${item.name}</p>
+                            <p>Price: $${item.price.toFixed(2)}</p>
+                            <p>Quantity: ${item.quantity}</p>
+                        </div>
+                    </div>
+                    <p class="item-total">$${(item.price * item.quantity).toFixed(2)}</p>
+                </div>
+            `;
+
+            subtotal += item.price * item.quantity;
+        });
+
+        // Set subtotal and total price in the DOM
+        document.getElementById('checkoutCartItems').innerHTML = checkoutItemsHTML;
+        document.getElementById('subtotal').textContent = `$${subtotal.toFixed(2)}`;
+        document.getElementById('totalPrice').textContent = `$${(subtotal + 5.00).toFixed(2)}`; // Assuming $5 shipping
+    }
+
+    // Apply discount code
+    function applyDiscount() {
+        const discountCode = document.getElementById('discountCode').value;
+        let subtotal = parseFloat(document.getElementById('subtotal').textContent.replace('$', ''));
+
+        if (discountCode === 'DISCOUNT10') {
+            const discountAmount = subtotal * 0.1; // 10% discount
+            subtotal -= discountAmount;
+            document.getElementById('totalPrice').textContent = `$${(subtotal + 5.00).toFixed(2)}`;
+            alert('Discount applied successfully!');
+        } else {
+            alert('Invalid discount code.');
+        }
+    }
+
+    // Confirm checkout
+    function confirmCheckout() {
+        const email = document.getElementById('email').value;
+        const fullName = document.getElementById('fullName').value;
+        const phone = document.getElementById('phone').value;
+        const streetAddress = document.getElementById('streetAddress').value;
+        const city = document.getElementById('city').value;
+        const state = document.getElementById('state').value;
+        const zipCode = document.getElementById('zipCode').value;
+        const country = document.getElementById('country').value;
+        const shippingMethod = document.getElementById('shippingMethod').value;
+        const paymentMethod = document.getElementById('paymentMethod').value;
+
+        if (!email || !fullName || !phone || !streetAddress || !city || !state || !zipCode || !country || !shippingMethod || !paymentMethod) {
+            alert("Please fill in all required fields.");
+            return;
+        }
+
+        alert("Checkout confirmed! Redirecting to confirmation page...");
+        window.location.href = "confirmation.html";
+    }
+
+    // Attach event listeners
+    document.getElementById('applyDiscount').addEventListener('click', applyDiscount);
+    document.querySelector('.checkout-button').addEventListener('click', confirmCheckout);
+
+    // Fetch cart data on page load
+    fetchCartData();
+});
+</script>
+
+</body>
+</html>

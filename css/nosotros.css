@@ -1,0 +1,22 @@
+#nosotros {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+
+p {
+    display: flex;
+    align-items: center;
+}
+
+img {
+    width: 90px;
+    height: 90px;
+    float: left;
+    margin-right: 1rem;
+    border-radius: 50%;
+    }
+
+    a {
+        margin-right: 1rem;
+    }
