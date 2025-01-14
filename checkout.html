@@ -142,11 +142,18 @@
     .product-info p {
         margin: 5px 0;
     }
+
+    .bannercheckout {
+        height: 200px;
+        margin: 0 auto;
+        display: block;
+    }
+
 </style>
 
 <body>
     
-<img source="">
+<img src="assets/img/logotipos/BannerCheckout.png" class="bannercheckout">
 <section class="checkout-section">
     <div class="container">
         <h1>Checkout</h1>
@@ -223,14 +230,27 @@
 </section>
 
 <script>
+document.addEventListener("DOMContentLoaded", function () {
     // Fetch cart data from products.json
     async function fetchCartData() {
         try {
-            const response = await fetch('products.json');
+            // Fetching the JSON file
+            const response = await fetch('assets/Data/platos.json');
+            if (!response.ok) {
+                throw new Error(`HTTP error! Status: ${response.status}`);
+            }
+
+            // Parsing the JSON response
             const cartData = await response.json();
+
+            // Debugging the cart data
+            console.log("Cart Data fetched successfully:", cartData);
+
+            // Render the items on the checkout page
             renderCheckoutItems(cartData);
         } catch (error) {
             console.error("Error fetching cart data:", error);
+            alert("Unable to fetch cart data. Please try again later.");
         }
     }
 
@@ -239,8 +259,12 @@
         let checkoutItemsHTML = '';
         let subtotal = 0;
 
-        for (let i = 0; i < cartData.length; i++) {
-            let item = cartData[i];
+        cartData.forEach(item => {
+            // Ensure the item has the required properties
+            if (!item.image || !item.name || !item.price || !item.quantity) {
+                console.error("Missing properties in item:", item);
+                return;
+            }
 
             checkoutItemsHTML += `
                 <div class="checkout-item">
@@ -257,23 +281,23 @@
             `;
 
             subtotal += item.price * item.quantity;
-        }
+        });
 
-        // Set subtotal
+        // Set subtotal and total price in the DOM
         document.getElementById('checkoutCartItems').innerHTML = checkoutItemsHTML;
         document.getElementById('subtotal').textContent = `$${subtotal.toFixed(2)}`;
-        document.getElementById('totalPrice').textContent = `$${(subtotal + 5.00).toFixed(2)}`;  // Assuming $5 shipping
+        document.getElementById('totalPrice').textContent = `$${(subtotal + 5.00).toFixed(2)}`; // Assuming $5 shipping
     }
 
-    // Handle discount code
+    // Apply discount code
     function applyDiscount() {
         const discountCode = document.getElementById('discountCode').value;
         let subtotal = parseFloat(document.getElementById('subtotal').textContent.replace('$', ''));
 
         if (discountCode === 'DISCOUNT10') {
-            let discountAmount = subtotal * 0.1;  // Apply 10% discount
+            const discountAmount = subtotal * 0.1; // 10% discount
             subtotal -= discountAmount;
-            document.getElementById('totalPrice').textContent = `$${(subtotal + 5.00).toFixed(2)}`;  // Update total price
+            document.getElementById('totalPrice').textContent = `$${(subtotal + 5.00).toFixed(2)}`;
             alert('Discount applied successfully!');
         } else {
             alert('Invalid discount code.');
@@ -292,34 +316,23 @@
         const country = document.getElementById('country').value;
         const shippingMethod = document.getElementById('shippingMethod').value;
         const paymentMethod = document.getElementById('paymentMethod').value;
-        let cardNumber, expirationDate, cvv;
 
-        if (paymentMethod === 'creditCard') {
-            cardNumber = document.getElementById('cardNumber').value;
-            expirationDate = document.getElementById('expirationDate').value;
-            cvv = document.getElementById('cvv').value;
-        }
-
-        // Validate required fields (could be enhanced with better validation logic)
         if (!email || !fullName || !phone || !streetAddress || !city || !state || !zipCode || !country || !shippingMethod || !paymentMethod) {
             alert("Please fill in all required fields.");
             return;
         }
 
-        if (paymentMethod === 'creditCard' && (!cardNumber || !expirationDate || !cvv)) {
-            alert("Please fill in credit card details.");
-            return;
-        }
-
-        // Simulate checkout confirmation
-        alert("Checkout confirmed! Proceeding to payment...");
-        // Redirect to payment page or complete the checkout process here
-        // Example: window.location.href = 'payment.html';
+        alert("Checkout confirmed! Redirecting to confirmation page...");
         window.location.href = "confirmation.html";
     }
 
-    // Call fetchCartData on page load
+    // Attach event listeners
+    document.getElementById('applyDiscount').addEventListener('click', applyDiscount);
+    document.querySelector('.checkout-button').addEventListener('click', confirmCheckout);
+
+    // Fetch cart data on page load
     fetchCartData();
+});
 </script>
 
 </body>
