@@ -1,0 +1,25 @@
+.encabezado {
+    margin-bottom: 2rem;
+}
+
+.texto_contacto {
+    margin-bottom: 2rem;
+}
+
+.contenedor {
+    display:flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+input {
+    font-size: 2rem;
+}
+
+label {
+    font-size: 2rem;
+}
+
+p {
+    font-size: 2rem;
+}
