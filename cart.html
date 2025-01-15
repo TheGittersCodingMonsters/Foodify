@@ -37,89 +37,31 @@
 
     <!-- Estilos -->
     <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/cart.css">
 
     <title>Foodify</title>
 </head>
 
-
 <style>         
-    /* Cart Section Styles */
-    .container {
-        max-width: 800px;
-        margin: 20px auto;
-        padding: 20px;
-        background-color: #fff;
-        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-        border-radius: 8px;
-    }
-
-    .cart-section h1 {
-        text-align: center;
-        color: #333;
-    }
-
-    .cart-item {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        padding: 10px 0;
-        border-bottom: 1px solid #ddd;
-    }
-
-    .cart-item:last-child {
-        border-bottom: none;
-    }
-
-    .item-name {
-        font-weight: bold;
-        color: #555;
-    }
-
-    .cart-footer {
-        text-align: right;
-        margin-top: 20px;
-    }
-
-    .total {
-        font-size: 18px;
-        font-weight: bold;
-    }
-
-    .checkout-button {
-        margin-top: 10px;
-        padding: 10px 20px;
-        font-size: 16px;
-        background-color: #007bff;
-        color: white;
-        border: none;
-        border-radius: 5px;
-        cursor: pointer;
-    }
-
-    .checkout-button:hover {
-        background-color: #0056b3;
-    }
+   
         </style>
 
 <body>
-    <header role="banner" class="header">
+    <header role="banner">
         <div class="logo">
-            <a href="index.html"><img src="assets/img/logotipos/imagotipo.png" alt="Foodify Logo"></a>
+            <img src="logo.png" alt="FoodyFly Logo">
         </div>
-        <nav role="navigation" class="nav">
-            <ul class="menu">
-                <li><a href="index.html">Home</a></li>
+        <nav role="navigation">
+            <ul>
+                <li><a href="#home">Home</a></li>
                 <li><a href="#about">About</a></li>
                 <li><a href="#menu">Menu</a></li>
                 <li><a href="#contact">Contact</a></li>
             </ul>
-            <div class="menu-mobile">
-                <i class="fa-solid fa-bars"></i>
-            </div>
         </nav>
     </header>
 
-    <main role="main" class="content">
+    <main role="main">
         <section id="cart-section">
             <div class="container">
                 <h1>Your Cart</h1>
@@ -134,7 +76,7 @@
         </section>
     </main>
 
-    <footer role="contentinfo" class="footer">
+        <footer role="contentinfo" class="footer">
         <div class="footer-info">
             <div class="footer-help">
                 <h3>Ayuda</h3>
@@ -181,57 +123,8 @@
         </div>
     </footer>
 
-    <script>
-async function fetchCartData() {
-    const response = await fetch('assets/Data/platos.json');
-    const cartData = await response.json();
-
-    // Handle empty cart
-    if (cartData.length === 0) {
-        document.getElementById('cartItems').innerHTML = `
-            <p>Your cart is empty. Add some items to proceed!</p>`;
-        document.querySelector('.checkout-button').disabled = true; // Disable checkout
-        return;
-    }
-
-    renderCartItems(cartData);
-}
-
-function renderCartItems(cartData) {
-    let cartItemsHTML = '';
-    let total = 0;
-
-    cartData.forEach(item => {
-        cartItemsHTML += `
-            <div class="cart-item">
-                <span class="item-name">${item.name}</span>
-                <span>$${item.price.toFixed(2)}</span>
-                <span>x ${item.quantity}</span>
-            </div>`;
-        total += item.price * item.quantity;
-    });
-
-    document.getElementById('cartItems').innerHTML = cartItemsHTML;
-    document.getElementById('totalPrice').textContent = total.toFixed(2);
-}
-
-async function goToCheckout() {
-    const response = await fetch('assets/Data/platos.json');
-    const cartData = await response.json();
-
-    // Prevent checkout if cart is empty
-    if (cartData.length === 0) {
-        alert("Your cart is empty. Please add items before proceeding to checkout.");
-        return;
-    }
-
-    localStorage.setItem('cartData', JSON.stringify(cartData));
-    alert("Proceeding to checkout...");
-    window.location.href = 'checkout.html';
-}
-
-// Automatically fetch and display cart data on page load
-fetchCartData();
-    </script>
+    <script src="scripts/script.js"></script>
+    <script src="scripts/cart.js"></script>
+   
 </body>
 </html>
