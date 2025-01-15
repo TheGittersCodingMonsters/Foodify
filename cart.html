@@ -16,7 +16,6 @@
     <meta property="og:image" content="image.jpg">
     <meta property="og:url" content="https://foodyfy.com">
     <meta property="og:type" content="website">
-<<<<<<< HEAD
 
     <!-- Favicon con tamaños distintos para dispositivos -->
     <link rel="apple-touch-icon" sizes="180x180" href="assets/img/favicon/apple-touch-icon.png">
@@ -39,58 +38,28 @@
     <!-- Estilos -->
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/cart.css">
-=======
->>>>>>> 736dd5d87273c8a7ef93181835f395ffb4e55d68
 
-    <!-- Favicon con tamaños distintos para dispositivos -->
-    <link rel="apple-touch-icon" sizes="180x180" href="assets/img/favicon/apple-touch-icon.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="assets/img/favicon/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="assets/img/favicon/favicon-16x16.png">
-    <link rel="manifest" href="assets/img/favicon/site.webmanifest">
-
-<<<<<<< HEAD
-=======
-    <!-- Font Awesome -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
-        integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
-        crossorigin="anonymous" referrerpolicy="no-referrer" />
-
-    <!-- Google Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link
-        href="https://fonts.googleapis.com/css2?family=Caprasimo&family=Imprima&family=Modak&family=Old+Standard+TT:ital,wght@0,400;0,700;1,400&display=swap"
-        rel="stylesheet">
-
-    <!-- Estilos -->
-    <link rel="stylesheet" href="css/style.css">
-
->>>>>>> 736dd5d87273c8a7ef93181835f395ffb4e55d68
     <title>Foodify</title>
 </head>
 
+<style>         
+   
+        </style>
+
 <body>
-    <header role="banner" class="header">
+    <header role="banner">
         <div class="logo">
-<<<<<<< HEAD
-            <a href="index.html"><img src="assets/img/logotipos/imagotipo.png" alt="Foodify Logo"></a>
-=======
-            <img src="logo.png" alt="Foodify Logo">
->>>>>>> ebc3b5fece7f2649c74548f37e6321a2b682236e
+            <img src="logo.png" alt="FoodyFly Logo">
         </div>
-        <nav role="navigation" class="nav">
-            <ul class="menu">
-                <li><a href="index.html">Home</a></li>
+        <nav role="navigation">
+            <ul>
+                <li><a href="#home">Home</a></li>
                 <li><a href="#about">About</a></li>
                 <li><a href="#menu">Menu</a></li>
                 <li><a href="#contact">Contact</a></li>
             </ul>
-            <div class="menu-mobile">
-                <i class="fa-solid fa-bars"></i>
-            </div>
         </nav>
     </header>
-
 
     <main role="main">
         <section id="cart-section">
@@ -107,11 +76,7 @@
         </section>
     </main>
 
-<<<<<<< HEAD
-    <footer role="contentinfo" class="footer">
-=======
         <footer role="contentinfo" class="footer">
->>>>>>> 736dd5d87273c8a7ef93181835f395ffb4e55d68
         <div class="footer-info">
             <div class="footer-help">
                 <h3>Ayuda</h3>
@@ -158,64 +123,8 @@
         </div>
     </footer>
 
-    <script src="script.js"></script>
-    <script>
-// Función asíncrona para obtener datos del carrito desde del archivo JSON
-async function fetchCartData() {
-    const response = await fetch('assets/Data/platos.json');
-    const cartData = await response.json();
-
-    // Maneja el caso de carrito vacío
-    if (cartData.length === 0) {
-        document.getElementById('cartItems').innerHTML = `
-            <p>Your cart is empty. Add some items to proceed!</p>`;
-        document.querySelector('.checkout-button').disabled = true; // Desactiva el botón de checkout
-        return;
-    }
-
-    renderCartItems(cartData);
-}
-
-// Función para renderizar los items del carrito en la página
-function renderCartItems(cartData) {
-    let cartItemsHTML = '';
-    let total = 0;
-
-    // Genera HTML para cada item y calcula el total
-    cartData.forEach(item => {
-        cartItemsHTML += `
-            <div class="cart-item">
-                <span class="item-name">${item.name}</span>
-                <span>$${item.price.toFixed(2)}</span>
-                <span>x ${item.quantity}</span>
-            </div>`;
-        total += item.price * item.quantity;
-    });
-
-    // Actualiza el DOM con los items y el precio total
-    document.getElementById('cartItems').innerHTML = cartItemsHTML;
-    document.getElementById('totalPrice').textContent = total.toFixed(2);
-}
-
-// Función asíncrona para proceder al checkout
-async function goToCheckout() {
-    const response = await fetch('assets/Data/platos.json');
-    const cartData = await response.json();
-
-    // Previene el checkout si el carrito está vacío
-    if (cartData.length === 0) {
-        alert("Your cart is empty. Please add items before proceeding to checkout.");
-        return;
-    }
-
-    // Guarda los datos del carrito en localStorage y redirige a la página de checkout
-    localStorage.setItem('cartData', JSON.stringify(cartData));
-    alert("Proceeding to checkout...");
-    window.location.href = 'checkout.html';
-}
-
-// Carga automáticamente los datos del carrito al cargar la página
-fetchCartData();
-    </script>
+    <script src="scripts/script.js"></script>
+    <script src="scripts/cart.js"></script>
+   
 </body>
 </html>
