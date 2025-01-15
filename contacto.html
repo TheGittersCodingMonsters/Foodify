@@ -28,16 +28,16 @@
 
 <body>
     <main>
-        <div class="encabezado">
+        <section class="encabezado">
             <h1>Fromulario de contacto:</h1>
-        </div>
+        </section>
 
-        <div class="texto_contacto">
+        <section class="texto_contacto">
             <p>Use este formulario para ponerse en contacto con nosotros y transmitirnos sus inquietudes, preguntas,
                 etc. Le responderemos lo antes posible.</p>
-        </div>
+        </section>
 
-        <div class="formulario">
+        <section class="formulario">
             <form id="formContacto" action="contacto.php" method="get">
                 <div class="contenedor">
 
@@ -88,19 +88,21 @@
                 </div>
 
 
-                <br>
-                <input type="checkbox" name="rgpd" id="rgpd" required>
+                <section class="rgpd">
+                    <input type="checkbox" name="rgpd" id="rgpd" required>
                 <label for="rgpd">Acepto las <a href="rgpd.html" target="_blank"> <b>políticas de privacidad</b></a>
                 </label>
+                </section>
+                
 
-                <div class="botones">
+                <section class="botones">
                     <button id="cancelarButton" type="reset">Cancelar</button>
                     <button id="enviarButton" type="button">Enviar</button>
-                </div>
+                </section>
 
             </form>
 
-        </div>
+        </section>
 
     </main>
 
