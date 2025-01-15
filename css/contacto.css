@@ -7,17 +7,19 @@
 }
 
 .contenedor {
-    display:flex;
+    display: flex;
     flex-direction: column;
     gap: 1rem;
 }
 
-input {
+.contenedor input {
     font-size: 2rem;
+
 }
 
-label {
+.contenedor label {
     font-size: 2rem;
+    min-width: 40%;
 }
 
 p {

@@ -38,11 +38,23 @@
     <div class="formulario">
     <form id="formContacto" action="contacto.php" method="get">
         <div class="contenedor">
-        
-        <p>Nombre: <input type="text" name="nombre_contacto" id="nombre_contacto" placeholder="Nombre" maxlength="20" required>
-        </p>
+            
+        <div class="campo">
+        <label for="nombre_contacto">Nombre:</label>
+        <input type="text" name="nombre_contacto" id="nombre_contacto" placeholder="Nombre" maxlength="20" required>
+        </div>
+
+        <div class="campo">
+        <label for="apellidos_contacto">Apellidos:</label>
+        <input type="text" name="apellidos_contacto" id="apellidos_contacto" placeholder="Apellidos" required>
+    </div>  
+
+
+
+
+    
          
-        <p>Apellidos: <input type="text" name="apellidos_contacto" id="apellidos_contacto" placeholder="Apellidos" required>
+        <p>Apellidos: 
         </p>
  
         <p>Email: <input type="email" name="email_contacto" id="email_contacto" placeholder="Email" required>
