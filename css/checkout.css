@@ -1,0 +1,141 @@
+            /* Checkout Page Styles */
+            .container {
+                max-width: 1200px;
+                margin: 20px auto;
+                padding: 20px;
+                background-color: #fff;
+                box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+                border-radius: 8px;
+                background-color: #bffea8;
+            }
+    
+            .checkout-section h1 {
+                text-align: center;
+                color: #333;
+            }
+    
+            .checkout-container {
+                display: flex;
+                justify-content: space-between;
+                gap: 40px;
+            }
+    
+            /* Left Column (Main Content) */
+            .checkout-left {
+                width: 60%;
+            }
+    
+            .form-section {
+                margin-bottom: 20px;
+            }
+    
+            .form-section h2 {
+                font-size: 24px;
+                font-weight: bold;
+                margin-bottom: 10px;
+            }
+    
+            .form-section input, .form-section select {
+                width: 100%;
+                padding: 10px;
+                margin-bottom: 10px;
+                border: 1px solid #ddd;
+                border-radius: 5px;
+            }
+    
+            .payment-details input {
+                width: 100%;
+                padding: 10px;
+                margin-bottom: 10px;
+                border: 1px solid #ddd;
+                border-radius: 5px;
+            }
+    
+            /* Right Column (Order Summary) */
+            .checkout-right {
+                width: 35%;
+                border-left: 2px solid #ddd;
+                padding-left: 20px;
+            }
+    
+            .checkout-right h2 {
+                font-size: 24px;
+                font-weight: bold;
+                margin-bottom: 20px;
+            }
+    
+            .summary-item {
+                margin-bottom: 20px;
+            }
+    
+            .summary-item p {
+                font-size: 18px;
+                margin: 5px 0;
+            }
+    
+            #discountCode {
+                padding: 8px;
+                font-size: 16px;
+                margin-right: 10px;
+                width: 60%;
+                border: 1px solid #ddd;
+                border-radius: 5px;
+            }
+    
+            #applyDiscount {
+                padding: 8px 16px;
+                background-color: #007bff;
+                color: white;
+                border: none;
+                border-radius: 5px;
+                cursor: pointer;
+            }
+    
+            #applyDiscount:hover {
+                background-color: #0056b3;
+            }
+    
+            .checkout-button {
+                padding: 10px 20px;
+                font-size: 16px;
+                background-color: #007bff;
+                color: white;
+                border: none;
+                border-radius: 5px;
+                cursor: pointer;
+                width: 100%;
+            }
+    
+            .checkout-button:hover {
+                background-color: #0056b3;
+            }
+    
+            .checkout-item {
+                display: flex;
+                justify-content: space-between;
+                margin-bottom: 20px;
+                padding-bottom: 10px;
+                border-bottom: 1px solid #ddd;
+            }
+    
+            .product-details {
+                display: flex;
+                align-items: center;
+            }
+    
+            .product-image {
+                width: 50px;
+                height: 50px;
+                object-fit: cover;
+                margin-right: 15px;
+            }
+    
+            .product-info p {
+                margin: 5px 0;
+            }
+    
+            .bannercheckout {
+                height: 230px;
+                margin: 0 auto;
+                display: block;
+            }
