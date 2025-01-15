@@ -1,41 +1,395 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
+<! Doctype html>
+<html lang="en"><head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <meta name="description" content="FoodyFly: Delicious prepared meals delivered to your doorstep.">
-    <meta name="keywords" content="food delivery, prepared meals, FoodyFly">
-    <meta name="author" content="FoodyFly Team">
+    <!-- Metadatos para buscadores -->
+    <meta name="description" content="Foodify: Delicious prepared meals delivered to your doorstep.">
+    <meta name="keywords" content="food delivery, prepared meals, Foodify">
+    <meta name="author" content="Foodify Team">
     
     <!-- Open Graph para redes sociales -->
-    <meta property="og:title" content="FoodyFly">
+    <meta property="og:title" content="Foodify">
     <meta property="og:description" content="Delicious prepared meals delivered to your doorstep.">
     <meta property="og:image" content="image.jpg">
-    <meta property="og:url" content="https://foodyfly.com">
+    <meta property="og:url" content="https://foodyfy.com">
     <meta property="og:type" content="website">
     
-    <link rel="icon" href="favicon.ico" type="image/x-icon">
+     <!-- Favicon con tamaños distintos para dispositivos -->
+    <link rel="apple-touch-icon" sizes="180x180" href="assets/img/favicon/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="assets/img/favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="assets/img/favicon/favicon-16x16.png">
+    <link rel="manifest" href="assets/img/favicon/site.webmanifest">
 
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+    <link href="https://fonts.googleapis.com/css2?family=Caprasimo&amp;family=Imprima&amp;family=Modak&amp;family=Old+Standard+TT:ital,wght@0,400;0,700;1,400&amp;display=swap" rel="stylesheet">
 
-    <link rel="stylesheet" href="assets/css/style.css">
+    <!-- Estilos -->
+    <link rel="stylesheet" href="css/style.css">
+	<link rel="stylesheet" href="css/catalogo.css">
    
-    <title>FoodyFly-Catálogo</title>
+    <title>Foodify-Catálogo</title>
+   
 </head>
 
 <body>
-    <main>
+    <header role="banner" class="header">
+        <div class="logo">
+            <a href="index.html"><img src="assets/img/logotipos/imagotipo.png" alt="Foodify Logo"></a>
+        </div>
+        <nav role="navigation" class="nav">
+            <ul class="menu">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#menu">Menu</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+            <div class="menu-mobile"></div>
 
+        </nav>
+    </header>
+		 <div class="language-switch">
+            <img src="assets/img/es_flag.png" alt="Español" id="lang-es" class="lang-icon">
+            <img src="assets/img/en_flag.png" alt="English" id="lang-en" class="lang-icon">
+        </div>
+
+
+    < id="catalogo">
+	  <main>
+       <nav class="filter-nav">
+		<label for="filter-category">Categoría:</label>
+		<select id="filter-category">
+			<option value="all">Todos</option>
+			<option value="categoria1">Categoría 1</option>
+			<option value="categoria2">Categoría 2</option>
+			<option value="categoria3">Categoría 3</option>
+		</select>
+
+		<label for="filter-type">Tipo:</label>
+		<select id="filter-type">
+			<option value="all">Todos</option>
+			<option value="tipo1">Tipo 1</option>
+			<option value="tipo2">Tipo 2</option>
+			<option value="tipo3">Tipo 3</option>
+		</select>
+      </nav>
+        <div class="gallery" id="gallery"><div class="plato">
+                <div id="productDetail">
+                <div class="img-plato"><img src="/assets/platos/01.jpg" alt="Noodles de trigo, ragú asiático y verduras"></div>
+                <div class="titulo"><h4>Noodles de trigo, ragú asiático y verduras</h4></div>
+                <p id="categoria">Categoría: Pasta</p>
+                <p id="precio">Precio: 10€</p>
+                <p id="calorias">Calorías: 400</p>
+                <p id="vegano">Vegano: Sí</p>
+                </div>
+            </div><div class="plato">
+                <div id="productDetail">
+                <div class="img-plato"><img src="/assets/platos/02.jpg" alt="Cazuela creole de pavo y langostinos"></div>
+                <div class="titulo"><h4>Cazuela creole de pavo y langostinos</h4></div>
+                <p id="categoria">Categoría: Carne</p>
+                <p id="precio">Precio: 15€</p>
+                <p id="calorias">Calorías: 350</p>
+                <p id="vegano">Vegano: Sí</p>
+                </div>
+            </div><div class="plato">
+                <div id="productDetail">
+                <div class="img-plato"><img src="/assets/platos/03.jpg" alt="Dhal de lentejas rojas"></div>
+                <div class="titulo"><h4>Dhal de lentejas rojas</h4></div>
+                <p id="categoria">Categoría: Legumbres</p>
+                <p id="precio">Precio: 10€</p>
+                <p id="calorias">Calorías: 374</p>
+                <p id="vegano">Vegano: Sí</p>
+                </div>
+            </div><div class="plato">
+                <div id="productDetail">
+                <div class="img-plato"><img src="/assets/platos/04.jpg" alt="Gratinado de berenjena, ricotta y calabacín "></div>
+                <div class="titulo"><h4>Gratinado de berenjena, ricotta y calabacín </h4></div>
+                <p id="categoria">Categoría: Verduras</p>
+                <p id="precio">Precio: 11€</p>
+                <p id="calorias">Calorías: 230</p>
+                <p id="vegano">Vegano: Sí</p>
+                </div>
+            </div><div class="plato">
+                <div id="productDetail">
+                <div class="img-plato"><img src="/assets/platos/05.jpg" alt="Salmón con salsa mimosa, patatas, brócoli y champiñones"></div>
+                <div class="titulo"><h4>Salmón con salsa mimosa, patatas, brócoli y champiñones</h4></div>
+                <p id="categoria">Categoría: Pescado</p>
+                <p id="precio">Precio: 15€</p>
+                <p id="calorias">Calorías: 634</p>
+                <p id="vegano">Vegano: Sí</p>
+                </div>
+            </div><div class="plato">
+                <div id="productDetail">
+                <div class="img-plato"><img src="/assets/platos/06.jpg" alt="Albóndigas con salsa de níscalos, parmentier y champiñones"></div>
+                <div class="titulo"><h4>Albóndigas con salsa de níscalos, parmentier y champiñones</h4></div>
+                <p id="categoria">Categoría: Carne</p>
+                <p id="precio">Precio: 14€</p>
+                <p id="calorias">Calorías: 480</p>
+                <p id="vegano">Vegano: Sí</p>
+                </div>
+            </div><div class="plato">
+                <div id="productDetail">
+                <div class="img-plato"><img src="/assets/platos/07.jpg" alt="Salmón con salsa mimosa, patatas, brócoli y champiñones"></div>
+                <div class="titulo"><h4>Salmón con salsa mimosa, patatas, brócoli y champiñones</h4></div>
+                <p id="categoria">Categoría: Pescado</p>
+                <p id="precio">Precio: 16€</p>
+                <p id="calorias">Calorías: 634</p>
+                <p id="vegano">Vegano: Sí</p>
+                </div>
+            </div><div class="plato">
+                <div id="productDetail">
+                <div class="img-plato"><img src="/assets/platos/08.jpg" alt="Pavo con salsa huancaína, patatas y verduras juliana"></div>
+                <div class="titulo"><h4>Pavo con salsa huancaína, patatas y verduras juliana</h4></div>
+                <p id="categoria">Categoría: Carne</p>
+                <p id="precio">Precio: 14€</p>
+                <p id="calorias">Calorías: 450</p>
+                <p id="vegano">Vegano: Sí</p>
+                </div>
+            </div><div class="plato">
+                <div id="productDetail">
+                <div class="img-plato"><img src="/assets/platos/09.jpg" alt="Garbanzos thai con curry"></div>
+                <div class="titulo"><h4>Garbanzos thai con curry</h4></div>
+                <p id="categoria">Categoría: Legumbres</p>
+                <p id="precio">Precio: 11€</p>
+                <p id="calorias">Calorías: 320</p>
+                <p id="vegano">Vegano: Sí</p>
+                </div>
+            </div><div class="plato">
+                <div id="productDetail">
+                <div class="img-plato"><img src="/assets/platos/10.jpg" alt="Cerdo con salsa moruna, cous cous y verdura juliana"></div>
+                <div class="titulo"><h4>Cerdo con salsa moruna, cous cous y verdura juliana</h4></div>
+                <p id="categoria">Categoría: Carne</p>
+                <p id="precio">Precio: 14€</p>
+                <p id="calorias">Calorías: 520</p>
+                <p id="vegano">Vegano: Sí</p>
+                </div>
+            </div><div class="plato">
+                <div id="productDetail">
+                <div class="img-plato"><img src="/assets/platos/11.jpg" alt="Legumbreta al estilo asiático, verduras y noodles de boniato"></div>
+                <div class="titulo"><h4>Legumbreta al estilo asiático, verduras y noodles de boniato</h4></div>
+                <p id="categoria">Categoría: Legumbres</p>
+                <p id="precio">Precio: 13€</p>
+                <p id="calorias">Calorías: 410</p>
+                <p id="vegano">Vegano: Sí</p>
+                </div>
+            </div><div class="plato">
+                <div id="productDetail">
+                <div class="img-plato"><img src="/assets/platos/12.jpg" alt="Merluza con salsa marinera, patatas, brócoli, zanahorias y pimientos"></div>
+                <div class="titulo"><h4>Merluza con salsa marinera, patatas, brócoli, zanahorias y pimientos</h4></div>
+                <p id="categoria">Categoría: Pescado</p>
+                <p id="precio">Precio: 13€</p>
+                <p id="calorias">Calorías: 350</p>
+                <p id="vegano">Vegano: Sí</p>
+                </div>
+            </div><div class="plato">
+                <div id="productDetail">
+                <div class="img-plato"><img src="/assets/platos/13.jpg" alt="Contramuslo con salsa piri piri, arroz y verduras"></div>
+                <div class="titulo"><h4>Contramuslo con salsa piri piri, arroz y verduras</h4></div>
+                <p id="categoria">Categoría: Carne</p>
+                <p id="precio">Precio: 13€</p>
+                <p id="calorias">Calorías: 380</p>
+                <p id="vegano">Vegano: Sí</p>
+                </div>
+            </div><div class="plato">
+                <div id="productDetail">
+                <div class="img-plato"><img src="/assets/platos/14.jpg" alt="Guiso de ternera, arroz y verduras"></div>
+                <div class="titulo"><h4>Guiso de ternera, arroz y verduras</h4></div>
+                <p id="categoria">Categoría: Carne</p>
+                <p id="precio">Precio: 13€</p>
+                <p id="calorias">Calorías: 400</p>
+                <p id="vegano">Vegano: Sí</p>
+                </div>
+            </div><div class="plato">
+                <div id="productDetail">
+                <div class="img-plato"><img src="/assets/platos/15.jpg" alt="Piccata de pavo, panaderas, champiñones y zanahorias"></div>
+                <div class="titulo"><h4>Piccata de pavo, panaderas, champiñones y zanahorias</h4></div>
+                <p id="categoria">Categoría: Carne</p>
+                <p id="precio">Precio: 14€</p>
+                <p id="calorias">Calorías: 370</p>
+                <p id="vegano">Vegano: Sí</p>
+                </div>
+            </div><div class="plato">
+                <div id="productDetail">
+                <div class="img-plato"><img src="/assets/platos/16.jpg" alt="Terrina glaseada de codillo"></div>
+                <div class="titulo"><h4>Terrina glaseada de codillo</h4></div>
+                <p id="categoria">Categoría: Carne</p>
+                <p id="precio">Precio: 13€</p>
+                <p id="calorias">Calorías: 540</p>
+                <p id="vegano">Vegano: Sí</p>
+                </div>
+            </div><div class="plato">
+                <div id="productDetail">
+                <div class="img-plato"><img src="/assets/platos/17.jpg" alt="Tacos de cochinita pibil"></div>
+                <div class="titulo"><h4>Tacos de cochinita pibil</h4></div>
+                <p id="categoria">Categoría: Carne</p>
+                <p id="precio">Precio: 10€</p>
+                <p id="calorias">Calorías: 450</p>
+                <p id="vegano">Vegano: Sí</p>
+                </div>
+            </div><div class="plato">
+                <div id="productDetail">
+                <div class="img-plato"><img src="/assets/platos/18.jpg" alt="Arroz meloso de marisco"></div>
+                <div class="titulo"><h4>Arroz meloso de marisco</h4></div>
+                <p id="categoria">Categoría: Arroz</p>
+                <p id="precio">Precio: 13€</p>
+                <p id="calorias">Calorías: 480</p>
+                <p id="vegano">Vegano: Sí</p>
+                </div>
+            </div><div class="plato">
+                <div id="productDetail">
+                <div class="img-plato"><img src="/assets/platos/19.jpg" alt="Penne integral con salsa cremosa de níscalos"></div>
+                <div class="titulo"><h4>Penne integral con salsa cremosa de níscalos</h4></div>
+                <p id="categoria">Categoría: Pasta</p>
+                <p id="precio">Precio: 12€</p>
+                <p id="calorias">Calorías: 400</p>
+                <p id="vegano">Vegano: Sí</p>
+                </div>
+            </div><div class="plato">
+                <div id="productDetail">
+                <div class="img-plato"><img src="/assets/platos/20.jpg" alt="Pasta al pesto veggie"></div>
+                <div class="titulo"><h4>Pasta al pesto veggie</h4></div>
+                <p id="categoria">Categoría: Pasta</p>
+                <p id="precio">Precio: 9€</p>
+                <p id="calorias">Calorías: 360</p>
+                <p id="vegano">Vegano: Sí</p>
+                </div>
+            </div><div class="plato">
+                <div id="productDetail">
+                <div class="img-plato"><img src="/assets/platos/21.jpg" alt="Heura con salsa satay y verduras"></div>
+                <div class="titulo"><h4>Heura con salsa satay y verduras</h4></div>
+                <p id="categoria">Categoría: Carne</p>
+                <p id="precio">Precio: 14€</p>
+                <p id="calorias">Calorías: 390</p>
+                <p id="vegano">Vegano: Sí</p>
+                </div>
+            </div><div class="plato">
+                <div id="productDetail">
+                <div class="img-plato"><img src="/assets/platos/22.jpg" alt="22 - Solomillo a la pimienta"></div>
+                <div class="titulo"><h4>22 - Solomillo a la pimienta</h4></div>
+                <p id="categoria">Categoría: Carne</p>
+                <p id="precio">Precio: 15€</p>
+                <p id="calorias">Calorías: 500</p>
+                <p id="vegano">Vegano: Sí</p>
+                </div>
+            </div><div class="plato">
+                <div id="productDetail">
+                <div class="img-plato"><img src="/assets/platos/23.jpg" alt="Lasaña de merluza y pulpo"></div>
+                <div class="titulo"><h4>Lasaña de merluza y pulpo</h4></div>
+                <p id="categoria">Categoría: Pasta</p>
+                <p id="precio">Precio: 11€</p>
+                <p id="calorias">Calorías: 410</p>
+                <p id="vegano">Vegano: Sí</p>
+                </div>
+            </div><div class="plato">
+                <div id="productDetail">
+                <div class="img-plato"><img src="/assets/platos/24.jpg" alt="Linguine a la putanesca"></div>
+                <div class="titulo"><h4>Linguine a la putanesca</h4></div>
+                <p id="categoria">Categoría: Pasta</p>
+                <p id="precio">Precio: 9€</p>
+                <p id="calorias">Calorías: 450</p>
+                <p id="vegano">Vegano: Sí</p>
+                </div>
+            </div><div class="plato">
+                <div id="productDetail">
+                <div class="img-plato"><img src="/assets/platos/25.jpg" alt="Arroz meloso de boletus y butifarra"></div>
+                <div class="titulo"><h4>Arroz meloso de boletus y butifarra</h4></div>
+                <p id="categoria">Categoría: Arroz</p>
+                <p id="precio">Precio: 12€</p>
+                <p id="calorias">Calorías: 460</p>
+                <p id="vegano">Vegano: Sí</p>
+                </div>
+            </div><div class="plato">
+                <div id="productDetail">
+                <div class="img-plato"><img src="/assets/platos/26.jpg" alt="Dorada con noodles de trigo y salsa tonkatsu"></div>
+                <div class="titulo"><h4>Dorada con noodles de trigo y salsa tonkatsu</h4></div>
+                <p id="categoria">Categoría: Pescado</p>
+                <p id="precio">Precio: 14€</p>
+                <p id="calorias">Calorías: 430</p>
+                <p id="vegano">Vegano: Sí</p>
+                </div>
+            </div><div class="plato">
+                <div id="productDetail">
+                <div class="img-plato"><img src="/assets/platos/27.jpg" alt="Penne, pomodoro e salsiccia rossa"></div>
+                <div class="titulo"><h4>Penne, pomodoro e salsiccia rossa</h4></div>
+                <p id="categoria">Categoría: Pasta</p>
+                <p id="precio">Precio: 8€</p>
+                <p id="calorias">Calorías: 480</p>
+                <p id="vegano">Vegano: Sí</p>
+                </div>
+            </div><div class="plato">
+                <div id="productDetail">
+                <div class="img-plato"><img src="/assets/platos/28.jpg" alt="Café"></div>
+                <div class="titulo"><h4>Café</h4></div>
+                <p id="categoria">Categoría: Postre</p>
+                <p id="precio">Precio: 1,5€</p>
+                <p id="calorias">Calorías: 2</p>
+                <p id="vegano">Vegano: Sí</p>
+                </div>
+            </div><div class="plato">
+                <div id="productDetail">
+                <div class="img-plato"><img src="/assets/platos/29.jpg" alt="Helado dos sabores"></div>
+                <div class="titulo"><h4>Helado dos sabores</h4></div>
+                <p id="categoria">Categoría: Postre</p>
+                <p id="precio">Precio: 2€</p>
+                <p id="calorias">Calorías: 200</p>
+                <p id="vegano">Vegano: Sí</p>
+                </div>
+            </div><div class="plato">
+                <div id="productDetail">
+                <div class="img-plato"><img src="/assets/platos/30.jpg" alt="Tarta de frambuesas"></div>
+                <div class="titulo"><h4>Tarta de frambuesas</h4></div>
+                <p id="categoria">Categoría: Postre</p>
+                <p id="precio">Precio: 3€</p>
+                <p id="calorias">Calorías: 350</p>
+                <p id="vegano">Vegano: Sí</p>
+                </div>
+            </div>
+        </div>
     </main>
+	
 
-    <footer role="contentinfo">
-        <p>&copy; 2025 FoodyFly. All rights reserved.</p>
-        <ul>
-            <li><a href="#privacy">Privacy Policy</a></li>
-            <li><a href="#terms">Terms of Service</a></li>
-        </ul>
+
+   <footer role="contentinfo" class="footer">
+        <div class="footer-info">
+            <h3>Ayuda</h3>
+            <ul class="ayuda">
+                <li>
+                    <a href="#">Cómo editar un pedido</a>
+                    <a href="#">Cuánto cuesta Wetaca</a>
+                    <a href="#">Cómo funciona</a>
+                    <a href="#">Preguntas frecuentes</a>
+                    <a href="#">Ticket restaurante</a>
+                    <a href="#">Contacto</a>
+                </li>
+            </ul>
+                
+                <h3>Conócenos</h3>
+            <ul class="about">
+                <li>
+                    <a href="#">¿Quienes somos?</a>
+                    <a href="#">Trabaja con nosotros</a>
+                    <a href="#">Colaboraciones</a>
+                    <a href="#">Wetaca para empresas</a>
+                    <a href="#">Nuestro blog</a>
+                </li>
+            </ul>
+        </div>
+        <div class="footer-legal">
+            <p>© 2025 FoodyFy. All rights reserved.</p>
+            <ul>
+                <li><a href="#privacy">Privacy Policy</a></li>
+                <li><a href="#terms">Terms of Service</a></li>
+            </ul>
+        </div>
     </footer>
 
-    <script src="script.js"></script>
+
+   <script src="scripts/catalogo.js"></script>
+
+
+
+
 </body>
 </html>
