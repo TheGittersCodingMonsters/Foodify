@@ -1,12 +1,58 @@
 :root {
 --titulos: #ff4d4dff;
---marron: #873008ff;
---fondo: #fbcb7bff;
---verde: #33eb55ff;
---verdeClaro: #beebc6;
+--subtitulos: #873008ff;
+--resalte: #fbcb7bff;
+--fondoBackground: #ffe2b0;
+--fondoSection: #ffffff;
+--verde: rgb(0, 117, 22);
+--verdeClaro: #b2ffa2;
 --morado: #8c184aff;
---letra: #0000;
+--textoNormal: #0000;
 }
+
+/* Fuentes */
+
+.modak-regular {
+  font-family: "Modak", serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.caprasimo-regular {
+  font-family: "Caprasimo", serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.old-standard-tt-regular {
+  font-family: "Old Standard TT", serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.old-standard-tt-bold {
+  font-family: "Old Standard TT", serif;
+  font-weight: 700;
+  font-style: normal;
+}
+
+.old-standard-tt-regular-italic {
+  font-family: "Old Standard TT", serif;
+  font-weight: 400;
+  font-style: italic;
+}
+
+.imprima-regular {
+  font-family: "Imprima", serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+h1, h2{
+  font-family: "Caprasimo", serif;
+  color: var(--titulos);
+}
+
 /* Reset CSS */
 
 * {
@@ -16,9 +62,8 @@
 }
 
 html {
-    height: 100%;
     font-family: "Imprima", serif;
-    background-color: var(--fondo);
+    background-color: var(--fondoBackground);
     font-size: 62.5%; /* para que 1rem sea igual a 10px */
 }
 
@@ -40,79 +85,30 @@ a {
     color: inherit;
 }
 
-/* Fuentes */
-
-.modak-regular {
-    font-family: "Modak", serif;
-    font-weight: 400;
-    font-style: normal;
-}
-
-.caprasimo-regular {
-    font-family: "Caprasimo", serif;
-    font-weight: 400;
-    font-style: normal;
-  }
-
-  .old-standard-tt-regular {
-    font-family: "Old Standard TT", serif;
-    font-weight: 400;
-    font-style: normal;
-  }
-  
-  .old-standard-tt-bold {
-    font-family: "Old Standard TT", serif;
-    font-weight: 700;
-    font-style: normal;
-  }
-  
-  .old-standard-tt-regular-italic {
-    font-family: "Old Standard TT", serif;
-    font-weight: 400;
-    font-style: italic;
-  }
-
-  .imprima-regular {
-    font-family: "Imprima", serif;
-    font-weight: 400;
-    font-style: normal;
-  }
-
-h1, h2{
-    font-family: "Caprasimo", serif;
-}
 
 /* Header */
-#hero {
-    width: 100%;
-    height: 500px;
-    border: 1px solid red;
-}
-
-#features {
-    width: 100%;
-    height: 500px;
-    border: 1px solid red;
-}
-
-.footer-info {
-    width: 100%;
-}
-
 
 .header {
     display: flex;
     justify-content: space-between;
+    align-items: center;
 
-    background-color: #ffffff;
+    background-color: var(--fondoSection);
     width: 90%;
     margin: 2rem auto;
     padding: 1.8rem;
     border-radius: 9rem;
-    height: 9rem;
+
 
     .logo {
-        width: 8rem;
+      width: 100%; /* Usa un porcentaje para que el ancho sea relativo al contenedor */
+      max-width: 8rem; /* Limita el tamaño máximo del logo */
+      min-width: 8rem;
+    }
+
+    .nav{
+      display: flex;
+      align-items: center;
     }
 
     .menu {
@@ -123,73 +119,107 @@ h1, h2{
     .menu li{
         padding: 0 1rem;
     }
+
+    .menu-mobile{
+      font-size: 3rem;
+      padding: 1.5rem 3rem;
+    }
 }
 
-/* 
-  ##Device = Desktops
-  ##Screen = 1281px to higher resolution desktops
-*/
 
-@media (min-width: 1281px) {
+/* Sections */
+
+#hero {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: flex-start;
+
+  padding: 5rem;
+  height: auto;
+
+  background: no-repeat center/cover url("/assets/img/fotos/pexels-nano-erdozain-120534369-30204528.jpg");
+
   
-    /* CSS */
-    
+  .hero-text {
+    background-color: var(--fondoSection);
+    padding: 3rem;
+    margin: 3rem auto;
+    font-size: clamp(1rem, 8vw, 5rem);
+
+    p {
+      color: var(--subtitulos);
+      font-size: 3rem;
+    }
   }
-  
-  /* 
-    ##Device = Laptops, Desktops
-    ##Screen = B/w 1025px to 1280px
-  */
-  
-  @media (min-width: 1025px) and (max-width: 1280px) {
-    
-    /* CSS */
-    
+
+  .hero-action{
+    background-color: var(--fondoSection);
+    padding: 3rem;
+    margin: 3rem auto;
   }
+
+}
+
+#features {
+  height: auto;
+  border: 1px solid red;
+}
+
+/* Footer */
+.footer {
+width: 100%;
+height: auto;
+
+
+}
+
+.footer-info {
+  display: flex;
+  justify-content: space-around;
+  margin: 3rem auto;
+  padding: 3rem;
+  border-radius: 3rem;
+  background-color: var(--verdeClaro);
+  width: 90%;
+}
+
+.footer-help, .footer-about, .footer-eco {
   
-  /* 
-    ##Device = Tablets, Ipads (portrait)
-    ##Screen = B/w 768px to 1024px
-  */
-  
-  @media (min-width: 768px) and (max-width: 1024px) {
-    
-    /* CSS */
-    
+  margin: 2rem;
+
+  h3 {
+    font-family: "Old Standard TT", serif;
+    font-size: 3rem;
+    margin-bottom: 1.5rem;
   }
-  
-  /* 
-    ##Device = Tablets, Ipads (landscape)
-    ##Screen = B/w 768px to 1024px
-  */
-  
-  @media (min-width: 768px) and (max-width: 1024px) and (orientation: landscape) {
-    
-    /* CSS */
-    
+
+  li {
+    padding: 0.4rem 0;
   }
-  
-  /* 
-    ##Device = Low Resolution Tablets, Mobiles (Landscape)
-    ##Screen = B/w 481px to 767px
-  */
-  
-  @media (min-width: 481px) and (max-width: 767px) {
+}
+
+
+.footer-legal {
+  display: flex;
+  justify-content: space-around;
+  background-color: var(--verde);
+  color: var(--verdeClaro);
+  padding: 2rem;
+
+  ul {
+    display: flex;
     
-    /* CSS */
-    
+    li {
+      padding: 0 1rem;
+    }
   }
-  
-  /* 
-    ##Device = Most of the Smartphones Mobiles (Portrait)
-    ##Screen = B/w 320px to 479px
-  */
-  
-  @media (min-width: 320px) and (max-width: 480px) {
-    
-    /* CSS */
-    
-  }
+}
+
+
+
+
+
 
 
 
