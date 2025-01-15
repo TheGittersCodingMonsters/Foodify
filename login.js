@@ -3,15 +3,17 @@ const google = document.getElementById('google');
 const login = document.getElementById('login');
 const usuario = document.getElementById('usuario');
 const password= document.getElementById('password');
-const cuentaBtn= document.querySelector("button[type='submit']");
-const telefono= document.getElementById('telefono');
-const politicaPrivacidad= document.getElementById('privacy');
+const telefono = document.getElementById('telefono');
+const privacy= document.getElementById('privacy');
+const crearCuentaButton = document.getElementById('crearCuentaButton');
+
+
 
 //DATOS PERSONALES
 const usuarios = [
-    {usuario: "usuario1", password: "contraseña1"},
-    {usuario: "usuario2", password: "contraseña2"},
-    {usuario: "belen", password:"2002"}
+    {usuario: "usuario1", password: "contraseña1", telefono: "1234567890"},
+    {usuario: "usuario2", password: "contraseña2", telefono: "0987654321" },
+    {usuario: "belen", password:"2002", telefono: "606803157"}
 ];
 
 // FUNCTION INICIO SESION
@@ -31,18 +33,17 @@ function iniciarsesion() {
 
 
 //FUNCTION CREAR CUENTA
-function crearCuenta(){
-    const usuarioInput= usuario.value;
-    const passwordInput= password.value;
-    const telefonoInput= telefono.value;
-    const privacidadChecked= politicaPrivacidad.checked;
-
-    if (!usuarioInput || !passwordInput|| !telefonoInput || !privacidadChecked) {
-        alert("Completa y acepta o no comes");
-        return;
+function crearcuenta() {
+    const privacyInput =document.getElementById('privacy');
+    if (privacyInput.checked){
+        alert('marcado');
+    }else{
+        alert('no marcado');
     }
-
-    alert("CUENTA CREADA :)");
+    alert(privacyInput);
+    const usuarioInput = usuario.value;
+    const passwordInput = password.value;
+    const telefonoInput = telefono.value;
 }
 
 
@@ -51,7 +52,5 @@ login.addEventListener('click', iniciarsesion);
 
 
 //EVENTO CREAR CUENTA
-cuentaBtn.addEventListener('click', function(event) {
-    event.preventDefault();
-    crearCuenta();
-});
+
+crearCuentaButton.addEventListener('click', crearcuenta);
