@@ -14,12 +14,13 @@
 
 .contenedor input {
     font-size: 2rem;
-
+    min-width: 20%;
 }
 
 .contenedor label {
     font-size: 2rem;
-    min-width: 40%;
+    min-width: 5%;
+    display: inline-block;
 }
 
 p {
