@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,69 +8,100 @@
     <meta name="description" content="FoodyFly: Delicious prepared meals delivered to your doorstep.">
     <meta name="keywords" content="food delivery, prepared meals, FoodyFly">
     <meta name="author" content="FoodyFly Team">
-    
+
     <!-- Open Graph para redes sociales -->
     <meta property="og:title" content="FoodyFly">
     <meta property="og:description" content="Delicious prepared meals delivered to your doorstep.">
     <meta property="og:image" content="image.jpg">
     <meta property="og:url" content="https://foodyfly.com">
     <meta property="og:type" content="website">
-    
+
     <link rel="icon" href="favicon.ico" type="image/x-icon">
 
 
-    <link rel="stylesheet" href="assets/css/style.css">
-   
+
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/contacto.css">
+
     <title>FoodyFly</title>
 </head>
 
 <body>
     <main>
-    <div class="texto_contacto">
-        <p>Use este formulario para ponerse en contacto con nosotros y transmitirnos sus inquietudes, preguntas, etc. Le responderemos lo antes posible.</p>
-    </div>
-    
-    <div class="formulario">
-    <form id="formContacto" action="contacto.php" method="get">
-        
-        <label for="nombre_contacto">Nombre:</label>
-            <input type="text" name="nombre_contacto" id="nombre_contacto" placeholder="Nombre" required>
-    <br>
-        <label for="apellidos_contacto">Apellidos:</label>
-            <input type="text" name="apellidos_contacto" id="apellidos_contacto" placeholder="Apellidos" required>
-    <br>
-        <label for="email_contacto">Email:</label>
-            <input type="email" name="email_contacto" id="email_contacto" placeholder="Email" required>
-    <br>
-        <label for="telefono_contacto">Teléfono:</label>
-            <input type="tel" name="telefono_contacto" id="telefono_contacto" placeholder="Teléfono">
-    <br>
-        <label for="direccion_contacto">Dirección:</label>
-            <input type="text" name="direccion_contacto" id="direccion_contacto" placeholder="Dirección">
-    <br>
-        <label for="cp_contacto">Código Postal:</label>
-            <input type="text" name="cp_contacto" id="cp_contacto" placeholder="Código postal">
-    <br>
-        <label for="poblacion_contacto">Población:</label>
-            <input type="text" name="poblacion_contacto" id="poblacion_contacto" placeholder="Población">
-    <br>
-        <label for="pais_contacto">País:</label>
-            <input type="text" name="pais_contacto" id="pais_contacto" placeholder="País" size="20" value="España" readonly="readonly">
-    <br>
+        <div class="encabezado">
+            <h1>Fromulario de contacto:</h1>
         </div>
-        </label><br>
-        <input type="checkbox" name="rgpd" id="rgpd" required>
-        <label for="rgpd">Acepto las <a href="rgpd.html" target="_blank"> <b>políticas de privacidad</b></a>
-        </label><br>
-       
-        <div class="botones">
-            <div class="botones">
-                <button class="boton_cancelar" type="reset">Cancelar</button>
-                <button id="enviarButton" class="boton_enviar" type="button">Enviar</button>
-            </div>  
-    </form>
 
- </div>   
+        <div class="texto_contacto">
+            <p>Use este formulario para ponerse en contacto con nosotros y transmitirnos sus inquietudes, preguntas,
+                etc. Le responderemos lo antes posible.</p>
+        </div>
+
+        <div class="formulario">
+            <form id="formContacto" action="contacto.php" method="get">
+                <div class="contenedor">
+
+                    <div class="campo">
+                        <label for="nombre_contacto">Nombre:</label>
+                        <input type="text" name="nombre_contacto" id="nombre_contacto" placeholder="Nombre"
+                             required>
+                    </div>
+
+                    <div class="campo">
+                        <label for="apellidos_contacto">Apellidos:</label>
+                        <input type="text" name="apellidos_contacto" id="apellidos_contacto" placeholder="Apellidos"
+                            required>
+                    </div>
+
+                    <div class="campo">
+                        <label for="email_contacto">Email:</label>
+                        <input type="email" name="email_contacto" id="email_contacto" placeholder="Email" required>
+                    </div>
+
+
+                    <div class="campo">
+                        <label for="telefono_contacto">Teléfono:</label>
+                        <input type="tel" name="telefono_contacto" id="telefono_contacto" placeholder="Teléfono">
+                    </div>
+
+                    <div class="campo">
+                        <label for="direccion_contacto">Dirección:</label>
+                        <input type="text" name="direccion_contacto" id="direccion_contacto" placeholder="Dirección">
+                    </div>
+
+                    <div class="campo">
+                        <label for="cp_contacto">C.P.:</label>
+                        <input type="text" name="cp_contacto" id="cp_contacto" placeholder="Código postal">
+                    </div>
+
+                    <div class="campo">
+                        <label for="poblacion_contacto">Población:</label>
+                        <input type="text" name="poblacion_contacto" id="poblacion_contacto" placeholder="Población">
+                    </div>
+
+                    <div class="campo">
+                        <label for="pais_contacto">País:</label>
+                        <input type="text" name="pais_contacto" id="pais_contacto" placeholder="País" 
+                            value="España">
+                    </div>
+
+                </div>
+
+
+                <br>
+                <input type="checkbox" name="rgpd" id="rgpd" required>
+                <label for="rgpd">Acepto las <a href="rgpd.html" target="_blank"> <b>políticas de privacidad</b></a>
+                </label>
+
+                <div class="botones">
+                    <button id="cancelarButton" type="reset">Cancelar</button>
+                    <button id="enviarButton" type="button">Enviar</button>
+                </div>
+
+            </form>
+
+        </div>
+
     </main>
 
     <footer role="contentinfo">
@@ -82,4 +114,5 @@
 
     <script src="scripts/contacto.js"></script>
 </body>
+
 </html>
