@@ -3,18 +3,21 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<link rel="stylesheet" href="css/checkout.css">
+    <link rel="stylesheet" href="css/checkout.css">
     <title>Checkout</title>
 </head>
 
 <body>
+    <!-- Banner image for checkout page -->
     <img src="assets/img/logotipos/BannerCheckout.png" class="bannercheckout">
+    
     <section class="checkout-section">
         <div class="container">
             <h1>Checkout</h1>
             <div class="checkout-container">
-                <!-- Left Column (Main Content) -->
+                <!-- Left Column: User Information and Payment Details -->
                 <div class="checkout-left">
+                    <!-- Personal Information Section -->
                     <div class="form-section">
                         <h2>Tu informacion</h2>
                         <input type="email" placeholder="Correo Electronico" id="email" required>
@@ -22,19 +25,21 @@
                         <input type="tel" placeholder="Telefono" id="phone" required>
                     </div>
 
+                    <!-- Delivery Address Section -->
                     <div class="form-section">
                         <h2>Direccion de Entrega</h2>
                         <input type="text" placeholder="Direccion de la calle" id="streetAddress" required>
                         <input type="text" placeholder="City" id="Cuidad" required>
                         <input type="text" placeholder="Estado/Provincia" id="state" required>
                         <input type="text" placeholder="ZIP/Codigo Postal" id="zipCode" required>
-                    <select>
-                        <option value="Espana">España</option>
-                        <option value="Italia">Italia</option>
-                        <option value="Alemania">Alemania</option>
-                    </select>
+                        <select>
+                            <option value="Espana">España</option>
+                            <option value="Italia">Italia</option>
+                            <option value="Alemania">Alemania</option>
+                        </select>
                     </div>
                     
+                    <!-- Shipping Method Section -->
                     <div class="form-section">
                         <h2>Metodo de Entrega</h2>
                         <select id="shippingMethod" required>
@@ -42,33 +47,34 @@
                         </select>
                     </div>
 
+                    <!-- Payment Method Section -->
                     <div class="form-section">
                         <h2>Metodo de Pago</h2>
                         <select id="paymentMethod" required>
                             <option value="creditCard">Credit Card</option>
                         </select>
 
-                        <!-- Campo Input de la tarjeta de credito -->
+                        <!-- Credit Card Input Fields -->
                         <div id="creditCardDetails" class="payment-details">
-                            <input type="text" placeholder="Card Number - xxxx xxxx xxxx xxxx" id="cardNumber" required>
-                            <input type="text" placeholder="Expiration Date (MM/YY)" id="expirationDate" required>
+                            <input type="text" placeholder="Numero de Tarjeta - xxxx xxxx xxxx xxxx" id="cardNumber" required>
+                            <input type="text" placeholder="Dia de expiracion (MM/AA)" id="expirationDate" required>
                             <input type="number" placeholder="CVV" id="cvv" maxlength="3" required>
                         </div>
                     </div>
 
-                    <!-- Confirm Checkout Button -->
+                    <!-- Checkout Button -->
                     <div class="form-section">
                         <button class="checkout-button" onclick="confirmCheckout()">Confirm Checkout</button>
                     </div>
                 </div>
 
-                <!-- Right Column (Order Summary) -->
+                <!-- Right Column: Order Summary -->
                 <div class="checkout-right">
                     <h2>Order Summary</h2>
-                    <div id="checkoutCartItems">
-                        <!-- Cart items will be dynamically inserted here -->
-                    </div>
+                    <!-- Dynamic cart items will be inserted here -->
+                    <div id="checkoutCartItems"></div>
                     
+                    <!-- Subtotal and Total Sections -->
                     <div class="summary-item">
                         <p>Subtotal</p>
                         <p id="subtotal">$0.00</p>
@@ -77,117 +83,90 @@
                         <p>Total</p>
                         <p id="totalPrice">$0.00</p>
                     </div>
-                    <div class="summary-item">
-                        <p>Discount Code</p>
-                        <input type="text" id="discountCode" placeholder="Enter discount code">
-                        <button id="applyDiscount" onclick="applyDiscount()">Apply</button>
-                    </div>
                 </div>
             </div>
         </div>
     </section>
 
     <script>
-// Función para obtener datos del carrito del almacenamiento local
-function fetchCartData() {
-    // Obtiene datos del carrito del localStorage o usa un array vacío si no hay datos
-    const cartData = JSON.parse(localStorage.getItem('cartData')) || [];
-    // Llama a la función para renderizar los items del carrito
-    renderCheckoutItems(cartData);
-}
-
-// Función para renderizar los items del carrito en la página de checkout
-function renderCheckoutItems(cartData) {
-    let checkoutItemsHTML = ''; // String para almacenar el HTML de los items
-    let subtotal = 0;
-
-    // Recorre cada item en el carrito
-    cartData.forEach(item => {
-        // Crea HTML para cada item y lo añade al string
-        checkoutItemsHTML += `
-            <div class="checkout-item">
-                <div class="product-details">
-                    <img src="${item.image}" alt="${item.name}" class="product-image">
-                    <div class="product-info">
-                        <p class="item-name">${item.name}</p>
-                        <p>Price: $${item.price.toFixed(2)}</p>
-                        <p>Quantity: ${item.quantity}</p>
-                    </div>
-                </div>
-                <p class="item-total">$${(item.price * item.quantity).toFixed(2)}</p>
-            </div>`;
-
-        // Calcula el subtotal
-        subtotal += item.price * item.quantity;
-    });
-
-    // Inserta el HTML de los items en la página
-    document.getElementById('checkoutCartItems').innerHTML = checkoutItemsHTML;
     
-    // Actualiza el subtotal y el precio total en la página
-    document.getElementById('subtotal').textContent = `$${subtotal.toFixed(2)}`;
-    document.getElementById('totalPrice').textContent = `$${subtotal.toFixed(2)}`;
-}
+// Consigue los items del carrito desde el browser storage
+    function fetchCartData() {
 
-// Llama a fetchCartData al cargar la página para mostrar los items del carrito
-fetchCartData();
+        // Obtiene los datos los items del carrito desde el localStorage
+        const cartData = JSON.parse(localStorage.getItem('cartData')) || [];
 
-// Función para aplicar descuento
-function applyDiscount() {
-    // Obtiene el código de descuento ingresado por el usuario
-    const discountCode = document.getElementById('discountCode').value.trim();
-
-    const subtotalElement = document.getElementById('subtotal');
-    const totalElement = document.getElementById('totalPrice');
-    let subtotal = parseFloat(subtotalElement.textContent.replace('$', ''));
-
-    // Verifica si el código de descuento es válido
-    if (discountCode === 'DISCOUNT10') {
-        const discount = subtotal * 0.1; // 10% de descuento
-        subtotal -= discount;
-        // Actualiza el subtotal y el total con el descuento aplicado
-        subtotalElement.textContent = `$${subtotal.toFixed(2)}`;
-        totalElement.textContent = `$${subtotal.toFixed(2)}`;
-        alert('Discount applied successfully!');
-    } else {
-        alert('Invalid discount code.');
-    }
-}
-
-// Función para confirmar el checkout y validar los datos de entrada
-function confirmCheckout() {
-    // Obtiene los valores de los campos del formulario
-    const email = document.getElementById('email').value.trim();
-    const fullName = document.getElementById('fullName').value.trim();
-    const phone = document.getElementById('phone').value.trim();
-    const streetAddress = document.getElementById('streetAddress').value.trim();
-    const city = document.getElementById('Cuidad').value.trim();
-    const state = document.getElementById('state').value.trim();
-    const zipCode = document.getElementById('zipCode').value.trim();
-    const paymentMethod = document.getElementById('paymentMethod').value;
-
-    // Validación: Asegura que todos los campos estén completos
-    if (!email || !fullName || !phone || !streetAddress || !city || !state || !zipCode || !paymentMethod) {
-        alert("Please fill in all required fields.");
-        return;
+        // Muestra los items del carrito importados desde el localStorage en la pagina
+        renderCheckoutItem('cartData')
     }
 
-    // Verifica los detalles de la tarjeta de crédito si se selecciona como método de pago
-    if (paymentMethod === 'creditCard') {
-        const cardNumber = document.getElementById('cardNumber').value.trim();
-        const expirationDate = document.getElementById('expirationDate').value.trim();
-        const cvv = document.getElementById('cvv').value.trim();
-        if (!cardNumber || !expirationDate || !cvv) {
-            alert("Please fill in credit card details.");
+   // Crear un HTML para mostrar los items del carrito
+    function renderCheckoutItems(cartData) {
+        let checkoutItemsHTML = ''; // Guarda el HTML para los items del carrito
+        let subtotal = 0; // Precio total de la calculacion
+
+        // Loop de cada item en el carrito
+        cartData.forEach(item => {
+            // Genera el HTML de cada item del carrito
+            checkoutItemsHTML += `
+                <div class="checkout-item">
+                    <div class="product-details">
+                        <img src="${item.image}" alt="${item.name}" class="product-image">
+                        <div class="product-info">
+                            <p class="item-name">${item.name}</p>
+                            <p>Price: $${item.price.toFixed(2)}</p>
+                            <p>Quantity: ${item.quantity}</p>
+                        </div>
+                    </div>
+                    <p class="item-total">$${(item.price * item.quantity).toFixed(2)}</p>
+                </div>`;
+            
+            // Calcula el subtotal
+            subtotal += item.price * item.quantity;
+        });
+
+        // Actualiza la pagina con los items del carrito y el total
+        document.getElementById('checkoutCartItems').innerHTML = checkoutItemsHTML;
+        document.getElementById('subtotal').textContent = `$${subtotal.toFixed(2)}`;
+        document.getElementById('totalPrice').textContent = `$${subtotal.toFixed(2)}`;
+    }
+
+    // Validar el proceso del checkout
+    function confirmCheckout() {
+        // Colecta los valores del input
+        const email = document.getElementById('email').value.trim();
+        const fullName = document.getElementById('fullName').value.trim();
+        const phone = document.getElementById('phone').value.trim();
+        const streetAddress = document.getElementById('streetAddress').value.trim();
+        const city = document.getElementById('Cuidad').value.trim();
+        const state = document.getElementById('state').value.trim();
+        const zipCode = document.getElementById('zipCode').value.trim();
+        const paymentMethod = document.getElementById('paymentMethod').value;
+
+        // Valida que todos los campos completos
+        if (!email || !fullName || !phone || !streetAddress || !city || !state || !zipCode || !paymentMethod) {
+            alert("Please fill in all required fields.");
             return;
         }
+
+        // Validacion adicional para las tarjetas de credit
+        if (paymentMethod === 'creditCard') {
+            const cardNumber = document.getElementById('cardNumber').value.trim();
+            const expirationDate = document.getElementById('expirationDate').value.trim();
+            const cvv = document.getElementById('cvv').value.trim();
+            if (!cardNumber || !expirationDate || !cvv) {
+                alert("Please fill in credit card details.");
+                return;
+            }
+        }
+
+        // Procede la confirmacion y se va a la pagina de confirmacion
+        alert("Checkout confirmed! Proceeding to payment...");
+        window.location.href = "confirmation.html";
     }
 
-    // Simula la finalización del checkout
-    alert("Checkout confirmed! Proceeding to payment...");
-    window.location.href = "confirmation.html";  // Redirige a la página de confirmación
-}
-
+    // Load cart data when page opens
+    fetchCartData();
     </script>
 </body>
 </html>

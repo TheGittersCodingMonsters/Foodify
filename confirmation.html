@@ -39,22 +39,84 @@
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/confirmation.css">
 
-
     <title>Foodify</title>
 </head>
 
+<style>
+    
+    .container1 h3 {
+        font-size: 30px;
+    }
+
+    .container1 .THANKYOU {
+        height: 500px;
+        width: 0 auto;
+        border-radius: 10px;
+        border: 1px solid;
+        box-shadow: -5px 5px 5px 1px;
+        margin: 20px 0 20px 0;
+    }
+
+    .container1 {
+        text-align: center;
+        line-height: 50px;
+        background-color: rgb(255, 210, 119);
+        margin: 0 60px 0 60px;
+        border-radius: 15px;
+        padding: 25px 0 25px 0;
+    }
+
+    .container2 {
+        display:flex;
+        flex-direction: row;
+        text-align: center;
+        justify-content: center;
+        gap: 100px;
+        line-height: 40px;
+    }
+
+    .container2 div p {
+        font-size: 30px;
+    }
+
+    .container2 .box {
+        background-color: rgb(255, 255, 255);
+        border-radius: 10px;
+        height:90px;
+        width: 20%;
+
+    }
+
+    .ViewOrder button {
+        margin-top: 30px;
+        background-color: rgb(0, 208, 14);
+        border: none;
+        padding: 10px 20px 10px 20px;
+        border-radius: 6px;
+        font-size: 20px;
+        font-family: Imprima, serif;
+        font-weight: bold;
+        cursor:pointer;
+        color: white;
+    }
+
+</style>
+
 <body>
-    <header role="banner">
+    <header role="banner" class="header">
         <div class="logo">
-            <img src="logo.png" alt="FoodyFly Logo">
+            <a href="index.html"><img src="assets/img/logotipos/imagotipo.png" alt="Foodify Logo"></a>
         </div>
-        <nav role="navigation">
-            <ul>
-                <li><a href="#home">Home</a></li>
+        <nav role="navigation" class="nav">
+            <ul class="menu">
+                <li><a href="index.html">Home</a></li>
                 <li><a href="#about">About</a></li>
                 <li><a href="#menu">Menu</a></li>
                 <li><a href="#contact">Contact</a></li>
             </ul>
+            <div class="menu-mobile">
+                <i class="fa-solid fa-bars"></i>
+            </div>
         </nav>
     </header>
 
@@ -62,8 +124,32 @@
         <section id="cart-section">
 
             <div class="container1">
-                <img src="assets/img/logotipos/imagotipo.png">
+                <img src="assets/img/logotipos/logotipo-letras.png">
+                <h3>¡Agradecemos tu pedido y tu confianza!</h3>
+                <p>¡Expresando gratitud por tu pedido y nuestro más sincero agradecimiento por tu confianza en nuestros productos!</p>
+                <img src="assets/img/fotos/THANKYOU.png" class="THANKYOU">
+                <div class="container2">
+
+                    <div class="box">
+                        <p>✓</p>
+                        <h4>Pedido Confirmado</h4>
+                    </div>
+                    <div class="box">
+                        <p>📦</p>
+                        <h4>Preparandolo...</h4>
+                    </div>
+                    <div class="box">
+                        <p>🚚</p>
+                        <h4>Se Entrega en 48h</h4>
+                    </div>
+                </div>
+                    <div class="ViewOrder">
+                        <a href="mailto">
+                            <button>Ver Tu Pedido 👉</button>
+                        </a>
+                    </div>
             </div>
+
 
         </section>
     </main>
@@ -114,3 +200,6 @@
             </ul>
         </div>
     </footer>
+
+        </body>
+    </html>
