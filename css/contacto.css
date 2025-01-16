@@ -28,10 +28,16 @@ p {
 }
 
 .rgpd {
+    font-size: 2rem;
    margin-top: 2rem;
    margin-bottom: 2rem; 
 }
 
-.botones button {
-    
+.botones {
+    margin-left: 2rem;
+}
+
+button {
+    font-size: 2rem;
+    padding: 1rem;    
 }
