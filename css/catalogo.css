@@ -1,4 +1,5 @@
 /* estilos para catalogo.html */
+
 #catalogo .filter-nav {
     padding: 20px;
     text-align: center;
@@ -16,22 +17,111 @@
     gap: 20px;
     padding: 20px;
 }
-
+#catalogo .productDetail{
+    font-size: 2rem;
+	position: relative; /* Necesario para posicionar el contador en la parte inferior */
+	padding-bottom: 60px; /* Espacio reservado para el contador */
+}
+#catalogo .productDetail p:last-child{
+    font-size: 2rem;
+    padding-bottom: 20px;
+}
 #catalogo .gallery .plato {
-    border: 1px solid #ff4d4dff;
-    padding: 10px;
+    /*border: 1px solid #ff4d4dff;*/
     text-align: center;
     cursor: pointer;
-	background-color:#ffffff;
-    
+	background-color:#ffffff; 
+    border-radius:25px;
 }
 
 #catalogo .img-plato{
     text-align:center;
+    border-radius:25px;
+    overflow:hidden;
+    position:relative;
+    
+}
+#catalogo .img-plato span{
+    position: absolute;
+    display: block;
+    left: 10%;
+    bottom: 4%;
+    z-index: 2;
+    padding:0.5rem;
+    border-radius:15px;
+    color:white;
+    font-size:2rem;
+    font-weight:bold;
+    background-color: rgba(22, 21, 21, 0.5);
+    
 }
 #catalogo .img-plato img{
-    width: 85%;
+    width: 100%;
+    border-radius:25px;
+    transition:transform 0.5s ease-out;
 }
+#catalogo .img-plato img:hover{
+    transform: scale(1.2);
+    
+}
+
+/** estilos del contador de pedido bajo foto plato**/
+#catalogo .product-counter {
+   position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-top: 1px solid #ccc;
+    background-color: #f9f9f9;
+    z-index: 10; /* Superior para estar encima del contenido */
+	height: 50px;
+}
+
+#catalogo .counter-btn {
+    flex: 1;
+    background-color: var(--verde);
+    color: #fff;
+    border: none;
+    font-size: 20px;
+    font-weight: bold;
+    cursor: pointer;
+    padding: 10px;
+    text-align: center;
+	user-select: none; /* Evita seleccionar texto al hacer clic */
+}
+
+#catalogo .counter-btn:active {
+    background-color: var(--verdeClaro);
+}
+
+#catalogo .counter-value {
+    flex: 2;
+    text-align: center;
+    font-size: 18px;
+    font-weight: bold;
+    color: #333;
+    padding: 10px;
+	user-select: none; /* Evita seleccionar texto */
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+    #catalogo .gallery {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+}
+
+@media (max-width: 480px) {
+    #catalogo .gallery {
+        grid-template-columns: 1fr;
+    }
+}
+
+/******************/
 /** languages **/
 .language-switch {
     display: flex;
@@ -47,21 +137,4 @@
     height: 24px;
     cursor: pointer;
     border-radius: 50%;
-}
-
-/* Responsive Styles */
-@media (max-width: 768px) {
-    #catalogo .gallery {
-        grid-template-columns: repeat(2, 1fr);
-    }
-    #catalogo .menu-toggle {
-        display: block;
-    }
-
-}
-
-@media (max-width: 480px) {
-    #catalogo .gallery {
-        grid-template-columns: 1fr;
-    }
 }
