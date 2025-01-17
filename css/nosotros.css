@@ -4,28 +4,27 @@
     justify-content: space-around;
 }
 
-#tituloNosotros{
+#tituloNosotros {
     margin-bottom: 6rem;
 }
 
 p {
     display: flex;
-
-img {
-    width: 90px;
-    height: 90px;
-    float: left;
-    margin-right: 1rem;
-    border-radius: 50%;
-    margin-top: 1rem;
-    margin-bottom: 1rem;
+    align-items: center;
 }
 
-a {
-    margin-right: 1rem;
-}
+    img {
+        width: 90px;
+        height: 90px;
+        float: left;
+        margin-right: 1rem;
+        border-radius: 50%;
+        margin-top: 1rem;
+        margin-bottom: 1rem;
+    }
 
-main {
-    margin-top: 6rem;
-    margin-bottom: 6rem;
-}
+
+    main {
+        margin-top: 6rem;
+        margin-bottom: 6rem;
+    }

@@ -1,0 +1,17 @@
+[
+  {
+    "titulo": "Fromulario de contacto:",
+    "texto": "Use este formulario para ponerse en contacto con nosotros y transmitirnos sus inquietudes, preguntas, etc. Le responderemos lo antes posible.",
+    "nombre": "nombre",
+    "apellidos": "apellidos",
+    "email": "email",
+    "telefono": "telefono",
+    "direccion": "direccion",
+    "cp": "cp",
+    "poblacion": "poblacion",
+    "pais": "pais",
+    "rgpd": "Acepto las  políticas de privacidad",
+    "cancelar": "cancelar",
+    "enviar": "enviar"
+  }
+]
