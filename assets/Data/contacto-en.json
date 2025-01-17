@@ -1,0 +1,17 @@
+[
+  {
+    "titulo": "Contact form:",
+    "texto": "Use this form to contact us with your concerns, questions, etc. We will reply to you as soon as possible.",
+    "nombre": "name",
+    "apellidos": "surnames",
+    "email": "e-mail",
+    "telefono": "phone",
+    "direccion": "address",
+    "cp": "cp",
+    "poblacion": "population",
+    "pais": "country",
+    "rgpd": "I accept the privacy policies",
+    "cancelar": "Cancel",
+    "enviar": "send"
+  }
+]
