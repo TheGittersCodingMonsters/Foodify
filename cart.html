@@ -172,7 +172,7 @@ function renderCartItems(cartData) {
 // Mover a la pagina del checkout
 function goToCheckout() {
     // Consigue los datos del carrito desde el storage
-    const cartData = JSON.parse(localStorage.getItem('cartData')) || [];
+    const cartData = JSON.parse(window.localStorage.getItem('cartData')) || [];
     
     // Comprueba si el carrito tiene items
     if (cartData.length === 0) {
