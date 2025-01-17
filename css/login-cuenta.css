@@ -1,2 +1,30 @@
-/*MAIN*/
+.content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 80vh;
+    padding: 2rem;
 
+}
+.contenedorLogin {
+    background-color: var(--fondoSection);
+    padding: 3rem;
+    border-radius: 2rem;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 400px;
+    text-align: center;
+}
+
+#login {
+    background-color: var(--verde);
+    color: var(--fondoSection);
+    font-size: 1.6rem;
+    margin-top: 1rem;
+    padding: 1rem 2rem;
+    border: none;
+    border-radius: 1rem;
+    cursor: pointer;
+   
+}
