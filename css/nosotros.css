@@ -1,30 +1,35 @@
-#nosotros {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-around;
+h1 {
+text-align: center;
+margin-bottom: 6rem;
 }
 
-#tituloNosotros {
-    margin-bottom: 6rem;
+h2 {
+    text-align: center;
+    margin-bottom: 2rem;
 }
 
-p {
-    display: flex;
+.historia {
+    margin-left: 5%;
+    margin-right: 5%;
+    margin-bottom: 3rem;
+    border-radius: 5%;
+    background-color: rgba(255, 255, 255, 0.5);
+    padding: 2rem;
+
+}
+.historia p {
+    text-align: justify;}
+
+.persona { display: flex;
     align-items: center;
+    margin-left: 5%;
+    margin-right: 5%;
+    margin-bottom: 3rem;
+    border-radius: 5%;
+    background-color: rgba(255, 255, 255, 0.5);
+    padding: 2rem;
 }
 
-    img {
-        width: 90px;
-        height: 90px;
-        float: left;
-        margin-right: 1rem;
-        border-radius: 50%;
-        margin-top: 1rem;
-        margin-bottom: 1rem;
-    }
-
-
-    main {
-        margin-top: 6rem;
-        margin-bottom: 6rem;
-    }
+.persona p {
+    margin-left: 1rem;
+    text-align: justify;}
