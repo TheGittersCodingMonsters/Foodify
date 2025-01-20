@@ -71,6 +71,8 @@ html {
 
 body {
   font-size: 1.6rem;
+  max-width: 75vw;
+  margin: auto;
 }
 
 img {
@@ -91,8 +93,11 @@ a {
 /* Header */
 
 .header {
-  position: relative;
+  position: sticky;
   z-index: 100;
+
+  top: 5%;
+
 
   display: flex;
   justify-content: space-between;
@@ -100,7 +105,7 @@ a {
 
   background-color: var(--fondoSection);
   width: 90%;
-  margin: 2rem auto;
+  margin: auto;
   padding: 1.8rem;
   border-radius: 9rem;
 
@@ -176,19 +181,18 @@ a {
 
 #hero {
   display: flex;
-  position: relative;
+
   flex-flow: column wrap;
   align-items: flex-start;
 
-  padding: 5rem;
+  padding: 8rem;
   height: auto;
 
-  background-color: white;
   /*  */
 
 
   .hero-text {
-    background-color: var(--fondoSection);
+
     padding: 3rem;
     font-size: clamp(1rem, 8vw, 5rem);
 
@@ -199,27 +203,43 @@ a {
   }
 
   .hero-action {
-    background-color: var(--fondoSection);
+
     padding: 3rem;
   }
 
   .hero-img {
     position: absolute;
-    top: -31%;
-    right: -10%;
-    width: 70%; /* Asegura que ocupe el 100% del contenedor */
-    max-width: 100vw; /* No supera el ancho del viewport */
+    top: -6%;
+    right: -30%;
+
+    width: 65vw; /* Asegura que ocupe el 100% del contenedor */
+    max-width: 65vw; /* No supera el ancho del viewport */
     aspect-ratio: 16 / 9; /* Mantiene una proporción de aspecto, ajustable según lo que desees */
     border-radius: 18rem;
     transform: rotate(10deg);
     background: no-repeat center/cover url("/assets/img/fotos/pexels-nano-erdozain-120534369-30204528.jpg");
 }
+  ul.hero{
+    font-size: 2rem;
+  }
+  .hero li{
+    padding: 0 2.5rem;
+    background-image: url(../assets/img/elements/check-circle.svg);
+    background-position: 0 0;
+    background-size: 2rem;
+    background-repeat: no-repeat;
+
+  }
 
 }
 
 #features {
-  height: auto;
-  border: 1px solid red;
+  height: 80vh;
+  background-color: var(--fondoSection);
+
+  .info{
+    
+  }
 }
 
 /* Footer */
