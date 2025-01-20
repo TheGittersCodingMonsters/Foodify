@@ -4,6 +4,11 @@
     justify-content: space-around;
 }
 
+h1 {
+    text-align: center;
+    margin-bottom: 6rem;
+    }
+    
 #tituloNosotros {
     margin-bottom: 6rem;
 }
