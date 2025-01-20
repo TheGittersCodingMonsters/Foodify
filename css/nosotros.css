@@ -18,7 +18,9 @@ h2 {
 
 }
 .historia p {
-    text-align: justify;}
+    text-align: justify;
+    margin-bottom: 2rem;
+    }
 
 .persona { display: flex;
     align-items: center;
