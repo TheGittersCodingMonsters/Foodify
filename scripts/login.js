@@ -25,7 +25,7 @@ function iniciarsesion() {
         const usuariovalido = usuarios.find(u => u.usuario === usuarioInput && u.password === passwordInput);
 
         if (usuariovalido) {
-            alert('ERES TU :)');
+            alert('HOLI DE NUEVO :)');
         } else {
             alert('NO ERES TU :(');
         }
@@ -41,6 +41,7 @@ function crearCuenta() {
         const telefonoInput = telefono.value;
         const privacyInput = privacy.checked;
 
+       
     if (verificarCuentaExistente(usuarioInput, passwordInput)) {
         return;
     }
@@ -53,6 +54,8 @@ function crearCuenta() {
     }
 }
 
+
+//VERIFICAR CUENTA EXISTENTE
 function verificarCuentaExistente(usuarioInput, passwordInput) {
     const usuarioExistente = usuarios.find(u => u.usuario === usuarioInput);
     const passwordExistente = usuarios.find(u => u.password === passwordInput);
@@ -79,15 +82,8 @@ if (login) {
     login.addEventListener('click', iniciarsesion);
 }
 
+
 //LISTENER DE CREAR CUENTA
 if (crearCuentaButton) {
     crearCuentaButton.addEventListener('click', crearCuenta);
 }
-//LISTENER DE USUARIO EXISTENTE
-// Removed redundant code
-
-//LISTENER DE PASSWORD EXISTENTE
-// Removed redundant code
-
-
-//LISTENER DE GOOGLE
