@@ -92,13 +92,13 @@
  },
  {
    "id": "08",
-   "nombre": "Turkey with huanca�na sauce, potatoes and julienne vegetables",
+   "nombre": "Turkey with huancaina sauce, potatoes and julienne vegetables",
    "foto": "/assets/platos/08.jpg",
    "filtroCategoria": "carne",
    "categoria": "Meat",
    "filtroOrden": "segundosPlatos",
    "orden": "Second",
-   "descripcion": "Turkey with huanca�na sauce, potatoes and julienne vegetables is a culinary proposal that fuses traditional flavors with a touch of elegance. The turkey, tender and juicy, is covered with a huanca�na sauce, an exquisite mixture of yellow chili, fresh cheese, milk and salted crackers, which provides a creamy and slightly spicy flavor.",
+   "descripcion": "Turkey with huancaina sauce, potatoes and julienne vegetables is a culinary proposal that fuses traditional flavors with a touch of elegance. The turkey, tender and juicy, is covered with a huancaina sauce, an exquisite mixture of yellow chili, fresh cheese, milk and salted crackers, which provides a creamy and slightly spicy flavor.",
    "precio": 14,
    "calorias": 450,
    "vegano": false
@@ -228,7 +228,7 @@
    "categoria": "Rice",
    "filtroOrden": "segundosPlatos",
    "orden": "Second",
-   "descripcion": "Sticky seafood rice is an emblematic dish that combines the richness of seafood with the creaminess of well-cooked rice. This dish is made with a base of saut�ed onion, garlic and peppers, to which crushed tomatoes and fish or seafood broth are added, creating an aromatic and tasty base.",
+   "descripcion": "Sticky seafood rice is an emblematic dish that combines the richness of seafood with the creaminess of well-cooked rice. This dish is made with a base of sautied onion, garlic and peppers, to which crushed tomatoes and fish or seafood broth are added, creating an aromatic and tasty base.",
    "precio": 13,
    "calorias": 480,
    "vegano": false
