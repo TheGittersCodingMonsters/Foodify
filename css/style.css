@@ -136,49 +136,71 @@ a {
     }
 
     .menu {
-      display: flex;
-      padding: 1.5rem;
-    }
-
-    .menu.clicked {
       position: fixed;
       z-index: 200;
       top: 0;
       left: 0;
       width: 100vw;
-      height: 100vh;
-      background-color: var(--subtitulos);
+      min-height: 100vh;
+      background-color: var(--verdeClaro);
 
       display: flex;
       flex-flow: column nowrap;
       justify-content: center;
-      align-items: stretch;
+      align-items: center;
       gap: 5rem;
       padding: 6rem;
 
+      transform: translateY(-99%);
+      transition: 0.5s ease-out;
+    }
+
+    .menu.clicked {
+      transform: translateY(0%);
+      transition: 0.5s ease-out;
+
       & li {
-        font-size: 5rem;
+        font-size: 4rem;
         font-family: "Caprasimo", 'Times New Roman', Times, serif;
-         
+        width: 75%; 
         text-align: center;
-        border: 1px solid red;
+        
       }
 
       & li a {
         display: block;
         width: 100%;
-        color: var(--resalte);
+        color: var(--subtitulos);
       }
     }
 
-    .menu li {
+    & .menu.clicked li:first-child::before{
+      content: "";
+      position: absolute;
+      top: 5%;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 100%;
+      padding: 5rem; /* Adjust the width as needed */
+      background: no-repeat center/contain url("../assets/img/logotipos/logotipo-letras.png");
+    
+    }
+
+    & .menu li {
       padding: 0 1rem;
     }
 
-    .menu-mobile {
+    & .menu-mobile {
+      position: relative;
+      z-index: 200;
       font-size: 3rem;
       padding: 1.5rem 3rem;
     }
+    
+    & .menu-mobile.clicked {
+      color: var(--verdeClaro);
+    }
+
 }
 
 /** languages **/
