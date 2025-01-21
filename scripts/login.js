@@ -41,27 +41,32 @@ function crearCuenta() {
         const telefonoInput = telefono.value;
         const privacyInput = privacy.checked;
 
-       
-    if (verificarCuentaExistente(usuarioInput, passwordInput)) {
+    if( !usuarioInput || !passwordInput || !telefonoInput) {
+        alert('COMPLETA O NO COMES :/');
         return;
     }
-
-    if (privacyInput) {
+    if(verificarCuentaExistente(usuarioInput, passwordInput, telefonoInput)) {
+        return;
+    }
+    if(!privacyInput) { 
         usuarios.push({ usuario: usuarioInput, password: passwordInput, telefono: telefonoInput });
-        alert('HOLI, BIENVENID@ A LA FAMILIA DE FOODIFY :)');
-    } else {
-        alert('COMPLETA O NO COMES :/');
+
+        alert('HOLI, BIENVENIDO A LA FAMILIA DE FOODIEFY :)');
+    } else{
+        alert('ACEPTA O NO COMES :(');
     }
 }
 }
 
+
+
 //VERIFICAR CUENTA EXISTENTE
-function verificarCuentaExistente(usuarioInput, passwordInput) {
+function verificarCuentaExistente(usuarioInput, passwordInput, telefonoInput) {
     const usuarioExistente = usuarios.find(u => u.usuario === usuarioInput);
     const passwordExistente = usuarios.find(u => u.password === passwordInput);
     const telefonoExistente = usuarios.find(u => u.telefono === telefonoInput);
 
-    //if (usuarioExistente) {
+    if (usuarioExistente) {
         alert('ESTE NOMBRE YA SE ESTA USANDO, PRUEBA OTRO');
         return true;
     }
@@ -70,14 +75,19 @@ function verificarCuentaExistente(usuarioInput, passwordInput) {
         alert('ESTA CONTRASEÑA YA SE ESTA USANDO, PRUEBA OTRA');
         return true;
     }
+    if(telefonoExistente) {
+        alert('ESTE TELEFONO YA SE ESTA USANDO, PRUEBA OTRO');
+        return true;
+    }
+    return false;
 
-
+}
 // Validar aceptación de términos
 function verificarCuentaExistente(usuarioInput, passwordInput) {
     const usuarioExistente = usuarios.find(u => u.usuario === usuarioInput);
     const passwordExistente = usuarios.find(u => u.password === passwordInput);
    
-    //if (usuarioExistente) {
+    if (usuarioExistente) {
         alert('ESTE NOMBRE YA SE ESTA USANDO, PRUEBA OTRO');
         return true;
     }
@@ -89,12 +99,7 @@ function verificarCuentaExistente(usuarioInput, passwordInput) {
     return false;
 
     return false;
-
-
- //Deberia saltar tambien una alarma 
-//en la que ponga completa o no comes :/ 
-
-
+}
 
 //LISTENER DE LOGIN
 if (login) {
