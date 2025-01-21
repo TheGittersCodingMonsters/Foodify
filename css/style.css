@@ -93,8 +93,93 @@ a {
   color: inherit;
 }
 
+/* Default: Extra-small devices such as small phones (less than 640px) */
 
-/* Header */
+ /* Header */
+
+.header {
+  position: sticky;
+  z-index: 100;
+
+  top: 5%;
+
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  background-color: var(--fondoSection);
+  width: 90%;
+  margin: auto;
+  padding: 1.8rem;
+  border-radius: 9rem;
+
+    .logo-regular {
+      display: none;
+    }
+
+    .logo-mobile {
+      width: 100%;
+      /* Usa un porcentaje para que el ancho sea relativo al contenedor */
+      max-width: 8rem;
+      /* Limita el tamaño máximo del logo */
+      min-width: 8rem;
+    }
+
+    .nav {
+      display: flex;
+      align-items: center;
+    }
+
+    .menu {
+      display: flex;
+      padding: 1.5rem;
+    }
+
+    .menu.clicked {
+      background-color: green;
+    }
+
+    .menu li {
+      padding: 0 1rem;
+    }
+
+    .menu-mobile {
+      font-size: 3rem;
+      padding: 1.5rem 3rem;
+    }
+}
+
+/** languages **/
+.language-switch {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  position: absolute;
+  z-index: 100;
+  top: 10px;
+  right: 20px;
+}
+
+.lang-icon {
+  width: 24px;
+  height: 24px;
+  cursor: pointer;
+  border-radius: 50%;
+}
+
+
+
+/* Small devices such as large phones (640px and up) */
+@media only screen and (min-width: 640px) {...}
+
+/* Medium devices such as tablets (768px and up) */
+@media only screen and (min-width: 768px) {...}
+
+/* Large devices such as laptops (1024px and up) */
+@media only screen and (min-width: 1024px) {
+  
+   /* Header */
 
 .header {
   position: sticky;
@@ -114,12 +199,22 @@ a {
   border-radius: 9rem;
 
 
-  .logo {
+  .logo-regular {
+    display: block;
     width: 100%;
+    padding: 0 2.5rem;
     /* Usa un porcentaje para que el ancho sea relativo al contenedor */
-    max-width: 8rem;
-    /* Limita el tamaño máximo del logo */
-    min-width: 8rem;
+    max-width: 25rem;
+ 
+    & a {
+      display: block;
+      margin-bottom: -1rem;
+    }
+  }
+
+  .logo-mobile,
+  .menu-mobile {
+    display: none;
   }
 
   .nav {
@@ -159,6 +254,12 @@ a {
   cursor: pointer;
   border-radius: 50%;
 }
+
+}
+
+/* Largest devices such as desktops (1280px and up) */
+@media only screen and (min-width: 1280px) {
+ 
 
 /* Buttons */
 .buttonLink {
