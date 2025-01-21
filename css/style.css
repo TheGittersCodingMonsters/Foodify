@@ -1,13 +1,13 @@
 :root {
-  --titulos: #ff4d4d;
-  --subtitulos: #873008;
-  --resalte: #fbcb7b;
+  --titulos: #ff6363ff;
+  --subtitulos: #88543b;
+  --resalte: #ffd257;
   --fondoBackground: #ffe2b0;
   --fondoSection: #ffffff;
-  --verde: rgb(0, 117, 22);
-  --verdeClaro: #b2ffa2;
-  --morado: #8c184a;
-  --textoNormal: #000000;
+  --verde: #73d786ff;
+  --verdeClaro: #beebc6ff;
+  --morado: #b9668aff;
+  --textoNormal: #1d1400;
 }
 
 /* Fonts */
@@ -71,8 +71,12 @@ html {
 
 body {
   font-size: 1.6rem;
-  max-width: 75vw;
   margin: auto;
+}
+
+.container {
+  max-width: 1500px;
+  margin: 0 auto;
 }
 
 img {
@@ -196,7 +200,7 @@ a {
     padding: 3rem;
     font-size: clamp(1rem, 8vw, 5rem);
 
-    p {
+  & p {
       color: var(--subtitulos);
       font-size: 3rem;
     }
@@ -217,17 +221,34 @@ a {
     aspect-ratio: 16 / 9; /* Mantiene una proporción de aspecto, ajustable según lo que desees */
     border-radius: 18rem;
     transform: rotate(10deg);
-    background: no-repeat center/cover url("/assets/img/fotos/pexels-nano-erdozain-120534369-30204528.jpg");
+    background: no-repeat center/cover url("../assets/img/fotos/foto-tenedor.jpg");
 }
-  ul.hero{
+  ul.hero {
     font-size: 2rem;
+    padding: 4rem 11rem;
+    background-color: #88543b;
+    border-radius: 11rem;
+    
   }
-  .hero li{
-    padding: 0 2.5rem;
-    background-image: url(../assets/img/elements/check-circle.svg);
-    background-position: 0 0;
-    background-size: 2rem;
-    background-repeat: no-repeat;
+
+  .hero li {
+    position: relative;
+    color: white;
+    padding: 0 3.1rem;
+    margin: 0.9rem;
+  }
+
+  .hero li::before {
+      content: "";
+      position: absolute;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      background-image: url(../assets/img/elements/check-circle.svg);
+      background-position: 0 0;
+      background-size: 2.1rem;
+      background-repeat: no-repeat;
+      
+      filter: invert(100%);
   }
 
 }
@@ -237,27 +258,30 @@ a {
   padding: 5rem;
   border-radius: 5rem;
   
-  .features-info {
+  & .features-info {
     display: flex;
     flex-flow: column wrap;
     justify-content: center;
     align-items: center;
     
-    h2 {
-      font-size: 6rem;
-      margin: 1rem;
-    }
+    & h2 {
+        font-size: 6rem;
+        margin: 1rem;
+      }
 
-    p {
-      font-size: 2.5rem;
-      margin: 1rem;
-    }
+    & p {
+        font-size: 2.5rem;
+        margin: 1rem;
+      }
 
-  .features-steps {
-    display: flex;
-    gap: 1rem;
-  }
+    & .features-steps {
+      display: flex;
+      gap: 10rem;
 
+        & .step h3 {
+          font-size: 3rem;
+        }
+      }
   }
 }
 
@@ -283,13 +307,13 @@ a {
 
   margin: 2rem;
 
-  h3 {
+ & h3 {
     font-family: "Old Standard TT", serif;
     font-size: 3rem;
     margin-bottom: 1.5rem;
   }
 
-  li {
+ & li {
     padding: 0.4rem 0;
   }
 }
@@ -299,13 +323,13 @@ a {
   display: flex;
   justify-content: space-around;
   background-color: var(--verde);
-  color: var(--verdeClaro);
+  color: var(--textoNormal);
   padding: 2rem;
 
-  ul {
+ & ul {
     display: flex;
 
-    li {
+   & li {
       padding: 0 1rem;
     }
   }
