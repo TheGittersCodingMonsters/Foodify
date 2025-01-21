@@ -49,9 +49,10 @@
 }
 
 h1,
-h2 {
+h2,
+h3 {
   font-family: "Caprasimo", serif;
-  color: var(--titulos);
+  color: var(--textoNormal);
 }
 
 /* Reset CSS */
@@ -151,13 +152,13 @@ a {
       gap: 5rem;
       padding: 6rem;
 
-      transform: translateY(-99%);
-      transition: 0.5s ease-out;
+      transform: translateY(-100%);
+      transition: transform 0.5s ease-out;
     }
 
     .menu.clicked {
       transform: translateY(0%);
-      transition: 0.5s ease-out;
+      transition:  transform 0.5s ease-out;
 
       & li {
         font-size: 4rem;
@@ -275,10 +276,26 @@ a {
     align-items: center;
   }
 
-  .menu {
-    display: flex;
-    padding: 1.5rem;
-  }
+  
+    .menu {
+      position: relative;
+      z-index: 200;
+  
+      width: unset;
+      min-height: unset;
+      background-color: unset;
+
+      display: flex;
+      flex-flow: row nowrap;
+      justify-content: flex-end;
+      padding: unset;
+
+      transform: translateY(0%);
+      transition: 0.5s ease-out;
+      display: flex;
+      
+    }
+ 
 
   .menu li {
     padding: 0 1rem;
@@ -358,6 +375,10 @@ a {
       color: var(--subtitulos);
       font-size: 3rem;
     }
+  & h1 {
+    color: var(--titulos);
+  }
+
   }
 
   .hero-action {
@@ -411,16 +432,21 @@ a {
   background-color: var(--fondoSection);
   padding: 5rem;
   border-radius: 5rem;
+  width: 75%;
+  margin: 0 auto;
   
   & .features-info {
     display: flex;
     flex-flow: column wrap;
     justify-content: center;
     align-items: center;
+    text-align: center;
+    margin: 2rem 0;
     
     & h2 {
         font-size: 6rem;
-        margin: 1rem;
+        margin: -1rem;
+        color: var(--titulos);
       }
 
     & p {
@@ -431,11 +457,19 @@ a {
     & .features-steps {
       display: flex;
       gap: 10rem;
+      margin: 2rem 0;
 
         & .step h3 {
-          font-size: 3rem;
+          font-size: 4rem;
+          text-align: center;
+          font-weight: 100;
+          color: var(--textoNormal);
+         
         }
       }
+    & img {
+      width: 75%;
+    }
   }
 }
 
