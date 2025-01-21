@@ -92,13 +92,13 @@
  },
  {
    "id": "08",
-   "nombre": "Turkey with huancaina sauce, potatoes and julienne vegetables",
+   "nombre": "Turkey with huanca�na sauce, potatoes and julienne vegetables",
    "foto": "/assets/platos/08.jpg",
    "filtroCategoria": "carne",
    "categoria": "Meat",
    "filtroOrden": "segundosPlatos",
    "orden": "Second",
-   "descripcion": "Turkey with huancaina sauce, potatoes and julienne vegetables is a culinary proposal that fuses traditional flavors with a touch of elegance. The turkey, tender and juicy, is covered with a huancaina sauce, an exquisite mixture of yellow chili, fresh cheese, milk and salted crackers, which provides a creamy and slightly spicy flavor.",
+   "descripcion": "Turkey with huanca�na sauce, potatoes and julienne vegetables is a culinary proposal that fuses traditional flavors with a touch of elegance. The turkey, tender and juicy, is covered with a huanca�na sauce, an exquisite mixture of yellow chili, fresh cheese, milk and salted crackers, which provides a creamy and slightly spicy flavor.",
    "precio": 14,
    "calorias": 450,
    "vegano": false
@@ -228,7 +228,7 @@
    "categoria": "Rice",
    "filtroOrden": "segundosPlatos",
    "orden": "Second",
-   "descripcion": "Sticky seafood rice is an emblematic dish that combines the richness of seafood with the creaminess of well-cooked rice. This dish is made with a base of sautied onion, garlic and peppers, to which crushed tomatoes and fish or seafood broth are added, creating an aromatic and tasty base.",
+   "descripcion": "Sticky seafood rice is an emblematic dish that combines the richness of seafood with the creaminess of well-cooked rice. This dish is made with a base of saut�ed onion, garlic and peppers, to which crushed tomatoes and fish or seafood broth are added, creating an aromatic and tasty base.",
    "precio": 13,
    "calorias": 480,
    "vegano": false
@@ -356,7 +356,7 @@
    "foto": "/assets/platos/28.jpg",
    "filtroCategoria": "postre",
    "categoria": "Dessert",
-   "filtroOrden": "postre",
+   "filtroOrden": "postres",
    "orden": "Dessert",
    "descripcion": "Coffee, that magical drink that wakes us up in the morning and accompanies us at many moments of the day. ?? Whether you prefer a strong and loaded espresso, a smooth latte, or perhaps something more exotic like a Turkish coffee, there is always a way to enjoy this delicious infusion.",
    "precio": 1.5,
@@ -369,7 +369,7 @@
    "foto": "/assets/platos/29.jpg",
    "filtroCategoria": "postre",
    "categoria": "Dessert",
-   "filtroOrden": "postre",
+   "filtroOrden": "postres",
    "orden": "Dessert",
    "descripcion": "Two-flavored ice cream is a delight that combines the best of two worlds in one dessert. You can choose your favorite flavors and enjoy them together in every bite, creating a unique and refreshing experience. Some classic combinations are vanilla and chocolate, strawberry and mango, or pistachio and chocolate. The choice of flavors depends on your preferences, but the mix of textures and flavors will make each spoonful a pleasure.",
    "precio": 2,
@@ -382,11 +382,24 @@
    "foto": "/assets/platos/30.jpg",
    "filtroCategoria": "postre",
    "categoria": "Dessert",
-   "filtroOrden": "postre",
+   "filtroOrden": "postres",
    "orden": "Dessert",
    "descripcion": "Raspberry tart is an elegant and delicious dessert, perfect for any special occasion or simply to enjoy a sweet treat. This cake is made up of a crunchy dough base, filled with a smooth and silky cream that can be vanilla, lemon or even cream cheese.",
    "precio": 3.25,
    "calorias": 350,
    "vegano": false
+ },
+  {
+   "id": "31",
+   "nombre": "Rice pudding",
+   "foto": "/assets/platos/31.jpg",
+   "filtroCategoria": "arroz",
+   "categoria": "Rice",
+   "filtroOrden": "postres",
+   "orden": "Dessert",
+   "descripcion": "Cooked in the traditional Asturian style, over a very low heat, stirring constantly and gradually adding the milk, as if it were a risotto. Finished with butter, cane sugar and a touch of cinnamon.",
+   "precio": "3,50",
+   "calorias": "176",
+   "vegano": "No"
  }
 ]

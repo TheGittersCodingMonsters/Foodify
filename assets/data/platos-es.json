@@ -356,7 +356,7 @@
    "foto": "/assets/platos/28.jpg",
    "filtroCategoria": "postre",
    "categoria": "Postre",
-   "filtroOrden": "postre",
+   "filtroOrden": "postres",
    "orden": "Postre",
    "descripcion": "El café, esa mágica bebida que nos despierta por las mañanas y nos acompaña en muchos momentos del día. 🌟 Ya sea que prefieras un espresso fuerte y cargado, un suave latte, o quizás algo más exótico como un café turco, siempre hay una manera de disfrutar de esta deliciosa infusión.",
    "precio": "1,5",
@@ -369,7 +369,7 @@
    "foto": "/assets/platos/29.jpg",
    "filtroCategoria": "postre",
    "categoria": "Postre",
-   "filtroOrden": "postre",
+   "filtroOrden": "postres",
    "orden": "Postre",
    "descripcion": "El helado de dos sabores es una delicia que combina lo mejor de dos mundos en un solo postre. Puedes elegir tus sabores favoritos y disfrutarlos juntos en cada bocado, creando una experiencia única y refrescante. Algunas combinaciones clásicas son vainilla y chocolate, fresa y mango, o pistacho y chocolate. La elección de los sabores depende de tus preferencias, pero la mezcla de texturas y sabores hará que cada cucharada sea un placer.",
    "precio": "2",
@@ -382,11 +382,24 @@
    "foto": "/assets/platos/30.jpg",
    "filtroCategoria": "postre",
    "categoria": "Postre",
-   "filtroOrden": "postre",
+   "filtroOrden": "postres",
    "orden": "Postre",
    "descripcion": "La tarta de frambuesas es un postre elegante y delicioso, perfecto para cualquier ocasión especial o simplemente para disfrutar de un capricho dulce. Esta tarta se compone de una base crujiente de masa, rellena con una crema suave y sedosa que puede ser de vainilla, limón o incluso queso crema.",
    "precio": "3",
    "calorias": "350",
+   "vegano": "No"
+ },
+  {
+   "id": "31",
+   "nombre": "Arroz con leche",
+   "foto": "/assets/platos/31.jpg",
+   "filtroCategoria": "arroz",
+   "categoria": "Arroz",
+   "filtroOrden": "postres",
+   "orden": "Postre",
+   "descripcion": "Cocinado al estilo tradicional asturiano, a fuego muy bajo, removiendo constantemente y añadiendo poco a poco la leche, como si fuera un risotto. Terminamos con mantequilla, azúcar de caña y un toque de canela.",
+   "precio": "3,50",
+   "calorias": "176",
    "vegano": "No"
  }
 ]
