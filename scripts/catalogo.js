@@ -8,7 +8,7 @@ document.addEventListener("DOMContentLoaded", () => {
     let platosData = [];
     let currentLanguage = "es";
 
-
+   
     // Función para mostrar los platos en la galería
     function displayPlatos(platos) {
         gallery.innerHTML = "";
@@ -72,13 +72,28 @@ document.addEventListener("DOMContentLoaded", () => {
                     if (data[key]) {
                         element.textContent = data[key];
                     }
+                    loadMenu();
                 });
             })
             .catch(error => console.error("Error al leer las traducciones:", error));
     }
 
+    // funcion para leer opciones de menu segun el idioma
+   function loadMenu(){
+    const menu1 = document.querySelector('.menu li:first-child a');
+    const ruta1 = `index-${currentLanguage}.html`;
+    menu1.setAttribute('href', ruta1);
+    const menu2 = document.querySelector('.menu li:nth-child(2) a');
+    const ruta2 = `contacto-${currentLanguage}.html`;
+    menu2.setAttribute('href', ruta2);
+   // const menu3 = document.querySelector('.menu li:nth-child(2) a')
+    //const ruta3 = `contacto-${currentLanguage}.html`;
+   // menu3.setAttribute('href', ruta3);
+    const menu4 = document.querySelector('.menu li:nth-child(4) a');
+    const ruta4 = `crearcuenta-${currentLanguage}.html`;
+    menu4.setAttribute('href', ruta4);
 
-
+   }
     // Aplicar filtros
     function applyFilters() {
         const selectedCategory = categoryFilter.value;
@@ -89,7 +104,7 @@ document.addEventListener("DOMContentLoaded", () => {
             const matchesType = selectedType === "all" || plato.filtroOrden === selectedType;
             return matchesCategory && matchesType;
         });
-        //loadTexts(currentLanguage);
+        loadTexts(currentLanguage);
         displayPlatos(filteredPlatos);
   
     }
@@ -116,81 +131,118 @@ document.addEventListener("DOMContentLoaded", () => {
    //CONTADORES Y CARRITO 
    const cartCountElement = document.querySelector(".cart-count");
 
-   // Función para obtener el carrito desde localStorage
-   function getCart() {
-       return JSON.parse(localStorage.getItem("cart")) || {};
-   }
+// Función para obtener el carrito desde localStorage
+function getCart() {
+    return JSON.parse(localStorage.getItem("cart")) || {}; // El carrito será un objeto con claves de ID de producto
+}
 
-   // Función para guardar el carrito en localStorage
-   function saveCart(cart) {
-       localStorage.setItem("cart", JSON.stringify(cart));
-   }
+// Función para guardar el carrito en localStorage
+function saveCart(cart) {
+    localStorage.setItem("cart", JSON.stringify(cart));
+}
 
-   // Función para actualizar un producto en el carrito
-   function updateProductInCart(productId, quantity) {
-       const cart = getCart();
+// Función para actualizar un producto en el carrito
+function updateProductInCart(productId, productName, productPrice, quantity) {
+    const cart = getCart();
 
-       if (quantity === 0) {
-           delete cart[productId]; // Eliminar el producto si la cantidad es 0
-       } else {
-           cart[productId] = quantity; // Actualizar la cantidad del producto
-       }
+    if (quantity === 0) {
+        delete cart[productId]; // Eliminar el producto si la cantidad es 0
+    } else {
+        cart[productId] = {
+            id: productId,
+            name: productName,
+            price: productPrice,
+            quantity: quantity,
+        };
+    }
 
-       saveCart(cart);
-       updateCartCount(); // Actualizar el contador del carrito
-   }
+    saveCart(cart);
+    updateCartCount(); // Actualizar el contador del carrito
+}
 
-   // Función para calcular y mostrar el número total de elementos en el carrito
-   function updateCartCount() {
-       const cart = getCart();
-       const totalItems = Object.values(cart).reduce((sum, quantity) => sum + quantity, 0);
-       cartCountElement.textContent = totalItems;
-   }
+// Función para inicializar los contadores
+function initializeCounters() {
+    const counters = document.querySelectorAll(".product-counter");
+    const cart = getCart();
 
-   // Función para inicializar los contadores
-   function initializeCounters() {
-       const counters = document.querySelectorAll(".product-counter");
-       const cart = getCart();
+    counters.forEach(counter => {
+        const id = counter.getAttribute("data-id");
+        const productName = counter.closest(".productDetail").querySelector(".titulo h4").textContent;
+        const productPrice = parseFloat(
+            counter.closest(".productDetail").querySelector(".precio").textContent.replace(/[^\d.]/g, "")
+            //counter.closest(".productDetail") Busca el elemento más cercano con la clase .productDetail
+           //.querySelector(".precio") Dentro de ese elemento, busca el primer hijo con la clase .precio
+            //textContent.replace(/[^\d.]/g, "") Elimina cualquier carácter que no sea un dígito o un punto decimal:
+        );
 
-       counters.forEach(counter => {
-           const id = counter.getAttribute("data-id");
-           const decrementBtn = counter.querySelector(".decrement");
-           const incrementBtn = counter.querySelector(".increment");
-           const counterValue = counter.querySelector(".counter-value");
+        const decrementBtn = counter.querySelector(".decrement");
+        const incrementBtn = counter.querySelector(".increment");
+        const counterValue = counter.querySelector(".counter-value");
 
-           // Mostrar el valor inicial desde el carrito
-           counterValue.textContent = cart[id] || 0;
+        // Mostrar el valor inicial desde el carrito
+        counterValue.textContent = cart[id]?.quantity || 0;
 
-           // Evento para decrementar
-           decrementBtn.addEventListener("click", () => {
-               let currentValue = parseInt(counterValue.textContent);
-               if (currentValue > 0) {
-                   currentValue--;
-                   counterValue.textContent = currentValue;
-                   updateProductInCart(id, currentValue);
-               }
-           });
+        // Evento para decrementar
+        decrementBtn.addEventListener("click", () => {
+            let currentValue = parseInt(counterValue.textContent);
+            if (currentValue > 0) {
+                currentValue--;
+                counterValue.textContent = currentValue;
+                updateProductInCart(id, productName, productPrice, currentValue);
+            }
+        });
 
-           // Evento para incrementar
-           incrementBtn.addEventListener("click", () => {
-               let currentValue = parseInt(counterValue.textContent);
-               currentValue++;
-               counterValue.textContent = currentValue;
-               updateProductInCart(id, currentValue);
-           });
-       });
+        // Evento para incrementar
+        incrementBtn.addEventListener("click", () => {
+            let currentValue = parseInt(counterValue.textContent);
+            currentValue++;
+            counterValue.textContent = currentValue;
+            updateProductInCart(id, productName, productPrice, currentValue);
+        });
+    });
 
-       // Actualizar el contador del carrito al cargar la página
-       updateCartCount();
-   }
+    // Actualizar el contador del carrito al cargar la página
+    updateCartCount();
+}
 
- 
+// Función para calcular y mostrar el número total de elementos en el carrito
+function updateCartCount() {
+    const cart = getCart();
+       // Depuración: Verifica el contenido del carrito
+       console.log("Cart contents:", cart);
+    // Calcula el total asegurándote de que quantity sea un número válido
+    const totalItems = Object.values(cart).reduce((sum, product) => {
+        const quantity = parseInt(product.quantity) || 0; // Asegura que quantity sea un número
+        return sum + quantity;
+    }, 0);
+    // Actualiza el contador total
+    cartCountElement.textContent = totalItems;
+}
+
+
+//cambiar estilos bot0nes seleccion para filtros
+document.addEventListener('DOMContentLoaded', () => {
+    const selects = document.querySelectorAll('select');
+  
+    selects.forEach((select) => {
+      select.addEventListener('change', () => {
+        if (select.value !== 'all') {
+          select.classList.add('not-all-active');
+        } else {
+          select.classList.remove('not-all-active');
+        }
+      });
+    });
+  });
+  
 
    // Llama a updateCartCount en puntos clave, como al cargar datos iniciales
    loadTexts(currentLanguage);
    loadPlatos(currentLanguage);
+   loadMenu();
    updateCartCount();
-
-
+// Actualizar el contador del carrito al cargar la página
+    updateCartCount();
+   
    // localStorage.clear(); //limpia localStorage
 });
