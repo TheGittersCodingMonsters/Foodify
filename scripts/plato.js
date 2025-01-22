@@ -137,6 +137,7 @@ langEn.addEventListener("click", () => {
  
      counters.forEach(counter => {
          const id = counter.getAttribute("data-id");
+         const productImage = counter.getAttribute(".plato-img img src");
          const productName = counter.closest(".productDetail").querySelector(".titulo h4").textContent;
          const productPrice = parseFloat(
              counter.closest(".productDetail").querySelector(".precio").textContent.replace(/[^\d.]/g, "")

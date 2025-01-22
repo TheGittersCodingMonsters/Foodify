@@ -8,7 +8,23 @@ document.addEventListener("DOMContentLoaded", () => {
     let platosData = [];
     let currentLanguage = "es";
 
-   
+    
+    // Función para cargar platos desde el archivo JSON
+    function loadPlatos(language) {
+        fetch(`../assets/data/platos-${language}.json`)
+            .then(response => {
+                if (!response.ok) throw new Error(`Error al cargar los datos: ${response.status}`);
+                return response.json();
+            })
+            .then(data => {
+                platosData = data;
+                displayPlatos(data);
+                loadTexts(currentLanguage);
+            })
+            .catch(error => console.error("Error al cargar los platos:", error));
+    }
+
+
     // Función para mostrar los platos en la galería
     function displayPlatos(platos) {
         gallery.innerHTML = "";
@@ -46,24 +62,8 @@ document.addEventListener("DOMContentLoaded", () => {
         initializeCounters();
     }
 
-    
-    // Función para cargar platos desde el archivo JSON
-    function loadPlatos(language) {
-        fetch(`../assets/data/platos-${language}.json`)
-            .then(response => {
-                if (!response.ok) throw new Error(`Error al cargar los datos: ${response.status}`);
-                return response.json();
-            })
-            .then(data => {
-                platosData = data;
-                displayPlatos(data);
-                loadTexts(currentLanguage);
-            })
-            .catch(error => console.error("Error al cargar los platos:", error));
-    }
-
-    // Función para cargar textos desde el archivo JSON de idioma
-    function loadTexts(language) {
+       // Función para cargar textos desde el archivo JSON de idioma
+       function loadTexts(language) {
         fetch(`../assets/data/textos-${language}.json`)
             .then(response => response.json())
             .then(data => {
@@ -94,6 +94,7 @@ document.addEventListener("DOMContentLoaded", () => {
     menu4.setAttribute('href', ruta4);
 
    }
+   
     // Aplicar filtros
     function applyFilters() {
         const selectedCategory = categoryFilter.value;
@@ -128,8 +129,8 @@ document.addEventListener("DOMContentLoaded", () => {
     });
 
 
-   //CONTADORES Y CARRITO 
-   const cartCountElement = document.querySelector(".cart-count");
+//CONTADORES Y CARRITO 
+const cartCountElement = document.querySelector(".cart-count");
 
 // Función para obtener el carrito desde localStorage
 function getCart() {
@@ -142,7 +143,7 @@ function saveCart(cart) {
 }
 
 // Función para actualizar un producto en el carrito
-function updateProductInCart(productId, productName, productPrice, quantity) {
+function updateProductInCart(productId, productName, productPrice, quantity, image) {
     const cart = getCart();
 
     if (quantity === 0) {
@@ -153,6 +154,7 @@ function updateProductInCart(productId, productName, productPrice, quantity) {
             name: productName,
             price: productPrice,
             quantity: quantity,
+            image: image
         };
     }
 
@@ -167,6 +169,7 @@ function initializeCounters() {
 
     counters.forEach(counter => {
         const id = counter.getAttribute("data-id");
+        const productImage = counter.closest(".productDetail").querySelector(".img-plato img").getAttribute("src");
         const productName = counter.closest(".productDetail").querySelector(".titulo h4").textContent;
         const productPrice = parseFloat(
             counter.closest(".productDetail").querySelector(".precio").textContent.replace(/[^\d.]/g, "")
@@ -188,7 +191,7 @@ function initializeCounters() {
             if (currentValue > 0) {
                 currentValue--;
                 counterValue.textContent = currentValue;
-                updateProductInCart(id, productName, productPrice, currentValue);
+                updateProductInCart(id, productName, productPrice, currentValue, productImage);
             }
         });
 
@@ -197,7 +200,7 @@ function initializeCounters() {
             let currentValue = parseInt(counterValue.textContent);
             currentValue++;
             counterValue.textContent = currentValue;
-            updateProductInCart(id, productName, productPrice, currentValue);
+            updateProductInCart(id, productName, productPrice, currentValue, productImage);
         });
     });
 
@@ -211,6 +214,7 @@ function updateCartCount() {
        // Depuración: Verifica el contenido del carrito
        console.log("Cart contents:", cart);
     // Calcula el total asegurándote de que quantity sea un número válido
+    //reduce hace suma de los productos en cart
     const totalItems = Object.values(cart).reduce((sum, product) => {
         const quantity = parseInt(product.quantity) || 0; // Asegura que quantity sea un número
         return sum + quantity;
@@ -236,7 +240,7 @@ document.addEventListener('DOMContentLoaded', () => {
   });
   
 
-   // Llama a updateCartCount en puntos clave, como al cargar datos iniciales
+// Llama a updateCartCount en puntos clave, como al cargar datos iniciales
    loadTexts(currentLanguage);
    loadPlatos(currentLanguage);
    loadMenu();
@@ -244,5 +248,5 @@ document.addEventListener('DOMContentLoaded', () => {
 // Actualizar el contador del carrito al cargar la página
     updateCartCount();
    
-   // localStorage.clear(); //limpia localStorage
+// localStorage.clear(); //limpia localStorage
 });
