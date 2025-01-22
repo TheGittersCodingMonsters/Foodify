@@ -9,28 +9,35 @@ const crearCuentaButton = document.getElementById('crearCuentaButton'); // Solo 
 
 // DATOS PERSONALES
 const usuarios = [
-    { usuario: "usuario1", password: "contraseña1", telefono: "1234567890" },
-    { usuario: "usuario2", password: "contraseña2", telefono: "0987654321" },
+    { usuario: "usuario1", password: "contraseña1", telefono: "1234" },
+    { usuario: "usuario2", password: "contraseña2", telefono: "56789" },
     { usuario: "belen", password: "2002", telefono: "606803157" }
 ];
 
 
 //INICIO DE SESIÓN
-function iniciarsesion() {
-
+function iniciarSesion() {
     if (usuario && password) { 
         const usuarioInput = usuario.value;
         const passwordInput = password.value;
 
-        const usuariovalido = usuarios.find(u => u.usuario === usuarioInput && u.password === passwordInput);
+        if (!usuarioInput || !passwordInput) {
+            alert('COMPLETA PARA COMER');
+            return;
+        }
+
+    const usuariovalido = usuarios.find(u => u.usuario === usuarioInput && u.password === passwordInput);
 
         if (usuariovalido) {
             alert('HOLI DE NUEVO :)');
         } else {
             alert('NO SE QUIEN ERES :(');
         }
+        } else {
+            alert('RELLENA TODO');
+        }
     }
-}
+
 
 
 //CREAR CUENTA
@@ -42,51 +49,30 @@ function crearCuenta() {
         const privacyInput = privacy.checked;
 
     if( !usuarioInput || !passwordInput || !telefonoInput) {
-        alert('COMPLETA O NO COMES :/');
+        alert('COMPLETA O NO COMES :(');
         return;
     }
-    if(verificarCuentaExistente(usuarioInput, passwordInput, telefonoInput)) {
-        return;
-    }
+ 
     if(!privacyInput) { 
-        usuarios.push({ usuario: usuarioInput, password: passwordInput, telefono: telefonoInput });
-
-        alert('HOLI, BIENVENIDO A LA FAMILIA DE FOODIEFY :)');
-    } else{
-        alert('ACEPTA O NO COMES :(');
+       alert('ACEPTA LA POLITICA DE PRIVACIDAD PARA COMER :/');
+        return;
     }
-}
-}
 
+    if(verificarCuentaExistente(usuarioInput, passwordInput)) {
+        return;
+    }
+
+    usuarios.push({ usuario: usuarioInput, password: passwordInput, telefono: telefonoInput });
+    alert('HOLI, BIENVENID@ A LA FAMILIA DE FOODIFY :)');
+}
+}
 
 
 //VERIFICAR CUENTA EXISTENTE
-function verificarCuentaExistente(usuarioInput, passwordInput, telefonoInput) {
-    const usuarioExistente = usuarios.find(u => u.usuario === usuarioInput);
-    const passwordExistente = usuarios.find(u => u.password === passwordInput);
-    const telefonoExistente = usuarios.find(u => u.telefono === telefonoInput);
-
-    if (usuarioExistente) {
-        alert('ESTE NOMBRE YA SE ESTA USANDO, PRUEBA OTRO');
-        return true;
-    }
-
-    if (passwordExistente) {
-        alert('ESTA CONTRASEÑA YA SE ESTA USANDO, PRUEBA OTRA');
-        return true;
-    }
-    if(telefonoExistente) {
-        alert('ESTE TELEFONO YA SE ESTA USANDO, PRUEBA OTRO');
-        return true;
-    }
-    return false;
-
-}
-// Validar aceptación de términos
 function verificarCuentaExistente(usuarioInput, passwordInput) {
     const usuarioExistente = usuarios.find(u => u.usuario === usuarioInput);
     const passwordExistente = usuarios.find(u => u.password === passwordInput);
-   
+    
     if (usuarioExistente) {
         alert('ESTE NOMBRE YA SE ESTA USANDO, PRUEBA OTRO');
         return true;
@@ -96,8 +82,6 @@ function verificarCuentaExistente(usuarioInput, passwordInput) {
         alert('ESTA CONTRASEÑA YA SE ESTA USANDO, PRUEBA OTRA');
         return true;
     }
-    return false;
-
     return false;
 }
 
@@ -111,3 +95,10 @@ if (login) {
 if (crearCuentaButton) {
     crearCuentaButton.addEventListener('click', crearCuenta);
 }
+    
+
+
+
+
+
+
