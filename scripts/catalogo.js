@@ -2,6 +2,7 @@
 document.addEventListener("DOMContentLoaded", () => {
     const categoryFilter = document.getElementById("filter-category");
     const typeFilter = document.getElementById("filter-type");
+    const veganFilter = document.getElementById("filter-vegan");
     const gallery = document.getElementById("gallery");
     const langEs = document.getElementById("lang-es");
     const langEn = document.getElementById("lang-en");
@@ -80,33 +81,38 @@ document.addEventListener("DOMContentLoaded", () => {
 
     // funcion para leer opciones de menu segun el idioma
    function loadMenu(){
+    const carpeta = currentLanguage.toUpperCase();
     const menu1 = document.querySelector('.menu li:first-child a');
-    const ruta1 = `index-${currentLanguage}.html`;
+    const ruta1 = `../${carpeta}/index-${currentLanguage}.html`;
     menu1.setAttribute('href', ruta1);
     const menu2 = document.querySelector('.menu li:nth-child(2) a');
-    const ruta2 = `contacto-${currentLanguage}.html`;
+    const ruta2 = `../${carpeta}/contacto-${currentLanguage}.html`;
     menu2.setAttribute('href', ruta2);
    // const menu3 = document.querySelector('.menu li:nth-child(2) a')
     //const ruta3 = `contacto-${currentLanguage}.html`;
    // menu3.setAttribute('href', ruta3);
     const menu4 = document.querySelector('.menu li:nth-child(4) a');
-    const ruta4 = `crearcuenta-${currentLanguage}.html`;
+    const ruta4 = `../${carpeta}/crearcuenta-${currentLanguage}.html`;
     menu4.setAttribute('href', ruta4);
-
    }
-   
+
     // Aplicar filtros
     function applyFilters() {
         const selectedCategory = categoryFilter.value;
         const selectedType = typeFilter.value;
-
+        const selectedVegan= veganFilter.value;
+     
+//filteerdPlatos contendra un array de objetos con los platos que coincidan con los criterios
         const filteredPlatos = platosData.filter(plato => {
             const matchesCategory = selectedCategory === "all" || plato.filtroCategoria === selectedCategory;
             const matchesType = selectedType === "all" || plato.filtroOrden === selectedType;
-            return matchesCategory && matchesType;
+            const matchesVegan = selectedVegan === "all" || plato.filtroVegano === selectedVegan;
+            return matchesCategory && matchesType && matchesVegan;
+            
         });
         loadTexts(currentLanguage);
         displayPlatos(filteredPlatos);
+      
   
     }
 
@@ -243,8 +249,8 @@ document.addEventListener('DOMContentLoaded', () => {
    loadMenu();
    updateCartCount();
 // Actualizar el contador del carrito al cargar la página
-    updateCartCount();
+   updateCartCount();
     
    
-   // localStorage.clear(); //limpia localStorage
+// localStorage.clear(); //limpia localStorage
 });
