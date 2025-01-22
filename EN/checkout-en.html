@@ -19,45 +19,45 @@
                 <div class="checkout-left">
                     <!-- Personal Information Section -->
                     <div class="form-section">
-                        <h2>Tu informacion</h2>
-                        <input type="email" placeholder="Correo Electronico" id="email" required>
-                        <input type="text" placeholder="Nombre Completo" id="fullName" required>
-                        <input type="tel" placeholder="Telefono" id="phone" required>
+                        <h2>Your Information</h2>
+                        <input type="email" placeholder="Email Address" id="email" required>
+                        <input type="text" placeholder="fullName" id="fullName" required>
+                        <input type="tel" placeholder="Phone Number" id="phone" required>
                     </div>
 
                     <!-- Delivery Address Section -->
                     <div class="form-section">
-                        <h2>Direccion de Entrega</h2>
-                        <input type="text" placeholder="Direccion de la calle" id="streetAddress" required>
-                        <input type="text" placeholder="City" id="Cuidad" required>
-                        <input type="text" placeholder="Estado/Provincia" id="state" required>
-                        <input type="text" placeholder="ZIP/Codigo Postal" id="zipCode" required>
+                        <h2>Delivery Address</h2>
+                        <input type="text" placeholder="Address" id="streetAddress" required>
+                        <input type="text" placeholder="City" id="city" required>
+                        <input type="text" placeholder="State" id="state" required>
+                        <input type="text" placeholder="zipCode" id="zipCode" required>
                         <select>
-                            <option value="Espana">España</option>
-                            <option value="Italia">Italia</option>
-                            <option value="Alemania">Alemania</option>
+                            <option value="Spain">Spain</option>
+                            <option value="Italy">Italy</option>
+                            <option value="Germany">Germany</option>
                         </select>
                     </div>
                     
                     <!-- Shipping Method Section -->
                     <div class="form-section">
-                        <h2>Metodo de Entrega</h2>
+                        <h2>Delivery Method</h2>
                         <select id="shippingMethod" required>
-                            <option value="standard">Envio standard (2-3 days) - Gratis</option>
+                            <option value="standard">Standard Shipping (1-2 days) - Free</option>
                         </select>
                     </div>
 
                     <!-- Payment Method Section -->
                     <div class="form-section">
-                        <h2>Metodo de Pago</h2>
+                        <h2>Payment Method</h2>
                         <select id="paymentMethod" required>
                             <option value="creditCard">Credit Card</option>
                         </select>
 
                         <!-- Credit Card Input Fields -->
                         <div id="creditCardDetails" class="payment-details">
-                            <input type="text" placeholder="Numero de Tarjeta - xxxx xxxx xxxx xxxx" id="cardNumber" required>
-                            <input type="text" placeholder="Dia de expiracion (MM/AA)" id="expirationDate" required>
+                            <input type="text" placeholder="credit/debit number - xxxx xxxx xxxx xxxx" id="cardNumber" required>
+                            <input type="text" placeholder="expiration date (MM/YY)" id="expirationDate" required>
                             <input type="number" placeholder="CVV" id="cvv" maxlength="3" required>
                         </div>
                     </div>
@@ -73,12 +73,8 @@
                     <h2>Order Summary</h2>
                     <!-- Dynamic cart items will be inserted here -->
                     <div id="checkoutCartItems"></div>
-                    
-                    <!-- Subtotal and Total Sections -->
-                    <div class="summary-item">
-                        <p>Subtotal</p>
-                        <p id="subtotal">$0.00</p>
-                    </div>
+                 
+
                     <div class="summary-item">
                         <p>Total</p>
                         <p id="totalPrice">$0.00</p>

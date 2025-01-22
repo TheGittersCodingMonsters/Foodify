@@ -1,77 +1,90 @@
-// Consigue los items del carrito desde el browser storage
-    function fetchCart() {
+// Fetch cart items from localStorage for checkout page
+function fetchCart() {
+    // Retrieve the cart object from localStorage (or an empty object if none)
+    const cart = JSON.parse(window.localStorage.getItem("cart")) || {};
 
-        // Obtiene los datos los items del carrito desde el localStorage
-        const cart = JSON.parse(localStorage.getItem('cart')) || [];
+    // Convert cart object into an array for easy iteration
+    const cartArray = Object.values(cart);
 
-        // Muestra los items del carrito importados desde el localStorage en la pagina
-        renderCheckoutItem('cart')
+    // Render the checkout items on the page
+    renderCheckoutItems(cartArray);
+}
+
+// Render checkout items in the UI
+function renderCheckoutItems(cart) {
+    let checkoutItemsHTML = ''; // Store checkout items HTML
+    let subtotal = 0; // Track total price
+
+    // If cart is empty, display message
+    if (cart.length === 0) {
+        document.getElementById('checkoutCartItems').innerHTML = `
+            <p>Your cart is empty. Please add items before checking out.</p>`;
+        document.querySelector('.checkout-button').disabled = true;
+        return;
     }
 
-   // Crear un HTML para mostrar los items del carrito
-    function renderCheckoutItems(cart) {
-        let checkoutItemsHTML = ''; // Guarda el HTML para los items del carrito
-        let subtotal = 0; // Precio total de la calculacion
-
-        // Loop de cada item en el carrito
-        cart.forEach(item => {
-            // Genera el HTML de cada item del carrito
-            checkoutItemsHTML += `
-                <div class="checkout-item">
-                    <div class="product-details">
-                        <img src="${item.image}" alt="${item.name}" class="product-image">
-                        <div class="product-info">
-                            <p class="item-name">${item.name}</p>
-                            <p>Price: $${item.price.toFixed(2)}</p>
-                            <p>Quantity: ${item.quantity}</p>
-                        </div>
+    // Loop through cart items
+    cart.forEach(item => {
+        checkoutItemsHTML += `
+            <div class="checkout-item">
+                <div class="product-details">
+                    <!-- Display product image -->
+                    <img src="${item.image}" alt="${item.name}" class="product-image" style="width: 100px; height: 100px;">
+                    <div class="product-info">
+                        <p class="item-name">${item.name}</p>
+                        <p>Quantity: ${item.quantity}</p>
                     </div>
-                    <p class="item-total">$${(item.price * item.quantity).toFixed(2)}</p>
-                </div>`;
-            
-            // Calcula el subtotal
-            subtotal += item.price * item.quantity;
-        });
+                </div>
+                <p class="item-total">$${(item.price * item.quantity).toFixed(2)}</p>
+            </div>`;
 
-        // Actualiza la pagina con los items del carrito y el total
-        document.getElementById('checkoutCartItems').innerHTML = checkoutItemsHTML;
-        document.getElementById('subtotal').textContent = `$${subtotal.toFixed(2)}`;
-        document.getElementById('totalPrice').textContent = `$${subtotal.toFixed(2)}`;
+        // Calculate subtotal
+        subtotal += item.price * item.quantity;
+    });
+
+    // Update the checkout page with items and total price
+    document.getElementById('checkoutCartItems').innerHTML = checkoutItemsHTML;
+    document.getElementById('totalPrice').textContent = `$${subtotal.toFixed(2)}`;
+}
+
+// Validate and confirm checkout
+function confirmCheckout() {
+    // Collect form values
+    const email = document.getElementById('email').value.trim();
+    const fullName = document.getElementById('fullName').value.trim();
+    const phone = document.getElementById('phone').value.trim();
+    const streetAddress = document.getElementById('streetAddress').value.trim();
+    const city = document.getElementById('city').value.trim();
+    const state = document.getElementById('state').value.trim();
+    const zipCode = document.getElementById('zipCode').value.trim();
+    const paymentMethod = document.getElementById('paymentMethod').value;
+
+    // Ensure all fields are filled
+    if (!email || !fullName || !phone || !streetAddress || !city || !state || !zipCode || !paymentMethod) {
+        alert("Please fill in all required fields.");
+        return;
     }
 
-    // Validar el proceso del checkout
-    function confirmCheckout() {
-        // Colecta los valores del input
-        const email = document.getElementById('email').value.trim();
-        const fullName = document.getElementById('fullName').value.trim();
-        const phone = document.getElementById('phone').value.trim();
-        const streetAddress = document.getElementById('streetAddress').value.trim();
-        const city = document.getElementById('Cuidad').value.trim();
-        const state = document.getElementById('state').value.trim();
-        const zipCode = document.getElementById('zipCode').value.trim();
-        const paymentMethod = document.getElementById('paymentMethod').value;
-
-        // Valida que todos los campos completos
-        if (!email || !fullName || !phone || !streetAddress || !city || !state || !zipCode || !paymentMethod) {
-            alert("Please fill in all required fields.");
+    // Validate credit card details if payment is by credit card
+    if (paymentMethod === 'creditCard') {
+        const cardNumber = document.getElementById('cardNumber').value.trim();
+        const expirationDate = document.getElementById('expirationDate').value.trim();
+        const cvv = document.getElementById('cvv').value.trim();
+        if (!cardNumber || !expirationDate || !cvv) {
+            alert("Please enter your credit card details.");
             return;
         }
-
-        // Validacion adicional para las tarjetas de credit
-        if (paymentMethod === 'creditCard') {
-            const cardNumber = document.getElementById('cardNumber').value.trim();
-            const expirationDate = document.getElementById('expirationDate').value.trim();
-            const cvv = document.getElementById('cvv').value.trim();
-            if (!cardNumber || !expirationDate || !cvv) {
-                alert("Please fill in credit card details.");
-                return;
-            }
-        }
-
-        // Procede la confirmacion y se va a la pagina de confirmacion
-        alert("Checkout confirmed! Proceeding to payment...");
-        window.location.href = "confirmation.html";
     }
 
-    // Load cart data when page opens
-    fetchCart();
+    // Proceed with checkout
+    alert("Checkout confirmed! Redirecting to confirmation page...");
+    
+    // Clear cart after checkout
+    window.localStorage.removeItem("cart");
+
+    // Redirect to confirmation page
+    window.location.href = "confirmation-en.html";
+}
+
+// Load cart on page load
+fetchCart();
