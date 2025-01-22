@@ -8,7 +8,23 @@ document.addEventListener("DOMContentLoaded", () => {
     let platosData = [];
     let currentLanguage = "es";
 
-   
+    
+    // Función para cargar platos desde el archivo JSON
+    function loadPlatos(language) {
+        fetch(`../assets/data/platos-${language}.json`)
+            .then(response => {
+                if (!response.ok) throw new Error(`Error al cargar los datos: ${response.status}`);
+                return response.json();
+            })
+            .then(data => {
+                platosData = data;
+                displayPlatos(data);
+                loadTexts(currentLanguage);
+            })
+            .catch(error => console.error("Error al cargar los platos:", error));
+    }
+
+
     // Función para mostrar los platos en la galería
     function displayPlatos(platos) {
         gallery.innerHTML = "";
@@ -46,24 +62,8 @@ document.addEventListener("DOMContentLoaded", () => {
         initializeCounters();
     }
 
-    
-    // Función para cargar platos desde el archivo JSON
-    function loadPlatos(language) {
-        fetch(`../assets/data/platos-${language}.json`)
-            .then(response => {
-                if (!response.ok) throw new Error(`Error al cargar los datos: ${response.status}`);
-                return response.json();
-            })
-            .then(data => {
-                platosData = data;
-                displayPlatos(data);
-                loadTexts(currentLanguage);
-            })
-            .catch(error => console.error("Error al cargar los platos:", error));
-    }
-
-    // Función para cargar textos desde el archivo JSON de idioma
-    function loadTexts(language) {
+       // Función para cargar textos desde el archivo JSON de idioma
+       function loadTexts(language) {
         fetch(`../assets/data/textos-${language}.json`)
             .then(response => response.json())
             .then(data => {
@@ -94,6 +94,7 @@ document.addEventListener("DOMContentLoaded", () => {
     menu4.setAttribute('href', ruta4);
 
    }
+   
     // Aplicar filtros
     function applyFilters() {
         const selectedCategory = categoryFilter.value;
@@ -245,8 +246,7 @@ document.addEventListener('DOMContentLoaded', () => {
    loadMenu();
    updateCartCount();
 // Actualizar el contador del carrito al cargar la página
-   updateCartCount();
-    
+    updateCartCount();
    
 // localStorage.clear(); //limpia localStorage
 });
