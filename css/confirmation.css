@@ -1,0 +1,55 @@
+    
+    .container1 h3 {
+        font-size: 30px;
+    }
+
+    .container1 .THANKYOU {
+        height: 500px;
+        width: 0 auto;
+        border-radius: 10px;       
+        box-shadow: 0px 0px 20px 0px;
+        border: 1px solid;
+        margin: 20px 0 20px 0;
+    }
+
+    .container1 {
+        text-align: center;
+        line-height: 50px;
+        background-color: rgb(255, 210, 119);
+        margin: 0 60px 0 60px;
+        border-radius: 15px;
+        padding: 25px 0 25px 0;
+    }
+
+    .container2 {
+        display:flex;
+        flex-direction: row;
+        text-align: center;
+        justify-content: center;
+        gap: 100px;
+        line-height: 40px;
+    }
+
+    .container2 div p {
+        font-size: 30px;
+    }
+
+    .container2 .box {
+        background-color: rgb(255, 255, 255);
+        border-radius: 10px;
+        height:90px;
+        width: 20%;
+    }
+
+    .ViewOrder button {
+        margin-top: 30px;
+        background-color: rgb(55, 200, 64);
+        border: none;
+        padding: 15px 25px 15px 25px;
+        border-radius: 6px;
+        font-size: 21px;
+        font-family: Imprima, serif;
+        font-weight: bold;
+        cursor:pointer;
+        color: white;        
+    }

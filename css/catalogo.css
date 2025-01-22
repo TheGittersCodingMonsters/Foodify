@@ -1,4 +1,10 @@
 /* estilos para catalogo.html */
+*{
+  box-sizing: border-box;
+}
+#catalogo{
+    margin-top:6rem;
+}
 
 #catalogo .filter-nav {
     padding: 20px;
@@ -106,8 +112,70 @@
     padding: 10px;
 	user-select: none; /* Evita seleccionar texto */
 }
+/*  botones  desplegables de filtros **/
+/* Estilo general del nav y select */
+#catalogo nav.filter-nav {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+}
 
-/* Responsive Styles */
+#catalogo select {
+  appearance: none; /* Elimina el estilo predeterminado */
+  background-color: white;
+  color: rgb(0, 117, 22);
+  border: none;
+  border-radius: 4px;
+  padding: 0.5rem 1rem;
+  font-size: 1.5rem;
+  cursor: pointer;
+  position: relative;
+  outline: none;
+  width: 20%;
+  transition: border 0.3s ease;
+   /* Transición para suavizar los cambios */
+  transition: background-image 0.3s ease, border 0.3s ease;
+}
+  /* Añadimos el icono de flecha abajo*/
+#catalogo select {
+background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="rgb(0, 117, 22)" width="48" height="48"><path d="M7 10l5 5 5-5H7z"/></svg>');
+background-repeat: no-repeat;
+background-position: right 1rem center;
+background-size: 3rem;
+}
+/*flecha arriba*/
+#catalogo select:focus {
+  border: 2px solid rgb(0, 117, 22);
+  background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="rgb(0, 117, 22)" width="48" height="48"><path d="M7 14l5-5 5 5H7z"/></svg>');
+}
+/* Estilo del submenu (opciones desplegadas) flecha arriba*/
+#catalogo select:focus::after {
+background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="rgb(0, 117, 22)" width="48" height="48"><path d="M7 14l5 5 5-5H7z"/></svg>');
+}
+/* Cambia a flecha hacia arriba cuando está abierto */
+#catalogo select.open::after {
+background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="rgb(0, 117, 22)" width="48" height="48"><path d="M7 10l5 5 5-5H7z"/></svg>');
+}
+
+/* Personalización adicional cuando se selecciona una opción que no sea "all" */
+/*#catalogo select:not([value="all"]):active {*/
+#catalogo .selected{
+  border: 2px solid rgb(0, 117, 22);
+}
+
+#catalogo option {
+  background-color: white;
+  color: rgb(0, 117, 22);
+  font-size: 1.5rem;
+  padding: 0.5rem;
+}
+
+#catalogo option:hover {
+  background-color: var(--verdeClaro);
+}
+
+
+/* Mediaqueries */
 @media (max-width: 768px) {
     #catalogo .gallery {
         grid-template-columns: repeat(2, 1fr);
@@ -121,20 +189,8 @@
     }
 }
 
-/******************/
-/** languages **/
-.language-switch {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    position: absolute;
-    top: 10px;
-    right: 20px;
-}
 
-.lang-icon {
-    width: 24px;
-    height: 24px;
-    cursor: pointer;
-    border-radius: 50%;
-}
+
+
+
+

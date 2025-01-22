@@ -1,27 +1,30 @@
+// Fetch cart items from localStorage
+function fetchCart() {
+    // Get cart from localStorage (stored as an object)
+    const cart = JSON.parse(window.localStorage.getItem("cart")) || {};
 
-// Función asíncrona para obtener datos del carrito desde un archivo JSON
-async function fetchCartData() {
-    const response = await fetch('assets/Data/platos.json');
-    const cartData = await response.json();
+    // Convert object to an array for easier iteration
+    const cartArray = Object.values(cart);
 
-    // Maneja el caso de carrito vacío
-    if (cartData.length === 0) {
+    // Render the cart items on the page
+    renderCartItems(cartArray);
+}
+
+// Render cart items in the UI
+function renderCartItems(cart) {
+    let cartItemsHTML = ''; // Store cart item HTML
+    let total = 0; // Total price calculation
+
+    // If the cart is empty, show a message and disable checkout
+    if (cart.length === 0) {
         document.getElementById('cartItems').innerHTML = `
             <p>Your cart is empty. Add some items to proceed!</p>`;
-        document.querySelector('.checkout-button').disabled = true; // Desactiva el botón de checkout
+        document.querySelector('.checkout-button').disabled = true;
         return;
     }
 
-    renderCartItems(cartData);
-}
-
-// Función para renderizar los items del carrito en la página
-function renderCartItems(cartData) {
-    let cartItemsHTML = '';
-    let total = 0;
-
-    // Genera HTML para cada item y calcula el total
-    cartData.forEach(item => {
+    // Loop through cart items
+    cart.forEach(item => {
         cartItemsHTML += `
             <div class="cart-item">
                 <span class="item-name">${item.name}</span>
@@ -31,27 +34,24 @@ function renderCartItems(cartData) {
         total += item.price * item.quantity;
     });
 
-    // Actualiza el DOM con los items y el precio total
+    // Insert items into the page
     document.getElementById('cartItems').innerHTML = cartItemsHTML;
+    
+    // Show total price
     document.getElementById('totalPrice').textContent = total.toFixed(2);
 }
 
-// Función asíncrona para proceder al checkout
-async function goToCheckout() {
-    const response = await fetch('assets/Data/platos.json');
-    const cartData = await response.json();
+// Redirect to checkout page
+function goToCheckout() {
+    const cart = JSON.parse(window.localStorage.getItem("cart")) || {};
 
-    // Previene el checkout si el carrito está vacío
-    if (cartData.length === 0) {
+    if (Object.keys(cart).length === 0) {
         alert("Your cart is empty. Please add items before proceeding to checkout.");
         return;
     }
 
-    // Guarda los datos del carrito en localStorage y redirige a la página de checkout
-    localStorage.setItem('cartData', JSON.stringify(cartData));
-    alert("Proceeding to checkout...");
-    window.location.href = 'checkout.html';
+    window.location.href = "checkout-en.html";
 }
 
-// Carga automáticamente los datos del carrito al cargar la página
-fetchCartData();
+// Load cart when page opens
+fetchCart();

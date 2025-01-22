@@ -13,7 +13,7 @@
     <!-- Open Graph para redes sociales -->
     <meta property="og:title" content="Foodify">
     <meta property="og:description" content="Delicious prepared meals delivered to your doorstep.">
-    <meta property="og:image" content="image.jpg">
+    <meta property="og:image" content="../assets/img">
     <meta property="og:url" content="https://foodyfy.com">
     <meta property="og:type" content="website">
 
@@ -36,75 +36,16 @@
         rel="stylesheet">
 
     <!-- Estilos -->
-    <link rel="stylesheet" href="css/style.css">
-    <link rel="stylesheet" href="css/confirmation.css">
+    <link rel="stylesheet" href="../css/login-cuenta.css">
+    <link rel="stylesheet" href="../css/style.css">
 
     <title>Foodify</title>
 </head>
 
-<style>
-    
-    .container1 h3 {
-        font-size: 30px;
-    }
-
-    .container1 .THANKYOU {
-        height: 500px;
-        width: 0 auto;
-        border-radius: 10px;       
-        box-shadow: 0px 0px 20px 0px;
-        border: 1px solid;
-        margin: 20px 0 20px 0;
-    }
-
-    .container1 {
-        text-align: center;
-        line-height: 50px;
-        background-color: rgb(255, 210, 119);
-        margin: 0 60px 0 60px;
-        border-radius: 15px;
-        padding: 25px 0 25px 0;
-    }
-
-    .container2 {
-        display:flex;
-        flex-direction: row;
-        text-align: center;
-        justify-content: center;
-        gap: 100px;
-        line-height: 40px;
-    }
-
-    .container2 div p {
-        font-size: 30px;
-    }
-
-    .container2 .box {
-        background-color: rgb(255, 255, 255);
-        border-radius: 10px;
-        height:90px;
-        width: 20%;
-    }
-
-    .ViewOrder button {
-        margin-top: 30px;
-        background-color: rgb(55, 200, 64);
-        border: none;
-        padding: 15px 25px 15px 25px;
-        border-radius: 6px;
-        font-size: 21px;
-        font-family: Imprima, serif;
-        font-weight: bold;
-        cursor:pointer;
-        color: white;        
-    }
-    
-</style>
-
 <body>
     <header role="banner" class="header">
         <div class="logo">
-            <a href="index.html"><img src="assets/img/logotipos/imagotipo.png" alt="Foodify Logo"></a>
+            <a href="../index.html"><img src="../assets/img/logotipos/imagotipo.png" alt="Foodify Logo"></a>
         </div>
         <nav role="navigation" class="nav">
             <ul class="menu">
@@ -118,42 +59,36 @@
             </div>
         </nav>
     </header>
+		 <div class="language-switch">
+            <img src="../assets/img/es_flag.png" alt="Español" id="lang-es" class="lang-icon">
+            <img src="../assets/img/en_flag.png" alt="English" id="lang-en" class="lang-icon">
+        </div>
 
-    <main role="main">
-        <section id="cart-section">
-
-            <div class="container1">
-                <img src="assets/img/logotipos/logotipo-letras.png">
-                <h3>¡Agradecemos su pedido y su confianza!</h3>
-                <p>¡Expresando gratitud por su pedido y nuestro más sincero agradecimiento por su confianza en nuestros productos!</p>
-                <img src="assets/img/fotos/THANKYOU.png" class="THANKYOU">
-                <div class="container2">
-
-                    <div class="box">
-                        <p>✓</p>
-                        <h4>Pedido Confirmado</h4>
-                    </div>
-                    <div class="box">
-                        <p>📦</p>
-                        <h4>Preparandolo...</h4>
-                    </div>
-                    <div class="box">
-                        <p>🚚</p>
-                        <h4>Se Entrega en 48h</h4>
-                    </div>
-                </div>
-                    <div class="ViewOrder">
-                        <a href="https://www.gmail.com/">
-                            <button>Ver Tu Pedido 👉</button>
-                        </a>
-                    </div>
+    <!--TRABAJAR AQUI-->
+    <main role="main" class="content">
+        <div class="contenedor-cuenta">
+            <h1>Crear cuenta</h1>
+            <button class="google-login" type="button">Acceder con cuenta de Google</button>
+            <br>
+            <label for="usuario">Usuario</label><input type="text" id="usuario" required>
+            <br>
+            <label for="password">Contraseña</label><input type="password" id="password" required>
+            <br>
+            <label for="telefono">Telefono movil</label><input type="tel" id="telefono" name="telefono" required>
+       
+            <br>
+            <div class="privacidad">
+                <input type="checkbox" id="privacy" required>
+                <label for="privacy">He leído y acepto la <a href="../ES/rgpd-es.html">Política de privacidad</a> y confirmo que soy mayor de edad.</label>
             </div>
-
-
-        </section>
-    </main>
-
-    <footer role="contentinfo" class="footer">
+            <button type="button" id="crearCuentaButton">Crear cuenta</button>
+            <p class="link">¿Ya tienes una cuenta? <a href="../ES/login-es.html">Inicia sesión aquí</a></p>
+        </div>
+       </main> 
+       <script src="../scripts/login.js"></script>
+       <script src="../scripts/script.js"></script>
+</body>
+       <footer role="contentinfo" class="footer">
         <div class="footer-info">
             <div class="footer-help">
                 <h3>Ayuda</h3>
@@ -164,7 +99,7 @@
                     <li><a href="#">Cómo funciona</a></li>
                     <li><a href="#">Preguntas frecuentes</a></li>
                     <li><a href="#">Ticket restaurante</a></li>
-                    <li><a href="#">Contacto</a></li>
+                    <li><a href="contacto-es.html">Contacto</a></li>
 
                 </ul>
             </div>
@@ -173,7 +108,7 @@
                 <h3>Conócenos</h3>
                 <ul class="about">
 
-                    <li><a href="#">¿Quienes somos?</a></li>
+                    <li><a href="../ES/nosotros-es.html">¿Quienes somos?</a></li>
                     <li><a href="#">Trabaja con nosotros</a></li>
                     <li><a href="#">Colaboraciones</a></li>
                     <li><a href="#">Wetaca para empresas</a></li>
@@ -194,11 +129,10 @@
         <div class="footer-legal">
             <p>&copy; 2025 FoodiFy. All rights reserved.</p>
             <ul class="legal">
-                <li><a href="#privacy">Privacy Policy</a></li>
+                <li><a href="../ES/about-es.html">The Gitters</a></li>
+                <li><a href="../ES/rgpd-es.html">Privacy Policy</a></li>
                 <li><a href="#terms">Terms of Service</a></li>
             </ul>
         </div>
     </footer>
-
-        </body>
-    </html>
+</html>

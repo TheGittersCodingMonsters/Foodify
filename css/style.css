@@ -132,6 +132,7 @@ a {
     }
 
     & .nav {
+      position: relative;
       display: flex;
       align-items: center;
    
@@ -145,16 +146,17 @@ a {
           width: 100vw;
           min-height: 100vh;
 
-          background-color: var(--verdeClaro);
+          
+          background: var(--verdeClaro) repeat center/150rem url("../assets/img/elements/mosaico-comida.png");
           font-family: "Caprasimo", 'Times New Roman', Times, serif;
-          font-size: 4rem;
+          font-size: 5rem;
 
           display: flex;
           flex-flow: column nowrap;
           justify-content: center;
           align-items: center;
           gap: 5rem;
-          padding: 6rem;
+          padding: 20rem 0;
 
           transform: translateY(-100%);
           transition: transform 0.5s ease-out;
@@ -165,13 +167,14 @@ a {
           transition:  transform 0.5s ease-out;
 
           & li {
-            width: 75%; 
+            width: 50rem; 
             text-align: center;
             
           }
 
           & li a {
             display: block;
+            
             width: 100%;
             color: var(--subtitulos);
           }
@@ -179,12 +182,11 @@ a {
 
         & .menu.clicked li:first-child::before{
           content: "";
-          position: absolute;
-          top: 5%;
-          left: 50%;
+          position: fixed;
+          top: -8rem;
+          left: 50vw;
           transform: translateX(-50%);
-          width: 100%;
-          padding: 5rem; /* Adjust the width as needed */
+          padding: 15rem;
           background: no-repeat center/contain url("../assets/img/logotipos/logotipo-letras.png");
         
         }
@@ -208,15 +210,51 @@ a {
         & .cart {
           position: relative;
           z-index: 200;
-          font-size: 1.8rem;
-          padding: 1.3rem;
-          background-color: var(--resalte);
-          color: var(--subtitulos);
+          cursor: pointer;
+
+          margin-right: 1.6rem;
+          padding: 0.9rem;
           border-radius: 100%;
-          border: 1px solid var(--subtitulos);
+          border: 0.4rem solid var(--subtitulos);
+          
+          font-size: 1.8rem;
+                  
+          background-color: var(--fondoBackground);
+          color: var(--subtitulos);
+          
         }
+
+          i {
+            position: relative;
+            top: 2px;
+            right: 1px;
+          }
+        }
+
+        & .cart:hover {
+          background: var(--subtitulos);
+          color: var(--resalte);
+        }
+
+        & .cart:hover .cart-count {
+          color: var(--textoNormal);
+          background: var(--resalte);
+        }
+
+        & .cart-count {
+          padding: 0.4rem 1rem;
+          position: absolute;
+          bottom: -0.89rem;
+          left: 2.7rem;
+          background: var(--subtitulos);
+          color: var(--resalte);
+          border-radius: 100%;
+        }
+        
+        
+
       }
-}
+    
 
 /** languages **/
 .language-switch {
