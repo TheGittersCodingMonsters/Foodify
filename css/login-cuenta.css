@@ -1,0 +1,119 @@
+/*LOGIN*/
+.contenedorLogin {
+    background-color: var(--fondoSection);
+    margin: 3rem auto;
+    padding: 2rem;
+    border-radius: 1rem;
+    width: 90%;
+    max-width: 400px;
+    text-align: center;
+  }
+  
+  .contenedorLogin h1 {
+    margin-bottom: 1.5rem;
+  }
+  
+  .contenedorLogin label {
+    display: block;
+    margin: 1rem 0 0.5rem;
+  }
+  
+  .contenedorLogin input {
+    width: 100%;
+    padding: 0.8rem;
+    margin-bottom: 1.5rem;
+    border: 1px solid var(--resalte);
+    border-radius: 0.5rem;
+  }
+  
+  .contenedorLogin button {
+    background-color: var(--verde);
+    color: var(--fondoSection);
+    padding: 1rem 2rem;
+    border-radius: 0.5rem;
+    cursor: pointer;
+  }
+  
+  .contenedorLogin button:hover {
+    background-color: var(--morado);
+  }
+  
+  .registro {
+    text-align: center;
+        margin-top: 1.5rem;
+    }
+
+  
+  .registro a {
+    color: var(--titulos);
+        font-weight: bold;
+        text-decoration: underline;
+    }
+ 
+
+  
+
+  /*CREAR CUENTA*/
+  .contenedor-cuenta{
+    background-color: var(--fondoSection);
+    margin: 3rem auto;
+    padding: 2rem;
+    border-radius: 1rem;
+    width: 90%;
+    max-width: 400px;
+    text-align: center;
+  }
+
+    .contenedor-cuenta h1 {
+        margin-bottom: 1.5rem;
+    }
+
+    .contenedor-cuenta label {
+        display: block;
+        margin: 1rem 0 0.5rem;
+    }
+
+    .contenedor-cuenta input[type="text"],
+    .contenedor-cuenta input[type="password"],
+    .contenedor-cuenta input[type="tel"] {
+        width: 100%;
+        padding: 1rem;
+        margin-top: 0.5rem;
+        border: 1px solid var(--resalte);
+        border-radius: 0.5rem;
+    }
+
+
+    .contenedor-cuenta button {
+        background-color: var(--verde);
+        color: var(--fondoSection);
+        padding: 1rem 2rem;
+        border-radius: 0.5rem;
+        cursor: pointer;
+    }
+
+    .contenedor-cuenta button:hover {
+        background-color: var(--morado);
+
+    }
+    
+    .privacidad{
+        padding-top: 1rem;
+    }
+
+    .privacidad a {
+        color: var(--morado);
+        font-weight: bold;
+    }
+
+    .link {
+        text-align: center;
+        margin-top: 1.5rem;
+    }
+    
+    .link a {
+        color: var(--titulos);
+        font-weight: bold;
+        text-decoration: underline;
+    }
+    

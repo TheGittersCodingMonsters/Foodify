@@ -37,7 +37,7 @@
 
     <!-- Estilos -->
     <link rel="stylesheet" href="css/style.css">
-    <link rel="stylesheet" href="css/login-cuenta.css">
+    <link rel="stylesheet" href="css/contacto.css">
 
     <title>Foodify</title>
 </head>
@@ -58,34 +58,102 @@
                 <i class="fa-solid fa-bars"></i>
             </div>
         </nav>
-    </header>
-		 <div class="language-switch">
+
+        <div class="language-switch">
             <img src="assets/img/es_flag.png" alt="Español" id="lang-es" class="lang-icon">
             <img src="assets/img/en_flag.png" alt="English" id="lang-en" class="lang-icon">
         </div>
-
-    <!--TRABAJAR AQUI-->
-    <main role="main" class="content">
-        <div class="contenedor-cuenta">
-            <h1>Crear cuenta</h1>
-            <button class="google-login" type="button">Acceder con cuenta de Google</button>
-            <br>
-            <label for="usuario">Usuario</label><input type="text" id="usuario" required>
-            <br>
-            <label for="password">Contraseña</label><input type="password" id="password" required>
-            <br>
-            <label for="telefono">Telefono movil</label><input type="tel" id="telefono" name="telefono" required>
-       
-            <br>
-            <div class="privacidad">
-                <input type="checkbox" id="privacy" required>
-                <label for="privacy">He leído y acepto la <a href="rgpd.html">Política de privacidad</a> y confirmo que soy mayor de edad.</label>
-            </div>
-            <button type="button" id="crearCuentaButton">Crear cuenta</button>
-            <p class="link">¿Ya tienes una cuenta? <a href="login.html">Inicia sesión aquí</a></p>
+        <div class="cart-icon" style="float:right; margin-right: 2%;">
+            🛒 <span class="cart-count">0</span>
         </div>
-       </main> 
-       <footer role="contentinfo" class="footer">
+    </header>
+
+    <div class="language-switch">
+        <a href="#"><img src="assets/img/es_flag.png" alt="Español" id="lang-es" class="lang-icon"></a>
+        <a href="contacto-en.html"><img src="assets/img/en_flag.png" alt="English" id="lang-en" class="lang-icon"></a>
+        
+    </div>
+
+    <main>
+        <section class="encabezado"> 
+            <h1>Fromulario de contacto:</h1>
+        </section>
+
+        <section class="texto_contacto">
+            <p>Use este formulario para ponerse en contacto con nosotros y transmitirnos sus inquietudes, preguntas,
+                etc. Le responderemos lo antes posible.</p>
+        </section>
+
+        <section class="formulario">
+            <form id="formContacto" action="contacto.php" method="get">
+                <div class="contenedor">
+
+                    <div class="campo">
+                        <label for="nombre_contacto">Nombre:</label>
+                        <input type="text" name="nombre_contacto" id="nombre_contacto" placeholder="Nombre"
+                             required>
+                    </div>
+
+                    <div class="campo">
+                        <label for="apellidos_contacto">Apellidos:</label>
+                        <input type="text" name="apellidos_contacto" id="apellidos_contacto" placeholder="Apellidos"
+                            required>
+                    </div>
+
+                    <div class="campo">
+                        <label for="email_contacto">Email:</label>
+                        <input type="email" name="email_contacto" id="email_contacto" placeholder="Email" required>
+                    </div>
+
+
+                    <div class="campo">
+                        <label for="telefono_contacto">Teléfono:</label>
+                        <input type="tel" name="telefono_contacto" id="telefono_contacto" placeholder="Teléfono">
+                    </div>
+
+                    <div class="campo">
+                        <label for="direccion_contacto">Dirección:</label>
+                        <input type="text" name="direccion_contacto" id="direccion_contacto" placeholder="Dirección">
+                    </div>
+
+                    <div class="campo">
+                        <label for="cp_contacto">C.P.:</label>
+                        <input type="text" name="cp_contacto" id="cp_contacto" placeholder="Código postal">
+                    </div>
+
+                    <div class="campo">
+                        <label for="poblacion_contacto">Población:</label>
+                        <input type="text" name="poblacion_contacto" id="poblacion_contacto" placeholder="Población">
+                    </div>
+
+                    <div class="campo">
+                        <label for="pais_contacto">País:</label>
+                        <input type="text" name="pais_contacto" id="pais_contacto" placeholder="País" 
+                            value="España">
+                    </div>
+
+                </div>
+
+
+                <section class="rgpd">
+                    <input type="checkbox" name="rgpd" id="rgpd" required>
+                <label for="rgpd">Acepto las <a href="rgpd.html" target="_blank"> <b>políticas de privacidad</b></a>
+                </label>
+                </section>
+                
+
+                <section class="botones">
+                    <button id="cancelarButton" type="reset">Cancelar</button>
+                    <button id="enviarButton" type="button">Enviar</button>
+                </section>
+
+            </form>
+
+        </section>
+
+    </main>
+
+    <footer role="contentinfo" class="footer">
         <div class="footer-info">
             <div class="footer-help">
                 <h3>Ayuda</h3>
@@ -96,7 +164,7 @@
                     <li><a href="#">Cómo funciona</a></li>
                     <li><a href="#">Preguntas frecuentes</a></li>
                     <li><a href="#">Ticket restaurante</a></li>
-                    <li><a href="#">Contacto</a></li>
+                    <li><a href="contacto-es.html">Contacto</a></li>
 
                 </ul>
             </div>
@@ -105,7 +173,7 @@
                 <h3>Conócenos</h3>
                 <ul class="about">
 
-                    <li><a href="#">¿Quienes somos?</a></li>
+                    <li><a href="nosotros-es.html">¿Quienes somos?</a></li>
                     <li><a href="#">Trabaja con nosotros</a></li>
                     <li><a href="#">Colaboraciones</a></li>
                     <li><a href="#">Wetaca para empresas</a></li>
@@ -126,17 +194,15 @@
         <div class="footer-legal">
             <p>&copy; 2025 FoodiFy. All rights reserved.</p>
             <ul class="legal">
-                <li><a href="#privacy">Privacy Policy</a></li>
+                <li><a href="about-es.html">The Gitters</a></li>
+                <li><a href="rgpd-es.html">Privacy Policy</a></li>
                 <li><a href="#terms">Terms of Service</a></li>
             </ul>
         </div>
     </footer>
 
     <script src="scripts/script.js"></script>
-  
-    <script src="scripts/login.js"></script>
+    <script src="scripts/contacto.js"></script>
 </body>
 
-
 </html>
-  
