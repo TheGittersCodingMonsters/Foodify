@@ -7,6 +7,7 @@ const telefono = document.getElementById('telefono'); // Solo está en crearcuen
 const privacy = document.getElementById('privacy'); // Solo está en crearcuenta
 const crearCuentaButton = document.getElementById('crearCuentaButton'); // Solo está en crearcuenta
 
+
 // DATOS PERSONALES
 const usuarios = [
     { usuario: "usuario1", password: "contraseña1", telefono: "1234" },
@@ -15,30 +16,27 @@ const usuarios = [
 ];
 
 
-//INICIO DE SESIÓN
-function iniciarSesion() {
+// INICIO DE SESION
+function iniciarsesion() {
     if (usuario && password) { 
         const usuarioInput = usuario.value;
         const passwordInput = password.value;
 
-        if (!usuarioInput || !passwordInput) {
-            alert('COMPLETA PARA COMER');
+
+        if( !usuarioInput || !passwordInput) {
+            alert('COMPLETA O NO COMES :(');
             return;
         }
 
-    const usuariovalido = usuarios.find(u => u.usuario === usuarioInput && u.password === passwordInput);
+        const usuariovalido = usuarios.find(u => u.usuario === usuarioInput && u.password === passwordInput);
 
         if (usuariovalido) {
             alert('HOLI DE NUEVO :)');
         } else {
-            alert('NO SE QUIEN ERES :(');
-        }
-        } else {
-            alert('RELLENA TODO');
-        }
+            alert('NO TE CONOZCO :(');
+        } 
     }
-
-
+}
 
 //CREAR CUENTA
 function crearCuenta() {
