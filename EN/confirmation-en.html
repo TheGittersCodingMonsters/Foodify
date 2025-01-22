@@ -18,10 +18,10 @@
     <meta property="og:type" content="website">
 
     <!-- Favicon con tamaños distintos para dispositivos -->
-    <link rel="apple-touch-icon" sizes="180x180" href="assets/img/favicon/apple-touch-icon.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="assets/img/favicon/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="assets/img/favicon/favicon-16x16.png">
-    <link rel="manifest" href="assets/img/favicon/site.webmanifest">
+    <link rel="apple-touch-icon" sizes="180x180" href="../assets/img/favicon/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="../assets/img/favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="../assets/img/favicon/favicon-16x16.png">
+    <link rel="manifest" href="../assets/img/favicon/site.webmanifest">
 
     <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
@@ -36,21 +36,19 @@
         rel="stylesheet">
 
     <!-- Estilos -->
-    <link rel="stylesheet" href="css/style.css">
-    <link rel="stylesheet" href="css/cart.css">
-
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/confirmation.css">
 
     <title>Foodify</title>
 </head>
-
 <body>
     <header role="banner" class="header">
         <div class="logo">
-            <a href="index.html"><img src="assets/img/logotipos/imagotipo.png" alt="Foodify Logo"></a>
+            <a href="../index.html"><img src="../assets/img/logotipos/imagotipo.png" alt="Foodify Logo"></a>
         </div>
         <nav role="navigation" class="nav">
             <ul class="menu">
-                <li><a href="index.html">Home</a></li>
+                <li><a href="../index.html">Home</a></li>
                 <li><a href="#about">About</a></li>
                 <li><a href="#menu">Menu</a></li>
                 <li><a href="#contact">Contact</a></li>
@@ -61,23 +59,41 @@
         </nav>
     </header>
 
-
     <main role="main">
         <section id="cart-section">
-            <div class="container">
-                <h1>Your Cart</h1>
-                <div id="cartItems">
-                    <!-- Cart items will be dynamically inserted here -->
+
+            <div class="container1">
+                <img src="../assets/img/logotipos/logotipo-letras.png">
+                <h3>We appreciate your request and your trust!</h3>
+                <p>Expressing gratitude for your request and our sincere thanks for your trust in our products!</p>
+                <img src="../assets/img/fotos/ThankYouEn.png" class="THANKYOU">
+                <div class="container2">
+
+                    <div class="box">
+                        <p>✓</p>
+                        <h4>Order Confirmed</h4>
+                    </div>
+                    <div class="box">
+                        <p>📦</p>
+                        <h4>Preparing it...</h4>
+                    </div>
+                    <div class="box">
+                        <p>🚚</p>
+                        <h4>Delivery is in 24/48h</h4>
+                    </div>
                 </div>
-                <div class="cart-footer">
-                    <p class="total">Total: $<span id="totalPrice">0.00</span></p>
-                    <button class="checkout-button" onclick="goToCheckout()">Proceed to Checkout</button>
-                </div>
+                    <div class="ViewOrder">
+                        <a href="https://www.gmail.com/">
+                            <button>View Your Order 👉</button>
+                        </a>
+                    </div>
             </div>
+
+
         </section>
     </main>
 
-        <footer role="contentinfo" class="footer">
+    <footer role="contentinfo" class="footer">
         <div class="footer-info">
             <div class="footer-help">
                 <h3>Ayuda</h3>
@@ -123,6 +139,6 @@
             </ul>
         </div>
     </footer>
-    <script src="scripts/cart.js"></script>
-    </body>
-</html>
+
+        </body>
+    </html>
