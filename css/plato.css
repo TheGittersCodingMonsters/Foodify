@@ -1,4 +1,7 @@
 /* estilos para plato.html */
+*{
+    box-sizing: border-box;
+}
 #plato{
     margin-top:6rem;
 }
@@ -9,7 +12,10 @@
  margin: 1rem auto;
  padding: 1rem;
 }
-
+#plato .contenido-detalle{
+    display: flex;
+    
+}
 #plato .img-plato{
     text-align:center;
     margin: 1rem;
@@ -82,13 +88,18 @@
 /** icono carrito **/
 .cart-icon{
     position: absolute;
-    top: 30px;
-    right: 20px;
+    top: 12rem;
+    right: 1.2rem;
     margin:0.5rem;
   }
   .fa-cart-shopping{
     color:var(--verde);
     padding:0.2rem;
+  }
+  .cart-count{
+    color:var(--morado);
+    font-size: 2rem;
+    font-weight: bold;
   }
 /* Responsive Styles */
 @media (max-width: 768px) {

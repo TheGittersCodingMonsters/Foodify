@@ -7,6 +7,7 @@ let currentLanguage = "es"; // Idioma por defecto
 // Obtenemos el ID del producto desde la URL
  const params = new URLSearchParams(window.location.search);
  const productId = params.get("id");
+ currentLanguage = params.get("lang");
 
 
 
@@ -19,22 +20,32 @@ function loadProductDetail(language) {
              if (plato) {
                 document.getElementById("productDetail").innerHTML = `
                       
-                      <h1>${plato.nombre}</h1>
-                         <div class="img-plato"><img src="${plato.foto}" alt="${plato.nombre}"></div> <!-- Foto del plato -->
-                         <p class ="descripcion"><span data-traductor="descripcion"></span>: ${plato.descripcion}</p>
+                    <h1>${plato.nombre}</h1>
+                      <div class="contenido-detalle">
+                         <div class="img-plato"><img src="${plato.foto}" alt="${plato.nombre}">
+                         </div> <!-- Foto del plato -->
+                         
+                         <div class="detalles">
+                        
+                         <p class ="descripcion-titulo"></p> <span data-traductor="descripcion"></span>:</p>
+                         <p class ="descripcion">${plato.descripcion}</p>
 						 <p class ="categoria"><span data-traductor="categoria"></span>: ${plato.categoria}</p>
                          <p class ="precio"><span data-traductor="precio"></span>: ${plato.precio}€</p>
                          <p class ="calorias"><span data-traductor="calorias"></span>: ${plato.calorias}</p>
                          <p class ="vegano"><span data-traductor="vegano"></span>: ${plato.vegano ? "Sí" : "No"}</p>
-                              <div class="product-counter" data-id="${plato.id}">
-                               <button class="counter-btn decrement">-</button>
-                              <span class="counter-value">0</span>
-                              <button class="counter-btn increment">+</button>
+                         </div>
+                     </div>
+
+                    <div class="product-counter" data-id="${plato.id}">
+                        <button class="counter-btn decrement">-</button>
+                        <span class="counter-value">0</span>
+                        <button class="counter-btn increment">+</button>
                     </div>
+                       
                     `;
 					loadTexts(currentLanguage);
            } else {
-                  document.getElementById("product-detail").innerHTML = "<p>Producto no encontrado</p>";
+                  document.getElementById("productDetail").innerHTML = "<p>Producto no encontrado</p>";
             }
       });
 }
@@ -53,9 +64,27 @@ function loadProductDetail(language) {
                         if (data[key]) {
                             element.textContent = data[key];
                         }
+                        loadMenu();
                     });
                 });
 }
+
+    // funcion para leer opciones de menu segun el idioma
+    function loadMenu(){
+        const menu1 = document.querySelector('.menu li:first-child a');
+        const ruta1 = `index-${currentLanguage}.html`;
+        menu1.setAttribute('href', ruta1);
+        const menu2 = document.querySelector('.menu li:nth-child(2) a');
+        const ruta2 = `contacto-${currentLanguage}.html`;
+        menu2.setAttribute('href', ruta2);
+       // const menu3 = document.querySelector('.menu li:nth-child(2) a')
+        //const ruta3 = `contacto-${currentLanguage}.html`;
+       // menu3.setAttribute('href', ruta3);
+        const menu4 = document.querySelector('.menu li:nth-child(4) a');
+        const ruta4 = `crearcuenta-${currentLanguage}.html`;
+        menu4.setAttribute('href', ruta4);
+    
+       }
 
 // Alternar entre idiomas
 langEs.addEventListener("click", () => {
@@ -161,6 +190,7 @@ langEn.addEventListener("click", () => {
  
 // Cargar textos y detalles iniciales
     loadTexts(currentLanguage);
+    loadMenu();
     loadProductDetail(currentLanguage);
     // Actualizar el contador del carrito al cargar la página
     updateCartCount();

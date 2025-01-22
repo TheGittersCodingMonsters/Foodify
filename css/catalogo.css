@@ -1,4 +1,7 @@
 /* estilos para catalogo.html */
+*{
+  box-sizing: border-box;
+}
 #catalogo{
     margin-top:6rem;
 }
@@ -109,140 +112,70 @@
     padding: 10px;
 	user-select: none; /* Evita seleccionar texto */
 }
-
-/** Estilos de botones desplegables de filtros **/
-#catalogo nav.filter-nav {
-    display: flex;
-    gap: 1rem;
-    align-items: center;
-  }
-  
-#catalogo select {
-    appearance: none; /* Elimina el estilo predeterminado */
-    background-color: white;
-    color: rgb(0, 117, 22);
-    border: none;
-    border-radius: 4px;
-    padding: 0.5rem 1rem;
-    font-size: 1.8rem;
-    cursor: pointer;
-    position: relative;
-    outline: none;
-    transition: border 0.3s ease;
-    width:10%;
-  }
-  
-#catalogo select:focus {
-    border: 2px solid rgb(0, 117, 22);
-  }
-  
-  /* Añadimos el icono de flecha */
-#catalogo select {
-    /*background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="rgb(0, 117, 22)" width="24" height="24"><path d="M7 10l5 5 5-5H7z"/></svg>');*/
-     background-image: '▼';
-    background-repeat: no-repeat;
-    background-position: right 1rem center;
-    background-size: 1rem;
-     background-image: '▼';
-}
-  
-  /* Estilo del submenu (opciones desplegadas) */
-#catalogo select:focus::after {
- /*background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="rgb(0, 117, 22)" width="24" height="24"><path d="M7 14l5-5 5 5H7z"/></svg>');*/
- background-image: '▲'; /* Flecha hacia abajo */
-
-  }
-  /* Cambia a flecha hacia arriba cuando está abierto */
-#catalogo select.open::after {
-    content: '▲'; /* Flecha hacia arriba */
-}
-  /* Transición para suavizar los cambios */
-#catalogo select {
-    transition: background-image 0.3s ease, border 0.3s ease;
-  }
-  
-  /* Personalización adicional cuando se selecciona una opción que no sea "all" */
-#catalogo select:not([value="all"]):active {
-    border: 2px solid rgb(0, 117, 22);
-  }
-  
-#catalogo option {
-    background-color: white;
-    color: rgb(0, 117, 22);
-    font-size: 1rem;
-    padding: 0.5rem;
-  }
-  
-#catalogo option:hover {
-    background-color: rgb(230, 255, 230);
-  }
-   desplegables de filtros **/
+/*  botones  desplegables de filtros **/
 /* Estilo general del nav y select */
 #catalogo nav.filter-nav {
-    display: flex;
-    gap: 1rem;
-    align-items: center;
-  }
-  
-#catalogo select {
-    appearance: none; /* Elimina el estilo predeterminado */
-    background-color: white;
-    color: rgb(0, 117, 22);
-    border: none;
-    border-radius: 4px;
-    padding: 0.5rem 1rem;
-    font-size: 1rem;
-    cursor: pointer;
-    position: relative;
-    outline: none;
-    transition: border 0.3s ease;
-  }
-  
-#catalogo select:focus {
-    border: 2px solid rgb(0, 117, 22);
-  }
-  
-  /* Añadimos el icono de flecha */
-#catalogo select {
-    /*background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="rgb(0, 117, 22)" width="24" height="24"><path d="M7 10l5 5 5-5H7z"/></svg>');*/
-     background-image: '▼';
-    background-repeat: no-repeat;
-    background-position: right 1rem center;
-    background-size: 1rem;
-     background-image: '▼';
+  display: flex;
+  gap: 1rem;
+  align-items: center;
 }
-  
-  /* Estilo del submenu (opciones desplegadas) */
-#catalogo select:focus::after {
- /*background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="rgb(0, 117, 22)" width="24" height="24"><path d="M7 14l5-5 5 5H7z"/></svg>');*/
- background-image: '▲'; /* Flecha hacia abajo */
 
-  }
-  /* Cambia a flecha hacia arriba cuando está abierto */
-#catalogo select.open::after {
-    content: '▲'; /* Flecha hacia arriba */
-}
-  /* Transición para suavizar los cambios */
 #catalogo select {
-    transition: background-image 0.3s ease, border 0.3s ease;
-  }
-  
-  /* Personalización adicional cuando se selecciona una opción que no sea "all" */
-#catalogo select:not([value="all"]):active {
-    border: 2px solid rgb(0, 117, 22);
-  }
-  
+  appearance: none; /* Elimina el estilo predeterminado */
+  background-color: white;
+  color: rgb(0, 117, 22);
+  border: none;
+  border-radius: 4px;
+  padding: 0.5rem 1rem;
+  font-size: 1.5rem;
+  cursor: pointer;
+  position: relative;
+  outline: none;
+  width: 20%;
+  transition: border 0.3s ease;
+   /* Transición para suavizar los cambios */
+  transition: background-image 0.3s ease, border 0.3s ease;
+}
+  /* Añadimos el icono de flecha abajo*/
+#catalogo select {
+background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="rgb(0, 117, 22)" width="48" height="48"><path d="M7 10l5 5 5-5H7z"/></svg>');
+background-repeat: no-repeat;
+background-position: right 1rem center;
+background-size: 3rem;
+}
+/*flecha arriba*/
+#catalogo select:focus {
+  border: 2px solid rgb(0, 117, 22);
+  background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="rgb(0, 117, 22)" width="48" height="48"><path d="M7 14l5-5 5 5H7z"/></svg>');
+}
+/* Estilo del submenu (opciones desplegadas) flecha arriba*/
+#catalogo select:focus::after {
+background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="rgb(0, 117, 22)" width="48" height="48"><path d="M7 14l5 5 5-5H7z"/></svg>');
+}
+/* Cambia a flecha hacia arriba cuando está abierto */
+#catalogo select.open::after {
+background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="rgb(0, 117, 22)" width="48" height="48"><path d="M7 10l5 5 5-5H7z"/></svg>');
+}
+
+/* Personalización adicional cuando se selecciona una opción que no sea "all" */
+/*#catalogo select:not([value="all"]):active {*/
+#catalogo .selected{
+  border: 2px solid rgb(0, 117, 22);
+}
+
 #catalogo option {
-    background-color: white;
-    color: rgb(0, 117, 22);
-    font-size: 1rem;
-    padding: 0.5rem;
-  }
-  
+  background-color: white;
+  color: rgb(0, 117, 22);
+  font-size: 1rem;
+  padding: 0.5rem;
+}
+
 #catalogo option:hover {
-    background-color: rgb(230, 255, 230);
-  }
-  
+  background-color: var(--verdeClaro);
+}
+
+
+
 
 /* Mediaqueries */
 @media (max-width: 768px) {
@@ -278,11 +211,17 @@
 /** icono carrito **/
 .cart-icon{
   position: absolute;
-  top: 30px;
-  right: 20px;
+  top: 12rem;
+  right: 1.2rem;
   margin:0.5rem;
 }
 .fa-cart-shopping{
   color:var(--verde);
   padding:0.2rem;
 }
+.cart-count{
+  color:var(--morado);
+  font-size: 2rem;
+  font-weight: bold;
+}
+

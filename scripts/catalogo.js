@@ -72,13 +72,28 @@ document.addEventListener("DOMContentLoaded", () => {
                     if (data[key]) {
                         element.textContent = data[key];
                     }
+                    loadMenu();
                 });
             })
             .catch(error => console.error("Error al leer las traducciones:", error));
     }
 
+    // funcion para leer opciones de menu segun el idioma
+   function loadMenu(){
+    const menu1 = document.querySelector('.menu li:first-child a');
+    const ruta1 = `index-${currentLanguage}.html`;
+    menu1.setAttribute('href', ruta1);
+    const menu2 = document.querySelector('.menu li:nth-child(2) a');
+    const ruta2 = `contacto-${currentLanguage}.html`;
+    menu2.setAttribute('href', ruta2);
+   // const menu3 = document.querySelector('.menu li:nth-child(2) a')
+    //const ruta3 = `contacto-${currentLanguage}.html`;
+   // menu3.setAttribute('href', ruta3);
+    const menu4 = document.querySelector('.menu li:nth-child(4) a');
+    const ruta4 = `crearcuenta-${currentLanguage}.html`;
+    menu4.setAttribute('href', ruta4);
 
-
+   }
     // Aplicar filtros
     function applyFilters() {
         const selectedCategory = categoryFilter.value;
@@ -155,6 +170,9 @@ function initializeCounters() {
         const productName = counter.closest(".productDetail").querySelector(".titulo h4").textContent;
         const productPrice = parseFloat(
             counter.closest(".productDetail").querySelector(".precio").textContent.replace(/[^\d.]/g, "")
+            //counter.closest(".productDetail") Busca el elemento más cercano con la clase .productDetail
+           //.querySelector(".precio") Dentro de ese elemento, busca el primer hijo con la clase .precio
+            //textContent.replace(/[^\d.]/g, "") Elimina cualquier carácter que no sea un dígito o un punto decimal:
         );
 
         const decrementBtn = counter.querySelector(".decrement");
@@ -202,9 +220,26 @@ function updateCartCount() {
 }
 
 
+//cambiar estilos bot0nes seleccion para filtros
+document.addEventListener('DOMContentLoaded', () => {
+    const selects = document.querySelectorAll('select');
+  
+    selects.forEach((select) => {
+      select.addEventListener('change', () => {
+        if (select.value !== 'all') {
+          select.classList.add('not-all-active');
+        } else {
+          select.classList.remove('not-all-active');
+        }
+      });
+    });
+  });
+  
+
    // Llama a updateCartCount en puntos clave, como al cargar datos iniciales
    loadTexts(currentLanguage);
    loadPlatos(currentLanguage);
+   loadMenu();
    updateCartCount();
 // Actualizar el contador del carrito al cargar la página
     updateCartCount();
