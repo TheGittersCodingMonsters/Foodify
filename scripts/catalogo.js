@@ -2,30 +2,13 @@
 document.addEventListener("DOMContentLoaded", () => {
     const categoryFilter = document.getElementById("filter-category");
     const typeFilter = document.getElementById("filter-type");
-    const veganFilter = document.getElementById("filter-vegan");
     const gallery = document.getElementById("gallery");
     const langEs = document.getElementById("lang-es");
     const langEn = document.getElementById("lang-en");
     let platosData = [];
     let currentLanguage = "es";
 
-    
-    // Función para cargar platos desde el archivo JSON
-    function loadPlatos(language) {
-        fetch(`../assets/data/platos-${language}.json`)
-            .then(response => {
-                if (!response.ok) throw new Error(`Error al cargar los datos: ${response.status}`);
-                return response.json();
-            })
-            .then(data => {
-                platosData = data;
-                displayPlatos(data);
-                loadTexts(currentLanguage);
-            })
-            .catch(error => console.error("Error al cargar los platos:", error));
-    }
-
-
+   
     // Función para mostrar los platos en la galería
     function displayPlatos(platos) {
         gallery.innerHTML = "";
@@ -63,8 +46,24 @@ document.addEventListener("DOMContentLoaded", () => {
         initializeCounters();
     }
 
-       // Función para cargar textos desde el archivo JSON de idioma
-       function loadTexts(language) {
+    
+    // Función para cargar platos desde el archivo JSON
+    function loadPlatos(language) {
+        fetch(`../assets/data/platos-${language}.json`)
+            .then(response => {
+                if (!response.ok) throw new Error(`Error al cargar los datos: ${response.status}`);
+                return response.json();
+            })
+            .then(data => {
+                platosData = data;
+                displayPlatos(data);
+                loadTexts(currentLanguage);
+            })
+            .catch(error => console.error("Error al cargar los platos:", error));
+    }
+
+    // Función para cargar textos desde el archivo JSON de idioma
+    function loadTexts(language) {
         fetch(`../assets/data/textos-${language}.json`)
             .then(response => response.json())
             .then(data => {
@@ -81,38 +80,32 @@ document.addEventListener("DOMContentLoaded", () => {
 
     // funcion para leer opciones de menu segun el idioma
    function loadMenu(){
-    const carpeta = currentLanguage.toUpperCase();
     const menu1 = document.querySelector('.menu li:first-child a');
-    const ruta1 = `../${carpeta}/index-${currentLanguage}.html`;
+    const ruta1 = `index-${currentLanguage}.html`;
     menu1.setAttribute('href', ruta1);
     const menu2 = document.querySelector('.menu li:nth-child(2) a');
-    const ruta2 = `../${carpeta}/contacto-${currentLanguage}.html`;
+    const ruta2 = `contacto-${currentLanguage}.html`;
     menu2.setAttribute('href', ruta2);
    // const menu3 = document.querySelector('.menu li:nth-child(2) a')
     //const ruta3 = `contacto-${currentLanguage}.html`;
    // menu3.setAttribute('href', ruta3);
     const menu4 = document.querySelector('.menu li:nth-child(4) a');
-    const ruta4 = `../${carpeta}/crearcuenta-${currentLanguage}.html`;
+    const ruta4 = `crearcuenta-${currentLanguage}.html`;
     menu4.setAttribute('href', ruta4);
-   }
 
+   }
     // Aplicar filtros
     function applyFilters() {
         const selectedCategory = categoryFilter.value;
         const selectedType = typeFilter.value;
-        const selectedVegan= veganFilter.value;
-     
-//filteerdPlatos contendra un array de objetos con los platos que coincidan con los criterios
+
         const filteredPlatos = platosData.filter(plato => {
             const matchesCategory = selectedCategory === "all" || plato.filtroCategoria === selectedCategory;
             const matchesType = selectedType === "all" || plato.filtroOrden === selectedType;
-            const matchesVegan = selectedVegan === "all" || plato.filtroVegano === selectedVegan;
-            return matchesCategory && matchesType && matchesVegan;
-            
+            return matchesCategory && matchesType;
         });
         loadTexts(currentLanguage);
         displayPlatos(filteredPlatos);
-      
   
     }
 
@@ -135,8 +128,8 @@ document.addEventListener("DOMContentLoaded", () => {
     });
 
 
-   //CONTADORES Y CARRITO 
-   const cartCountElement = document.querySelector(".cart-count");
+//CONTADORES Y CARRITO 
+const cartCountElement = document.querySelector(".cart-count");
 
 // Función para obtener el carrito desde localStorage
 function getCart() {
@@ -149,7 +142,7 @@ function saveCart(cart) {
 }
 
 // Función para actualizar un producto en el carrito
-function updateProductInCart(productId, productName, productPrice, quantity) {
+function updateProductInCart(productId, productName, productPrice, quantity, image) {
     const cart = getCart();
 
     if (quantity === 0) {
@@ -160,6 +153,7 @@ function updateProductInCart(productId, productName, productPrice, quantity) {
             name: productName,
             price: productPrice,
             quantity: quantity,
+            image: image
         };
     }
 
@@ -174,6 +168,7 @@ function initializeCounters() {
 
     counters.forEach(counter => {
         const id = counter.getAttribute("data-id");
+        const productImage = counter.closest(".productDetail").querySelector(".img-plato img").getAttribute("src");
         const productName = counter.closest(".productDetail").querySelector(".titulo h4").textContent;
         const productPrice = parseFloat(
             counter.closest(".productDetail").querySelector(".precio").textContent.replace(/[^\d.]/g, "")
@@ -195,7 +190,7 @@ function initializeCounters() {
             if (currentValue > 0) {
                 currentValue--;
                 counterValue.textContent = currentValue;
-                updateProductInCart(id, productName, productPrice, currentValue);
+                updateProductInCart(id, productName, productPrice, currentValue, productImage);
             }
         });
 
@@ -204,7 +199,7 @@ function initializeCounters() {
             let currentValue = parseInt(counterValue.textContent);
             currentValue++;
             counterValue.textContent = currentValue;
-            updateProductInCart(id, productName, productPrice, currentValue);
+            updateProductInCart(id, productName, productPrice, currentValue, productImage);
         });
     });
 
@@ -218,6 +213,7 @@ function updateCartCount() {
        // Depuración: Verifica el contenido del carrito
        console.log("Cart contents:", cart);
     // Calcula el total asegurándote de que quantity sea un número válido
+    //reduce hace suma de los productos en cart
     const totalItems = Object.values(cart).reduce((sum, product) => {
         const quantity = parseInt(product.quantity) || 0; // Asegura que quantity sea un número
         return sum + quantity;
@@ -243,7 +239,7 @@ document.addEventListener('DOMContentLoaded', () => {
   });
   
 
-   // Llama a updateCartCount en puntos clave, como al cargar datos iniciales
+// Llama a updateCartCount en puntos clave, como al cargar datos iniciales
    loadTexts(currentLanguage);
    loadPlatos(currentLanguage);
    loadMenu();
