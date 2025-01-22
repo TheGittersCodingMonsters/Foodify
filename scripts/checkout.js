@@ -1,20 +1,20 @@
 // Consigue los items del carrito desde el browser storage
-    function fetchCartData() {
+    function fetchCart() {
 
         // Obtiene los datos los items del carrito desde el localStorage
-        const cartData = JSON.parse(localStorage.getItem('cartData')) || [];
+        const cart = JSON.parse(localStorage.getItem('cart')) || [];
 
         // Muestra los items del carrito importados desde el localStorage en la pagina
-        renderCheckoutItem('cartData')
+        renderCheckoutItem('cart')
     }
 
    // Crear un HTML para mostrar los items del carrito
-    function renderCheckoutItems(cartData) {
+    function renderCheckoutItems(cart) {
         let checkoutItemsHTML = ''; // Guarda el HTML para los items del carrito
         let subtotal = 0; // Precio total de la calculacion
 
         // Loop de cada item en el carrito
-        cartData.forEach(item => {
+        cart.forEach(item => {
             // Genera el HTML de cada item del carrito
             checkoutItemsHTML += `
                 <div class="checkout-item">
@@ -74,4 +74,4 @@
     }
 
     // Load cart data when page opens
-    fetchCartData();
+    fetchCart();
