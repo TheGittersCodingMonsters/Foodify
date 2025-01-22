@@ -243,6 +243,7 @@ document.addEventListener('DOMContentLoaded', () => {
    updateCartCount();
 // Actualizar el contador del carrito al cargar la página
     updateCartCount();
+    
    
    // localStorage.clear(); //limpia localStorage
 });
