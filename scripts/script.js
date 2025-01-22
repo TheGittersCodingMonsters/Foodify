@@ -1,4 +1,19 @@
-   // Función para obtener el carrito desde localStorage
+  // Eventos Click de menu y carrito
+  const menuButton = document.querySelector(".menu-mobile");
+  const menu = document.querySelector(".menu");
+
+  const cartButton = document.querySelector(".cart");
+  menuButton.addEventListener("click", showMenu);
+//   cartButton.addEventListener("click", showCart);
+
+  // Funcion Menu
+  function showMenu(){
+    menu.classList.toggle("clicked");
+  }
+
+
+  
+  // Función para obtener el carrito desde localStorage
    const cartCountElement = document.querySelector(".cart-count");
    function getCart() {
     return JSON.parse(localStorage.getItem("cart")) || {};

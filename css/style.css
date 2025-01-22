@@ -4,7 +4,7 @@
   --resalte: #ffd257;
   --fondoBackground: #ffe2b0;
   --fondoSection: #ffffff;
-  --verde: #73d786ff;
+  --verde: #006815;
   --verdeClaro: #beebc6ff;
   --morado: #b9668aff;
   --textoNormal: #1d1400;
@@ -119,11 +119,11 @@ a {
   border-radius: 9rem;
   box-shadow: 0 4px 8px var(--titulos);
 
-    .logo-regular {
+    & .logo-regular {
       display: none;
     }
 
-    .logo-mobile {
+    & .logo-mobile {
       width: 100%;
       /* Usa un porcentaje para que el ancho sea relativo al contenedor */
       max-width: 8rem;
@@ -131,77 +131,91 @@ a {
       min-width: 8rem;
     }
 
-    .nav {
+    & .nav {
       display: flex;
       align-items: center;
-    }
+   
 
-    .menu {
-      position: fixed;
-      z-index: 200;
-      top: 0;
-      left: 0;
-      width: 100vw;
-      min-height: 100vh;
-      background-color: var(--verdeClaro);
+        & .menu {
+          position: fixed;
+          z-index: 200;
+          top: 0;
+          left: 0;
 
-      display: flex;
-      flex-flow: column nowrap;
-      justify-content: center;
-      align-items: center;
-      gap: 5rem;
-      padding: 6rem;
+          width: 100vw;
+          min-height: 100vh;
 
-      transform: translateY(-100%);
-      transition: transform 0.5s ease-out;
-    }
+          background-color: var(--verdeClaro);
+          font-family: "Caprasimo", 'Times New Roman', Times, serif;
+          font-size: 4rem;
 
-    .menu.clicked {
-      transform: translateY(0%);
-      transition:  transform 0.5s ease-out;
+          display: flex;
+          flex-flow: column nowrap;
+          justify-content: center;
+          align-items: center;
+          gap: 5rem;
+          padding: 6rem;
 
-      & li {
-        font-size: 4rem;
-        font-family: "Caprasimo", 'Times New Roman', Times, serif;
-        width: 75%; 
-        text-align: center;
+          transform: translateY(-100%);
+          transition: transform 0.5s ease-out;
+        }
+
+        & .menu.clicked {
+          transform: translateY(0%);
+          transition:  transform 0.5s ease-out;
+
+          & li {
+            width: 75%; 
+            text-align: center;
+            
+          }
+
+          & li a {
+            display: block;
+            width: 100%;
+            color: var(--subtitulos);
+          }
+        }
+
+        & .menu.clicked li:first-child::before{
+          content: "";
+          position: absolute;
+          top: 5%;
+          left: 50%;
+          transform: translateX(-50%);
+          width: 100%;
+          padding: 5rem; /* Adjust the width as needed */
+          background: no-repeat center/contain url("../assets/img/logotipos/logotipo-letras.png");
         
+        }
+
+        & .menu li {
+          padding: 0 1rem;
+        }
+
+        & .menu-mobile {
+          position: relative;
+          cursor: pointer;
+          z-index: 200;
+          font-size: 3rem;
+          padding: 1.5rem 3rem;
+
+            i:hover {
+              color: var(--titulos);
+          }
+        }
+
+        & .cart {
+          position: relative;
+          z-index: 200;
+          font-size: 1.8rem;
+          padding: 1.3rem;
+          background-color: var(--resalte);
+          color: var(--subtitulos);
+          border-radius: 100%;
+          border: 1px solid var(--subtitulos);
+        }
       }
-
-      & li a {
-        display: block;
-        width: 100%;
-        color: var(--subtitulos);
-      }
-    }
-
-    & .menu.clicked li:first-child::before{
-      content: "";
-      position: absolute;
-      top: 5%;
-      left: 50%;
-      transform: translateX(-50%);
-      width: 100%;
-      padding: 5rem; /* Adjust the width as needed */
-      background: no-repeat center/contain url("../assets/img/logotipos/logotipo-letras.png");
-    
-    }
-
-    & .menu li {
-      padding: 0 1rem;
-    }
-
-    & .menu-mobile {
-      position: relative;
-      z-index: 200;
-      font-size: 3rem;
-      padding: 1.5rem 3rem;
-    }
-    
-    & .menu-mobile.clicked {
-      color: var(--verdeClaro);
-    }
-
 }
 
 /** languages **/
@@ -224,11 +238,11 @@ a {
 
 
 
-/* Small devices such as large phones (640px and up) */
-@media only screen and (min-width: 640px) {...}
+/* Small devices such as large phones (640px and up) 
+@media only screen and (min-width: 640px) {...}*/
 
-/* Medium devices such as tablets (768px and up) */
-@media only screen and (min-width: 768px) {...}
+/* Medium devices such as tablets (768px and up)
+@media only screen and (min-width: 768px) {...} */
 
 /* Large devices such as laptops (1024px and up) */
 @media only screen and (min-width: 1024px) {
@@ -253,7 +267,7 @@ a {
   border-radius: 9rem;
 
 
-  .logo-regular {
+  & .logo-regular {
     display: block;
     width: 100%;
     padding: 0 2.5rem;
@@ -266,44 +280,35 @@ a {
     }
   }
 
-  .logo-mobile,
-  .menu-mobile {
+  & .logo-mobile,
+  & .menu-mobile {
     display: none;
   }
 
-  .nav {
+  & .nav {
     display: flex;
     align-items: center;
   }
-
   
-    .menu {
-      position: relative;
-      z-index: 200;
-  
-      width: unset;
-      min-height: unset;
-      background-color: unset;
+  & .menu {
+    position: relative;
+    z-index: 200;
+    
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: flex-end;
+    padding: unset;
 
-      display: flex;
-      flex-flow: row nowrap;
-      justify-content: flex-end;
-      padding: unset;
+    width: unset;
+    min-height: unset;
+    background-color: unset;
 
-      transform: translateY(0%);
-      transition: 0.5s ease-out;
-      display: flex;
-      
-    }
- 
-
-  .menu li {
-    padding: 0 1rem;
+    transform: translateY(0%);
+    transition: transform 0.5s ease-out;
   }
-
-  .menu-mobile {
-    font-size: 3rem;
-    padding: 1.5rem 3rem;
+ 
+  & .menu li {
+    padding: 0 1rem;
   }
 }
 
@@ -444,13 +449,13 @@ a {
     margin: 2rem 0;
     
     & h2 {
-        font-size: 6rem;
+        font-size: 8rem;
         margin: -1rem;
         color: var(--titulos);
       }
 
     & p {
-        font-size: 2.5rem;
+        font-size: 1.8rem;
         margin: 1rem;
       }
 
@@ -460,7 +465,7 @@ a {
       margin: 2rem 0;
 
         & .step h3 {
-          font-size: 4rem;
+          font-size: 3rem;
           text-align: center;
           font-weight: 100;
           color: var(--textoNormal);
@@ -521,4 +526,6 @@ a {
       padding: 0 1rem;
     }
   }
+}
+
 }
