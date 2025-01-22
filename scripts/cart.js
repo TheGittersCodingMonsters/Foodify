@@ -1,7 +1,7 @@
 // Consigue los items del carrito desde el browser storage
 function fetchCartData() {
     // Obtiene los datos del carrito desde el almacenamiento local, o usa un array vacio si no hay datos
-    const cartData = JSON.parse(window.localStorage.getItem('cartData')) || [];
+    const cartData = JSON.parse(window.localStorage.getItem('cart')) || [];
     
     // Muestra los items del carrito importados desde el localStorage en la pagina
     renderCartItems(cartData);
@@ -44,7 +44,7 @@ function renderCartItems(cartData) {
 // Mover a la pagina del checkout
 function goToCheckout() {
     // Consigue los datos del carrito desde el storage
-    const cartData = JSON.parse(window.localStorage.getItem('cartData')) || [];
+    const cartData = JSON.parse(window.localStorage.getItem('cart')) || [];
     
     // Comprueba si el carrito tiene items
     if (cartData.length === 0) {
