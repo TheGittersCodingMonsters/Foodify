@@ -189,37 +189,8 @@ background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/200
     }
 }
 
-/******************/
-/** liconos idiomas **/
-.language-switch {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    position: absolute;
-    top: 10px;
-    right: 20px;
-}
 
-.lang-icon {
-    width: 24px;
-    height: 24px;
-    cursor: pointer;
-    border-radius: 50%;
-}
-/** icono carrito **/
-.cart-icon{
-  position: absolute;
-  top: 12rem;
-  right: 1.2rem;
-  margin:0.5rem;
-}
-.fa-cart-shopping{
-  color:var(--verde);
-  padding:0.2rem;
-}
-.cart-count{
-  color:var(--morado);
-  font-size: 2rem;
-  font-weight: bold;
-}
+
+
+
 
