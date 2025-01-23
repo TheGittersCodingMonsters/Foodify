@@ -10,7 +10,7 @@ function fetchCart() {
     renderCartItems(cartArray);
 }
 
-// Render cart items in the UI
+// Render cart items in the website
 function renderCartItems(cart) {
     let cartItemsHTML = ''; // Store cart item HTML
     let total = 0; // Total price calculation
