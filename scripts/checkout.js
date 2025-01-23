@@ -13,7 +13,7 @@ function fetchCart() {
 // Render checkout items in the UI
 function renderCheckoutItems(cart) {
     let checkoutItemsHTML = ''; // Store checkout items HTML
-    let subtotal = 0; // Track total price
+    let total = 0; // Track total price
 
     // If cart is empty, display message
     if (cart.length === 0) {
@@ -38,13 +38,13 @@ function renderCheckoutItems(cart) {
                 <p class="item-total">$${(item.price * item.quantity).toFixed(2)}</p>
             </div>`;
 
-        // Calculate subtotal
-        subtotal += item.price * item.quantity;
+        // Calculate total
+        total += item.price * item.quantity;
     });
 
     // Update the checkout page with items and total price
     document.getElementById('checkoutCartItems').innerHTML = checkoutItemsHTML;
-    document.getElementById('totalPrice').textContent = `$${subtotal.toFixed(2)}`;
+    document.getElementById('totalPrice').textContent = `$${total.toFixed(2)}`;
 }
 
 // Validate and confirm checkout
@@ -78,9 +78,7 @@ function confirmCheckout() {
     } else {
         alert("Checkout confirmado! Redirigiendo a la pagina de confirmacion...");
     }
-
     
-    // if the cart has 0 value go back to the catalog
 
     // Clear cart after checkout
     window.localStorage.removeItem("cart");
