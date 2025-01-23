@@ -10,44 +10,6 @@
   --textoNormal: #1d1400;
 }
 
-/* Fonts */
-
-.modak-regular {
-  font-family: "Modak", serif;
-  font-weight: 400;
-  font-style: normal;
-}
-
-.caprasimo-regular {
-  font-family: "Caprasimo", serif;
-  font-weight: 400;
-  font-style: normal;
-}
-
-.old-standard-tt-regular {
-  font-family: "Old Standard TT", serif;
-  font-weight: 400;
-  font-style: normal;
-}
-
-.old-standard-tt-bold {
-  font-family: "Old Standard TT", serif;
-  font-weight: 700;
-  font-style: normal;
-}
-
-.old-standard-tt-regular-italic {
-  font-family: "Old Standard TT", serif;
-  font-weight: 400;
-  font-style: italic;
-}
-
-.imprima-regular {
-  font-family: "Imprima", serif;
-  font-weight: 400;
-  font-style: normal;
-}
-
 h1,
 h2,
 h3 {
@@ -113,7 +75,7 @@ a {
   width: 90%;
   padding: 1.8rem;
   border-radius: 9rem;
-  box-shadow: 0 4px 8px var(--titulos);
+  box-shadow: 0 4px 8px var(--subtitulos);
 }
 
 .logo-regular {
@@ -493,7 +455,7 @@ a {
   .footer-help h3,
   .footer-about h3,
   .footer-eco h3 {
-    font-family: "Old Standard TT", serif;
+    font-family: "Noticia Text", serif;
     font-size: 3rem;
     margin-bottom: 1.5rem;
   }

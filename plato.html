@@ -30,11 +30,8 @@
 
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link
-        href="https://fonts.googleapis.com/css2?family=Caprasimo&family=Imprima&family=Modak&family=Old+Standard+TT:ital,wght@0,400;0,700;1,400&display=swap"
-        rel="stylesheet">
-
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Caprasimo&family=Imprima&family=Modak&family=Noticia+Text:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
     <!-- Estilos -->
     <link rel="stylesheet" href="css/style.css">
 	<link rel="stylesheet" href="css/plato.css">
@@ -42,25 +39,31 @@
     <title>Foodify-Plato</title>
 
 </head>
-<div>
-    <div class="container"></div>
-    <!-- HEADER -->
-    <header role="banner" class="header">
-        <div class="logo">
-            <a href="index.html"><img src="assets/img/logotipos/imagotipo.png" alt="Foodify Logo"></a>
-        </div>
-        <nav role="navigation" class="nav">
-            <ul class="menu">
-                <li><a href="index.html" data-traductor="home"><!---Home---></a></li>
-                <li><a href="contacto.html" data-traductor="contacto"><!---Contacto---></a></li>
-                <li><a href="platos.html" data-traductor="platos"><!---Platos---></a></li>
-                <li><a href="crearcuenta.html" data-traductor="crearcuenta"><!---Mi cuenta---></a></li>
-            </ul>
-            <div class="menu-mobile">
-                <i class="fa-solid fa-bars"></i>
+<body>
+    <div class="container">
+        <header role="banner" class="header">
+            <div class="logo-mobile">
+                <a href="index.html"><img src="assets/img/logotipos/imagotipo.png" alt="Foodify Logo"></a>
             </div>
-        </nav>
-    </header>
+            <div class="logo-regular">
+                <a href="index.html"><img src="assets/img/logotipos/logotipo-letras.png" alt="Foodify Logo"></a>
+            </div>
+            <nav role="navigation" class="nav">
+                <ul class="menu">
+                    <li><a href="index.html" data-traductor="home">Home</a></li>
+                    <li><a href="ES/contacto-es.html" data-traductor="contacto">Contacto</a></li>
+                    <li><a href="catalogo.html" data-traductor="platos">Platos</a></li>
+                    <li><a href="ES/crearcuenta-es.html" data-traductor="micuenta">Mi cuenta</a></li>
+                </ul>
+                <div class="menu-mobile">
+                    <i class="fa-solid fa-bars"></i>
+                </div>
+                <div class="cart">
+                    <a href="ES/cart-es.html"><i class="fa-solid fa-cart-shopping"></i></a>
+                    <span class="cart-count">0</span>
+                </div>
+            </nav>
+        </header>
 		 <div class="language-switch">
             <img src="assets/img/es_flag.png" alt="Español" id="lang-es" class="lang-icon">
             <img src="assets/img/en_flag.png" alt="English" id="lang-en" class="lang-icon">
