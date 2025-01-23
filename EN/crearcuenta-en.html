@@ -5,23 +5,23 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <!-- Metadatos para buscadores -->
+    <!-- Metadata for search engines -->
     <meta name="description" content="Foodify: Delicious prepared meals delivered to your doorstep.">
     <meta name="keywords" content="food delivery, prepared meals, Foodify">
     <meta name="author" content="Foodify Team">
 
-    <!-- Open Graph para redes sociales -->
+    <!-- Open Graph for social media -->
     <meta property="og:title" content="Foodify">
     <meta property="og:description" content="Delicious prepared meals delivered to your doorstep.">
     <meta property="og:image" content="image.jpg">
     <meta property="og:url" content="https://foodyfy.com">
     <meta property="og:type" content="website">
 
-    <!-- Favicon con tamaños distintos para dispositivos -->
-    <link rel="apple-touch-icon" sizes="180x180" href="assets/img/favicon/apple-touch-icon.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="assets/img/favicon/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="assets/img/favicon/favicon-16x16.png">
-    <link rel="manifest" href="assets/img/favicon/site.webmanifest">
+    <!-- Favicon for different devices -->
+    <link rel="apple-touch-icon" sizes="180x180" href="../assets/img/favicon/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="../assets/img/favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="../assets/img/favicon/favicon-16x16.png">
+    <link rel="manifest" href="../assets/img/favicon/site.webmanifest">
 
     <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
@@ -35,9 +35,9 @@
         href="https://fonts.googleapis.com/css2?family=Caprasimo&family=Imprima&family=Modak&family=Old+Standard+TT:ital,wght@0,400;0,700;1,400&display=swap"
         rel="stylesheet">
 
-    <!-- Estilos -->
-    <link rel="stylesheet" href="css/style.css">
-    <link rel="stylesheet" href="css/login-cuenta.css">
+    <!-- Styles -->
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/login-cuenta.css">
 
     <title>Foodify</title>
 </head>
@@ -45,11 +45,11 @@
 <body>
     <header role="banner" class="header">
         <div class="logo">
-            <a href="index.html"><img src="assets/img/logotipos/imagotipo.png" alt="Foodify Logo"></a>
+            <a href="../index.html"><img src="../assets/img/logotipos/imagotipo.png" alt="Foodify Logo"></a>
         </div>
         <nav role="navigation" class="nav">
             <ul class="menu">
-                <li><a href="index.html">Home</a></li>
+                <li><a href="../index.html">Home</a></li>
                 <li><a href="#about">About</a></li>
                 <li><a href="#menu">Menu</a></li>
                 <li><a href="#contact">Contact</a></li>
@@ -59,72 +59,67 @@
             </div>
         </nav>
     </header>
-		 <div class="language-switch">
-            <img src="assets/img/es_flag.png" alt="Español" id="lang-es" class="lang-icon">
-            <img src="assets/img/en_flag.png" alt="English" id="lang-en" class="lang-icon">
-        </div>
+    <div class="language-switch">
+        <img src="../assets/img/es_flag.png" alt="Spanish" id="lang-es" class="lang-icon">
+        <img src="../assets/img/en_flag.png" alt="English" id="lang-en" class="lang-icon">
+    </div>
 
-    <!--TRABAJAR AQUI-->
+    <!-- WORK HERE -->
     <main role="main" class="content">
         <div class="contenedor-cuenta">
-            <h1>Crear cuenta</h1>
-            <button class="google-login" type="button">Acceder con cuenta de Google</button>
+            <h1>Create Account</h1>
+            <button class="google-login" type="button">Sign in with Google Account</button>
             <br>
-            <label for="usuario">Usuario</label><input type="text" id="usuario" required>
+            <label for="usuario">Username</label><input type="text" id="usuario" required>
             <br>
-            <label for="password">Contraseña</label><input type="password" id="password" required>
+            <label for="password">Password</label><input type="password" id="password" required>
             <br>
-            <label for="telefono">Telefono movil</label><input type="tel" id="telefono" name="telefono" required>
-       
+            <label for="telefono">Mobile Phone</label><input type="tel" id="telefono" name="telefono" required>
             <br>
             <div class="privacidad">
                 <input type="checkbox" id="privacy" required>
-                <label for="privacy">He leído y acepto la <a href="rgpd.html">Política de privacidad</a> y confirmo que soy mayor de edad.</label>
+                <label for="privacy">I have read and accept the <a href="../EN/rgpd-en.html">Privacy Policy</a> and confirm that I am of legal age.</label>
             </div>
-            <button type="button" id="crearCuentaButton">Crear cuenta</button>
-            <p class="link">¿Ya tienes una cuenta? <a href="login.html">Inicia sesión aquí</a></p>
+            <button type="button" id="crearCuentaButton">Create Account</button>
+            <p class="link">Already have an account? <a href="../EN/login-en.html">Log in here</a></p>
         </div>
-       </main> 
-       <footer role="contentinfo" class="footer">
+    </main>
+    <footer role="contentinfo" class="footer">
         <div class="footer-info">
             <div class="footer-help">
-                <h3>Ayuda</h3>
+                <h3>Help</h3>
                 <ul class="help">
-
-                    <li><a href="#">Cómo editar un pedido</a></li>
-                    <li><a href="#">Cuánto cuesta Wetaca</a></li>
-                    <li><a href="#">Cómo funciona</a></li>
-                    <li><a href="#">Preguntas frecuentes</a></li>
-                    <li><a href="#">Ticket restaurante</a></li>
-                    <li><a href="#">Contacto</a></li>
-
+                    <li><a href="#">How to edit an order</a></li>
+                    <li><a href="#">How much does Wetaca cost</a></li>
+                    <li><a href="#">How it works</a></li>
+                    <li><a href="#">Frequently Asked Questions</a></li>
+                    <li><a href="#">Restaurant Ticket</a></li>
+                    <li><a href="#">Contact</a></li>
                 </ul>
             </div>
 
             <div class="footer-about">
-                <h3>Conócenos</h3>
+                <h3>About Us</h3>
                 <ul class="about">
-
-                    <li><a href="#">¿Quienes somos?</a></li>
-                    <li><a href="#">Trabaja con nosotros</a></li>
-                    <li><a href="#">Colaboraciones</a></li>
-                    <li><a href="#">Wetaca para empresas</a></li>
-                    <li><a href="#">Nuestro blog</a></li>
-
+                    <li><a href="#">Who we are</a></li>
+                    <li><a href="#">Work with us</a></li>
+                    <li><a href="#">Partnerships</a></li>
+                    <li><a href="#">Wetaca for businesses</a></li>
+                    <li><a href="#">Our Blog</a></li>
                 </ul>
             </div>
 
             <div class="footer-eco">
-                <h3>Sostenibilidad</h3>
+                <h3>Sustainability</h3>
                 <ul class="eco">
-                    <li><a href="#" id="">Medio ambiente</a></li>
-                    <li><a href="#" id="">Envases sostenibles</a></li>
+                    <li><a href="#" id="">Environment</a></li>
+                    <li><a href="#" id="">Sustainable Packaging</a></li>
                     <li><a href="#" id="">Plastic Neutral</a></li>
                 </ul>
             </div>
         </div>
         <div class="footer-legal">
-            <p>&copy; 2025 FoodiFy. All rights reserved.</p>
+            <p>&copy; 2025 Foodify. All rights reserved.</p>
             <ul class="legal">
                 <li><a href="#privacy">Privacy Policy</a></li>
                 <li><a href="#terms">Terms of Service</a></li>
@@ -132,11 +127,7 @@
         </div>
     </footer>
 
-    <script src="scripts/script.js"></script>
-  
-    <script src="scripts/login.js"></script>
+    <script src="../scripts/script.js"></script>
+    <script src="../scripts/login.js"></script>
 </body>
-
-
 </html>
-  
