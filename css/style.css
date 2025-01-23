@@ -303,10 +303,10 @@ a {
     flex-flow: row nowrap;
     justify-content: center;
     align-items: center;
-    gap: 5rem;
+    gap: 1rem;
     padding: unset;
     transform: unset;
-    transition: transform 0.5s ease-out;
+    transition: unset;
   }
 
   .menu li {
