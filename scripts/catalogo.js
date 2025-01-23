@@ -2,16 +2,18 @@
 document.addEventListener("DOMContentLoaded", () => {
     const categoryFilter = document.getElementById("filter-category");
     const typeFilter = document.getElementById("filter-type");
+    const veganFilter = document.getElementById("filter-vegan");
     const gallery = document.getElementById("gallery");
     const langEs = document.getElementById("lang-es");
     const langEn = document.getElementById("lang-en");
+   // const langEu = document.getElementById("lang-eu");
     let platosData = [];
     let currentLanguage = "es";
 
     
     // Función para cargar platos desde el archivo JSON
     function loadPlatos(language) {
-        fetch(`../assets/data/platos-${language}.json`)
+        fetch(`../assets/Data/platos-${language}.json`)
             .then(response => {
                 if (!response.ok) throw new Error(`Error al cargar los datos: ${response.status}`);
                 return response.json();
@@ -37,11 +39,13 @@ document.addEventListener("DOMContentLoaded", () => {
                         <img src="${plato.foto}" alt="${plato.nombre}">
                         <span>${plato.calorias} kcal</span>
                     </div>
+                    <div class="infoPlato">
                     <div class="titulo"><h4>${plato.nombre}</h4></div>
                     <p class="categoria"><span data-traductor="categoria"></span>: ${plato.categoria}</p>
                     <p class="precio"><span data-traductor="precio"></span>: ${plato.precio}€</p>
                     <p class="calorias"><span data-traductor="calorias"></span>: ${plato.calorias}</p>
-                    <p class="vegano"><span data-traductor="vegano"></span>: ${plato.vegano ? "Sí" : "No"}</p>
+                    <p class="vegano"><span data-traductor="vegano"></span>: ${plato.vegano}</p>
+                    </div>
                     <div class="product-counter" data-id="${plato.id}">
                         <button class="counter-btn decrement">-</button>
                         <span class="counter-value">0</span>
@@ -64,7 +68,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
        // Función para cargar textos desde el archivo JSON de idioma
        function loadTexts(language) {
-        fetch(`../assets/data/textos-${language}.json`)
+        fetch(`../assets/Data/textos-${language}.json`)
             .then(response => response.json())
             .then(data => {
                 document.querySelectorAll("[data-traductor]").forEach(element => {
@@ -72,26 +76,33 @@ document.addEventListener("DOMContentLoaded", () => {
                     if (data[key]) {
                         element.textContent = data[key];
                     }
-                    loadMenu();
+                   
                 });
+                loadMenu();
             })
+            
             .catch(error => console.error("Error al leer las traducciones:", error));
     }
 
-    // funcion para leer opciones de menu segun el idioma
+    // funcion para leer opciones de menu segun el idioma, cambia el link 
    function loadMenu(){
+    const carpeta = currentLanguage.toUpperCase();
     const menu1 = document.querySelector('.menu li:first-child a');
-    const ruta1 = `index-${currentLanguage}.html`;
+    const ruta1 = `${carpeta}/index-${currentLanguage}.html`;
     menu1.setAttribute('href', ruta1);
     const menu2 = document.querySelector('.menu li:nth-child(2) a');
-    const ruta2 = `contacto-${currentLanguage}.html`;
+    const ruta2 = `${carpeta}/contacto-${currentLanguage}.html`;
     menu2.setAttribute('href', ruta2);
-   // const menu3 = document.querySelector('.menu li:nth-child(2) a')
-    //const ruta3 = `contacto-${currentLanguage}.html`;
+   // const menu3 = document.querySelector('.menu li:nth-child(3) a')
+    //const ruta3 = `catalogo-${currentLanguage}.html`;
    // menu3.setAttribute('href', ruta3);
     const menu4 = document.querySelector('.menu li:nth-child(4) a');
-    const ruta4 = `crearcuenta-${currentLanguage}.html`;
+    const ruta4 = `${carpeta}/crearcuenta-${currentLanguage}.html`;
     menu4.setAttribute('href', ruta4);
+    //link en icono carrito
+    const menu5 = document.querySelector('.cart a');
+    const ruta5 = `${carpeta}/cart-${currentLanguage}.html`;
+    menu5.setAttribute('href', ruta5);
 
    }
    
@@ -99,11 +110,13 @@ document.addEventListener("DOMContentLoaded", () => {
     function applyFilters() {
         const selectedCategory = categoryFilter.value;
         const selectedType = typeFilter.value;
+        const selectedVegan = veganFilter.value;
 
         const filteredPlatos = platosData.filter(plato => {
             const matchesCategory = selectedCategory === "all" || plato.filtroCategoria === selectedCategory;
             const matchesType = selectedType === "all" || plato.filtroOrden === selectedType;
-            return matchesCategory && matchesType;
+            const matchesVegan = selectedVegan === "all" || plato.filtroVegano === selectedVegan;
+            return matchesCategory && matchesType && matchesVegan;
         });
         loadTexts(currentLanguage);
         displayPlatos(filteredPlatos);
@@ -113,6 +126,7 @@ document.addEventListener("DOMContentLoaded", () => {
     // Eventos para filtros
     categoryFilter.addEventListener("change", applyFilters);
     typeFilter.addEventListener("change", applyFilters);
+    veganFilter.addEventListener("change", applyFilters);
 
     
     // Eventos para cambiar idioma
@@ -121,12 +135,18 @@ document.addEventListener("DOMContentLoaded", () => {
         loadTexts(currentLanguage);
         loadPlatos(currentLanguage);
     });
-
+  //English
     langEn.addEventListener("click", () => {
         currentLanguage = "en";
         loadTexts(currentLanguage);
         loadPlatos(currentLanguage);
     });
+    //PARA EUSKERA
+   /*langEu.addEventListener("click", () => {
+        currentLanguage = "eu";
+        loadTexts(currentLanguage);
+        loadPlatos(currentLanguage);
+    });*/
 
 
 //CONTADORES Y CARRITO 
@@ -240,6 +260,7 @@ document.addEventListener('DOMContentLoaded', () => {
   });
   
 
+
 // Llama a updateCartCount en puntos clave, como al cargar datos iniciales
    loadTexts(currentLanguage);
    loadPlatos(currentLanguage);
@@ -250,3 +271,19 @@ document.addEventListener('DOMContentLoaded', () => {
    
 // localStorage.clear(); //limpia localStorage
 });
+
+  // Scroll to Top Function para el boton to top
+  function scrollToTop() {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+}
+
+// muestra/Oculta el boton Back to top al hacer scroll
+window.addEventListener("scroll", function() {
+    const topButton = document.getElementById("top-button");
+    if (window.scrollY > window.innerHeight) {
+        topButton.style.display = "block";
+    } else {
+        topButton.style.display = "none";
+    }
+});
+
