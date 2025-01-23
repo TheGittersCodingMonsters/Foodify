@@ -13,7 +13,7 @@ function fetchCart() {
 // Render checkout items in the UI
 function renderCheckoutItems(cart) {
     let checkoutItemsHTML = ''; // Store checkout items HTML
-    let subtotal = 0; // Track total price
+    let total = 0; // Track total price
 
     // If cart is empty, display message
     if (cart.length === 0) {
@@ -38,13 +38,13 @@ function renderCheckoutItems(cart) {
                 <p class="item-total">$${(item.price * item.quantity).toFixed(2)}</p>
             </div>`;
 
-        // Calculate subtotal
-        subtotal += item.price * item.quantity;
+        // Calculate total
+        total += item.price * item.quantity;
     });
 
     // Update the checkout page with items and total price
     document.getElementById('checkoutCartItems').innerHTML = checkoutItemsHTML;
-    document.getElementById('totalPrice').textContent = `$${subtotal.toFixed(2)}`;
+    document.getElementById('totalPrice').textContent = `$${total.toFixed(2)}`;
 }
 
 // Validate and confirm checkout
@@ -57,34 +57,41 @@ function confirmCheckout() {
     const city = document.getElementById('city').value.trim();
     const state = document.getElementById('state').value.trim();
     const zipCode = document.getElementById('zipCode').value.trim();
+    // Now for payment method
     const paymentMethod = document.getElementById('paymentMethod').value;
+    const cardNumber = document.getElementById('cardNumber').value.trim();
+    const expirationDate = document.getElementById('expirationDate').value.trim();
+    const cvv = document.getElementById('cvv').value.trim();
 
     // Ensure all fields are filled
-    if (!email || !fullName || !phone || !streetAddress || !city || !state || !zipCode || !paymentMethod) {
-        alert("Please fill in all required fields.");
-        return;
-    }
+    if (!email || !fullName || !phone || !streetAddress || !city || !state || !zipCode || !paymentMethod || !cardNumber || !expirationDate || !cvv) {
+        if (location.href.indexOf("checkout-en.html") !== -1) {
+            alert("Please fill in all required fields");
+        } else {
+            alert("Por favor, rellene los campos obligatorios");
+        } return;
+    } 
 
-    // Validate credit card details if payment is by credit card
-    if (paymentMethod === 'creditCard') {
-        const cardNumber = document.getElementById('cardNumber').value.trim();
-        const expirationDate = document.getElementById('expirationDate').value.trim();
-        const cvv = document.getElementById('cvv').value.trim();
-        if (!cardNumber || !expirationDate || !cvv) {
-            alert("Please enter your credit card details.");
-            return;
-        }
+    // Proceed with checkout if the information is filled
+    if(location.href.indexOf("checkout-en.html") !== -1) {
+        alert("Checkout confirmed! Redirecting to confirmation page...");
+    } else {
+        alert("Checkout confirmado! Redirigiendo a la pagina de confirmacion...");
     }
-
-    // Proceed with checkout
-    alert("Checkout confirmed! Redirecting to confirmation page...");
     
+
     // Clear cart after checkout
     window.localStorage.removeItem("cart");
 
     // Redirect to confirmation page
-    window.location.href = "confirmation-en.html";
+    if (location.href.indexOf("checkout-en.html") !== -1) {
+        window.location.href = "confirmation-en.html";
+    } else {
+        window.location.href = "confirmation-es.html";
+    }
 }
+
+
 
 // Load cart on page load
 fetchCart();

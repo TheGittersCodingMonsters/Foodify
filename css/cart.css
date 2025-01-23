@@ -14,7 +14,9 @@
 }
 
 .cart-item {
+    margin-top: 20px;
     display: flex;
+    flex-direction: column;
     justify-content: space-between;
     align-items: center;
     padding: 10px 0;
@@ -38,6 +40,7 @@
 .total {
     font-size: 18px;
     font-weight: bold;
+    text-align: center;
 }
 
 .checkout-button {
