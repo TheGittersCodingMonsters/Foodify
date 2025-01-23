@@ -93,5 +93,7 @@ function confirmCheckout() {
     }
 }
 
+
+
 // Load cart on page load
 fetchCart();
