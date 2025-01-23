@@ -1,8 +1,4 @@
-main {
-    margin-top: 6rem;
-margin-left: 2rem;
-margin-right: 2rem;
-}
+
 
 .encabezado {
     margin-bottom: 2rem;
@@ -38,7 +34,7 @@ p {
 .formulario {
 
     margin-left: 2rem;
-    margin-right: 70%;
+    margin-right: 50%;
     margin-bottom: 3rem;
     border-radius: 5%;
     background-color: rgba(255, 255, 255, 0.5);

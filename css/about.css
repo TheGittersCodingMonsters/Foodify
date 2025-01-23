@@ -21,13 +21,13 @@ h1 {
 p {
     display: flex;
     align-items: center;
-    margin: 1rem, 3rem, 1rem, 3rem;
+    margin: 2rem, 3rem, 2rem, 3rem;
     background-color: rgba(255, 255, 255, 0.5);
     border-radius: 5%;
     gap: 2rem;
 }
 
-    img {
+#nosotros img {
         width: 90px;
         height: 90px;
         float: left;
