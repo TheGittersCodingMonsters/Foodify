@@ -190,6 +190,36 @@ a {
   border-radius: 100%;
 }
 
+/* Cart modal */
+.cart-overlay {
+  position: fixed;
+  display: none;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vw;
+  opacity: 40%;
+  background-color: var(--textoNormal);
+  z-index: 299;
+}
+
+.cart-modal {
+  position: fixed;
+  display: none;
+  top: 0;
+  right: 0;
+  z-index: 300;
+  background-color: var(--fondoSection);
+  width: 20vw;
+  height: 100vh;
+  flex-flow: column nowrap;
+}
+
+.cart-overlay.clicked,
+.cart-modal.clicked {
+  display: flex;
+}
+
 /** languages **/
 .language-switch {
   position: absolute;
