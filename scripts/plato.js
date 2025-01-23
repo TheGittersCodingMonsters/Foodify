@@ -69,20 +69,25 @@ function loadProductDetail(language) {
                 });
 }
 
-    // funcion para leer opciones de menu segun el idioma
+    // funcion para leer opciones de menu segun el idioma, cambia el link 
     function loadMenu(){
+        const carpeta = currentLanguage.toUpperCase();
         const menu1 = document.querySelector('.menu li:first-child a');
-        const ruta1 = `index-${currentLanguage}.html`;
+        const ruta1 = `${carpeta}/index-${currentLanguage}.html`;
         menu1.setAttribute('href', ruta1);
         const menu2 = document.querySelector('.menu li:nth-child(2) a');
-        const ruta2 = `contacto-${currentLanguage}.html`;
+        const ruta2 = `${carpeta}/contacto-${currentLanguage}.html`;
         menu2.setAttribute('href', ruta2);
-       // const menu3 = document.querySelector('.menu li:nth-child(2) a')
-        //const ruta3 = `contacto-${currentLanguage}.html`;
+       // const menu3 = document.querySelector('.menu li:nth-child(3) a')
+        //const ruta3 = `catalogo-${currentLanguage}.html`;
        // menu3.setAttribute('href', ruta3);
         const menu4 = document.querySelector('.menu li:nth-child(4) a');
-        const ruta4 = `crearcuenta-${currentLanguage}.html`;
+        const ruta4 = `${carpeta}/crearcuenta-${currentLanguage}.html`;
         menu4.setAttribute('href', ruta4);
+        //link en icono carrito
+        const menu5 = document.querySelector('.cart a');
+        const ruta5 = `${carpeta}/cart-${currentLanguage}.html`;
+        menu5.setAttribute('href', ruta5);
     
        }
 
@@ -111,21 +116,22 @@ langEn.addEventListener("click", () => {
      localStorage.setItem("cart", JSON.stringify(cart));
  }
  
- // Función para actualizar un producto en el carrito
- function updateProductInCart(productId, productName, productPrice, quantity) {
-     const cart = getCart();
- 
-     if (quantity === 0) {
-         delete cart[productId]; // Eliminar el producto si la cantidad es 0
-     } else {
-         cart[productId] = {
-             id: productId,
-             name: productName,
-             price: productPrice,
-             quantity: quantity,
-         };
-     }
- 
+// Función para actualizar un producto en el carrito
+function updateProductInCart(productId, productName, productPrice, quantity, image) {
+    const cart = getCart();
+
+    if (quantity === 0) {
+        delete cart[productId]; // Eliminar el producto si la cantidad es 0
+    } else {
+        cart[productId] = {
+            id: productId,
+            name: productName,
+            price: productPrice,
+            quantity: quantity,
+            image: image
+        };
+    }
+
      saveCart(cart);
      updateCartCount(); // Actualizar el contador del carrito
  }
