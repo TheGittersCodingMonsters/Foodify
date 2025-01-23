@@ -1,7 +1,12 @@
+main {
+    margin-left: 3rem;
+}
+
 #nosotros {
     display: flex;
     flex-direction: column;
     justify-content: space-around;
+    gap: 2rem;
 }
 
 h1 {
@@ -16,6 +21,10 @@ h1 {
 p {
     display: flex;
     align-items: center;
+    margin: 1rem, 3rem, 1rem, 3rem;
+    background-color: rgba(255, 255, 255, 0.5);
+    border-radius: 5%;
+    gap: 2rem;
 }
 
     img {

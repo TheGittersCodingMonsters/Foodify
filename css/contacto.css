@@ -34,8 +34,18 @@ p {
     font-size: 2rem;
 }
 
+
+ /* .formulario {
+    margin-left: 2rem;
+    margin-right: 70%;
+    margin-bottom: 3rem;
+    border-radius: 5%;
+    background-color: rgba(255, 255, 255, 0.5);
+    padding: 2rem;
+} */
+
 .rgpd {
-    font-size: 2rem;
+   font-size: 2rem;
    margin-top: 2rem;
    margin-bottom: 2rem; 
 }
