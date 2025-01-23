@@ -13,7 +13,7 @@ document.addEventListener("DOMContentLoaded", () => {
     
     // Función para cargar platos desde el archivo JSON
     function loadPlatos(language) {
-        fetch(`../assets/Data/platos-${language}.json`)
+        fetch(`../assets/data/platos-${language}.json`)
             .then(response => {
                 if (!response.ok) throw new Error(`Error al cargar los datos: ${response.status}`);
                 return response.json();
@@ -68,7 +68,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
        // Función para cargar textos desde el archivo JSON de idioma
        function loadTexts(language) {
-        fetch(`../assets/Data/textos-${language}.json`)
+        fetch(`../assets/data/textos-${language}.json`)
             .then(response => response.json())
             .then(data => {
                 document.querySelectorAll("[data-traductor]").forEach(element => {
