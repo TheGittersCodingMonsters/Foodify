@@ -29,7 +29,8 @@ function renderCartItems(cart) {
     cart.forEach(item => {
         cartItemsHTML += `
             <div class="cart-item">
-            <div 
+            <div>
+                <img src="${item.image}" alt="${item.name}" class="item-image" style="height: 80px; width: 80px; justify-content:center; display:block; margin: 0 auto 20px; border-radius: 10px;">                
                 <span class="item-name">${item.name}</span>
                 <span>$${item.price.toFixed(2)}</span>
                 <span>x ${item.quantity}</span>
