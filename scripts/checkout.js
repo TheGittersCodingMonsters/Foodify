@@ -57,33 +57,40 @@ function confirmCheckout() {
     const city = document.getElementById('city').value.trim();
     const state = document.getElementById('state').value.trim();
     const zipCode = document.getElementById('zipCode').value.trim();
+    // Now for payment method
     const paymentMethod = document.getElementById('paymentMethod').value;
+    const cardNumber = document.getElementById('cardNumber').value.trim();
+    const expirationDate = document.getElementById('expirationDate').value.trim();
+    const cvv = document.getElementById('cvv').value.trim();
 
     // Ensure all fields are filled
-    if (!email || !fullName || !phone || !streetAddress || !city || !state || !zipCode || !paymentMethod) {
-        alert("Please fill in all required fields.");
-        return;
+    if (!email || !fullName || !phone || !streetAddress || !city || !state || !zipCode || !paymentMethod || !cardNumber || !expirationDate || !cvv) {
+        if (location.href.indexOf("checkout-en.html") !== -1) {
+            alert("Please fill in all required fields");
+        } else {
+            alert("Por favor, rellene los campos obligatorios");
+        } return;
+    } 
+
+    // Proceed with checkout if the information is filled
+    if(location.href.indexOf("checkout-en.html") !== -1) {
+        alert("Checkout confirmed! Redirecting to confirmation page...");
+    } else {
+        alert("Checkout confirmado! Redirigiendo a la pagina de confirmacion...");
     }
 
-    // Validate credit card details if payment is by credit card
-    if (paymentMethod === 'creditCard') {
-        const cardNumber = document.getElementById('cardNumber').value.trim();
-        const expirationDate = document.getElementById('expirationDate').value.trim();
-        const cvv = document.getElementById('cvv').value.trim();
-        if (!cardNumber || !expirationDate || !cvv) {
-            alert("Please enter your credit card details.");
-            return;
-        }
-    }
-
-    // Proceed with checkout
-    alert("Checkout confirmed! Redirecting to confirmation page...");
     
+    // if the cart has 0 value go back to the catalog
+
     // Clear cart after checkout
     window.localStorage.removeItem("cart");
 
     // Redirect to confirmation page
-    window.location.href = "confirmation-en.html";
+    if (location.href.indexOf("checkout-en.html") !== -1) {
+        window.location.href = "confirmation-en.html";
+    } else {
+        window.location.href = "confirmation-es.html";
+    }
 }
 
 // Load cart on page load
