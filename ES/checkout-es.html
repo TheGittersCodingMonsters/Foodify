@@ -29,7 +29,7 @@
                     <div class="form-section">
                         <h2>Direccion de Entrega</h2>
                         <input type="text" placeholder="Direccion de la calle" id="streetAddress" required>
-                        <input type="text" placeholder="City" id="Cuidad" required>
+                        <input type="text" placeholder="City" id="city" required>
                         <input type="text" placeholder="Estado/Provincia" id="state" required>
                         <input type="text" placeholder="ZIP/Codigo Postal" id="zipCode" required>
                         <select>
@@ -64,13 +64,13 @@
 
                     <!-- Checkout Button -->
                     <div class="form-section">
-                        <button class="checkout-button" onclick="confirmCheckout()">Confirm Checkout</button>
+                        <button class="checkout-button" onclick="confirmCheckout()">Confirma el Checkout</button>
                     </div>
                 </div>
 
                 <!-- Right Column: Order Summary -->
                 <div class="checkout-right">
-                    <h2>Order Summary</h2>
+                    <h2>Resumen del Pedido</h2>
                     <!-- Dynamic cart items will be inserted here -->
                     <div id="checkoutCartItems"></div>
                     
@@ -81,7 +81,7 @@
                     </div>
                     <div class="summary-item">
                         <p>Total</p>
-                        <p id="totalPrice">$0.00</p>
+                        <p id="totalPrice">€0.00</p>
                     </div>
                 </div>
             </div>
