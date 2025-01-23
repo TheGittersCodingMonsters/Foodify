@@ -58,10 +58,14 @@ function loadProductDetail(language) {
         fetch(`../assets/data/textos-${language}.json`)
                 .then(response => response.json())
                 .then(data => {
+                    platoData = data;
+                 
+                   alert();
                     // Encuentra todos los elementos con el atributo data-traductor
                     document.querySelectorAll("[data-traductor]").forEach(element => {
                         const key = element.getAttribute("data-traductor");
                         if (data[key]) {
+                         
                             element.textContent = data[key];
                         }
                         loadMenu();
@@ -141,13 +145,11 @@ function updateProductInCart(productId, productName, productPrice, quantity, ima
      const counters = document.querySelectorAll(".product-counter");
      const cart = getCart();
  
-     counters.forEach(counter => {
-         const id = counter.getAttribute("data-id");
-         const productImage = counter.getAttribute(".plato-img img src");
-         const productName = counter.closest(".productDetail").querySelector(".titulo h4").textContent;
-         const productPrice = parseFloat(
-             counter.closest(".productDetail").querySelector(".precio").textContent.replace(/[^\d.]/g, "")
-         );
+         counters(counter => {
+         const id = platoData.id;
+         const productImage = platoData.foto;
+         const productName =  platoData.nombre;
+         const productPrice = parseFloat(platoData.precio);
  
          const decrementBtn = counter.querySelector(".decrement");
          const incrementBtn = counter.querySelector(".increment");
@@ -171,7 +173,7 @@ function updateProductInCart(productId, productName, productPrice, quantity, ima
              let currentValue = parseInt(counterValue.textContent);
              currentValue++;
              counterValue.textContent = currentValue;
-             updateProductInCart(id, productName, productPrice, currentValue);
+             updateProductInCart(id, productName, productPrice, currentValue, productImage);
          });
      });
  
