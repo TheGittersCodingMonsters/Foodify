@@ -1,7 +1,6 @@
 <!DOCTYPE html>
-<html lang="en">
-
-<head>
+<html lang="es">
+  <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
@@ -13,7 +12,7 @@
     <!-- Open Graph para redes sociales -->
     <meta property="og:title" content="Foodify">
     <meta property="og:description" content="Delicious prepared meals delivered to your doorstep.">
-    <meta property="og:image" content="../assets/img">
+    <meta property="og:image" content="image.jpg">
     <meta property="og:url" content="https://foodyfy.com">
     <meta property="og:type" content="website">
 
@@ -30,41 +29,46 @@
 
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link
-        href="https://fonts.googleapis.com/css2?family=Caprasimo&family=Imprima&family=Modak&family=Old+Standard+TT:ital,wght@0,400;0,700;1,400&display=swap"
-        rel="stylesheet">
-
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Caprasimo&family=Imprima&family=Modak&family=Noticia+Text:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
     <!-- Estilos -->
-    <link rel="stylesheet" href="../css/login-cuenta.css">
     <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/login-cuenta.css">
 
     <title>Foodify</title>
 </head>
 
 <body>
-    <header role="banner" class="header">
-        <div class="logo">
-            <a href="../index.html"><img src="../assets/img/logotipos/imagotipo.png" alt="Foodify Logo"></a>
-        </div>
-        <nav role="navigation" class="nav">
-            <ul class="menu">
-                <li><a href="index.html">Home</a></li>
-                <li><a href="#about">About</a></li>
-                <li><a href="#menu">Menu</a></li>
-                <li><a href="#contact">Contact</a></li>
-            </ul>
-            <div class="menu-mobile">
-                <i class="fa-solid fa-bars"></i>
+    <div class="container">
+        <header role="banner" class="header">
+            <div class="logo-mobile">
+                <a href="index.html"><img src="../assets/img/logotipos/imagotipo.png" alt="Foodify Logo"></a>
             </div>
-        </nav>
-    </header>
-		 <div class="language-switch">
-            <img src="../assets/img/es_flag.png" alt="Español" id="lang-es" class="lang-icon">
-            <img src="../assets/img/en_flag.png" alt="English" id="lang-en" class="lang-icon">
-        </div>
+            <div class="logo-regular">
+                <a href="index.html"><img src="../assets/img/logotipos/logotipo-letras.png" alt="Foodify Logo"></a>
+            </div>
+            <nav role="navigation" class="nav">
+                <ul class="menu">
+                    <li><a href="index.html" data-traductor="home">Home</a></li>
+                    <li><a href="ES/contacto-es.html" data-traductor="contacto">Contacto</a></li>
+                    <li><a href="catalogo.html" data-traductor="platos">Platos</a></li>
+                    <li><a href="ES/crearcuenta-es.html" data-traductor="micuenta">Mi cuenta</a></li>
+                </ul>
+                <div class="menu-mobile">
+                    <i class="fa-solid fa-bars"></i>
+                </div>
+                <div class="cart">
+                    <a href="ES/cart-es.html"><i class="fa-solid fa-cart-shopping"></i></a>
+                    <span class="cart-count">0</span>
+                </div>
+            </nav>
+        </header>
 
-    <!--TRABAJAR AQUI-->
+    <div class="language-switch">
+        <a href="#"><img src="../assets/img/es_flag.png" alt="Español" id="lang-es" class="lang-icon"></a>
+        <a href="../en/rgpd-en.html"><img src="../assets/img/en_flag.png" alt="English" id="lang-en" class="lang-icon"></a>
+        
+    </div>
     <main role="main" class="content">
         <div class="contenedor-cuenta">
             <h1>Crear cuenta</h1>
@@ -85,38 +89,36 @@
             <p class="link">¿Ya tienes una cuenta? <a href="../ES/login-es.html">Inicia sesión aquí</a></p>
         </div>
        </main> 
-       <script src="../scripts/login.js"></script>
-       <script src="../scripts/script.js"></script>
-</body>
-       <footer role="contentinfo" class="footer">
+    </div>
+    <footer role="contentinfo" class="footer">
         <div class="footer-info">
             <div class="footer-help">
                 <h3>Ayuda</h3>
                 <ul class="help">
-
+    
                     <li><a href="#">Cómo editar un pedido</a></li>
                     <li><a href="#">Cuánto cuesta Wetaca</a></li>
                     <li><a href="#">Cómo funciona</a></li>
                     <li><a href="#">Preguntas frecuentes</a></li>
                     <li><a href="#">Ticket restaurante</a></li>
                     <li><a href="contacto-es.html">Contacto</a></li>
-
+    
                 </ul>
             </div>
-
+    
             <div class="footer-about">
                 <h3>Conócenos</h3>
                 <ul class="about">
-
-                    <li><a href="../ES/nosotros-es.html">¿Quienes somos?</a></li>
+    
+                    <li><a href="nosotros-es.html">¿Quienes somos?</a></li>
                     <li><a href="#">Trabaja con nosotros</a></li>
                     <li><a href="#">Colaboraciones</a></li>
                     <li><a href="#">Wetaca para empresas</a></li>
                     <li><a href="#">Nuestro blog</a></li>
-
+    
                 </ul>
             </div>
-
+    
             <div class="footer-eco">
                 <h3>Sostenibilidad</h3>
                 <ul class="eco">
@@ -129,10 +131,13 @@
         <div class="footer-legal">
             <p>&copy; 2025 FoodiFy. All rights reserved.</p>
             <ul class="legal">
-                <li><a href="../ES/about-es.html">The Gitters</a></li>
-                <li><a href="../ES/rgpd-es.html">Privacy Policy</a></li>
+                <li><a href="about-es.html">The Gitters</a></li>
+                <li><a href="#">Privacy Policy</a></li>
                 <li><a href="#terms">Terms of Service</a></li>
             </ul>
         </div>
     </footer>
+       <script src="../scripts/login.js"></script>
+       <script src="../scripts/script.js"></script>
+</body>
 </html>
