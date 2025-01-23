@@ -7,26 +7,34 @@
 }
 
 #catalogo .filter-nav {
+   display:flex;
+   flex-direction:row; /*por defecto*/
+   justify-content:space-around;
+   align-items:center;
     padding: 20px;
     text-align: center;
+    width:100vw;
 }
 
-#catalogo .filter-nav button {
+#catalogo .filter-nav select {
     margin: 0 10px;
     padding: 10px 20px;
     cursor: pointer;
+    width:100%;
 }
 
 #catalogo .gallery {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
-    gap: 20px;
+    gap: 25px;
     padding: 20px;
 }
 #catalogo .productDetail{
-    font-size: 2rem;
-	position: relative; /* Necesario para posicionar el contador en la parte inferior */
-	padding-bottom: 60px; /* Espacio reservado para el contador */
+  display: flex; 
+  flex-direction: column; 
+  font-size: 2rem;
+  height: 100%; /* Asegura que el contenedor use toda la altura disponible */
+
 }
 #catalogo .productDetail p:last-child{
     font-size: 2rem;
@@ -38,6 +46,7 @@
     cursor: pointer;
 	background-color:#ffffff; 
     border-radius:25px;
+
 }
 
 #catalogo .img-plato{
@@ -47,6 +56,7 @@
     position:relative;
     
 }
+
 #catalogo .img-plato span{
     position: absolute;
     display: block;
@@ -73,17 +83,13 @@
 
 /** estilos del contador de pedido bajo foto plato**/
 #catalogo .product-counter {
-   position: absolute;
-    bottom: 0;
-    left: 0;
-    width: 100%;
+    margin-top: auto; /* Empuja el contador al fondo del contenedor */
     display: flex;
     justify-content: space-between;
     align-items: center;
     border-top: 1px solid #ccc;
     background-color: #f9f9f9;
-    z-index: 10; /* Superior para estar encima del contenido */
-	height: 50px;
+	  height: 50px;
 }
 
 #catalogo .counter-btn {
@@ -124,7 +130,6 @@
   appearance: none; /* Elimina el estilo predeterminado */
   background-color: white;
   color: rgb(0, 117, 22);
-  border: none;
   border-radius: 4px;
   padding: 0.5rem 1rem;
   font-size: 1.5rem;
@@ -143,24 +148,20 @@ background-repeat: no-repeat;
 background-position: right 1rem center;
 background-size: 3rem;
 }
-/*flecha arriba*/
-#catalogo select:focus {
+/* Cambio en el borde solo si la opción seleccionada es distinta de "all" */
+#catalogo select:not([value="all"]) {
   border: 2px solid rgb(0, 117, 22);
-  background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="rgb(0, 117, 22)" width="48" height="48"><path d="M7 14l5-5 5 5H7z"/></svg>');
-}
-/* Estilo del submenu (opciones desplegadas) flecha arriba*/
-#catalogo select:focus::after {
-background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="rgb(0, 117, 22)" width="48" height="48"><path d="M7 14l5 5 5-5H7z"/></svg>');
-}
-/* Cambia a flecha hacia arriba cuando está abierto */
-#catalogo select.open::after {
-background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="rgb(0, 117, 22)" width="48" height="48"><path d="M7 10l5 5 5-5H7z"/></svg>');
 }
 
-/* Personalización adicional cuando se selecciona una opción que no sea "all" */
-/*#catalogo select:not([value="all"]):active {*/
-#catalogo .selected{
-  border: 2px solid rgb(0, 117, 22);
+/* Restaurar borde si la opción seleccionada es "all" */
+#catalogo select[value="all"] {
+  border: none;
+}
+
+/* Cambia a flecha hacia arriba cuando abre */
+
+#catalogo select.open {
+  background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="rgb(0, 117, 22)" width="48" height="48"><path d="M7 14l5-5 5 5H7z"/></svg>');
 }
 
 #catalogo option {
@@ -171,9 +172,30 @@ background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/200
 }
 
 #catalogo option:hover {
-  background-color: var(--verdeClaro);
+  background-color: var(--fondoBackground);
 }
 
+/** boton up to top **/
+#top-button {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background-color: var(--fondoBackground);
+  color: var(--subtitulos);
+  border: 2px solid var(--subtitulos);
+  padding: 10px 15px;
+  border-radius: 50%;
+  cursor: pointer;
+  font-size: 20px;
+  display: none;
+  transition: background-color 0.3s;
+  z-index:300;
+}
+
+#top-button:hover{
+  background-color: var(--subtitulos);
+color: var(--verdeClaro);
+}
 
 /* Mediaqueries */
 @media (max-width: 768px) {
@@ -188,9 +210,6 @@ background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/200
         grid-template-columns: 1fr;
     }
 }
-
-
-
 
 
 

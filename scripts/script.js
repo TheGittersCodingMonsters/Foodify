@@ -9,7 +9,14 @@
   // Funcion Menu
   function showMenu(){
     menu.classList.toggle("clicked");
+  };
+
+  // Asegúrate de que en pantallas grandes no se añade la clase `clicked`.
+window.addEventListener('resize', () => {
+  if (window.innerWidth >= 1024) {
+      menu.classList.remove('clicked');
   }
+});
 
 
   
