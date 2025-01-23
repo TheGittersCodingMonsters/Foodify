@@ -3,12 +3,35 @@
   const menu = document.querySelector(".menu");
 
   const cartButton = document.querySelector(".cart");
-  menuButton.addEventListener("click", showMenu);
-//   cartButton.addEventListener("click", showCart);
+  const cartOverlay = document.querySelector(".cart-overlay");
+  const cartModal = document.querySelector(".cart-modal");
 
-  // Funcion Menu
-  function showMenu(){
-    menu.classList.toggle("clicked");
+
+// Eventos
+cartButton.addEventListener("click", toggleCart); // Mostrar/ocultar el carrito al hacer clic
+cartOverlay.addEventListener("click", closeCart); // Cerrar el carrito al hacer clic en el overlay
+
+// Función para mostrar/ocultar el carrito
+function toggleCart() {
+  cartOverlay.classList.toggle("clicked"); // Alterna la visibilidad de la superposición
+  cartModal.classList.toggle("clicked"); // Alterna la visibilidad del modal
+}
+
+// Función para cerrar el carrito
+function closeCart() {
+  cartOverlay.classList.remove("clicked"); // Asegura que se oculte la superposición
+  cartModal.classList.remove("clicked"); // Asegura que se oculte el modal
+}
+
+/*    // Funcion Cart
+   function showCart(){
+    cartButton.classList.toggle("clicked");
+  };
+ */
+   // Funcion Cart
+   function showOverlay(){
+    cartOverlay.classList.toggle("clicked");
+    cartModal.classList.toggle("clicked");
   };
 
   // Asegúrate de que en pantallas grandes no se añade la clase `clicked`.
@@ -17,8 +40,6 @@ window.addEventListener('resize', () => {
       menu.classList.remove('clicked');
   }
 });
-
-
   
   // Función para obtener el carrito desde localStorage
    const cartCountElement = document.querySelector(".cart-count");
