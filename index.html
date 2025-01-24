@@ -58,7 +58,7 @@
                     <i class="fa-solid fa-bars"></i>
                 </div>
                 <div class="cart">
-                    <a href="ES/cart-es.html"><i class="fa-solid fa-cart-shopping"></i></a>
+                    <i class="fa-solid fa-cart-shopping"></i>
                     <span class="cart-count">0</span>
                 </div>
             </nav>
@@ -67,6 +67,18 @@
             <img src="../assets/img/es_flag.png" alt="Español" id="lang-es" class="lang-icon">
             <img src="../assets/img/en_flag.png" alt="English" id="lang-en" class="lang-icon">
         </div>
+                <div class="cart-overlay"></div>
+                <div class="cart-modal">
+                    <h1>Tu carrito</h1>
+                    <div id="cartItems">
+                        <!-- Cart items will be dynamically inserted here -->
+                    </div>
+                    <div class="cart-footer">
+                        <p class="total">Total: €<span id="totalPrice">0.00</span></p>
+                        <button class="checkout-button" onclick="goToCheckout()">Proceder al Checkout</button>
+                    </div>
+                </div>
+
         <main role="main" class="content">
             <section id="hero">
                 <div class="hero-img"></div>
@@ -161,6 +173,7 @@
     </footer>
 
     <script src="scripts/script.js"></script>
+    <script src="scripts/cart.js"></script>
 </body>
 
 </html>

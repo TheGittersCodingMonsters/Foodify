@@ -29,7 +29,7 @@ function renderCheckoutItems(cart) {
             <div class="checkout-item">
                 <div class="product-details">
                     <!-- Display product image -->
-                    <img src="${item.image}" alt="${item.name}" class="product-image" style="width: 100px; height: 100px;">
+                    <img src="${item.image}" alt="${item.name}" class="product-image" style="width: 80px; height: 80px; border-radius: 10px; border: solid 3px white;">
                     <div class="product-info">
                         <p class="item-name">${item.name}</p>
                         <p>Quantity: ${item.quantity}</p>
@@ -44,7 +44,12 @@ function renderCheckoutItems(cart) {
 
     // Update the checkout page with items and total price
     document.getElementById('checkoutCartItems').innerHTML = checkoutItemsHTML;
-    document.getElementById('totalPrice').textContent = `$${total.toFixed(2)}`;
+    // Change the currency and it is between Dollar and Euro
+    if (location.href.indexOf("checkout-en.html") !== -1) {
+        document.getElementById('totalPrice').textContent = `$${total.toFixed(2)}`;
+    } else {
+        document.getElementById('totalPrice').textContent = `€${total.toFixed(2)}`;
+    }
 }
 
 // Validate and confirm checkout
@@ -90,8 +95,6 @@ function confirmCheckout() {
         window.location.href = "confirmation-es.html";
     }
 }
-
-
 
 // Load cart on page load
 fetchCart();
