@@ -17,7 +17,7 @@ function renderCartItems(cart) {
 
     // If the cart is empty, show a message and disable checkout
     if (cart.length === 0) {
-        document.getElementById('cartItems').innerHTML = `
+        document.querySelector('.cartItems').innerHTML = `
             <p>Your cart is empty. Add some items to proceed!</p>`;
         document.querySelector('.checkout-button').addEventListener('click', function () {
             window.location.href = "../../catalogo.html";
@@ -29,17 +29,18 @@ function renderCartItems(cart) {
     cart.forEach(item => {
         cartItemsHTML += `
             <div class="cart-item">
-            <div>
-                <img src="${item.image}" alt="${item.name}" class="item-image" style="height: 80px; width: 80px; justify-content:center; display:block; margin: 0 auto 20px; border-radius: 10px;">                
-                <span class="item-name">${item.name}</span>
-                <span>$${item.price.toFixed(2)}</span>
-                <span>x ${item.quantity}</span>
+                <img src="${item.image}" alt="${item.name}" class="item-img">                
+                <div class="cart-elements">
+                    <span class="item-name">${item.name}</span>
+                    <span class="item-price">$${item.price.toFixed(2)}</span>
+                    <span class="item-quantity">x ${item.quantity}</span>
+                </div>
             </div>`;
         total += item.price * item.quantity;
     });
 
     // Insert items into the page
-    document.getElementById('cartItems').innerHTML = cartItemsHTML;
+    document.querySelector('.cartItems').innerHTML = cartItemsHTML;
     
     // Show total price
     document.getElementById('totalPrice').textContent = total.toFixed(2);

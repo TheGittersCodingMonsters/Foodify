@@ -100,13 +100,12 @@ a {
   top: 0;
   left: 0;
   width: 100vw;
-  min-height: 100vh;
+  height: auto;
   background: var(--verdeClaro) repeat center/150rem url("../assets/img/elements/mosaico-comida.png");
   font-family: "Caprasimo", 'Times New Roman', Times, serif;
   font-size: 5rem;
   display: flex;
   flex-flow: column nowrap;
-  justify-content: center;
   align-items: center;
   gap: 5rem;
   padding: 20rem 0;
@@ -205,20 +204,68 @@ a {
 
 .cart-modal {
   position: fixed;
+  z-index: 300;
   display: none;
   top: 0;
   right: 0;
-  z-index: 300;
   background-color: var(--fondoSection);
-  width: 20vw;
   height: 100vh;
   flex-flow: column nowrap;
+  transform: translateX(-100%);
 }
 
-.cart-overlay.clicked,
+.cart-overlay.clicked{
+  display: block;
+}
+
 .cart-modal.clicked {
   display: flex;
+  transform: translateX(0%);
+  transition: transform 0.5s ease-out;
 }
+
+.cartItems {
+  display: flex;
+  flex-direction: column;
+  margin: 1rem 3rem;
+  gap: 2rem;
+}
+
+.cart-item {
+  margin: 0;
+  border: 2px solid var(--subtitulos);
+  display: flex;
+  gap: 1rem;
+  background-color: var(--fondoBackground);
+  border-radius: 2rem;
+}
+
+.cart-item img{
+  width: 10rem;
+ 
+  object-fit: cover;
+  justify-content:center; 
+  display: block; 
+  border-radius: 2rem 0 0 2rem;
+}
+
+.cart-elements {
+  display: flex;
+  flex-direction: column;
+}
+.item-name{
+  font-size: 2rem;
+  padding: 1rem;
+}
+.item-price{
+  font-size: 2.4rem;
+  align-self: flex-end;
+}
+.item-quantity  {
+  font-size: 3rem;
+}
+
+
 
 /** languages **/
 .language-switch {
@@ -313,6 +360,8 @@ margin-top: 8rem;
     transform: translateY(0%);
   }
 
+
+
   /** languages **/
   .language-switch {
     display: flex;
@@ -351,6 +400,8 @@ margin-top: 8rem;
     background-color: var(--verde);
     transition: all 550ms cubic-bezier(0.19, 1, 0.22, 1);
   }
+
+
 
   /* Sections */
   #hero {
