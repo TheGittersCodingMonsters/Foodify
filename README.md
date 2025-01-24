@@ -1,44 +1,48 @@
+
+
 Este proyecto es un ejercicio realizado en el Bootcamp Full-Stack de PeñascalF5.
 
-Los integrantes del grupo son:
+Los integrantes del grupo The Gitters son:ç
 
-<ul>
-<li> [![Belén](assets/img/avatares/belen.jpg)](https://github.com/b6l6n): Product Owner del proyecto. Es la encargada de la relación con el cliente, transmitir sus necesidades al equipo y presentar los resultados para su validación.</li>
+| EQUIPO | FUNCIONES |
+|-------------|-----------------------------------------------------------------|
+| [<img src="assets/img/avatares/belen.jpg" alt="Belén" width="100">](https://github.com/b6l6n) | Product Owner del proyecto. Es la encargada de la relación con el cliente, transmitir sus necesidades al equipo y presentar los resultados para su validación.|
+| [<img src="assets/img/avatares/paco.png" alt="Paco" width="100">](https://github.com/githpaco) | Scrum Master. Es el responsable de que todo funcione correctamente,que el equipo trabaje de manera fluida y resolver aquellos problemas que puedan surgir durante el desarrollo. |
+| [<img src="assets/img/avatares/gaizka.jpg" alt="Gaizka" width="100">](https://github.com/gaizkamg) | Además de programador realiza las labores de diseño visual de la página web |
+| [<img src="assets/img/avatares/igor.jpg" alt="Igor" width="100">](https://github.com/igoribon) | Programador dentro del proyecto |
+| [<img src="assets/img/avatares/youssef.png" alt="Youssef" width="100">](https://github.com/SideWalk29) | Programador dentro del proyecto |
 
-<li> Paco: Scrum Master. Es el responsable de que todo funcione correctamente,que el equipo trabaje de manera fluida y resolver aquellos problemas que puedan surgir durante el desarrollo.</li>
 
-<li> Gaizka: además de programador realiza las labores de diseño visual de la página web.</li>
 
-<li> Igor: Programador dentro del proyecto</li>
-
-<li> Youssef: Programador dentro del proyecto.</li>
-
-</ul>
 
 El proyecto tiene los siguientes parámetros:
+<ul>
+<li>Se solicitó el desarrollo de una página web de comercio electrónico que utilizara todo lo aprendido hasta el momento dentro del Bootcamp.</li>
 
-Se solicitó el desarrollo de una página web de comercio electrónico que utilizara todo lo aprendido hasta el momento dentro del Bootcamp.
+<li>Por la parte de programación debe contener código HTML, CSS, Javascript, documentos JSON y ser responsive para poder ser presentada en dispositivos móviles.</li>
 
-Por la parte de programación debe contener código HTML, CSS, Javascript, documentos JSON y ser responsive para poder ser presentada en dispositivos móviles.
+<li>Al ser un proyecto en grupo se deberá utilizar GIT y GITHUB para el desarrollo común del código.</li>
 
-Al ser un proyecto en grupo se deberá utilizar GIT y GITHUB para el desarrollo común del código.
+<li>Por la parte de soft skills se deben implementar técnicas SCRUM y AGILE.</li>
 
-Por la parte de soft skills se deben implementar técnicas SCRUM y AGILE.
-
-Se creará un tablero de TRELLO para el seguimiento de las tareas y una presentación en FIGMA para el diseño preliminar de la web.
+<li>Se creará un tablero de TRELLO para el seguimiento de las tareas y una presentación en FIGMA para el diseño preliminar de la web.</li>
+</ul>
 
 Los parámetros más importantes del proyecto son:
+<ul>
+<li>La web será un portal para la venta electrónica de productos. En este caso se ha elegido la venta de comida precocinada.</li>
 
-La web será un portal para la venta electrónica de productos. En este caso se ha elegido la venta de comida precocinada.
+<li>Entre todas las páginas diseñadas habrá una con un catálogo de productos en venta con al menos 12 repartidos en 3 ó 4 categorías. Cada producto se visualizará de manera individual con una página detalle donde aparezcan todas sus características.</li>
 
-Entre todas las páginas diseñadas habrá una con un catálogo de productos en venta con al menos 12 repartidos en 3 ó 4 categorías. Cada producto se visualizará de manera individual con una página detalle donde aparezcan todas sus características.
+<li>Con los productos seleccionados a su compra se generará una página de carrito seguida de una de checkout.</li>
 
-Con los productos seleccionados a su compra se generará una página de carrito seguida de una de checkout.
+<li>Como todos los sitios de compra online deberá contar con una sección de registro y login de clientes.</li>
 
-Como todos los sitios de compra online deberá contar con una sección de registro y login de clientes.
-Se deja a criterio del grupo de desarrollo la elección de colores, tipografía y otros elementos de diseño e imagen de marca.
+<li>Se deja a criterio del grupo de desarrollo la elección de colores, tipografía y otros elementos de diseño e imagen de marca.</li>
 
-El sitio deberá ser multilingüe con al menos dos idiomas.
+<li>El sitio deberá ser multilingüe con al menos dos idiomas.</li>
+</ul>
+
 
 Desarrollo del proyecto:
 
