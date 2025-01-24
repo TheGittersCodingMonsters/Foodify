@@ -26,44 +26,39 @@
 
 
 /** estilos del contador de pedido bajo foto plato**/
-#catalogo .product-counter {
-    position: absolute;
-     bottom: 0;
-     left: 0;
-     width: 100%;
-     display: flex;
-     justify-content: space-between;
-     align-items: center;
-     border-top: 1px solid #ccc;
-     background-color: #f9f9f9;
-     z-index: 10; /* Superior para estar encima del contenido */
-     height: 50px;
- }
- 
- #catalogo .counter-btn {
-     flex: 1;
-     background-color: var(--verde);
-     color: #fff;
-     border: none;
-     font-size: 20px;
-     font-weight: bold;
-     cursor: pointer;
-     padding: 10px;
-     text-align: center;
-     user-select: none; /* Evita seleccionar texto al hacer clic */
- }
- 
- #catalogo .counter-btn:active {
-     background-color: var(--verdeClaro);
- }
- 
- #catalogo .counter-value {
-     flex: 2;
-     text-align: center;
-     font-size: 18px;
-     font-weight: bold;
-     color: #333;
-     padding: 10px;
-     user-select: none; /* Evita seleccionar texto */
- }
+#plato .product-counter {
+    margin-top: auto; /* Empuja el contador al fondo del contenedor */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-top: 1px solid #ccc;
+    background-color: #f9f9f9;
+	  height: 50px;
+}
 
+#plato .counter-btn {
+    flex: 1;
+    background-color: var(--verde);
+    color: #fff;
+    border: none;
+    font-size: 20px;
+    font-weight: bold;
+    cursor: pointer;
+    padding: 10px;
+    text-align: center;
+	user-select: none; /* Evita seleccionar texto al hacer clic */
+}
+
+#plato .counter-btn:active {
+    background-color: var(--verdeClaro);
+}
+
+#plato .counter-value {
+    flex: 2;
+    text-align: center;
+    font-size: 18px;
+    font-weight: bold;
+    color: #333;
+    padding: 10px;
+	user-select: none; /* Evita seleccionar texto */
+}
