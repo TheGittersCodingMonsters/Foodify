@@ -1,23 +1,22 @@
 <!DOCTYPE html>
-<html lang="en">
-
-<head>
+<html lang="es">
+  <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <!-- Metadata for search engines -->
+    <!-- Metadatos para buscadores -->
     <meta name="description" content="Foodify: Delicious prepared meals delivered to your doorstep.">
     <meta name="keywords" content="food delivery, prepared meals, Foodify">
     <meta name="author" content="Foodify Team">
 
-    <!-- Open Graph for social media -->
+    <!-- Open Graph para redes sociales -->
     <meta property="og:title" content="Foodify">
     <meta property="og:description" content="Delicious prepared meals delivered to your doorstep.">
-    <meta property="og:image" content="image.jpg">
+    <meta property="og:image" content="../image.jpg">
     <meta property="og:url" content="https://foodyfy.com">
     <meta property="og:type" content="website">
 
-    <!-- Favicon for different devices -->
+    <!-- Favicon con tamaños distintos para dispositivos -->
     <link rel="apple-touch-icon" sizes="180x180" href="../assets/img/favicon/apple-touch-icon.png">
     <link rel="icon" type="image/png" sizes="32x32" href="../assets/img/favicon/favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="../assets/img/favicon/favicon-16x16.png">
@@ -30,12 +29,9 @@
 
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link
-        href="https://fonts.googleapis.com/css2?family=Caprasimo&family=Imprima&family=Modak&family=Old+Standard+TT:ital,wght@0,400;0,700;1,400&display=swap"
-        rel="stylesheet">
-
-    <!-- Styles -->
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Caprasimo&family=Imprima&family=Modak&family=Noticia+Text:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
+    <!-- Estilos -->
     <link rel="stylesheet" href="../css/style.css">
     <link rel="stylesheet" href="../css/login-cuenta.css">
 
@@ -43,40 +39,55 @@
 </head>
 
 <body>
-    <header role="banner" class="header">
-        <div class="logo">
-            <a href="../index.html"><img src="../assets/img/logotipos/imagotipo.png" alt="Foodify Logo"></a>
-        </div>
-        <nav role="navigation" class="nav">
-            <ul class="menu">
-                <li><a href="../index.html">Home</a></li>
-                <li><a href="#about">About</a></li>
-                <li><a href="#menu">Menu</a></li>
-                <li><a href="#contact">Contact</a></li>
-            </ul>
-            <div class="menu-mobile">
-                <i class="fa-solid fa-bars"></i>
+    <div class="container">
+        <header role="banner" class="header">
+            <div class="logo-mobile">
+                <a href="../index.html"><img src="../assets/img/logotipos/imagotipo.png" alt="Foodify Logo"></a>
             </div>
-        </nav>
-    </header>
-    <!-- WORK HERE -->
-    <main>
-        <div class="contenedorLogin">
-            <h1>Sign Up - Login</h1>
-            <button id="google" class="google-login">Sign in with Google Account</button>
-            <br>
-            <label for="usuario">Username</label><input type="text" id="usuario">
-            <br>
-            <label for="password">Password</label><input type="password" id="password">
-            <br>
-            <button id="login">Log In</button>
-        </div>
+            <div class="logo-regular">
+                <a href="../index.html"><img src="../assets/img/logotipos/logotipo-letras.png" alt="Foodify Logo"></a>
+            </div>
+            <nav role="navigation" class="nav">
+                <ul class="menu">
+                    <li><a href="../index.html" data-traductor="home">Home</a></li>
+                    <li><a href="../EN/contacto-en.html" data-traductor="contacto">Contacto</a></li>
+                    <li><a href="catalogo.html" data-traductor="platos">Platos</a></li>
+                    <li><a href="ES/crearcuenta-es.html" data-traductor="micuenta">Mi cuenta</a></li>
+                </ul>
+                <div class="menu-mobile">
+                    <i class="fa-solid fa-bars"></i>
+                </div>
+                <div class="cart">
+                    <a href="../EN/cart-en.html"><i class="fa-solid fa-cart-shopping"></i></a>
+                    <span class="cart-count">0</span>
+                </div>
+            </nav>
+        </header>
 
-        <div class="registro">
-            <a href="../EN//crearcuenta-en.html">Create Account</a>
-        </div>
+    <div class="language-switch">
+        <a href="#"><img src="../assets/img/es_flag.png" alt="Español" id="lang-es" class="lang-icon"></a>
+        <a href="#"></a><img src="../assets/img/en_flag.png" alt="English" id="lang-en" class="lang-icon"></a>
         
-    </main>
+    </div>
+    </div>
+<!--TRABAJAR AQUI-->
+   <main>
+    <div class="contenedorLogin">
+        <h1>Login</h1>
+        <button id="google" class="google-login">Sign in with Google account</button>
+        <br>
+        <label for="usuario">Username</label><input type="text" id="usuario">
+        <br>
+        <label for="password">Password</label><input type="password" id="password">
+        <br>
+        <button id="login">Log in</button>
+    </div>
+
+    <div class="registro">
+        <a href="../EN/crearcuenta-en.html">Create Account</a>
+    </div>
+</main>
+  
     <footer role="contentinfo" class="footer">
         <div class="footer-info">
             <div class="footer-help">
@@ -84,23 +95,24 @@
                 <ul class="help">
 
                     <li><a href="#">How to edit an order</a></li>
-                    <li><a href="#">How much does Wetaca cost</a></li>
+                    <li><a href="#">How much does Foodify cost</a></li>
                     <li><a href="#">How it works</a></li>
-                    <li><a href="#">FAQ</a></li>
-                    <li><a href="#">Restaurant Ticket</a></li>
+                    <li><a href="#">Frequently Asked Questions</a></li>
+                    <li><a href="#">Restaurant ticket</a></li>
                     <li><a href="#">Contact</a></li>
 
                 </ul>
-            </div>
+            </div> 
+     </div>
 
             <div class="footer-about">
                 <h3>About Us</h3>
                 <ul class="about">
 
-                    <li><a href="#">Who we are</a></li>
+                    <li><a href="#">Who are we?</a></li>
                     <li><a href="#">Work with us</a></li>
-                    <li><a href="#">Partnerships</a></li>
-                    <li><a href="#">Wetaca for businesses</a></li>
+                    <li><a href="#">Collaborations</a></li>
+                    <li><a href="#">Foodify for businesses</a></li>
                     <li><a href="#">Our blog</a></li>
 
                 </ul>
@@ -116,7 +128,7 @@
             </div>
         </div>
         <div class="footer-legal">
-            <p>&copy; 2025 Foodify. All rights reserved.</p>
+            <p>&copy; 2025 FoodiFy. All rights reserved.</p>
             <ul class="legal">
                 <li><a href="#privacy">Privacy Policy</a></li>
                 <li><a href="#terms">Terms of Service</a></li>
@@ -127,4 +139,5 @@
     <script src="../scripts/script.js"></script>
     <script src="../scripts/login.js"></script>
 </body>
+
 </html>
