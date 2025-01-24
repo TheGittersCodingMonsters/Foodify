@@ -232,7 +232,7 @@ function initializeCounters() {
 function updateCartCount() {
     const cart = getCart();
        // Depuración: Verifica el contenido del carrito
-      // console.log("Cart contents:", cart);
+       //console.log("Cart contents:", cart);
     // Calcula el total asegurándote de que quantity sea un número válido
     //reduce hace suma de los productos en cart
     const totalItems = Object.values(cart).reduce((sum, product) => {
