@@ -10,6 +10,8 @@
 // Eventos
 cartButton.addEventListener("click", toggleCart); // Mostrar/ocultar el carrito al hacer clic
 cartOverlay.addEventListener("click", closeCart); // Cerrar el carrito al hacer clic en el overlay
+menuButton.addEventListener("click", showMenu); // Mostrar/ocultar el menu al hacer clic
+
 
 // Función para mostrar/ocultar el carrito
 function toggleCart() {
@@ -23,16 +25,10 @@ function closeCart() {
   cartModal.classList.remove("clicked"); // Asegura que se oculte el modal
 }
 
-/*    // Funcion Cart
-   function showCart(){
-    cartButton.classList.toggle("clicked");
-  };
- */
-   // Funcion Cart
-   function showOverlay(){
-    cartOverlay.classList.toggle("clicked");
-    cartModal.classList.toggle("clicked");
-  };
+// Funcion Menu
+function showMenu(){
+menu.classList.toggle("clicked");
+};
 
   // Asegúrate de que en pantallas grandes no se añade la clase `clicked`.
 window.addEventListener('resize', () => {
