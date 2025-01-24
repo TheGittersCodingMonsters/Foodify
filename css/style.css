@@ -240,7 +240,7 @@ a {
   border-radius: 2rem;
 }
 
-.cart-item img{
+.cart-item .img-plato{
   width: 10rem;
  
   object-fit: cover;
@@ -253,15 +253,15 @@ a {
   display: flex;
   flex-direction: column;
 }
-.item-name{
+.cart-item .titulo{
   font-size: 2rem;
   padding: 1rem;
 }
-.item-price{
+.cart-item .precio{
   font-size: 2.4rem;
   align-self: flex-end;
 }
-.item-quantity  {
+.cart-item .counter-value  {
   font-size: 3rem;
 }
 
