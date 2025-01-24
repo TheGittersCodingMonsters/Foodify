@@ -28,13 +28,18 @@ function renderCartItems(cart) {
     // Loop through cart items
     cart.forEach(item => {
         cartItemsHTML += `
-            <div class="cart-item">
-                <img src="${item.image}" alt="${item.name}" class="item-img">                
+            <div class="cart-item productDetail">
+                <img src="${item.image}" alt="${item.name}" class="img-plato">                
                 <div class="cart-elements">
-                    <span class="item-name">${item.name}</span>
-                    <span class="item-price">$${item.price.toFixed(2)}</span>
-                    <span class="item-quantity">x ${item.quantity}</span>
+                    <span class="titulo">${item.name}</span>
+                    <span class="precio">$${item.price.toFixed(2)}</span>
+                    <span class="counter-value">x ${item.quantity}</span>
                 </div>
+                 <div class="product-counter" data-id="${item.id}">
+                        <button class="counter-btn decrement">-</button>
+                        <span class="counter-value">0</span>
+                        <button class="counter-btn increment">+</button>
+                    </div>
             </div>`;
         total += item.price * item.quantity;
     });
@@ -45,6 +50,8 @@ function renderCartItems(cart) {
     // Show total price
     document.getElementById('totalPrice').textContent = total.toFixed(2);
 }
+
+
 
 // Redirect to checkout page
 function goToCheckout() {
