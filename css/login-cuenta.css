@@ -4,9 +4,11 @@
   margin: 3rem auto;
   padding: 2rem;
   border-radius: 1rem;
-  width: 90%;
-  max-width: 400px;
+  width: 50%;
+  height: 50%;
   text-align: center;
+ 
+ 
 }
   
   .contenedorLogin h1 {
