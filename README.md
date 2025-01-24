@@ -1,8 +1,9 @@
+![The Gitters](assets/img/logotipos/the-gitters.png)
 
 
 Este proyecto es un ejercicio realizado en el Bootcamp Full-Stack de PeñascalF5.
 
-Los integrantes del grupo The Gitters son:ç
+Los integrantes del grupo The Gitters son:
 
 | EQUIPO | FUNCIONES |
 |-------------|-----------------------------------------------------------------|
