@@ -151,13 +151,13 @@ document.addEventListener("DOMContentLoaded", () => {
          loadPlatos(currentLanguage);
      });*/
 
-  //CONTADORES Y CARRITO
+  /* //CONTADORES Y CARRITO
   const cartCountElement = document.querySelector(".cart-count");
 
   // Función para obtener el carrito desde localStorage
   function getCart() {
     return JSON.parse(localStorage.getItem("cart")) || {}; // El carrito será un objeto con claves de ID de producto
-  }
+  } */
 
   // Función para guardar el carrito en localStorage
   function saveCart(cart) {
