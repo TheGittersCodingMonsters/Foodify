@@ -28,18 +28,20 @@ function renderCartItems(cart) {
     // Loop through cart items
     cart.forEach(item => {
         cartItemsHTML += `
-            <div class="cart-item productDetail">
-                <img src="${item.image}" alt="${item.name}" class="img-plato">                
+            <div class="cart-item">
+                <div class="cart-img">
+                    <img src="${item.image}" alt="${item.name}" class="img-plato">
+                </div>                
                 <div class="cart-elements">
                     <span class="titulo">${item.name}</span>
-                    <span class="precio">$${item.price.toFixed(2)}</span>
-                    <span class="counter-value">x ${item.quantity}</span>
+                    <span class="precio">${item.price.toFixed(2)} €</span>
+                    <div class="product-counter" data-id="${item.id}">
+                    <button class="counter-btn decrement"><i class="fa-solid fa-minus"></i></button>
+                     <span class="counter-value">x ${item.quantity}</span>
+                    <button class="counter-btn increment"><i class="fa-solid fa-plus"></i></button>
                 </div>
-                 <div class="product-counter" data-id="${item.id}">
-                        <button class="counter-btn decrement">-</button>
-                        <span class="counter-value">0</span>
-                        <button class="counter-btn increment">+</button>
-                    </div>
+                </div>
+               
             </div>`;
         total += item.price * item.quantity;
     });
@@ -58,9 +60,9 @@ function goToCheckout() {
     const cart = JSON.parse(window.localStorage.getItem("cart")) || {};
 
 if (location.href.indexOf("cart-en.html") !== -1) {
-        window.location.href = "checkout-en.html";
+        window.location.href = "../EN/checkout-en.html";
 } else {
-        window.location.href = "checkout-es.html";
+        window.location.href = "../ES/checkout-es.html";
 }
 }
 

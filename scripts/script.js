@@ -9,7 +9,7 @@
 
 // Eventos
 cartButton.addEventListener("click", toggleCart); // Mostrar/ocultar el carrito al hacer clic
-cartOverlay.addEventListener("click", closeCart); // Cerrar el carrito al hacer clic en el overlay
+cartOverlay.addEventListener("click", toggleCart); // Cerrar el carrito al hacer clic en el overlay
 menuButton.addEventListener("click", showMenu); // Mostrar/ocultar el menu al hacer clic
 
 
@@ -17,12 +17,6 @@ menuButton.addEventListener("click", showMenu); // Mostrar/ocultar el menu al ha
 function toggleCart() {
   cartOverlay.classList.toggle("clicked"); // Alterna la visibilidad de la superposición
   cartModal.classList.toggle("clicked"); // Alterna la visibilidad del modal
-}
-
-// Función para cerrar el carrito
-function closeCart() {
-  cartOverlay.classList.remove("clicked"); // Asegura que se oculte la superposición
-  cartModal.classList.remove("clicked"); // Asegura que se oculte el modal
 }
 
 // Funcion Menu

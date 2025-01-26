@@ -49,7 +49,7 @@
         </div>
         <nav role="navigation" class="nav">
             <ul class="menu">
-                <li><a href="index.html" data-traductor="home">Home</a></li>
+                <li><a href="../index.html" data-traductor="home">Home</a></li>
                 <li><a href="ES/contacto-es.html" data-traductor="contacto">Contacto</a></li>
                 <li><a href="catalogo.html" data-traductor="platos">Platos</a></li>
                 <li><a href="ES/crearcuenta-es.html" data-traductor="micuenta">Mi cuenta</a></li>
@@ -69,6 +69,17 @@
     <a href="../en/rgpd-en.html"><img src="../assets/img/en_flag.png" alt="English" id="lang-en" class="lang-icon"></a>
     
 </div>
+<div class="cart-overlay"></div>
+<aside class="cart-modal">
+    <h2>Tu carrito</h2>
+    <div class="cartItems">
+        <!-- Cart items will be dynamically inserted here -->
+    </div>
+    <div class="cart-footer">
+        <p class="total">Total: <span id="totalPrice">0.00 </span>€</p>
+        <button class="checkout-button buttonLink" onclick="goToCheckout()">Suscríbete al 30%</button>
+    </div>
+</aside>
 
 
 <main role="main" class="content">
