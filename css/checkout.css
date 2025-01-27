@@ -6,7 +6,7 @@
                 background-color: #fff;
                 box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
                 border-radius: 8px;
-                background-color: #bffea8;
+                background-color: #fdcc78;
             }
     
             .checkout-section h1 {
@@ -73,41 +73,22 @@
                 margin: 5px 0;
             }
     
-            #discountCode {
-                padding: 8px;
-                font-size: 16px;
-                margin-right: 10px;
-                width: 60%;
-                border: 1px solid #ddd;
-                border-radius: 5px;
-            }
-    
-            #applyDiscount {
-                padding: 8px 16px;
-                background-color: #007bff;
-                color: white;
-                border: none;
-                border-radius: 5px;
-                cursor: pointer;
-            }
-    
-            #applyDiscount:hover {
-                background-color: #0056b3;
-            }
-    
             .checkout-button {
                 padding: 10px 20px;
                 font-size: 16px;
-                background-color: #007bff;
-                color: white;
+                background-color: #006815;
+                color: #ffffff;
                 border: none;
-                border-radius: 5px;
+                border-radius: 6px;
                 cursor: pointer;
                 width: 100%;
+                transition-duration:0.5s;
             }
     
             .checkout-button:hover {
-                background-color: #0056b3;
+                background-color: #00ad23;
+                color:  #ffffff;
+                transition-duration:0.5s;
             }
     
             .checkout-item {
