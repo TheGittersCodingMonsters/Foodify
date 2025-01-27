@@ -12,15 +12,15 @@
     <!-- Open Graph para redes sociales -->
     <meta property="og:title" content="Foodify">
     <meta property="og:description" content="Delicious prepared meals delivered to your doorstep.">
-    <meta property="og:image" content="../image.jpg">
+    <meta property="og:image" content="image.jpg">
     <meta property="og:url" content="https://foodyfy.com">
     <meta property="og:type" content="website">
 
     <!-- Favicon con tamaños distintos para dispositivos -->
-    <link rel="apple-touch-icon" sizes="180x180" href="../assets/img/favicon/apple-touch-icon.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="../assets/img/favicon/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="../assets/img/favicon/favicon-16x16.png">
-    <link rel="manifest" href="../assets/img/favicon/site.webmanifest">
+    <link rel="apple-touch-icon" sizes="180x180" href="assets/img/favicon/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="assets/img/favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="assets/img/favicon/favicon-16x16.png">
+    <link rel="manifest" href="assets/img/favicon/site.webmanifest">
 
     <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
@@ -32,8 +32,8 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Caprasimo&family=Imprima&family=Modak&family=Noticia+Text:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
     <!-- Estilos -->
-    <link rel="stylesheet" href="../css/style.css">
-    <link rel="stylesheet" href="../css/login-cuenta.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/login-cuenta.css">
 
     <title>Foodify</title>
 </head>
@@ -42,87 +42,87 @@
     <div class="container">
         <header role="banner" class="header">
             <div class="logo-mobile">
-                <a href="../index.html"><img src="../assets/img/logotipos/imagotipo.png" alt="Foodify Logo"></a>
+                <a href="index.html"><img src="assets/img/logotipos/imagotipo.png" alt="Foodify Logo"></a>
             </div>
             <div class="logo-regular">
-                <a href="../index.html"><img src="../assets/img/logotipos/logotipo-letras.png" alt="Foodify Logo"></a>
+                <a href="index.html"><img src="assets/img/logotipos/logotipo-letras.png" alt="Foodify Logo"></a>
             </div>
             <nav role="navigation" class="nav">
                 <ul class="menu">
-                    <li><a href="../index.html" data-traductor="home">Home</a></li>
-                    <li><a href="../EN/contacto-en.html" data-traductor="contacto">Contacto</a></li>
+                    <li><a href="index.html" data-traductor="home">Home</a></li>
+                    <li><a href="contacto-es.html" data-traductor="contacto">Contacto</a></li>
                     <li><a href="catalogo.html" data-traductor="platos">Platos</a></li>
-                    <li><a href="ES/crearcuenta-es.html" data-traductor="micuenta">Mi cuenta</a></li>
+                    <li><a href="crearcuenta-es.html" data-traductor="micuenta">Mi cuenta</a></li>
                 </ul>
                 <div class="menu-mobile">
                     <i class="fa-solid fa-bars"></i>
                 </div>
                 <div class="cart">
-                    <a href="../EN/cart-en.html"><i class="fa-solid fa-cart-shopping"></i></a>
+                    <a href="cart-es.html"><i class="fa-solid fa-cart-shopping"></i></a>
                     <span class="cart-count">0</span>
                 </div>
             </nav>
         </header>
 
     <div class="language-switch">
-        <a href="#"><img src="../assets/img/es_flag.png" alt="Español" id="lang-es" class="lang-icon"></a>
-        <a href="#"></a><img src="../assets/img/en_flag.png" alt="English" id="lang-en" class="lang-icon"></a>
+        <a href="#"><img src="assets/img/es_flag.png" alt="Español" id="lang-es" class="lang-icon"></a>
+        <a href="#"><img src="assets/img/en_flag.png" alt="English" id="lang-en" class="lang-icon"></a>
         
     </div>
-    </div>
 <!--TRABAJAR AQUI-->
-   <main>
-    <div class="contenedorLogin">
-        <h1>Login</h1>
-        <button id="google" class="google-login">Sign in with Google account</button>
-        <br>
-        <label for="usuario">Username</label><input type="text" id="usuario">
-        <br>
-        <label for="password">Password</label><input type="password" id="password">
-        <br>
-        <button id="login">Log in</button>
-    </div>
+    <main>
+        <div class="contenedorLogin">
+            <h1>Registro</h1>
+            <button id="google" class="google-login">Acceder con cuenta de Google</button>
+            <br>
+            <label for="usuario">Usuario</label><input type="text" id="usuario">
+            <br>
+            <label for="password">Contraseña</label><input type="password" id="password">
+            <br>
+            <button id="login">Iniciar sesión</button>
 
-    <div class="registro">
-        <a href="../EN/crearcuenta-en.html">Create Account</a>
+
+        <div class="registro">
+            <p class="link">¿No tienes una cuenta?<a href="crearcuenta-es.html">Crear cuenta</a></p>
+        </div>
     </div>
-</main>
-  
+        </div>
+    </main>
+    
     <footer role="contentinfo" class="footer">
         <div class="footer-info">
             <div class="footer-help">
-                <h3>Help</h3>
+                <h3>Ayuda</h3>
                 <ul class="help">
 
-                    <li><a href="#">How to edit an order</a></li>
-                    <li><a href="#">How much does Foodify cost</a></li>
-                    <li><a href="#">How it works</a></li>
-                    <li><a href="#">Frequently Asked Questions</a></li>
-                    <li><a href="#">Restaurant ticket</a></li>
-                    <li><a href="#">Contact</a></li>
+                    <li><a href="#">Cómo editar un pedido</a></li>
+                    <li><a href="#">Cuánto cuesta Foodify</a></li>
+                    <li><a href="#">Cómo funciona</a></li>
+                    <li><a href="#">Preguntas frecuentes</a></li>
+                    <li><a href="#">Ticket restaurante</a></li>
+                    <li><a href="#">Contacto</a></li>
 
                 </ul>
-            </div> 
-     </div>
+            </div>
 
             <div class="footer-about">
-                <h3>About Us</h3>
+                <h3>Conócenos</h3>
                 <ul class="about">
 
-                    <li><a href="#">Who are we?</a></li>
-                    <li><a href="#">Work with us</a></li>
-                    <li><a href="#">Collaborations</a></li>
-                    <li><a href="#">Foodify for businesses</a></li>
-                    <li><a href="#">Our blog</a></li>
+                    <li><a href="#">¿Quienes somos?</a></li>
+                    <li><a href="#">Trabaja con nosotros</a></li>
+                    <li><a href="#">Colaboraciones</a></li>
+                    <li><a href="#">Foodify para empresas</a></li>
+                    <li><a href="#">Nuestro blog</a></li>
 
                 </ul>
             </div>
 
             <div class="footer-eco">
-                <h3>Sustainability</h3>
+                <h3>Sostenibilidad</h3>
                 <ul class="eco">
-                    <li><a href="#" id="">Environment</a></li>
-                    <li><a href="#" id="">Sustainable packaging</a></li>
+                    <li><a href="#" id="">Medio ambiente</a></li>
+                    <li><a href="#" id="">Envases sostenibles</a></li>
                     <li><a href="#" id="">Plastic Neutral</a></li>
                 </ul>
             </div>
@@ -136,8 +136,8 @@
         </div>
     </footer>
 
-    <script src="../scripts/script.js"></script>
-    <script src="../scripts/login-en.js"></script>
+    <script src="scripts/script.js"></script>
+    <script src="scripts/login.js"></script>
 </body>
 
 </html>

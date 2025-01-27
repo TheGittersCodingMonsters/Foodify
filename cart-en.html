@@ -1,6 +1,7 @@
 <!DOCTYPE html>
-<html lang="es">
-  <head>
+<html lang="en">
+
+<head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
@@ -29,75 +30,53 @@
 
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Caprasimo&family=Imprima&family=Modak&family=Noticia+Text:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Caprasimo&family=Imprima&family=Modak&family=Old+Standard+TT:ital,wght@0,400;0,700;1,400&display=swap"
+        rel="stylesheet">
+
     <!-- Estilos -->
-    <link rel="stylesheet" href="../css/style.css">
-    <link rel="stylesheet" href="../css/cart.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/cart.css">
 
 
     <title>Foodify</title>
 </head>
 
 <body>
-    <div class="container">
-        <header role="banner" class="header">
-            <div class="logo-mobile">
-                <a href="../index.html"><img src="../assets/img/logotipos/imagotipo.png" alt="Foodify Logo"></a>
-            </div>
-            <div class="logo-regular">
-                <a href="../index.html"><img src="../assets/img/logotipos/logotipo-letras.png" alt="Foodify Logo"></a>
-            </div>
-            <nav role="navigation" class="nav">
-                <ul class="menu">
-                    <li><a href="index.html" data-traductor="home">Home</a></li>
-                    <li><a href="ES/contacto-es.html" data-traductor="contacto">Contacto</a></li>
-                    <li><a href="catalogo.html" data-traductor="platos">Platos</a></li>
-                    <li><a href="ES/crearcuenta-es.html" data-traductor="micuenta">Mi cuenta</a></li>
-                </ul>
-                <div class="menu-mobile">
-                    <i class="fa-solid fa-bars"></i>
-                </div>
-             <div class="cart">
-                    <i class="fa-solid fa-cart-shopping"></i>
-                    <span class="cart-count">0</span>
-                </div>
-            </nav>
-        </header>
-
-    <div class="language-switch">
-        <a href="#"><img src="../assets/img/es_flag.png" alt="Español" id="lang-es" class="lang-icon"></a>
-        <a href="../en/rgpd-en.html"><img src="../assets/img/en_flag.png" alt="English" id="lang-en" class="lang-icon"></a>
-        
-    </div>
-    <div class="cart-overlay"></div>
-    <aside class="cart-modal">
-        <h2>Tu carrito</h2>
-        <div class="cartItems">
-            <!-- Cart items will be dynamically inserted here -->
+    <header role="banner" class="header">
+        <div class="logo">
+            <a href="index.html"><img src="assets/img/logotipos/imagotipo.png" alt="Foodify Logo"></a>
         </div>
-        <div class="cart-footer">
-            <p class="total">Total: <span id="totalPrice">0.00 </span>€</p>
-            <button class="checkout-button buttonLink" onclick="goToCheckout()">Suscríbete al 30%</button>
-        </div>
-    </aside>
+        <nav role="navigation" class="nav">
+            <ul class="menu">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#menu">Menu</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+            <div class="menu-mobile">
+                <i class="fa-solid fa-bars"></i>
+            </div>
+        </nav>
+    </header>
 
 
-    <main role="main" class="content">
+    <main role="main">
         <section id="cart-section">
             <div class="container">
-                <h1>Tu carrito</h1>
+                <h1>Your Cart</h1>
                 <div id="cartItems">
                     <!-- Cart items will be dynamically inserted here -->
                 </div>
                 <div class="cart-footer">
-                    <p class="total">Total: €<span id="totalPrice">0.00</span></p>
-                    <button class="checkout-button" onclick="goToCheckout()">Proceder al Checkout</button>
+                    <p class="total">Total: $<span id="totalPrice">0.00</span></p>
+                    <button class="checkout-button" onclick="goToCheckout()">Proceed to Checkout</button>
                 </div>
             </div>
         </section>
     </main>
-    </div>
+
         <footer role="contentinfo" class="footer">
         <div class="footer-info">
             <div class="footer-help">
@@ -137,13 +116,13 @@
             </div>
         </div>
         <div class="footer-legal">
-            <p>&copy; 2025 FoodiFy. Todos Los Derechos Reservados.</p>
+            <p>&copy; 2025 FoodiFy. All rights reserved.</p>
             <ul class="legal">
-                <li><a href="#privacy">Politica de Privacidad</a></li>
-                <li><a href="#terms">Terminos de servicios</a></li>
+                <li><a href="#privacy">Privacy Policy</a></li>
+                <li><a href="#terms">Terms of Service</a></li>
             </ul>
         </div>
     </footer>
-    <script src="../scripts/cart.js"></script>
+    <script src="scripts/cart.js"></script>
     </body>
 </html>
