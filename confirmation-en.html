@@ -42,22 +42,36 @@
     <title>Foodify</title>
 </head>
 <body>
-    <header role="banner" class="header">
-        <div class="logo">
-            <a href="index.html"><img src="assets/img/logotipos/imagotipo.png" alt="Foodify Logo"></a>
-        </div>
-        <nav role="navigation" class="nav">
-            <ul class="menu">
-                <li><a href="index.html">Home</a></li>
-                <li><a href="#about">About</a></li>
-                <li><a href="#menu">Menu</a></li>
-                <li><a href="#contact">Contact</a></li>
-            </ul>
-            <div class="menu-mobile">
-                <i class="fa-solid fa-bars"></i>
+    <div class="container">
+        <header role="banner" class="header">
+            <div class="logo-mobile">
+                <a href="../index.html"><img src="assets/img/logotipos/imagotipo.png" alt="Foodify Logo"></a>
             </div>
-        </nav>
-    </header>
+            <div class="logo-regular">
+                <a href="index.html"><img src="assets/img/logotipos/logotipo-letras.png" alt="Foodify Logo"></a>
+            </div>
+            <nav role="navigation" class="nav">
+                <ul class="menu">
+                    <li><a href="index.html" data-traductor="home">Home</a></li>
+                    <li><a href="contacto-es.html" data-traductor="contacto">Contacto</a></li>
+                    <li><a href="catalogo.html" data-traductor="platos">Platos</a></li>
+                    <li><a href="crearcuenta-es.html" data-traductor="micuenta">Mi cuenta</a></li>
+                </ul>
+                <div class="menu-mobile">
+                    <i class="fa-solid fa-bars"></i>
+                </div>
+                <div class="cart">
+                    <a href="cart-es.html"><i class="fa-solid fa-cart-shopping"></i></a>
+                    <span class="cart-count">0</span>
+                </div>
+            </nav>
+        </header>
+
+    <div class="language-switch">
+        <a href="#"><img src="assets/img/es_flag.png" alt="Español" id="lang-es" class="lang-icon"></a>
+        <a href="rgpd-en.html"><img src="assets/img/en_flag.png" alt="English" id="lang-en" class="lang-icon"></a>
+        
+    </div>
 
     <main role="main">
         <section id="cart-section">
