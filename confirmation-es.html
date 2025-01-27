@@ -1,7 +1,6 @@
 <!DOCTYPE html>
-<html lang="en">
-
-<head>
+<html lang="es">
+  <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
@@ -18,10 +17,10 @@
     <meta property="og:type" content="website">
 
     <!-- Favicon con tamaños distintos para dispositivos -->
-    <link rel="apple-touch-icon" sizes="180x180" href="../assets/img/favicon/apple-touch-icon.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="../assets/img/favicon/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="../assets/img/favicon/favicon-16x16.png">
-    <link rel="manifest" href="../assets/img/favicon/site.webmanifest">
+    <link rel="apple-touch-icon" sizes="180x180" href="assets/img/favicon/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="assets/img/favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="assets/img/favicon/favicon-16x16.png">
+    <link rel="manifest" href="assets/img/favicon/site.webmanifest">
 
     <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
@@ -30,69 +29,80 @@
 
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link
-        href="https://fonts.googleapis.com/css2?family=Caprasimo&family=Imprima&family=Modak&family=Old+Standard+TT:ital,wght@0,400;0,700;1,400&display=swap"
-        rel="stylesheet">
-
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Caprasimo&family=Imprima&family=Modak&family=Noticia+Text:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
     <!-- Estilos -->
-    <link rel="stylesheet" href="../css/style.css">
-    <link rel="stylesheet" href="../css/confirmation.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/confirmation.css">
 
     <title>Foodify</title>
 </head>
 <body>
-    <header role="banner" class="header">
-        <div class="logo">
-            <a href="../index.html"><img src="../assets/img/logotipos/imagotipo.png" alt="Foodify Logo"></a>
-        </div>
-        <nav role="navigation" class="nav">
-            <ul class="menu">
-                <li><a href="../index.html">Home</a></li>
-                <li><a href="#about">About</a></li>
-                <li><a href="#menu">Menu</a></li>
-                <li><a href="#contact">Contact</a></li>
-            </ul>
-            <div class="menu-mobile">
-                <i class="fa-solid fa-bars"></i>
+    <div class="container">
+        <header role="banner" class="header">
+            <div class="logo-mobile">
+                <a href="../index.html"><img src="assets/img/logotipos/imagotipo.png" alt="Foodify Logo"></a>
             </div>
-        </nav>
-    </header>
+            <div class="logo-regular">
+                <a href="index.html"><img src="assets/img/logotipos/logotipo-letras.png" alt="Foodify Logo"></a>
+            </div>
+            <nav role="navigation" class="nav">
+                <ul class="menu">
+                    <li><a href="index.html" data-traductor="home">Home</a></li>
+                    <li><a href="contacto-es.html" data-traductor="contacto">Contacto</a></li>
+                    <li><a href="catalogo.html" data-traductor="platos">Platos</a></li>
+                    <li><a href="crearcuenta-es.html" data-traductor="micuenta">Mi cuenta</a></li>
+                </ul>
+                <div class="menu-mobile">
+                    <i class="fa-solid fa-bars"></i>
+                </div>
+                <div class="cart">
+                    <a href="cart-es.html"><i class="fa-solid fa-cart-shopping"></i></a>
+                    <span class="cart-count">0</span>
+                </div>
+            </nav>
+        </header>
 
-    <main role="main">
+    <div class="language-switch">
+        <a href="#"><img src="assets/img/es_flag.png" alt="Español" id="lang-es" class="lang-icon"></a>
+        <a href="rgpd-en.html"><img src="assets/img/en_flag.png" alt="English" id="lang-en" class="lang-icon"></a>
+        
+    </div>
+
+    <main role="main" class="content">
         <section id="cart-section">
 
             <div class="container1">
-                <img src="../assets/img/logotipos/logotipo-letras.png">
-                <h3>We appreciate your request and your trust!</h3>
-                <p>Expressing gratitude for your request and our sincere thanks for your trust in our products!</p>
-                <img src="../assets/img/fotos/ThankYouEn.png" class="THANKYOU">
+                <img src="assets/img/logotipos/logotipo-letras.png">
+                <h3>¡Agradecemos su pedido y su confianza!</h3>
+                <p>¡Expresando gratitud por su pedido y nuestro más sincero agradecimiento por su confianza en nuestros productos!</p>
+                <img src="assets/img/fotos/THANKYOU.png" class="THANKYOU">
                 <div class="container2">
 
                     <div class="box">
                         <p>✓</p>
-                        <h4>Order Confirmed</h4>
+                        <h4>Pedido Confirmado</h4>
                     </div>
                     <div class="box">
                         <p>📦</p>
-                        <h4>Preparing it...</h4>
+                        <h4>Preparandolo...</h4>
                     </div>
                     <div class="box">
                         <p>🚚</p>
-                        <h4>Delivery is in 24/48h</h4>
+                        <h4>Se Entrega en 48h</h4>
                     </div>
                 </div>
                     <div class="ViewOrder">
                         <a href="https://www.gmail.com/">
-                            <button>View Your Order 👉</button>
+                            <button>Ver Tu Pedido 👉</button>
                         </a>
-                    </div>                    
+                    </div>
             </div>
 
 
         </section>
     </main>
-
+    </div>
     <footer role="contentinfo" class="footer">
         <div class="footer-info">
             <div class="footer-help">
@@ -132,14 +142,13 @@
             </div>
         </div>
         <div class="footer-legal">
-            <p>&copy; 2025 FoodiFy. All rights reserved.</p>
+            <p>&copy; 2025 FoodiFy. Todos Los Derechos Reservados.</p>
             <ul class="legal">
-                <li><a href="#privacy">Privacy Policy</a></li>
-                <li><a href="#terms">Terms of Service</a></li>
+                <li><a href="#privacy">Politica de Privacidad</a></li>
+                <li><a href="#terms">Terminos de servicios</a></li>
             </ul>
         </div>
     </footer>
 
-    <script></script>
         </body>
     </html>

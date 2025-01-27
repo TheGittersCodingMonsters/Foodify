@@ -12,15 +12,15 @@
     <!-- Open Graph para redes sociales -->
     <meta property="og:title" content="Foodify">
     <meta property="og:description" content="Delicious prepared meals delivered to your doorstep.">
-    <meta property="og:image" content="../image.jpg">
+    <meta property="og:image" content="image.jpg">
     <meta property="og:url" content="https://foodyfy.com">
     <meta property="og:type" content="website">
 
     <!-- Favicon con tamaños distintos para dispositivos -->
-    <link rel="apple-touch-icon" sizes="180x180" href="../assets/img/favicon/apple-touch-icon.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="../assets/img/favicon/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="../assets/img/favicon/favicon-16x16.png">
-    <link rel="manifest" href="../assets/img/favicon/site.webmanifest">
+    <link rel="apple-touch-icon" sizes="180x180" href="assets/img/favicon/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="assets/img/favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="assets/img/favicon/favicon-16x16.png">
+    <link rel="manifest" href="assets/img/favicon/site.webmanifest">
 
     <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
@@ -32,8 +32,8 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Caprasimo&family=Imprima&family=Modak&family=Noticia+Text:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
     <!-- Estilos -->
-    <link rel="stylesheet" href="../css/style.css">
-    <link rel="stylesheet" href="../css/login-cuenta.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/login-cuenta.css">
 
     <title>Foodify</title>
 </head>
@@ -42,57 +42,52 @@
     <div class="container">
         <header role="banner" class="header">
             <div class="logo-mobile">
-                <a href="../index.html"><img src="../assets/img/logotipos/imagotipo.png" alt="Foodify Logo"></a>
+                <a href="index.html"><img src="assets/img/logotipos/imagotipo.png" alt="Foodify Logo"></a>
             </div>
             <div class="logo-regular">
-                <a href="../index.html"><img src="../assets/img/logotipos/logotipo-letras.png" alt="Foodify Logo"></a>
+                <a href="index.html"><img src="assets/img/logotipos/logotipo-letras.png" alt="Foodify Logo"></a>
             </div>
             <nav role="navigation" class="nav">
                 <ul class="menu">
-                    <li><a href="../index.html" data-traductor="home">Home</a></li>
-                    <li><a href="../EN/contacto-en.html" data-traductor="contacto">Contacto</a></li>
-                    <li><a href="../catalogo.html" data-traductor="platos">Platos</a></li>
-                    <li><a href="../EN/crearcuenta-en.html" data-traductor="micuenta">Mi cuenta</a></li>
+                    <li><a href="index.html" data-traductor="home">Home</a></li>
+                    <li><a href="contacto-en.html" data-traductor="contacto">Contacto</a></li>
+                    <li><a href="catalogo.html" data-traductor="platos">Platos</a></li>
+                    <li><a href="crearcuenta-es.html" data-traductor="micuenta">Mi cuenta</a></li>
                 </ul>
                 <div class="menu-mobile">
                     <i class="fa-solid fa-bars"></i>
                 </div>
                 <div class="cart">
-                    <a href="../EN/cart-en.html"><i class="fa-solid fa-cart-shopping"></i></a>
+                    <a href="cart-en.html"><i class="fa-solid fa-cart-shopping"></i></a>
                     <span class="cart-count">0</span>
                 </div>
             </nav>
         </header>
 
     <div class="language-switch">
-        <a href="#"><img src="../assets/img/es_flag.png" alt="Español" id="lang-es" class="lang-icon"></a>
-        <a href="#"><img src="../assets/img/en_flag.png" alt="English" id="lang-en" class="lang-icon"></a>
+        <a href="#"><img src="assets/img/es_flag.png" alt="Español" id="lang-es" class="lang-icon"></a>
+        <a href="#"></a><img src="assets/img/en_flag.png" alt="English" id="lang-en" class="lang-icon"></a>
         
     </div>
     </div>
+<!--TRABAJAR AQUI-->
+   <main>
+    <div class="contenedorLogin">
+        <h1>Login</h1>
+        <button id="google" class="google-login">Sign in with Google account</button>
+        <br>
+        <label for="usuario">Username</label><input type="text" id="usuario">
+        <br>
+        <label for="password">Password</label><input type="password" id="password">
+        <br>
+        <button id="login">Log in</button>
+    </div>
 
-    <!--TRABAJAR AQUI-->
-    <main>
-        <div class="contenedor-cuenta">
-            <h1>Create Account</h1>
-            <button class="google-login" type="button">Sign in with Google account</button>
-            <br>
-            <label for="usuario">Username</label><input type="text" id="usuario" required>
-            <br>
-            <label for="password">Password</label><input type="password" id="password" required>
-            <br>
-            <label for="telefono">Mobile Phone</label><input type="tel" id="telefono" name="telefono" required>
-
-            <br>
-            <div class="privacidad">
-                <input type="checkbox" id="privacy" required>
-                <label for="privacy">I have read and accept the  <a href="../EN/rgpd-en.html">Privacy Policy</a>and confirm I am of legal age </label>
-            </div>
-            <button type="button" id="crearCuentaButton">Create Account</button>
-            <p class="link">Already have an account?<a href="../EN/login-en.html">Log in here</a></p>
-        </div>
-       </main> 
-
+    <div class="registro">
+        <a href="crearcuenta-en.html">Create Account</a>
+    </div>
+</main>
+  
     <footer role="contentinfo" class="footer">
         <div class="footer-info">
             <div class="footer-help">
@@ -141,8 +136,8 @@
         </div>
     </footer>
 
-    <script src="../scripts/script.js"></script>
-    <script src="../scripts/login-en.js"></script>
+    <script src="scripts/script.js"></script>
+    <script src="scripts/login-en.js"></script>
 </body>
 
 </html>
