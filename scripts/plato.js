@@ -92,9 +92,9 @@ function loadProductDetail(language) {
         const ruta4 = `${carpeta}/crearcuenta-${currentLanguage}.html`;
         menu4.setAttribute('href', ruta4);
         //link en icono carrito
-        const menu5 = document.querySelector('.cart a');
-        const ruta5 = `${carpeta}/cart-${currentLanguage}.html`;
-        menu5.setAttribute('href', ruta5);
+/*         const menu5 = document.querySelector('.cart a');
+        const ruta5 = `${carpeta}/cart-${currentLanguage}.html`; 
+        menu5.setAttribute('href', ruta5);*/
     
        }
 

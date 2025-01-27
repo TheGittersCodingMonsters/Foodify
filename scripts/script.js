@@ -56,6 +56,9 @@ window.addEventListener('resize', () => {
 // Cargar textos y detalles iniciales
     updateCartCount(); // Actualizar el contador del carrito
 
+
+    
+
 /* ----------------- ELEMENTOS DEL CART.JS ------------------//*/
 // Fetch cart items from localStorage
 function fetchCart() {
@@ -69,7 +72,7 @@ function fetchCart() {
   renderCartItems(cartArray);
 }
 
-// Render cart items in the website
+/*/ Render cart items in the website ç*/
 function renderCartItems(cart) {
   let cartItemsHTML = ''; // Store cart item HTML
   let total = 0; // Total price calculation
@@ -87,14 +90,15 @@ function renderCartItems(cart) {
   // Loop through cart items
   cart.forEach(item => {
       cartItemsHTML += `
-          <div class="cart-item">
-              <div class="cart-img">
+          <div class="cart-item productDetail">
+              <div class="cart-img img-plato">
                   <img src="${item.image}" alt="${item.name}" class="img-plato">
               </div>                
               <div class="cart-elements">
-                  <span class="titulo">${item.name}</span>
+                  <h4 class="titulo">${item.name}</h4>
                   <span class="precio">${item.price.toFixed(2)} €</span>
-                  <div class="product-counter" data-id="${item.id}">
+                 
+                  <div class="product-counter " data-id="${item.id}">
                   <button class="counter-btn decrement"><i class="fa-solid fa-minus"></i></button>
                    <span class="counter-value">x ${item.quantity}</span>
                   <button class="counter-btn increment"><i class="fa-solid fa-plus"></i></button>

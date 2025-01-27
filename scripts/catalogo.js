@@ -221,8 +221,22 @@ document.addEventListener("DOMContentLoaded", () => {
       // Mostrar el valor inicial desde el carrito
       counterValue.textContent = cart[id]?.quantity || 0;
 
-      // Evento para decrementar
-      decrementBtn.addEventListener("click", () => {
+ // Funciones Incrementar y Decrementar
+      function incrementButton() {
+        let currentValue = parseInt(counterValue.textContent);
+        currentValue++;
+        counterValue.textContent = currentValue;
+        updateProductInCart(
+          id,
+          productName,
+          productPrice,
+          currentValue,
+          productImage
+        );
+      };
+
+
+      function decrementButton(){
         let currentValue = parseInt(counterValue.textContent);
         if (currentValue > 0) {
           currentValue--;
@@ -235,21 +249,13 @@ document.addEventListener("DOMContentLoaded", () => {
             productImage
           );
         }
-      });
+      }
+      
+      // Evento para decrementar
+      decrementBtn.addEventListener("click", decrementButton);
 
       // Evento para incrementar
-      incrementBtn.addEventListener("click", () => {
-        let currentValue = parseInt(counterValue.textContent);
-        currentValue++;
-        counterValue.textContent = currentValue;
-        updateProductInCart(
-          id,
-          productName,
-          productPrice,
-          currentValue,
-          productImage
-        );
-      });
+      incrementBtn.addEventListener("click", incrementButton);
     });
 
     // Actualizar el contador del carrito al cargar la página
