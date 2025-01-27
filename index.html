@@ -30,8 +30,10 @@
 
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Caprasimo&family=Imprima&family=Modak&family=Noticia+Text:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Caprasimo&family=Imprima&family=Modak&family=Noticia+Text:ital,wght@0,400;0,700;1,400;1,700&display=swap"
+        rel="stylesheet">
     <!-- Estilos -->
     <link rel="stylesheet" href="css/style.css">
 
@@ -67,17 +69,17 @@
             <img src="assets/img/es_flag.png" alt="Español" id="lang-es" class="lang-icon">
             <img src="assets/img/en_flag.png" alt="English" id="lang-en" class="lang-icon">
         </div>
-                <div class="cart-overlay"></div>
-                <div class="cart-modal">
-                    <h1>Tu carrito</h1>
-                    <div class="cartItems">
-                        <!-- Cart items will be dynamically inserted here -->
-                    </div>
-                    <div class="cart-footer">
-                        <p class="total">Total: €<span id="totalPrice">0.00</span></p>
-                        <button class="checkout-button" onclick="goToCheckout()">Proceder al Checkout</button>
-                    </div>
-                </div>
+        <div class="cart-overlay"></div>
+        <aside class="cart-modal">
+            <h2>Tu carrito</h2>
+            <div class="cartItems">
+                <!-- Cart items will be dynamically inserted here -->
+            </div>
+            <div class="cart-footer">
+                <p class="total">Total: <span id="totalPrice">0.00 </span>€</p>
+                <button class="checkout-button buttonLink" onclick="goToCheckout()">Suscríbete al 30%</button>
+            </div>
+        </aside>
 
         <main role="main" class="content">
             <section id="hero">
@@ -162,7 +164,7 @@
                     <li><a href="#" id="">Plastic Neutral</a></li>
                 </ul>
             </div>
-            
+
             <div class="footer-logo">
                 <img src="assets/img/logotipos/logo-grande.png" alt="">
             </div>
@@ -176,9 +178,11 @@
         </div>
     </footer>
 
+    <script src="scripts/carrito.js"></script>
     <script src="scripts/script.js"></script>
-    <script src="scripts/cart.js"></script>
-    
+
+
 </body>
 
 </html>
+
