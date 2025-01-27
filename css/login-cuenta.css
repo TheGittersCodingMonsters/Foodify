@@ -1,18 +1,18 @@
 /*LOGIN*/
 .contenedorLogin {
-  background-color: var(--fondoSection);
+  background-color:  #ffffff;
   margin: 3rem auto;
   padding: 2rem;
   border-radius: 1rem;
-  width: 50%;
-  height: 50%;
+  width: 100rem;
+  height: 70%;
   text-align: center;
- 
- 
+  border-radius: 5rem;
 }
   
   .contenedorLogin h1 {
     margin-bottom: 1.5rem;
+    color: #ff6363ff;
   }
   
   .contenedorLogin label {
@@ -21,35 +21,44 @@
   }
   
   .contenedorLogin input {
-    width: 100%;
-    padding: 0.8rem;
+    width: 50%;
+    padding: 1rem;
     margin-bottom: 1.5rem;
     border: 1px solid var(--resalte);
-    border-radius: 0.5rem;
+    border-radius: 4rem;
   }
   
   .contenedorLogin button {
-    background-color: var(--verde);
-    color: var(--fondoSection);
+    background-color: #ffd257;;
     padding: 1rem 2rem;
-    border-radius: 0.5rem;
+    border-radius: 4rem;
     cursor: pointer;
   }
   
   .contenedorLogin button:hover {
-    background-color: var(--morado);
+    background-color: #b9668aff;
   }
   
   .registro {
+    background-color:  #ffffff;
+    margin: 3rem auto;
+    padding: 2rem;
+    border-radius: 4rem;
+    width: 60%;
+    height: 70%;
     text-align: center;
-        margin-top: 1.5rem;
+    margin-top: 1.5rem;
     }
 
+    .privacidad{
+      padding-top: 1rem;
+  }
   
   .registro a {
-    color: var(--titulos);
+    color: #88543b;
         font-weight: bold;
         text-decoration: underline;
+        margin: 1rem;
     }
  
 
@@ -57,17 +66,20 @@
 
   /*CREAR CUENTA*/
   .contenedor-cuenta{
-    background-color: var(--fondoSection);
+    width: 100rem;
+    height: 70%;
+    background-color:  #ffffff;
     margin: 3rem auto;
     padding: 2rem;
     border-radius: 1rem;
-    width: 90%;
-    max-width: 400px;
     text-align: center;
+    border-radius: 5rem;
+  
   }
 
     .contenedor-cuenta h1 {
         margin-bottom: 1.5rem;
+        color: #ff6363ff;
     }
 
     .contenedor-cuenta label {
@@ -78,24 +90,24 @@
     .contenedor-cuenta input[type="text"],
     .contenedor-cuenta input[type="password"],
     .contenedor-cuenta input[type="tel"] {
-        width: 100%;
+        width: 50%;
         padding: 1rem;
         margin-top: 0.5rem;
         border: 1px solid var(--resalte);
-        border-radius: 0.5rem;
+        border-radius: 4rem;
     }
 
 
     .contenedor-cuenta button {
-        background-color: var(--verde);
-        color: var(--fondoSection);
+        background-color: #ffd257;
         padding: 1rem 2rem;
-        border-radius: 0.5rem;
+        margin: 1rem;
+        border-radius: 4rem;
         cursor: pointer;
     }
 
     .contenedor-cuenta button:hover {
-        background-color: var(--morado);
+        background-color: #b9668aff;
 
     }
     
@@ -104,18 +116,19 @@
     }
 
     .privacidad a {
-        color: var(--morado);
+        color: var #b9668aff;
         font-weight: bold;
     }
 
     .link {
         text-align: center;
-        margin-top: 1.5rem;
+     margin: 1rem;
     }
     
     .link a {
-        color: var(--titulos);
+        color:#88543b;
         font-weight: bold;
         text-decoration: underline;
+        
     }
     
