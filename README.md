@@ -17,11 +17,11 @@ Se prepará un diseño preliminar en FIGMA que se presenta al cliente con todas 
 
 Una página principal de acceso donde se presenta la empresa y sus productos.
 
-[imagen]
+![index](assets/img/readme/index.png)
 
 Una página de catálogo donde aparecen todos los platos que **Foodify** prepara para su distribución y desde donde se pueden ir añadiendo al pedido.
 
-[imagen]
+![catalogo](assets/img/readme/platos.png)
 
 El pedido se mostrará en un carrito para su revisión por parte del cliente.
 
@@ -33,11 +33,11 @@ Y un checkout
 
 Al ser un sitio de ecommerce deberá contar con un registro y login de usuarios que los identifique y guarde sus datos para la compra y futuro. Así mismo presentará las disposiciones legales necesarias para este tipo de sitios.
 
-[imagen]
+![rgpd](assets/img/readme/rgpd.png)
 
 Los clientes están orgullosos de su historia y equipo por lo que han solicitado la inclusión de una página que presente la empresa, sus fundadores y sus empleados.
 
-[imagen]
+![nosotros](assets/img/readme/nosotros.png)
 <br>
 <br>
 <br>
