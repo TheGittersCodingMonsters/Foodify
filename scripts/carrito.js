@@ -1,4 +1,3 @@
-
 function getCart() {
     cart = JSON.parse(localStorage.getItem("cart")) || [];
     const cartArray = Object.values(cart);  

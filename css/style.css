@@ -256,6 +256,7 @@ a {
 
 .cart-item .img-plato {
   display: block;
+  cursor: pointer;
   width: 20rem;
   object-fit: cover;
   border-radius: 2rem 0 0 2rem;

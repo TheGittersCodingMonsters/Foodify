@@ -85,7 +85,12 @@ function renderCart() {
         const incrementBtn = cartItem.querySelector(".increment-cart");
         const decrementBtn = cartItem.querySelector(".decrement-cart");
 
-        // --- CAMBIO CLAVE 1: Incluir updateProductCounter ---
+        // Evento al hacer clic en la imagen
+        const imgCart = cartItem.querySelector(".cart-img .img-plato");
+        imgCart.addEventListener("click", () => {
+        window.location.href = `plato.html?id=${item.id}&lang=${language}`;
+        });
+                
         incrementBtn.addEventListener("click", () => {
             addToCart(item);
             renderCart(); // Actualiza el modal
@@ -93,7 +98,7 @@ function renderCart() {
             updateTotalPrice(); 
         });
 
-        // --- CAMBIO CLAVE 2: Pasar ID explícitamente ---
+        
         decrementBtn.addEventListener("click", () => {
             handleDecrementClick(item.id); 
             renderCart();
@@ -110,6 +115,8 @@ function renderCart() {
         totalElement.textContent = `Total: ${total.toFixed(2)} €`;
     }
 }
+
+
 
 // Inicialización del modal
 updateCartCount();
