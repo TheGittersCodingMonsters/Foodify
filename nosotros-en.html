@@ -42,31 +42,30 @@
 </head>
 
   <body>
-    <header role="banner" class="header">
-      <div class="logo">
-        <a href="index.html"
-          ><img src="assets/img/logotipos/imagotipo.png" alt="Foodify Logo"
-        /></a>
-      </div>
-      <nav role="navigation" class="nav">
+    <div class="container">
+      <header role="banner" class="header">
+        <div class="logo-mobile">
+      <a href="index.html"><img src="assets/img/logotipos/imagotipo.png" alt="Foodify Logo"></a>
+  </div>
+  <div class="logo-regular">
+      <a href="index.html"><img src="assets/img/logotipos/logotipo-letras.png" alt="Foodify Logo"></a>
+  </div>
+<nav role="navigation" class="nav">
         <ul class="menu">
           <li><a href="index.html">Home</a></li>
-          <li><a href="#about">About</a></li>
-          <li><a href="#menu">Menu</a></li>
-          <li><a href="#contact">Contact</a></li>
+          <li><a href="contacto-en.html">Contact</a></li>
+          <li><a href="catalogo.html">Menu</a></li>
+          <li><a href="crearcuenta-en.html">Profile</a></li>
         </ul>
         <div class="menu-mobile">
           <i class="fa-solid fa-bars"></i>
-        </div>
-      </nav>
-      <div class="language-switch">
-        <img src="assets/img/es_flag.png" alt="Español" id="lang-es" class="lang-icon">
-        <img src="assets/img/en_flag.png" alt="English" id="lang-en" class="lang-icon">
-    </div>
-    <div class="cart-icon" style="float:right; margin-right: 2%;">
-        🛒 <span class="cart-count">0</span>
-    </div>
-    </header>
+      </div>
+      <div class="cart">
+          <a href="cart-es.html"><i class="fa-solid fa-cart-shopping"></i></a>
+          <span class="cart-count">0</span>
+      </div>
+  </nav>
+</header>
     <div class="language-switch">
       <a href="nosotros-es.html">
       <img
@@ -85,6 +84,17 @@
       />
     </a>
     </div>
+    <div class="cart-overlay"></div>
+    <aside class="cart-modal">
+        <h2>Tu carrito</h2>
+        <div class="cartItems">
+            <!-- Cart items will be dynamically inserted here -->
+        </div>
+        <div class="cart-footer">
+            <p class="total">Total: <span id="totalPrice">0.00 </span>€</p>
+            <button class="checkout-button buttonLink" onclick="goToCheckout()">Suscríbete al 30%</button>
+        </div>
+    </aside>
 
     <main role="main" class="content">
       <h1>FoodiFy</h1>
@@ -205,6 +215,7 @@
           Thanks to Paco, innovation is at the service of your taste buds!
         </p>
       </div>
+    </div>
     </main>
 
     <footer role="contentinfo" class="footer">

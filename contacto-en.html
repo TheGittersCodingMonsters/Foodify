@@ -67,41 +67,39 @@
   </head>
 
   <body>
+    <div class="container">
     <header role="banner" class="header">
-      <div class="logo">
+      <div class="logo-mobile">
         <a href="index.html"
-          ><img src="assets/img/logotipos/imagotipo.png" alt="Foodify Logo"
+          ><img
+            src="assets/img/logotipos/imagotipo.png"
+            alt="Foodify Logo"
+        /></a>
+      </div>
+      <div class="logo-regular">
+        <a href="index.html"
+          ><img
+            src="assets/img/logotipos/logotipo-letras.png"
+            alt="Foodify Logo"
         /></a>
       </div>
       <nav role="navigation" class="nav">
         <ul class="menu">
           <li><a href="index.html">Home</a></li>
-          <li><a href="#about">About</a></li>
-          <li><a href="#menu">Menu</a></li>
-          <li><a href="#contact">Contact</a></li>
+          <li><a href="#">Contact</a></li>
+          <li><a href="catalogo.html">Menu</a></li>
+          <li><a href="crearcuenta-en.html">Profile</a></li>
         </ul>
         <div class="menu-mobile">
           <i class="fa-solid fa-bars"></i>
         </div>
+        <div class="cart">
+          <a href="cart-es.html"
+            ><i class="fa-solid fa-cart-shopping"></i
+          ></a>
+          <span class="cart-count">0</span>
+        </div>
       </nav>
-
-      <div class="language-switch">
-        <img
-          src="assets/img/es_flag.png"
-          alt="Español"
-          id="lang-es"
-          class="lang-icon"
-        />
-        <img
-          src="assets/img/en_flag.png"
-          alt="English"
-          id="lang-en"
-          class="lang-icon"
-        />
-      </div>
-      <div class="cart-icon" style="float: right; margin-right: 2%">
-        🛒 <span class="cart-count">0</span>
-      </div>
     </header>
 
     <div class="language-switch">
@@ -241,6 +239,7 @@
           <img src="assets/img/img_contacto.png" alt="" />
         </section>
       </section>
+    </div>
     </main>
 
     <footer role="contentinfo" class="footer">
