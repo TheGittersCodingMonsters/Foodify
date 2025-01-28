@@ -42,39 +42,90 @@ document.addEventListener("DOMContentLoaded", () => {
 
                 loadTexts(currentLanguage);
                 setupCounter(plato);
+                updateProductCounter(plato.id); 
             });
     }
 
     // Configurar eventos para los botones (igual que en catalogo.js)
     function setupCounter(plato) {
         const counter = document.querySelector(`[data-id="${plato.id}"]`);
-        if (!counter) return;
+    if (!counter) return;
+    
+    // Obtener cantidad actual del carrito
+    const cart = getCart();
+    const cartItem = cart.find(item => item.id == plato.id);
+    const initialValue = cartItem ? cartItem.quantity : 0; // <-- Aquí
 
+    // Reemplazar HTML incluyendo el valor inicial
+    counter.innerHTML = `
+        <button class="counter-btn decrement">-</button>
+        <span class="counter-value">${initialValue}</span>
+        <button class="counter-btn increment">+</button>
+    `;
+        // Obtener los nuevos botones
         const incrementBtn = counter.querySelector(".increment");
         const decrementBtn = counter.querySelector(".decrement");
-
-        // Actualizar contador inicial
-        updateProductCounter(plato.id);
-
-        // Eventos idénticos a catalogo.js
+      
+        // Evento para incrementar
         incrementBtn.addEventListener("click", () => {
-            addToCart(plato);
-            updateProductCounter(plato.id);
-            updateCartCount();
-            updateTotalPrice();
+          addToCart(plato);
+          updateProductCounter(plato.id);
+          updateCartCount();
+          updateTotalPrice();
         });
-
+      
+        // Evento para decrementar
         decrementBtn.addEventListener("click", () => {
-            handleDecrementClick(plato.id);
-            updateProductCounter(plato.id);
-            updateCartCount();
-            updateTotalPrice();
+          handleDecrementClick(plato.id);
+          updateProductCounter(plato.id);
+          updateCartCount();
+          updateTotalPrice();
         });
-    }
+      
+        // Actualizar el contador inicial
+        updateProductCounter(plato.id);
+      }
 
     // Resto de funciones (loadTexts, loadMenu) se mantienen igual
-    function loadTexts(language) { /* ... */ }
-    function loadMenu() { /* ... */ }
+    function loadTexts(language) {
+        fetch(`../assets/data/textos-${language}.json`)
+                .then(response => response.json())
+                .then(data => {
+              
+                    // Encuentra todos los elementos con el atributo data-traductor
+                    document.querySelectorAll("[data-traductor]").forEach(element => {
+                        const key = element.getAttribute("data-traductor");
+                        if (data[key]) {
+                         
+                            element.textContent = data[key];
+                        }
+                        loadMenu();
+                    });
+                });
+}
+
+   // funcion para leer opciones de menu segun el idioma, cambia el link 
+   function loadMenu(){
+    const carpeta = currentLanguage.toUpperCase();
+    const menu1 = document.querySelector('.menu li:first-child a');
+    const ruta1 = `${carpeta}/index-${currentLanguage}.html`;
+    menu1.setAttribute('href', ruta1);
+    const menu2 = document.querySelector('.menu li:nth-child(2) a');
+    const ruta2 = `${carpeta}/contacto-${currentLanguage}.html`;
+    menu2.setAttribute('href', ruta2);
+   // const menu3 = document.querySelector('.menu li:nth-child(3) a')
+    //const ruta3 = `catalogo-${currentLanguage}.html`;
+   // menu3.setAttribute('href', ruta3);
+    const menu4 = document.querySelector('.menu li:nth-child(4) a');
+    const ruta4 = `${carpeta}/crearcuenta-${currentLanguage}.html`;
+    menu4.setAttribute('href', ruta4);
+    //link en icono carrito
+/*         const menu5 = document.querySelector('.cart a');
+    const ruta5 = `${carpeta}/cart-${currentLanguage}.html`;
+    menu5.setAttribute('href', ruta5); */
+
+   }
+
 
     // Eventos de cambio de idioma
     langEs.addEventListener("click", () => {

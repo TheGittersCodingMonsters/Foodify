@@ -4,9 +4,9 @@ let currentLanguage = 'es';
 let translations = {};
 
 // Función principal async/await
-async function loadTexts(language) {
+async function loadTexts(currentLanguage) {
   try {
-    const response = await fetch(`../assets/data/textos-${language}.json`);
+    const response = await fetch(`../assets/data/textos-${currentLanguage}.json`);
     if (!response.ok) throw new Error(`HTTP error! status: ${response.status}`);
     translations = await response.json();
     
@@ -20,24 +20,6 @@ async function loadTexts(language) {
     console.error("Error cargando textos:", error);
   }
 }
-
-async function loadPlatos() {
-  try {
-    const response = await fetch(`../assets/data/platos-${currentLanguage}.json`);
-    if (!response.ok) throw new Error("Error cargando platos");
-    
-    platosData = await response.json();
-    gallery.innerHTML = "";
-    
-    populateFilterOptions(platosData);
-    displayPlatos(platosData);
-    platosData.forEach(plato => updateProductCounter(plato.id));
-  } catch (error) {
-    console.error("Error:", error);
-  }
-}
-
-
 
 // Filtrado simplificado
 function applyFilters() {
@@ -72,7 +54,7 @@ document.body.addEventListener('change', (e) => {
 async function changeLanguage(lang) {
   currentLanguage = lang;
   await loadTexts(lang);
-  await loadPlatos();
+  await loadPlatos(currentLanguage);
 }
 
 // Inicialización
@@ -90,11 +72,9 @@ document.addEventListener("DOMContentLoaded", async () => {
     return;
   }
 
-
-  
   try {
     await loadTexts(currentLanguage);
-    await loadPlatos();
+    await loadPlatos(currentLanguage);
     updateCartCount();
     updateTotalPrice();
   } catch (error) {
@@ -107,7 +87,7 @@ const handleLanguageChange = async (lang) => {
   try {
     currentLanguage = lang;
     await loadTexts(currentLanguage);
-    await loadPlatos();
+    await loadPlatos(currentLanguage);
   } catch (error) {
     console.error("Error cambiando idioma:", error);
   }
@@ -116,7 +96,7 @@ const handleLanguageChange = async (lang) => {
 
 
 // Función para cargar platos
-function loadPlatos() {
+async function loadPlatos(currentLanguage) {
   gallery.innerHTML = ""; // Limpiar galería
   
   fetch(`../assets/data/platos-${currentLanguage}.json`)
@@ -219,7 +199,7 @@ function displayPlatos(platos) {
 }
 
 // Carga inicial de platos
-function loadPlatos() {
+function loadPlatos(currentLanguage) {
   fetch(`../assets/data/platos-${currentLanguage}.json`)
     .then(response => {
       if (!response.ok) throw new Error(`Error al cargar los datos: ${response.status}`);
@@ -233,7 +213,7 @@ function loadPlatos() {
     .catch(error => console.error("Error al cargar los platos:", error));
 }
 
-// Función actualizada para manejar múltiples instancias
+/* // Función actualizada para manejar múltiples instancias
 function updateProductCounter(platoId) {
   const cart = getCart();
   const plato = cart.find(item => item.id === platoId);
@@ -248,49 +228,38 @@ function updateProductCounter(platoId) {
           element.textContent = "0"; // Reset si no está en el carrito
       });
   }
-}
+} */
 
 // funcion para leer opciones de menu segun el idioma, cambia el link 
 function loadMenu(){
-  const carpeta = currentLanguage.toUpperCase();
+
   const menu1 = document.querySelector('.menu li:first-child a');
-  const ruta1 = `${carpeta}/index-${currentLanguage}.html`;
+  const ruta1 = `index-${currentLanguage}.html`;
   menu1.setAttribute('href', ruta1);
   const menu2 = document.querySelector('.menu li:nth-child(2) a');
-  const ruta2 = `${carpeta}/contacto-${currentLanguage}.html`;
+  const ruta2 = `contacto-${currentLanguage}.html`;
   menu2.setAttribute('href', ruta2);
- // const menu3 = document.querySelector('.menu li:nth-child(3) a')
-  //const ruta3 = `catalogo-${currentLanguage}.html`;
- // menu3.setAttribute('href', ruta3);
+  const menu3 = document.querySelector('.menu li:nth-child(3) a')
+  const ruta3 = `catalogo.html`;
+  menu3.setAttribute('href', ruta3);
   const menu4 = document.querySelector('.menu li:nth-child(4) a');
-  const ruta4 = `${carpeta}/crearcuenta-${currentLanguage}.html`;
+  const ruta4 = `crearcuenta-${currentLanguage}.html`;
   menu4.setAttribute('href', ruta4);
-  //link en icono carrito
-/*   const menu5 = document.querySelector('.cart a');
-  const ruta5 = `${carpeta}/cart-${currentLanguage}.html`;
-  menu5.setAttribute('href', ruta5); */
-
  }
 
+//PARA español
+langEs.addEventListener("click", () => {
+  currentLanguage = "es";
+  loadTexts(currentLanguage);
+  loadPlatos(currentLanguage);
+});
 
-
- // Función para cargar textos desde el archivo JSON de idioma
- function loadTexts(language) {
-  fetch(`../assets/data/textos-${currentLanguage}.json`)
-      .then(response => response.json())
-      .then(data => {
-          document.querySelectorAll("[data-traductor]").forEach(element => {
-              const key = element.getAttribute("data-traductor");
-              if (data[key]) {
-                  element.textContent = data[key];
-              }
-             
-          });
-          loadMenu();
-      })
-      
-      .catch(error => console.error("Error al leer las traducciones:", error));
-}
+//PARA EUSKERA
+langEn.addEventListener("click", () => {
+  currentLanguage = "en";
+  loadTexts(currentLanguage);
+  loadPlatos(currentLanguage);
+});
 
 //PARA EUSKERA
 /*langEu.addEventListener("click", () => {
@@ -301,9 +270,11 @@ function loadMenu(){
 
 
 
+
+
 // Inicialización
 document.addEventListener("DOMContentLoaded", () => {
-  loadPlatos();
+  loadPlatos(currentLanguage);
   updateCartCount();
   updateTotalPrice();
 });
