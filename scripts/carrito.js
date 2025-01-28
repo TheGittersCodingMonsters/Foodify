@@ -25,7 +25,7 @@ function getCart() {
   
   function addToCart(product) {
     const cart = getCart();
-    const existingProduct = cart.find(item => item.id === product.id);
+    const existingProduct = cart.find(item => item.id == product.id);
     
     if (existingProduct) {
       existingProduct.quantity += 1;
@@ -87,7 +87,7 @@ function updateTotalPrice() {
 
 function handleIncrementClick(productId) { // Recibir el ID del producto
     const cart = getCart();
-    const existingProduct = cart.find(item => item.id === productId); // Buscar en el carrito
+    const existingProduct = cart.find(item => item.id == productId); // Buscar en el carrito
     if (existingProduct) {
         existingProduct.quantity += 1;
         saveCart(cart);
@@ -99,7 +99,7 @@ function handleIncrementClick(productId) { // Recibir el ID del producto
 
 function handleDecrementClick(productId) {
     const cart = getCart();
-    const existingProduct = cart.find(item => item.id === productId);
+    const existingProduct = cart.find(item => item.id == productId);
     
     if (existingProduct) {
         if (existingProduct.quantity > 1) {
@@ -117,6 +117,22 @@ function handleDecrementClick(productId) {
         updateCartCount();
     }
 }
+
+function updateProductCounter(platoId) {
+    const cart = getCart();
+    const plato = cart.find(item => item.id === platoId);
+    const counterElements = document.querySelectorAll(`[data-id="${platoId}"] .counter-value`);
+  
+    if (plato && counterElements.length > 0) {
+        counterElements.forEach(element => {
+            element.textContent = plato.quantity;
+        });
+    } else {
+        counterElements.forEach(element => {
+            element.textContent = "0";
+        });
+    }
+  }
   
 
   
