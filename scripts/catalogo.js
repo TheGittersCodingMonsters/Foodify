@@ -1,4 +1,4 @@
-let categoryFilter, typeFilter, veganFilter, langEs, langEn;
+let categoryFilter, typeFilter, veganFilter, langEs, langEn, langEu;
 let platosData = [];
 let currentLanguage = 'es';
 let translations = {};
@@ -64,6 +64,7 @@ document.addEventListener("DOMContentLoaded", async () => {
   veganFilter = document.getElementById("filter-vegan");
   langEs = document.getElementById("lang-es");
   langEn = document.getElementById("lang-en");
+  langEu = document.getElementById("lang-eu");
   gallery = document.getElementById("gallery");
 
   //PARA español
@@ -73,7 +74,7 @@ document.addEventListener("DOMContentLoaded", async () => {
     loadPlatos(currentLanguage);
   });
 
-  //PARA EUSKERA
+  //PARA Inglés
   langEn.addEventListener("click", () => {
     currentLanguage = "en";
     loadTexts(currentLanguage);
@@ -81,11 +82,11 @@ document.addEventListener("DOMContentLoaded", async () => {
   });
 
   //PARA EUSKERA
-  /*langEu.addEventListener("click", () => {
+  langEu.addEventListener("click", () => {
     currentLanguage = "eu";
     loadTexts(currentLanguage);
     loadPlatos(currentLanguage);
-  });*/
+  });
 
   // Verificar existencia
   if (!categoryFilter || !typeFilter || !veganFilter) {

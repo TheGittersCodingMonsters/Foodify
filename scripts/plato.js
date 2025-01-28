@@ -1,6 +1,7 @@
 document.addEventListener("DOMContentLoaded", () => {
     const langEs = document.getElementById("lang-es");
     const langEn = document.getElementById("lang-en");
+    const langEu = document.getElementById("lang-eu");
     let currentLanguage = "es";
     const params = new URLSearchParams(window.location.search);
     const productId = params.get("id");
@@ -33,12 +34,7 @@ document.addEventListener("DOMContentLoaded", () => {
                             <p class="calorias"><span data-traductor="calorias"></span>: ${plato.calorias}</p>
                             <p class="vegano"><span data-traductor="vegano"></span>: ${plato.vegano ? "Sí" : "No"}</p>
                         </div>
-                    </div>
-                    <div class="product-counter" data-id="${plato.id}">
-                        <button class="counter-btn decrement">-</button>
-                        <span class="counter-value">0</span>
-                        <button class="counter-btn increment">+</button>
-                    </div>`;
+                    </div> `;
                 
                 loadTexts(currentLanguage);
                 setupCounter(plato);
@@ -139,6 +135,13 @@ document.addEventListener("DOMContentLoaded", () => {
         loadTexts(currentLanguage);
         loadProductDetail(currentLanguage);
     });
+
+    langEu.addEventListener("click", () => {
+        currentLanguage = "eu";
+        loadTexts(currentLanguage);
+        loadProductDetail(currentLanguage);
+    });
+
 
     // Carga inicial
     loadTexts(currentLanguage);
