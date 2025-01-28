@@ -34,12 +34,7 @@ document.addEventListener("DOMContentLoaded", () => {
                             <p class="calorias"><span data-traductor="calorias"></span>: ${plato.calorias}</p>
                             <p class="vegano"><span data-traductor="vegano"></span>: ${plato.vegano ? "Sí" : "No"}</p>
                         </div>
-                    </div>
-                    <div class="product-counter" data-id="${plato.id}">
-                        <button class="counter-btn decrement">-</button>
-                        <span class="counter-value">0</span>
-                        <button class="counter-btn increment">+</button>
-                    </div>`;
+                    </div> `;
                 
                 loadTexts(currentLanguage);
                 setupCounter(plato);
