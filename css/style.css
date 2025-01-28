@@ -64,6 +64,29 @@ a {
 
 /* Header */
 
+/** Reloj en index **/
+.date-time-box {
+  font-family: 'Arial', sans-serif;
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: white;
+  background: linear-gradient(135deg, #ffd257, #88543b);
+  padding: 15px 20px;
+  border-radius: 10px;
+  text-align: center;
+  width: fit-content;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s ease-in-out;
+  position: absolute;
+  top: 2rem;
+  left: 2rem;
+  z-index: 250;
+}
+
+.date-time-box:hover {
+  transform: scale(1.05);
+} 
+
 .header {
   position: sticky;
   z-index: 100;
@@ -333,31 +356,6 @@ a {
 }
 
 
-/** Reloj en index **/
-.date-time-box {
-  font-family: 'Arial', sans-serif;
-  font-size: 1.2rem;
-  font-weight: bold;
-  color: white;
-  background: linear-gradient(135deg, #ffd257, #88543b);
-  padding: 15px 20px;
-  border-radius: 10px;
-  text-align: center;
-  width: fit-content;
-  margin: 20px auto;
-  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
-  transition: transform 0.3s ease-in-out;
-  position: absolute;
-  right: 80px;
-  top: 117px;
-  z-index: 250;
-}
-
-.date-time-box:hover {
-  transform: scale(1.05);
-} 
-
-
 /** languages **/
 .language-switch {
   position: absolute;
@@ -526,6 +524,9 @@ ul.hero {
 /* Large devices such as laptops (1024px and up) */
 @media only screen and (min-width: 1024px) {
   /* Header */
+
+
+
   .header {
     position: sticky;
     z-index: 100;
@@ -587,12 +588,6 @@ ul.hero {
   .menu.clicked {
     transform: translateY(0%);
   }
-
-  .date-time-box {
-    top: 99px;
-    right: 99px;
-  }
-
 
   /** languages **/
   .language-switch {
@@ -697,12 +692,11 @@ ul.hero {
     background-color: var(--verde);
     transition: all 550ms cubic-bezier(0.19, 1, 0.22, 1);
   }
+*/
 
-  .date-time-box {
-    top: 99px;
-    right: 99px;
-  }
 
+
+  
   /* Sections */
   #hero {
     display: flex;
