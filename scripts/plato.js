@@ -39,7 +39,7 @@ document.addEventListener("DOMContentLoaded", () => {
                         <span class="counter-value">0</span>
                         <button class="counter-btn increment">+</button>
                     </div>`;
-
+                
                 loadTexts(currentLanguage);
                 setupCounter(plato);
                 updateProductCounter(plato.id); 
