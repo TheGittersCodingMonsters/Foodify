@@ -1,6 +1,7 @@
 document.addEventListener("DOMContentLoaded", () => {
     const langEs = document.getElementById("lang-es");
     const langEn = document.getElementById("lang-en");
+    const langEu = document.getElementById("lang-eu");
     let currentLanguage = "es";
     const params = new URLSearchParams(window.location.search);
     const productId = params.get("id");
@@ -139,6 +140,13 @@ document.addEventListener("DOMContentLoaded", () => {
         loadTexts(currentLanguage);
         loadProductDetail(currentLanguage);
     });
+
+    langEu.addEventListener("click", () => {
+        currentLanguage = "eu";
+        loadTexts(currentLanguage);
+        loadProductDetail(currentLanguage);
+    });
+
 
     // Carga inicial
     loadTexts(currentLanguage);
