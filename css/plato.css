@@ -8,22 +8,41 @@
 #plato #productDetail{
  background-color:white;
  text-align:center;
- width:65%;
- margin: 1rem auto;
+ width:80%;
+ margin: 1.5rem auto;
  padding: 1rem;
+ border-radius:25px;
 }
 #plato .contenido-detalle{
     display: flex;
-    
+  
 }
 #plato .img-plato{
     text-align:center;
     margin: 1rem;
+    overflow:hidden;
+    border-radius:25px;
+    
 }
 #plato .img-plato img{
-    width: 70%;
+    width: 100%;
+    height: 100%;
+    transition:transform 0.5s ease-out;
+ 
 }
-
+#plato .img-plato img:hover{
+    transform: scale(1.2);
+}
+#plato .detalles{
+    font-size:2rem;
+    padding:0.5rem;
+}
+#plato .descripcion-titulo, #plato .descripcion{
+    margin: 1rem auto;
+}
+#plato .categoria{
+    margin: 3rem auto auto;
+}
 
 /** estilos del contador de pedido bajo foto plato**/
 #plato .product-counter {
@@ -33,7 +52,8 @@
     align-items: center;
     border-top: 1px solid #ccc;
     background-color: #f9f9f9;
-	  height: 50px;
+	height: 50px;
+
 }
 
 #plato .counter-btn {
@@ -61,4 +81,12 @@
     color: #333;
     padding: 10px;
 	user-select: none; /* Evita seleccionar texto */
+}
+@media (max-width: 768px) {
+    #plato .contenido-detalle{
+        flex-direction:column;
+      
+    }
+    
+
 }

@@ -1,26 +1,26 @@
-let categoryFilter, typeFilter, veganFilter, langEs, langEn;
+let categoryFilter, typeFilter, veganFilter, langEs, langEn /* langEu */;
 let platosData = [];
 let currentLanguage = 'es';
 let translations = {};
 
 // Función principal async/await
-async function loadTexts(currentLanguage) {
-  try {
-    const response = await fetch(`../assets/data/textos-${currentLanguage}.json`);
-    if (!response.ok) throw new Error(`HTTP error! status: ${response.status}`);
-    translations = await response.json();
-    
-    document.querySelectorAll("[data-traductor]").forEach(element => {
-      const key = element.getAttribute("data-traductor");
-      element.textContent = translations[key] || key;
-    });
-    
-    loadMenu();
-  } catch (error) {
-    console.error("Error cargando textos:", error);
-  }
-}
 
+function loadTexts(language) {
+  fetch(`../assets/data/textos-${language}.json`)
+    .then(response => response.json())
+    .then(data => {
+      // Almacena las traducciones en una variable global
+      translations = data;
+      
+      // Aplica las traducciones a todos los elementos existentes
+      document.querySelectorAll("[data-traductor]").forEach(element => {
+        const key = element.getAttribute("data-traductor");
+        element.textContent = translations[key] || "";
+      });
+      
+      loadMenu();
+    });
+}
 // Filtrado simplificado
 function applyFilters() {
 
@@ -51,10 +51,10 @@ document.body.addEventListener('change', (e) => {
 });
 
 // Cambio de idioma simplificado
-async function changeLanguage(lang) {
+function changeLanguage(lang) {
   currentLanguage = lang;
-  await loadTexts(lang);
-  await loadPlatos(currentLanguage);
+ loadTexts(currentLanguage);
+loadPlatos(currentLanguage);
 }
 
 // Inicialización
@@ -64,7 +64,30 @@ document.addEventListener("DOMContentLoaded", async () => {
   veganFilter = document.getElementById("filter-vegan");
   langEs = document.getElementById("lang-es");
   langEn = document.getElementById("lang-en");
+/*   langEu = document.getElementById("lang-eu"); */
   gallery = document.getElementById("gallery");
+
+  //PARA español
+  langEs.addEventListener("click", () => {
+    currentLanguage = "es";
+    loadTexts(currentLanguage);
+    loadPlatos(currentLanguage);
+  });
+
+  //PARA Ingles
+  langEn.addEventListener("click", () => {
+    currentLanguage = "en";
+    loadTexts(currentLanguage);
+    loadPlatos(currentLanguage);
+  });
+
+/*  //PARA EUSKERA
+ langEu.addEventListener("click", () => {
+  currentLanguage = "eu";
+  loadTexts(currentLanguage);
+  loadPlatos(currentLanguage);
+}); */
+
 
   // Verificar existencia
   if (!categoryFilter || !typeFilter || !veganFilter) {
@@ -72,34 +95,21 @@ document.addEventListener("DOMContentLoaded", async () => {
     return;
   }
 
-  try {
-    await loadTexts(currentLanguage);
-    await loadPlatos(currentLanguage);
+ 
+    loadTexts(currentLanguage);
+    loadPlatos(currentLanguage);
     updateCartCount();
     updateTotalPrice();
-  } catch (error) {
-    console.error("Error inicial:", error);
-  }
+
 });
 
-// Función para manejar cambio de idioma
-const handleLanguageChange = async (lang) => {
-  try {
-    currentLanguage = lang;
-    await loadTexts(currentLanguage);
-    await loadPlatos(currentLanguage);
-  } catch (error) {
-    console.error("Error cambiando idioma:", error);
-  }
-};
 
 
-
-// Función para cargar platos
-async function loadPlatos(currentLanguage) {
+/* // Función para cargar platos
+async function loadPlatos(language) {
   gallery.innerHTML = ""; // Limpiar galería
   
-  fetch(`../assets/data/platos-${currentLanguage}.json`)
+  fetch(`../assets/data/platos-${language}.json`)
     .then(response => response.json())
     .then(data => {
       platosData = data;
@@ -109,7 +119,7 @@ async function loadPlatos(currentLanguage) {
     })
     .catch(error => console.error("Error cargando platos:", error));
 }
-
+ */
 // Función para poblar opciones de filtros
 function populateFilterOptions(platos) {
   const categories = getUniqueFilterValues(platos, "filtroCategoria");
@@ -166,6 +176,13 @@ function displayPlatos(platos) {
       </div>
     `;
 
+    
+    // Aplicar traducciones a los nuevos elementos dinámicos
+    document.querySelectorAll("[data-traductor]").forEach(element => {
+      const key = element.getAttribute("data-traductor");
+      element.textContent = translations[key] || "";
+    });
+    
     // Evento al hacer clic en la imagen
     const imgPlato = platoDiv.querySelector(".img-plato img");
     imgPlato.addEventListener("click", () => {
@@ -199,7 +216,7 @@ function displayPlatos(platos) {
 }
 
 // Carga inicial de platos
-function loadPlatos(currentLanguage) {
+function loadPlatos(language) {
   fetch(`../assets/data/platos-${currentLanguage}.json`)
     .then(response => {
       if (!response.ok) throw new Error(`Error al cargar los datos: ${response.status}`);
@@ -246,31 +263,6 @@ function loadMenu(){
   const ruta4 = `crearcuenta-${currentLanguage}.html`;
   menu4.setAttribute('href', ruta4);
  }
-
-//PARA español
-langEs.addEventListener("click", () => {
-  currentLanguage = "es";
-  loadTexts(currentLanguage);
-  loadPlatos(currentLanguage);
-});
-
-//PARA EUSKERA
-langEn.addEventListener("click", () => {
-  currentLanguage = "en";
-  loadTexts(currentLanguage);
-  loadPlatos(currentLanguage);
-});
-
-//PARA EUSKERA
-/*langEu.addEventListener("click", () => {
-  currentLanguage = "eu";
-  loadTexts(currentLanguage);
-  loadPlatos(currentLanguage);
-});*/
-
-
-
-
 
 // Inicialización
 document.addEventListener("DOMContentLoaded", () => {
