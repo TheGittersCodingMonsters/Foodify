@@ -23,5 +23,5 @@ enviar.addEventListener("click", function (event) {
   localStorage.setItem("poblacion", poblacion);
   localStorage.setItem("pais", pais);
 
-  //alert("Datos guardados en localStorage");
+alert("Datos guardados en localStorage");
 });
