@@ -29,17 +29,17 @@ function renderCheckoutItems(cart) {
             <div class="checkout-item">
                 <div class="product-details">
                     <!-- Display product image -->
-                    <img src="${item.image}" alt="${item.name}" class="product-image" style="width: 80px; height: 80px; border-radius: 10px; border: solid 3px white;">
+                    <img src="${item.foto}" alt="${item.nombre}" class="product-image" style="width: 80px; height: 80px; border-radius: 10px; border: solid 3px white;">
                     <div class="product-info">
-                        <p class="item-name">${item.name}</p>
+                        <p class="item-name">${item.precio}</p>
                         <p>Quantity: ${item.quantity}</p>
                     </div>
                 </div>
-                <p class="item-total">$${(item.price * item.quantity).toFixed(2)}</p>
+                <p class="item-total">$${(item.precio * item.quantity).toFixed(2)}</p>
             </div>`;
 
         // Calculate total
-        total += item.price * item.quantity;
+        total += item.precio * item.quantity;
     });
 
     // Update the checkout page with items and total price
