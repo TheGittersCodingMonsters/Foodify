@@ -6,7 +6,7 @@
   --fondoSection: #ffffff;
   --verde: #00a721;
   --verdeClaro: #beebc6ff;
-  --morado: #b9668aff;
+  --morado: rgb(98, 49, 175);
   --textoNormal: #1d1400;
 }
 
@@ -44,6 +44,7 @@ body {
   justify-content: center;
   flex-direction: column;
   align-items: center;
+  overflow: visible;
 }
 
 img {
@@ -66,21 +67,21 @@ a {
 
 /** Reloj en index **/
 .date-time-box {
+  position: absolute;
+  top: 1rem;
+  left: 1rem;
+  z-index: 150;
+
   font-family: 'Arial', sans-serif;
   font-size: 1.2rem;
   font-weight: bold;
-  color: white;
+  color: var(--textoNormal);
+
   background: linear-gradient(135deg, #ffd257, #88543b);
-  padding: 15px 20px;
+  padding: 1.5rem 2rem;
   border-radius: 10px;
-  text-align: center;
-  width: fit-content;
   box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
   transition: transform 0.3s ease-in-out;
-  position: absolute;
-  top: 2rem;
-  left: 2rem;
-  z-index: 250;
 }
 
 .date-time-box:hover {
@@ -89,13 +90,14 @@ a {
 
 .header {
   position: sticky;
-  z-index: 100;
+  z-index: 150;
   top: 5%;
+  left: 0;
   display: flex;
   justify-content: space-between;
   align-items: center;
   background-color: var(--fondoSection);
-  width: 90%;
+  
   padding: 1.8rem;
   border-radius: 9rem;
   box-shadow: 0 4px 8px var(--subtitulos);
@@ -130,8 +132,8 @@ a {
   font-size: 5rem;
   display: flex;
   flex-flow: column nowrap;
-  align-items: center;
-  gap: 5rem;
+  align-items: stretch;
+  gap: 2rem;
   padding: 20rem 0;
   transform: translateY(-100%);
   transition: transform 0.5s ease-out;
@@ -154,18 +156,31 @@ a {
 
 .menu li {
   padding: 0 1rem;
-}
+  margin: 0 auto;
+  width: 70%;
+ }
 
 .menu li a {
   display: block;
   width: 100%;
   color: var(--subtitulos);
+  padding: 2rem;
+  border-radius: 4rem;
+  text-align: center;
+  transition: background-color 0.4s ease-in;
+}
+
+.menu li a:hover {
+  display: block;
+  width: 100%;
+  background-color: var(--subtitulos);
+  color: var(--resalte);
 }
 
 .menu-mobile {
   position: relative;
   cursor: pointer;
-  z-index: 200;
+  z-index: 300;
   font-size: 3rem;
   padding: 1.5rem 3rem;
 }
@@ -176,7 +191,7 @@ a {
 
 .cart {
   position: relative;
-  z-index: 200;
+  z-index: 150;
   cursor: pointer;
   margin-right: 1.6rem;
   padding: 0.9rem;
@@ -220,17 +235,17 @@ a {
   top: 0;
   left: 0;
   width: 100vw;
-  height: 100vw;
+  height: 100%;
   opacity: 40%;
   background-color: var(--textoNormal);
   z-index: 299;
 }
 
 .cart-modal {
-  position: absolute;
+  position: fixed;
   z-index: 300;
   display: flex;
-  top: 0;
+  top: 6rem;
   right: 0;
   background-color: var(--fondoSection);
   height: auto;
@@ -361,7 +376,7 @@ a {
   position: absolute;
   right: 20px;
   top: 10px;
-  z-index: 250;
+  z-index: 99;
   display: flex;
   align-items: center;
   gap: 10px;
@@ -399,26 +414,32 @@ main {
 
 
 
-/* Sections */
+/* Sections Index*/
 #hero {
   display: flex;
   flex-flow: column wrap;
-  align-items: flex-start;
+  align-items: center;
   padding: 8rem;
+  width: 75%;
   height: auto;
 }
+
+
 
 .hero-text {
   position: relative;
   z-index: 2;
   background-color: var(--fondoBackground);
-  padding: 3rem;
-  font-size: clamp(1rem, 8vw, 5rem);
+  padding: 4rem 10rem;
+  margin-bottom: 1rem;
+  font-size: 4rem;
+  border-radius: 8rem;
 }
 
 .hero-text p {
   color: var(--subtitulos);
   font-size: 3rem;
+  padding: 1.5rem 0;
 }
 
 .hero-text h1 {
@@ -426,15 +447,28 @@ main {
 }
 
 .hero-action {
+  position: relative;
   padding: 3rem;
+
 }
+
+.hero-action::before{
+  content: '';
+  position: absolute;
+  background: no-repeat center / contain url(../assets/img/elements/cocinero-color.png);
+  padding: 18rem;
+  top: 0;
+  right: -12rem;
+  z-index: 10;
+}
+
 
 .hero-img {
   position: absolute;
   z-index: 1;
-  top: -12rem;
-  right: 0;
-  width: 110vw;
+  top: -5rem;
+  right: -11rem;
+  width: 120vw;
   border-radius: 10rem;
   aspect-ratio: 16 / 9;
   transform: rotate(10deg);
@@ -444,7 +478,9 @@ main {
 
 ul.hero {
   font-size: 2rem;
-  padding: 4rem 11rem;
+  padding: 7rem 7rem 7rem 5rem;
+  width: 71vw;
+  max-width: 55rem;
   background-color: #88543b;
   border-radius: 11rem;
 }
@@ -470,6 +506,324 @@ ul.hero {
   filter: invert(100%);
 }
 
+/* Features Steps */
+
+#features {
+  background-color: var(--fondoSection);
+  padding: 2.8rem;
+  border-radius: 5rem;
+  width: 80%;
+  margin: 0 auto;
+}
+
+.features-info {
+  display: flex;
+  flex: 1 0 auto;
+  flex-flow: column wrap;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  
+}
+
+.features-info h2 {
+  font-size: 5rem;
+  color: var(--titulos);
+}
+
+.features-info .subtitulo {
+  font-size: 1.8rem;
+}
+
+.features-info p {
+  font-size: 1.6rem;
+  margin: 1rem;
+}
+
+
+.features-steps {
+  display: flex;
+  flex-flow: column wrap;
+  gap: 10rem;
+  margin: 2rem 0;
+}
+
+.step h3 {
+  font-size: 2.5rem;
+  text-align: center;
+  font-weight: 100;
+  color: var(--textoNormal);
+}
+
+.features-info img {
+  width: 75%;
+}
+
+/* Features Tupper */
+.features-tupper {
+  display: flex;
+  flex-flow: column wrap;
+  justify-content: center;
+  align-items: center;
+  margin: 5rem auto;
+  width: 100%;
+  background-color: var(--resalte);
+  padding-bottom: 8rem;
+  border-radius: 8rem;
+
+}
+
+.features-tupper h2 {
+  font-size: 7.2rem;
+  margin: 5rem;
+  color: var(--subtitulos);
+}
+
+.tupper-header {
+  width: 100%;
+  padding: 3rem;
+  text-align: center;
+}
+
+.tupper-img {
+  position: relative;
+  z-index: 2;
+  width: 80%;
+
+}
+
+.tupper-description {
+  width: 100%;
+
+}
+
+.tupper-header p {
+  font-size: 2.5rem;
+  margin: -3rem;
+}
+
+.tupper-description-list {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
+  margin: -16rem 0;
+  padding: 10rem 15rem 8rem 15rem;
+  border-radius: 5rem;
+  background: var(--verdeClaro);
+  font-size: 2.2rem;
+  text-align: center;
+}
+
+.tupper-description-list li {
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: center;
+  align-items: center; 
+}
+
+.tupper-description-list img {
+  width: 6rem;
+  padding: 1rem;
+}
+
+
+/* Footer */
+
+.footer {
+  width: 100%;
+  height: auto;
+}
+
+.footer-info {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  flex-flow: column;
+  margin: 1rem auto;
+  padding: 1rem;
+  border-radius: 3rem;
+  background: var(--verdeClaro) repeat center/150rem
+  url("../assets/img/elements/mosaico-comida.png");
+  width: 90%;
+}
+
+.footer-info a {
+  background-color: var(--verdeClaro);
+}
+
+.footer-info a:hover {
+  background-color: var(--morado);
+  color:  var(--verdeClaro);
+  padding: 1rem;
+  border-radius: 2rem;
+}
+
+
+.footer-help,
+.footer-about,
+.footer-eco {
+  margin: 2rem;
+  width: 100%;
+  text-align: center;
+  font-size: 2.5rem;
+}
+
+.footer-help h3,
+.footer-about h3,
+.footer-eco h3 {
+  font-family: "Noticia Text", serif;
+  font-size: 3rem;
+  margin-bottom: 1.5rem;
+}
+
+.footer-help li,
+.footer-about li,
+.footer-eco li {
+  padding: 0.4rem 0;
+  margin: 0.3rem;
+}
+
+.footer-logo {
+  max-width: 53%;
+  margin: 5rem;
+}
+
+.footer-legal {
+  display: flex;
+  justify-content: space-around;
+  background-color: var(--resalte);
+  color: var(--textoNormal);
+  padding: 2rem;
+}
+
+.footer-legal ul {
+  display: flex;
+  flex-direction: column;
+  font-size: 2.2rem;
+}
+
+.footer-legal li {
+  padding: 0 1rem;
+}
+/* Small devices such as large phones (640px and up) */
+@media only screen and (min-width: 640px) {
+/* Header */
+  .header {
+    position: sticky;
+    z-index: 100;
+    top: 5%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: var(--fondoSection);
+    width: 90%;
+    margin: auto;
+    padding: 1.8rem;
+    border-radius: 9rem;
+  }
+
+  .hero-img {
+    top: -12rem;
+    right: -11rem;
+    width: 120vw;
+
+  }
+
+}
+
+/* Medium devices such as tablets (768px and up) */
+@media only screen and (min-width: 768px) {
+  #hero {
+    display: flex;
+    flex-flow: column wrap;
+    align-items: center;
+    padding: 8rem;
+    width: 21%;
+    height: auto;
+  }
+
+  .hero-text {
+    font-size: 5.5rem;
+  }
+
+  ul.hero {
+    font-size: 2rem;
+    padding: 7rem 7rem 7rem 7rem;
+    width: 80vw;
+    max-width: 65rem;
+    background-color: #88543b;
+    border-radius: 11rem;
+  }
+
+
+}
+
+/* Large devices such as laptops (1024px and up) */
+@media only screen and (min-width: 1024px) {
+  /* Header */
+
+  .logo-regular {
+    display: block;
+    width: 100%;
+    padding: 0 2.5rem;
+    max-width: 25rem;
+  }
+
+  .logo-regular a {
+    display: block;
+    margin-bottom: -1rem;
+  }
+
+  .logo-mobile,
+  .menu-mobile {
+    display: none;
+  }
+
+  .menu {
+    position: static;
+    z-index: 200;
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-evenly;
+    align-items: center;
+    width: 90%;
+    min-height: unset;
+    background: unset;
+    font-family: unset;
+    font-size: 2rem;
+    gap: 0.2rem;
+    padding: unset;
+    transform: unset;
+    transition: unset;
+  }
+
+  .menu li {
+    padding: 0.5rem;
+    min-width: 14rem;
+
+  }
+
+  .menu.clicked {
+    transform: translateY(0%);
+  }
+
+  .hero-text {
+    background-color: transparent;
+  }
+
+
+  .hero-img {
+    position: absolute;
+    top: -2%;
+    right: -40%;
+    width: 80vw;
+   }
+
+
+/* Features Steps */
+
 #features {
   background-color: var(--fondoSection);
   padding: 5rem;
@@ -493,19 +847,25 @@ ul.hero {
   color: var(--titulos);
 }
 
+.features-info .subtitulo {
+  font-size: 2.5rem;
+}
+
 .features-info p {
-  font-size: 1.8rem;
+  font-size: 1.6rem;
   margin: 1rem;
 }
 
+
 .features-steps {
   display: flex;
-  gap: 10rem;
-  margin: 2rem 0;
+    flex-flow: row nowrap;
+  gap: 3rem;
+  margin: 7rem 0;
 }
 
 .step h3 {
-  font-size: 3rem;
+  font-size: 2.5rem;
   text-align: center;
   font-weight: 100;
   color: var(--textoNormal);
@@ -515,100 +875,76 @@ ul.hero {
   width: 75%;
 }
 
-/* Small devices such as large phones (640px and up) 
-@media only screen and (min-width: 640px) {...}*/
+/* Features Tupper */
+.features-tupper {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
+  align-items: center;
+  margin: 5rem auto;
+  width: 100%;
+  background-color: var(--resalte);
+  padding-bottom: 8rem;
+  border-radius: 8rem;
 
-/* Medium devices such as tablets (768px and up)
-@media only screen and (min-width: 768px) {...} */
-
-/* Large devices such as laptops (1024px and up) */
-@media only screen and (min-width: 1024px) {
-  /* Header */
-
-
-
-  .header {
-    position: sticky;
-    z-index: 100;
-    top: 5%;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    background-color: var(--fondoSection);
-    width: 90%;
-    margin: auto;
-    padding: 1.8rem;
-    border-radius: 9rem;
-  }
-
-  .logo-regular {
-    display: block;
-    width: 100%;
-    padding: 0 2.5rem;
-    max-width: 25rem;
-  }
-
-  .logo-regular a {
-    display: block;
-    margin-bottom: -1rem;
-  }
-
-  .logo-mobile,
-  .menu-mobile {
-    display: none;
-  }
-
-  .nav {
-    display: flex;
-    align-items: center;
-  }
-
-  .menu {
-    position: static;
-    z-index: 200;
-    width: 100%;
-    min-height: unset;
-    background: unset;
-    font-family: unset;
-    font-size: 2rem;
-    display: flex;
-    flex-flow: row nowrap;
-    justify-content: center;
-    align-items: center;
-    gap: 1rem;
-    padding: unset;
-    transform: unset;
-    transition: unset;
-  }
-
-  .menu li {
-    padding: 0 1rem;
-  }
-
-  .menu.clicked {
-    transform: translateY(0%);
-  }
-
-  /** languages **/
-  .language-switch {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    position: absolute;
-    z-index: 100;
-    top: 10px;
-    right: 20px;
-  }
-
-  .lang-icon {
-    width: 24px;
-    height: 24px;
-    cursor: pointer;
-    border-radius: 50%;
-  }
 }
 
+.features-tupper h2 {
+  font-size: 7.2rem;
+  margin: 5rem;
+  color: var(--subtitulos);
+}
 
+.tupper-header {
+  width: 100%;
+  text-align: center;
+  padding: 3rem;
+}
+
+.tupper-img {
+  width: 50%;
+  position: relative;
+  z-index: 2;
+
+}
+
+.tupper-description {
+  width: 50%;
+
+}
+
+.tupper-header p {
+  font-size: 2.5rem;
+  margin: 1rem;
+}
+
+.tupper-description-list {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: flex-end;
+  
+  width: 70rem;
+  margin-left: -15rem;
+  background: var(--verdeClaro);
+  padding: 5rem;
+  border-radius: 6rem;
+  font-size: 2.4rem;
+  text-align: center;
+}
+
+.tupper-description-list li {
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: center;
+  align-items: center; 
+}
+
+.tupper-description-list img {
+  width: 6rem;
+  padding: 1rem;
+}
 
 
 /* Footer */
@@ -620,23 +956,25 @@ ul.hero {
 
 .footer-info {
   display: flex;
-  align-items: center;
+  align-items: flex-start;
   justify-content: center;
-  flex-flow: column;
+  flex-flow: row nowrap;
   margin: 3rem auto;
   padding: 3rem;
   border-radius: 3rem;
-  background-color: var(--verdeClaro);
+  background: var(--verdeClaro) repeat center/150rem
+  url("../assets/img/elements/mosaico-comida.png");
   width: 90%;
 }
 
 .footer-help,
 .footer-about,
 .footer-eco {
-  margin: 2rem;
-  width: 100%;
+   
+  width: 31%;
   text-align: center;
   font-size: 1.5rem;
+
 }
 
 .footer-help h3,
@@ -644,7 +982,7 @@ ul.hero {
 .footer-eco h3 {
   font-family: "Noticia Text", serif;
   font-size: 3rem;
-  margin-bottom: 1.5rem;
+ 
 }
 
 .footer-help li,
@@ -672,6 +1010,15 @@ ul.hero {
 .footer-legal li {
   padding: 0 1rem;
 }
+}
+
+@media only screen and (min-width: 1280px) {
+  .hero-img {
+    position: absolute;
+    top: -6%;
+    right: -36%;
+  }
+}
 
 /* Largest devices such as desktops (1280px and up) */
 @media only screen and (min-width: 1280px) {
@@ -693,6 +1040,7 @@ ul.hero {
     transition: all 550ms cubic-bezier(0.19, 1, 0.22, 1);
   }
 */
+
 
 
 
@@ -726,15 +1074,10 @@ ul.hero {
 
   .hero-img {
     position: absolute;
-    top: -6%;
-    right: -30%;
-    width: 65vw;
-    max-width: 65vw;
-    aspect-ratio: 16 / 9;
-    border-radius: 18rem;
-    transform: rotate(10deg);
-    background: no-repeat center/cover
-      url("../assets/img/fotos/pexels-nano-erdozain-120534369-30204528.jpg");
+    top: -10%;
+    right: -27%;
+    width: 70vw;
+    max-width: 85vw;
   }
 
   ul.hero {
@@ -772,7 +1115,7 @@ ul.hero {
     width: 75%;
     margin: 0 auto;
   }
-
+  
   .features-info {
     display: flex;
     flex-flow: column wrap;
@@ -781,31 +1124,31 @@ ul.hero {
     text-align: center;
     margin: 2rem 0;
   }
-
+  
   .features-info h2 {
     font-size: 8rem;
     margin: -1rem;
     color: var(--titulos);
   }
-
+  
   .features-info p {
     font-size: 1.8rem;
     margin: 1rem;
   }
-
+  
   .features-steps {
     display: flex;
     gap: 10rem;
     margin: 2rem 0;
   }
-
+  
   .step h3 {
     font-size: 3rem;
     text-align: center;
     font-weight: 100;
     color: var(--textoNormal);
   }
-
+  
   .features-info img {
     width: 75%;
   }
@@ -818,12 +1161,7 @@ ul.hero {
 
   .footer-info {
     display: flex;
-    justify-content: space-around;
-    margin: 3rem auto;
-    padding: 3rem;
-    border-radius: 3rem;
-    background-color: var(--verdeClaro);
-    width: 90%;
+
   }
 
   .footer-help,
@@ -848,10 +1186,7 @@ ul.hero {
 
   .footer-legal {
     display: flex;
-    justify-content: space-around;
-    background-color: var(--verde);
-    color: var(--textoNormal);
-    padding: 2rem;
+
   }
 
   .footer-legal ul {
