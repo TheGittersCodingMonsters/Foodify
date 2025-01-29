@@ -99,7 +99,7 @@ document.addEventListener("DOMContentLoaded", async () => {
     loadTexts(currentLanguage);
     loadPlatos(currentLanguage);
     updateCartCount();
-    updateTotalPrice();
+    //updateTotalPrice();
 
 });
 
@@ -121,7 +121,7 @@ async function loadPlatos(language) {
 }
  */
 // Función para poblar opciones de filtros
-function populateFilterOptions(platos) {
+/*function populateFilterOptions(platos) {
   const categories = getUniqueFilterValues(platos, "filtroCategoria");
   const types = getUniqueFilterValues(platos, "filtroOrden");
   const veganOptions = getUniqueFilterValues(platos, "filtroVegano");
@@ -132,7 +132,7 @@ function populateFilterOptions(platos) {
 }
 
 // Función auxiliar para obtener valores únicos
-/*function getUniqueFilterValues(platos, key) {
+function getUniqueFilterValues(platos, key) {
   const values = platos.map(plato => plato[key]);
   return ["all", ...new Set(values)];
 }
