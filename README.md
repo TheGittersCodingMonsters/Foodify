@@ -25,11 +25,12 @@ Una página de catálogo donde aparecen todos los platos que **Foodify** prepara
 
 El pedido se mostrará en un carrito para su revisión por parte del cliente.
 
-[imagen]
+![carrito](assets/img/readme/carrito.png)
 
 Y un checkout
 
-![image](https://github.com/user-attachments/assets/dae5b780-46a2-49dc-9914-2343fb85003d)
+
+![checkout](assets/img/readme/checkout.png)
 
 
 Al ser un sitio de ecommerce deberá contar con un registro y login de usuarios que los identifique y guarde sus datos para la compra y futuro. Así mismo presentará las disposiciones legales necesarias para este tipo de sitios.
