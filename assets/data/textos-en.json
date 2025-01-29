@@ -3,7 +3,7 @@
     "__textosHeader": "English text for HEADER",
     "home": "Home",
     "contacto": "Contact",
-    "platos" : "Menu-dishes",
+    "platos" : "Dishes",
     "micuenta": "My account",
     "__textosFooter": "English text for FOOTER",
     "ayuda": "Help",
@@ -43,5 +43,5 @@
     "segundos_platos": "Main courses",
     "postres_orden": "Desserts",
     "noVegano": "It's not Vegan",
-    "__paginaC": "English text for page C"
+    "__paginaC": "English text for page C "
 }

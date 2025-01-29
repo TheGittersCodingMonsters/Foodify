@@ -1,4 +1,4 @@
-let categoryFilter, typeFilter, veganFilter, langEs, langEn /* langEu */;
+let categoryFilter, typeFilter, veganFilter, langEs, langEn, langEu;
 let platosData = [];
 let currentLanguage = 'es';
 let translations = {};
@@ -19,6 +19,7 @@ function loadTexts(language) {
       });
       
       loadMenu();
+      applyFilters();
     });
 }
 // Filtrado simplificado
@@ -54,7 +55,7 @@ document.body.addEventListener('change', (e) => {
 function changeLanguage(lang) {
   currentLanguage = lang;
  loadTexts(currentLanguage);
-loadPlatos(currentLanguage);
+ loadPlatos(currentLanguage);
 }
 
 // Inicialización
@@ -64,7 +65,7 @@ document.addEventListener("DOMContentLoaded", async () => {
   veganFilter = document.getElementById("filter-vegan");
   langEs = document.getElementById("lang-es");
   langEn = document.getElementById("lang-en");
-/*   langEu = document.getElementById("lang-eu"); */
+  langEu = document.getElementById("lang-eu");
   gallery = document.getElementById("gallery");
 
   //PARA español
@@ -81,12 +82,12 @@ document.addEventListener("DOMContentLoaded", async () => {
     loadPlatos(currentLanguage);
   });
 
-/*  //PARA EUSKERA
+  //PARA EUSKERA
  langEu.addEventListener("click", () => {
   currentLanguage = "eu";
   loadTexts(currentLanguage);
   loadPlatos(currentLanguage);
-}); */
+  });
 
 
   // Verificar existencia
@@ -104,7 +105,7 @@ document.addEventListener("DOMContentLoaded", async () => {
 });
 
 
-
+ 
 /* // Función para cargar platos
 async function loadPlatos(language) {
   gallery.innerHTML = ""; // Limpiar galería
@@ -121,7 +122,7 @@ async function loadPlatos(language) {
 }
  */
 // Función para poblar opciones de filtros
-function populateFilterOptions(platos) {
+/*function populateFilterOptions(platos) {
   const categories = getUniqueFilterValues(platos, "filtroCategoria");
   const types = getUniqueFilterValues(platos, "filtroOrden");
   const veganOptions = getUniqueFilterValues(platos, "filtroVegano");
@@ -147,7 +148,7 @@ function populateSelect(selectElement, values, translationKey) {
 // Función para obtener texto traducido
 function getTranslatedText(translationKey, value) {
   return translations[translationKey]?.[value] || value;
-}
+}*/
 
 function displayPlatos(platos) {
   gallery.innerHTML = "";
@@ -163,10 +164,10 @@ function displayPlatos(platos) {
           </div>
           <div class="infoPlato">
               <div class="titulo"><h4>${plato.nombre}</h4></div>
-              <p class="categoria"><span data-traductor="categoria"></span>: ${plato.categoria}</p>
-              <p class="precio"><span data-traductor="precio"></span>: ${plato.precio}€</p>
-              <p class="calorias"><span data-traductor="calorias"></span>: ${plato.calorias}</p>
-              <p class="vegano"><span data-traductor="vegano"></span>: ${plato.vegano}</p>
+              <p class="categoria"><span data-traductor="categoria">Categoría</span>: ${plato.categoria}</p>
+              <p class="precio"><span data-traductor="precio">Precio</span>: ${plato.precio}€</p>
+              <p class="calorias"><span data-traductor="calorias">Calorías</span>: ${plato.calorias}</p>
+              <p class="vegano"><span data-traductor="vegano">Vegano</span>: ${plato.vegano}</p>
           </div>
           <div class="product-counter" data-id="${plato.id}">
               <button class="counter-btn decrement">-</button>
@@ -175,7 +176,8 @@ function displayPlatos(platos) {
           </div>
       </div>
     `;
-
+      // Agrega el plato al DOM
+      gallery.appendChild(platoDiv);
     
     // Aplicar traducciones a los nuevos elementos dinámicos
     document.querySelectorAll("[data-traductor]").forEach(element => {
@@ -217,7 +219,7 @@ function displayPlatos(platos) {
 
 // Carga inicial de platos
 function loadPlatos(language) {
-  fetch(`../assets/data/platos-${currentLanguage}.json`)
+  fetch(`../assets/data/platos-${language}.json`)
     .then(response => {
       if (!response.ok) throw new Error(`Error al cargar los datos: ${response.status}`);
       return response.json();
@@ -251,7 +253,7 @@ function updateProductCounter(platoId) {
 function loadMenu(){
 
   const menu1 = document.querySelector('.menu li:first-child a');
-  const ruta1 = `index-${currentLanguage}.html`;
+  const ruta1 = `index.html`;
   menu1.setAttribute('href', ruta1);
   const menu2 = document.querySelector('.menu li:nth-child(2) a');
   const ruta2 = `contacto-${currentLanguage}.html`;

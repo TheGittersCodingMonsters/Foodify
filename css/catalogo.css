@@ -7,16 +7,16 @@
 #catalogo .filter-nav {
    display:flex;
    flex-direction:row; /*por defecto*/
-   justify-content:space-around;
+   justify-content:center;
    align-items:center;
-    padding: 20px;
+    padding: 0.5rem;
     text-align: center;
-    width:100vw;
+    width:100%;
 }
 
 #catalogo .filter-nav select {
-    margin: 0 10px;
-    padding: 10px 20px;
+    margin: 0 0.6rem;
+    padding: 0.6rem 2rem;
     cursor: pointer;
     width:100%;
 }
@@ -35,10 +35,8 @@
   height: 100%; /* Asegura que el contenedor use toda la altura disponible */
   
 }
-
-#catalogo .productDetail p:last-child{
-    font-size: 2rem;
-    padding-bottom: 20px;
+#catalogo .detalles{
+width: 60%;
 }
 #catalogo .gallery .plato {
     /*border: 1px solid #ff4d4dff;*/
@@ -110,7 +108,7 @@
   border-top: 1px solid #ccc;
   background-color:var(--fondoBackground);
   border-radius: 3rem;
-  margin: 0 auto;
+  margin: 1rem auto;
   padding: 0.8rem;
 }
 
@@ -136,16 +134,14 @@
 #catalogo .counter-value {
   padding:  1rem;
 }
+@media (max-width: 768px) {
+  #catalogo .filter-nav{
+      flex-direction:column;
+    
+  }
+  
 
-
-
-
-
-
-
-
-
-
+}
 
 
 
