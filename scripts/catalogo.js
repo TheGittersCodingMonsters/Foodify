@@ -65,7 +65,7 @@ document.addEventListener("DOMContentLoaded", async () => {
   veganFilter = document.getElementById("filter-vegan");
   langEs = document.getElementById("lang-es");
   langEn = document.getElementById("lang-en");
-  langEu = document.getElementById("lang-eu");
+  langEu = document.getElementById("lang-eu"); 
   gallery = document.getElementById("gallery");
 
   //PARA español
@@ -87,7 +87,7 @@ document.addEventListener("DOMContentLoaded", async () => {
   currentLanguage = "eu";
   loadTexts(currentLanguage);
   loadPlatos(currentLanguage);
-  });
+}); 
 
 
   // Verificar existencia
@@ -105,7 +105,7 @@ document.addEventListener("DOMContentLoaded", async () => {
 });
 
 
- 
+
 /* // Función para cargar platos
 async function loadPlatos(language) {
   gallery.innerHTML = ""; // Limpiar galería
@@ -120,9 +120,9 @@ async function loadPlatos(language) {
     })
     .catch(error => console.error("Error cargando platos:", error));
 }
- */
+ 
 // Función para poblar opciones de filtros
-/*function populateFilterOptions(platos) {
+function populateFilterOptions(platos) {
   const categories = getUniqueFilterValues(platos, "filtroCategoria");
   const types = getUniqueFilterValues(platos, "filtroOrden");
   const veganOptions = getUniqueFilterValues(platos, "filtroVegano");
@@ -130,7 +130,7 @@ async function loadPlatos(language) {
   populateSelect(categoryFilter, categories, "categoria");
   populateSelect(typeFilter, types, "tipo");
   populateSelect(veganFilter, veganOptions, "vegano");
-}
+}*/
 
 // Función auxiliar para obtener valores únicos
 function getUniqueFilterValues(platos, key) {
@@ -148,7 +148,7 @@ function populateSelect(selectElement, values, translationKey) {
 // Función para obtener texto traducido
 function getTranslatedText(translationKey, value) {
   return translations[translationKey]?.[value] || value;
-}*/
+}
 
 function displayPlatos(platos) {
   gallery.innerHTML = "";
@@ -176,8 +176,8 @@ function displayPlatos(platos) {
           </div>
       </div>
     `;
-      // Agrega el plato al DOM
-      gallery.appendChild(platoDiv);
+  // Agrega el plato al DOM
+  gallery.appendChild(platoDiv);
     
     // Aplicar traducciones a los nuevos elementos dinámicos
     document.querySelectorAll("[data-traductor]").forEach(element => {
@@ -253,7 +253,7 @@ function updateProductCounter(platoId) {
 function loadMenu(){
 
   const menu1 = document.querySelector('.menu li:first-child a');
-  const ruta1 = `index.html`;
+  const ruta1 = `index-${currentLanguage}.html`;
   menu1.setAttribute('href', ruta1);
   const menu2 = document.querySelector('.menu li:nth-child(2) a');
   const ruta2 = `contacto-${currentLanguage}.html`;

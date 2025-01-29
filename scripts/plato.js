@@ -21,11 +21,11 @@ document.addEventListener("DOMContentLoaded", () => {
                 }
 
                 productDetail.innerHTML = `
-                    <h1>${plato.nombre}</h1>
-                    <div class="contenido-detalle">
-                        <div class="img-plato">
-                            <img src="${plato.foto}" alt="${plato.nombre}">
-                        </div>
+                <div class="img-plato">
+                    <img src="${plato.foto}" alt="${plato.nombre}">
+                </div>
+                <div class="contenido-detalle">
+                        <h1>${plato.nombre}</h1>
                         <div class="detalles">
                             <p class="descripcion-titulo"><span data-traductor="descripcion"></span>:</p>
                             <p class="descripcion">${plato.descripcion}</p>
@@ -37,52 +37,10 @@ document.addEventListener("DOMContentLoaded", () => {
                     </div> `;
                 
                 loadTexts(currentLanguage);
-                //setupCounter(plato);
-                //updateProductCounter(plato.id); 
             });
     }
 
-    // Configurar eventos para los botones (igual que en catalogo.js)
-/*    function setupCounter(plato) {
-        const counter = document.querySelector(`[data-id="${plato.id}"]`);
-    if (!counter) return;
-    
-    // // Obtener cantidad actual del carrito
-    // const cart = getCart();
-    // const cartItem = cart.find(item => item.id == plato.id);
-    // const initialValue = cartItem ? cartItem.quantity : 0; // <-- Aquí
-
-    // // Reemplazar HTML incluyendo el valor inicial
-    // counter.innerHTML = `
-    //     <button class="counter-btn decrement">-</button>
-    //     <span class="counter-value">${initialValue}</span>
-    //     <button class="counter-btn increment">+</button>
-    // `;
-    //     // Obtener los nuevos botones
-    //     const incrementBtn = counter.querySelector(".increment");
-    //     const decrementBtn = counter.querySelector(".decrement");
-      
-    //     // Evento para incrementar
-    //     incrementBtn.addEventListener("click", () => {
-    //       addToCart(plato);
-    //       updateProductCounter(plato.id);
-    //       updateCartCount();
-    //       updateTotalPrice();
-    //     });
-      
-    //     // Evento para decrementar
-    //     decrementBtn.addEventListener("click", () => {
-    //       handleDecrementClick(plato.id);
-    //       updateProductCounter(plato.id);
-    //       updateCartCount();
-    //       updateTotalPrice();
-    //     });
-      
-        // Actualizar el contador inicial
-        updateProductCounter(plato.id);
-      }
-*/
-    // Resto de funciones (loadTexts, loadMenu) se mantienen igual
+// Resto de funciones carga Textos y Menu en distintos idiomas
     function loadTexts(language) {
         fetch(`../assets/data/textos-${language}.json`)
                 .then(response => response.json())
@@ -102,20 +60,19 @@ document.addEventListener("DOMContentLoaded", () => {
 
    // funcion para leer opciones de menu segun el idioma, cambia el link 
    function loadMenu(){
-      
+    const carpeta = currentLanguage.toUpperCase();
     const menu1 = document.querySelector('.menu li:first-child a');
     const ruta1 = `index.html`;
     menu1.setAttribute('href', ruta1);
     const menu2 = document.querySelector('.menu li:nth-child(2) a');
     const ruta2 = `contacto-${currentLanguage}.html`;
     menu2.setAttribute('href', ruta2);
-   const menu3 = document.querySelector('.menu li:nth-child(3) a')
+    const menu3 = document.querySelector('.menu li:nth-child(3) a')
     const ruta3 = `catalogo.html`;
     menu3.setAttribute('href', ruta3);
     const menu4 = document.querySelector('.menu li:nth-child(4) a');
     const ruta4 = `crearcuenta-${currentLanguage}.html`;
     menu4.setAttribute('href', ruta4);
-
    }
 
 
@@ -143,6 +100,4 @@ document.addEventListener("DOMContentLoaded", () => {
     loadTexts(currentLanguage);
     loadMenu();
     loadProductDetail(currentLanguage);
-    //updateCartCount();
-    
 });

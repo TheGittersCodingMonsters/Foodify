@@ -457,7 +457,7 @@ main {
   position: absolute;
   background: no-repeat center / contain url(../assets/img/elements/cocinero-color.png);
   padding: 18rem;
-  top: 0;
+  top: -6rem;
   right: -12rem;
   z-index: 10;
 }
@@ -628,6 +628,13 @@ ul.hero {
   padding: 1rem;
 }
 
+.features-tupper a {
+  position: relative;
+  z-index: 3;
+  font-size: 3rem;
+  margin: 12rem 0 0;
+}
+
 
 /* Footer */
 
@@ -686,8 +693,8 @@ ul.hero {
 }
 
 .footer-logo {
-  max-width: 53%;
-  margin: 5rem;
+  max-width: 40rem;
+  margin: 5rem auto;
 }
 
 .footer-legal {
@@ -701,6 +708,7 @@ ul.hero {
 .footer-legal ul {
   display: flex;
   flex-direction: column;
+  align-items: flex-end;
   font-size: 2.2rem;
 }
 
@@ -713,7 +721,7 @@ ul.hero {
   .header {
     position: sticky;
     z-index: 100;
-    top: 5%;
+    top: 8%;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -973,7 +981,7 @@ ul.hero {
    
   width: 31%;
   text-align: center;
-  font-size: 1.5rem;
+  font-size: 1.8rem;
 
 }
 
@@ -992,7 +1000,8 @@ ul.hero {
 }
 
 .footer-logo {
-  max-width: 60%;
+  max-width: 50rem;
+  margin: 5rem auto;
 }
 
 .footer-legal {
@@ -1005,11 +1014,15 @@ ul.hero {
 
 .footer-legal ul {
   display: flex;
+  flex-direction: row;
+  font-size: 1.7rem;
 }
+
 
 .footer-legal li {
   padding: 0 1rem;
 }
+
 }
 
 @media only screen and (min-width: 1280px) {
@@ -1097,7 +1110,7 @@ ul.hero {
   .hero li::before {
     content: "";
     position: absolute;
-    top: 0;
+    top: 0rem;
     left: 0;
     width: 100%;
     height: 100%;
@@ -1153,47 +1166,4 @@ ul.hero {
     width: 75%;
   }
 
-  /* Footer */
-  .footer {
-    width: 100%;
-    height: auto;
-  }
-
-  .footer-info {
-    display: flex;
-
-  }
-
-  .footer-help,
-  .footer-about,
-  .footer-eco {
-    margin: 2rem;
-  }
-
-  .footer-help h3,
-  .footer-about h3,
-  .footer-eco h3 {
-    font-family: "Noticia Text", serif;
-    font-size: 3rem;
-    margin-bottom: 1.5rem;
-  }
-
-  .footer-help li,
-  .footer-about li,
-  .footer-eco li {
-    padding: 0.4rem 0;
-  }
-
-  .footer-legal {
-    display: flex;
-
-  }
-
-  .footer-legal ul {
-    display: flex;
-  }
-
-  .footer-legal li {
-    padding: 0 1rem;
-  }
 }

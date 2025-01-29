@@ -5,26 +5,30 @@
 }
 
 #catalogo .filter-nav {
-   display:flex;
-   flex-direction:row; /*por defecto*/
-   justify-content:center;
+   display: flex;
+   flex-direction: row; /*por defecto*/
+   justify-content: center;
    align-items:center;
-    padding: 0.5rem;
-    text-align: center;
-    width:100%;
+   text-align: center;
+   
 }
 
 #catalogo .filter-nav select {
-    margin: 0 0.6rem;
-    padding: 0.6rem 2rem;
+    margin: 0 10px;
+    padding: 10px 20px;
     cursor: pointer;
-    width:100%;
+    width: 100%;
 }
 
-#catalogo .gallery {
+#catalogo .filter-nav label{
+  font-size: 2.4rem;
+}
+
+#gallery {
     display: grid;
     grid-template-columns: repeat(1, 1fr);
-    margin: 0 13rem;
+    padding: 0 30rem;
+   
 }
 
 #catalogo .productDetail {
@@ -35,8 +39,10 @@
   height: 100%; /* Asegura que el contenedor use toda la altura disponible */
   
 }
-#catalogo .detalles{
-width: 60%;
+
+#catalogo .productDetail p:last-child{
+    font-size: 2rem;
+    padding-bottom: 20px;
 }
 #catalogo .gallery .plato {
     /*border: 1px solid #ff4d4dff;*/
@@ -69,8 +75,9 @@ width: 60%;
     background-color: rgba(22, 21, 21, 0.5);
 }
 #catalogo .img-plato img{
+    display: block;
     width: 100%;
-    border-radius:2.5rem;
+    border-radius: 2.5rem 2.5rem 0 0;
     transition: transform 0.5s ease-out;
 }
 #catalogo .img-plato img:hover{
@@ -85,8 +92,8 @@ width: 60%;
 
 /** Estilos del texto de las tarjetas **/
 #catalogo .productDetail h4 {
-  margin: 1rem 0;
   padding: 3rem 0;
+  margin-bottom: 3rem;
   background-color: var(--resalte);
   font-size: 2rem;
   color: var(--subtitulos);
@@ -108,7 +115,7 @@ width: 60%;
   border-top: 1px solid #ccc;
   background-color:var(--fondoBackground);
   border-radius: 3rem;
-  margin: 1rem auto;
+  margin: 0 auto;
   padding: 0.8rem;
 }
 
@@ -134,36 +141,29 @@ width: 60%;
 #catalogo .counter-value {
   padding:  1rem;
 }
-@media (max-width: 768px) {
-  #catalogo .filter-nav{
-      flex-direction:column;
-    
-  }
-  
-
-}
-
-
 
 /*  botones  desplegables de filtros **/
 /* Estilo general del nav y select */
 #catalogo nav.filter-nav {
   display: flex;
-  gap: 1rem;
+  flex-direction: column;
+  gap: 4rem;
   align-items: center;
+  font-size: 1rem;
+  margin-top: 5rem;
 }
 
 #catalogo select {
   appearance: none; /* Elimina el estilo predeterminado */
   background-color: white;
-  color: rgb(0, 117, 22);
+  color:var(--verde);
   border-radius: 4px;
   padding: 0.5rem 1rem;
-  font-size: 1.5rem;
+  font-size: 2rem;
   cursor: pointer;
   position: relative;
   outline: none;
-  width: 20%;
+  width: 20rem;
   transition: border 0.3s ease;
    /* Transición para suavizar los cambios */
   transition: background-image 0.3s ease, border 0.3s ease;
@@ -195,12 +195,15 @@ border-radius: 2rem;
 #catalogo option {
   background-color: white;
   color: var(--verde);
-  font-size: 1.5rem;
+  width: 20rem;
+  font-size: 2rem;
   padding: 0.5rem;
+  border-radius: 2rem;
 }
 
-#catalogo option:hover {
+option.color:hover {
   background-color: var(--fondoBackground);
+  color: var(--subtitulos);
 }
 
 /** boton up to top **/
@@ -237,12 +240,23 @@ color: var(--verdeClaro);
     #catalogo .gallery {
         grid-template-columns: repeat(2, 1fr);
     }
+
+    #catalogo nav.filter-nav {
+      display: flex;
+      flex-direction: row;
+      gap: 4rem;
+      align-items: center;
+      font-size: 2rem;
+       margin: 5rem auto;
+        max-width: 60%;
+    }
 }
 
 @media (min-width: 1024px){
   #catalogo .gallery {
     grid-template-columns: repeat(3, 1fr);
 }
+
 
 }
 
