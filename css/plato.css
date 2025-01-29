@@ -2,40 +2,146 @@
 *{
     box-sizing: border-box;
 }
+
+#plato {
+    margin-top:6rem;
+}
+
+#plato #productDetail{
+ display: flex;
+ flex-direction: column;
+ background-color:var(--fondoSection);
+ text-align: center;
+ width: 80%;
+ margin: 2rem auto;
+ border-radius:25px;
+ 
+}
+
+#plato .contenido-detalle {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    padding: 2rem;
+    
+}
+
+#plato .contenido-detalle h1 {
+    background-color: var(--resalte);
+    margin: -2.5rem -2rem;
+    padding: 2rem;
+    font-family: "Noticia Text";
+
+}
+#plato .contenido-detalle .precio {
+    position: absolute;
+    bottom: 4rem;
+    right: 0;
+    background-color: var(--verdeClaro);
+  
+    font-size: 2.5rem;
+    padding: 1rem;
+}
+
+#plato .contenido-detalle .calorias {
+    position: absolute;
+    top: -7rem;
+    right: 2rem;
+    z-index: 2;
+    padding: 1rem;
+    border-radius: 2.5rem;
+    color: white;
+    font-size: 2.6rem;
+    font-weight: bold;
+    background-color: rgba(22, 21, 21, 0.5);
+}
+
+#plato .descripcion-titulo {
+    color: transparent;
+}
+
+#plato .img-plato {
+    width: 100%;
+    text-align: center;
+    
+}
+#plato .img-plato img {
+    border-radius: 2.5rem 2.5rem 0 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease-out;
+}
+
+#plato .detalles {
+    font-size:1.8rem;
+    text-align: justify;
+    padding: 2rem;
+}
+
+#plato .descripcion-titulo, #plato .descripcion{
+    margin: 1rem auto;
+}
+
+#plato .categoria {
+    margin: 3rem auto auto;
+}
+
+
+@media only screen and (min-width: 1024px) {
 #plato{
     margin-top:6rem;
 }
 #plato #productDetail{
- background-color:white;
- text-align:center;
- width:80%;
- margin: 1.5rem auto;
- padding: 1rem;
- border-radius:25px;
-}
-#plato .contenido-detalle{
     display: flex;
+    flex-direction: row;
+    background-color: var(--fondoSection);
+    text-align: center;
+    width: 80%;
+    margin: 6.5rem auto;
+    border-radius: 25px;
+}
+
+#plato .contenido-detalle{
+    flex-direction: row;
   
 }
-#plato .img-plato{
-    text-align:center;
-    margin: 1rem;
-    overflow:hidden;
-    border-radius:25px;
+
+#plato .contenido-detalle h1 {
+    margin: -2rem -2rem;
+    border-radius: 0 2rem 0 0;
+
+}
+
+#plato .img-plato {
+    width: 50%;
+    text-align: center;
     
 }
-#plato .img-plato img{
+#plato .img-plato img {
+    border-radius: 2.5rem 0 0 2.5rem;
     width: 100%;
     height: 100%;
-    transition:transform 0.5s ease-out;
- 
+    object-fit: cover;
+    transition: transform 0.5s ease-out; 
 }
-#plato .img-plato img:hover{
-    transform: scale(1.2);
-}
+
+#plato .contenido-detalle .calorias {
+    position: absolute;
+    width: fit-content;
+    height: fit-content;
+    left: unset;
+    bottom: unset;
+    top: unset;
+    right: unset;
+    bottom: 1rem;
+    left: -18rem;
+ }
+
 #plato .detalles{
-    font-size:2rem;
-    padding:0.5rem;
+    font-size: 1.6rem;
+    padding: 1.2rem;
 }
 #plato .descripcion-titulo, #plato .descripcion{
     margin: 1rem auto;
@@ -44,49 +150,8 @@
     margin: 3rem auto auto;
 }
 
-/** estilos del contador de pedido bajo foto plato**/
-#plato .product-counter {
-    margin-top: auto; /* Empuja el contador al fondo del contenedor */
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    border-top: 1px solid #ccc;
-    background-color: #f9f9f9;
-	height: 50px;
-
+#plato .contenido-detalle {
+    width: 50%;
+    flex-direction:column;  
 }
-
-#plato .counter-btn {
-    flex: 1;
-    background-color: var(--verde);
-    color: #fff;
-    border: none;
-    font-size: 20px;
-    font-weight: bold;
-    cursor: pointer;
-    padding: 10px;
-    text-align: center;
-	user-select: none; /* Evita seleccionar texto al hacer clic */
-}
-
-#plato .counter-btn:active {
-    background-color: var(--verdeClaro);
-}
-
-#plato .counter-value {
-    flex: 2;
-    text-align: center;
-    font-size: 18px;
-    font-weight: bold;
-    color: #333;
-    padding: 10px;
-	user-select: none; /* Evita seleccionar texto */
-}
-@media (max-width: 768px) {
-    #plato .contenido-detalle{
-        flex-direction:column;
-      
-    }
-    
-
 }
