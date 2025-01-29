@@ -47,36 +47,36 @@ document.addEventListener("DOMContentLoaded", () => {
         const counter = document.querySelector(`[data-id="${plato.id}"]`);
     if (!counter) return;
     
-    // Obtener cantidad actual del carrito
-    const cart = getCart();
-    const cartItem = cart.find(item => item.id == plato.id);
-    const initialValue = cartItem ? cartItem.quantity : 0; // <-- Aquí
+    // // Obtener cantidad actual del carrito
+    // const cart = getCart();
+    // const cartItem = cart.find(item => item.id == plato.id);
+    // const initialValue = cartItem ? cartItem.quantity : 0; // <-- Aquí
 
-    // Reemplazar HTML incluyendo el valor inicial
-    counter.innerHTML = `
-        <button class="counter-btn decrement">-</button>
-        <span class="counter-value">${initialValue}</span>
-        <button class="counter-btn increment">+</button>
-    `;
-        // Obtener los nuevos botones
-        const incrementBtn = counter.querySelector(".increment");
-        const decrementBtn = counter.querySelector(".decrement");
+    // // Reemplazar HTML incluyendo el valor inicial
+    // counter.innerHTML = `
+    //     <button class="counter-btn decrement">-</button>
+    //     <span class="counter-value">${initialValue}</span>
+    //     <button class="counter-btn increment">+</button>
+    // `;
+    //     // Obtener los nuevos botones
+    //     const incrementBtn = counter.querySelector(".increment");
+    //     const decrementBtn = counter.querySelector(".decrement");
       
-        // Evento para incrementar
-        incrementBtn.addEventListener("click", () => {
-          addToCart(plato);
-          updateProductCounter(plato.id);
-          updateCartCount();
-          updateTotalPrice();
-        });
+    //     // Evento para incrementar
+    //     incrementBtn.addEventListener("click", () => {
+    //       addToCart(plato);
+    //       updateProductCounter(plato.id);
+    //       updateCartCount();
+    //       updateTotalPrice();
+    //     });
       
-        // Evento para decrementar
-        decrementBtn.addEventListener("click", () => {
-          handleDecrementClick(plato.id);
-          updateProductCounter(plato.id);
-          updateCartCount();
-          updateTotalPrice();
-        });
+    //     // Evento para decrementar
+    //     decrementBtn.addEventListener("click", () => {
+    //       handleDecrementClick(plato.id);
+    //       updateProductCounter(plato.id);
+    //       updateCartCount();
+    //       updateTotalPrice();
+    //     });
       
         // Actualizar el contador inicial
         updateProductCounter(plato.id);
