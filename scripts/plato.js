@@ -37,13 +37,13 @@ document.addEventListener("DOMContentLoaded", () => {
                     </div> `;
                 
                 loadTexts(currentLanguage);
-                setupCounter(plato);
-                updateProductCounter(plato.id); 
+                //setupCounter(plato);
+                //updateProductCounter(plato.id); 
             });
     }
 
     // Configurar eventos para los botones (igual que en catalogo.js)
-    function setupCounter(plato) {
+/*    function setupCounter(plato) {
         const counter = document.querySelector(`[data-id="${plato.id}"]`);
     if (!counter) return;
     
@@ -81,7 +81,7 @@ document.addEventListener("DOMContentLoaded", () => {
         // Actualizar el contador inicial
         updateProductCounter(plato.id);
       }
-
+*/
     // Resto de funciones (loadTexts, loadMenu) se mantienen igual
     function loadTexts(language) {
         fetch(`../assets/data/textos-${language}.json`)
@@ -102,23 +102,19 @@ document.addEventListener("DOMContentLoaded", () => {
 
    // funcion para leer opciones de menu segun el idioma, cambia el link 
    function loadMenu(){
-    const carpeta = currentLanguage.toUpperCase();
+      
     const menu1 = document.querySelector('.menu li:first-child a');
-    const ruta1 = `${carpeta}/index-${currentLanguage}.html`;
+    const ruta1 = `index.html`;
     menu1.setAttribute('href', ruta1);
     const menu2 = document.querySelector('.menu li:nth-child(2) a');
-    const ruta2 = `${carpeta}/contacto-${currentLanguage}.html`;
+    const ruta2 = `contacto-${currentLanguage}.html`;
     menu2.setAttribute('href', ruta2);
-   // const menu3 = document.querySelector('.menu li:nth-child(3) a')
-    //const ruta3 = `catalogo-${currentLanguage}.html`;
-   // menu3.setAttribute('href', ruta3);
+   const menu3 = document.querySelector('.menu li:nth-child(3) a')
+    const ruta3 = `catalogo.html`;
+    menu3.setAttribute('href', ruta3);
     const menu4 = document.querySelector('.menu li:nth-child(4) a');
-    const ruta4 = `${carpeta}/crearcuenta-${currentLanguage}.html`;
+    const ruta4 = `crearcuenta-${currentLanguage}.html`;
     menu4.setAttribute('href', ruta4);
-    //link en icono carrito
-/*         const menu5 = document.querySelector('.cart a');
-    const ruta5 = `${carpeta}/cart-${currentLanguage}.html`;
-    menu5.setAttribute('href', ruta5); */
 
    }
 
@@ -147,5 +143,5 @@ document.addEventListener("DOMContentLoaded", () => {
     loadTexts(currentLanguage);
     loadMenu();
     loadProductDetail(currentLanguage);
-    updateCartCount();
+    //updateCartCount();
 });

@@ -1,4 +1,4 @@
-let categoryFilter, typeFilter, veganFilter, langEs, langEn /* langEu */;
+let categoryFilter, typeFilter, veganFilter, langEs, langEn, langEu;
 let platosData = [];
 let currentLanguage = 'es';
 let translations = {};
@@ -64,7 +64,7 @@ document.addEventListener("DOMContentLoaded", async () => {
   veganFilter = document.getElementById("filter-vegan");
   langEs = document.getElementById("lang-es");
   langEn = document.getElementById("lang-en");
-/*   langEu = document.getElementById("lang-eu"); */
+  langEu = document.getElementById("lang-eu");
   gallery = document.getElementById("gallery");
 
   //PARA español
@@ -81,12 +81,12 @@ document.addEventListener("DOMContentLoaded", async () => {
     loadPlatos(currentLanguage);
   });
 
-/*  //PARA EUSKERA
+  //PARA EUSKERA
  langEu.addEventListener("click", () => {
   currentLanguage = "eu";
   loadTexts(currentLanguage);
   loadPlatos(currentLanguage);
-}); */
+  });
 
 
   // Verificar existencia
@@ -132,7 +132,7 @@ function populateFilterOptions(platos) {
 }
 
 // Función auxiliar para obtener valores únicos
-function getUniqueFilterValues(platos, key) {
+/*function getUniqueFilterValues(platos, key) {
   const values = platos.map(plato => plato[key]);
   return ["all", ...new Set(values)];
 }
@@ -147,7 +147,7 @@ function populateSelect(selectElement, values, translationKey) {
 // Función para obtener texto traducido
 function getTranslatedText(translationKey, value) {
   return translations[translationKey]?.[value] || value;
-}
+}*/
 
 function displayPlatos(platos) {
   gallery.innerHTML = "";
@@ -217,7 +217,7 @@ function displayPlatos(platos) {
 
 // Carga inicial de platos
 function loadPlatos(language) {
-  fetch(`../assets/data/platos-${currentLanguage}.json`)
+  fetch(`../assets/data/platos-${language}.json`)
     .then(response => {
       if (!response.ok) throw new Error(`Error al cargar los datos: ${response.status}`);
       return response.json();
