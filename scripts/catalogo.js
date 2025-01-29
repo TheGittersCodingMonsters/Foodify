@@ -253,7 +253,7 @@ function updateProductCounter(platoId) {
 function loadMenu(){
 
   const menu1 = document.querySelector('.menu li:first-child a');
-  const ruta1 = `index-${currentLanguage}.html`;
+  const ruta1 = `index.html`;
   menu1.setAttribute('href', ruta1);
   const menu2 = document.querySelector('.menu li:nth-child(2) a');
   const ruta2 = `contacto-${currentLanguage}.html`;
