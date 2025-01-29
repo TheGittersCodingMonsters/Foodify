@@ -19,6 +19,7 @@ function loadTexts(language) {
       });
       
       loadMenu();
+      applyFilters();
     });
 }
 // Filtrado simplificado
@@ -54,7 +55,7 @@ document.body.addEventListener('change', (e) => {
 function changeLanguage(lang) {
   currentLanguage = lang;
  loadTexts(currentLanguage);
-loadPlatos(currentLanguage);
+ loadPlatos(currentLanguage);
 }
 
 // Inicialización
@@ -99,12 +100,12 @@ document.addEventListener("DOMContentLoaded", async () => {
     loadTexts(currentLanguage);
     loadPlatos(currentLanguage);
     updateCartCount();
-    //updateTotalPrice();
+    updateTotalPrice();
 
 });
 
 
-
+ 
 /* // Función para cargar platos
 async function loadPlatos(language) {
   gallery.innerHTML = ""; // Limpiar galería
@@ -163,10 +164,10 @@ function displayPlatos(platos) {
           </div>
           <div class="infoPlato">
               <div class="titulo"><h4>${plato.nombre}</h4></div>
-              <p class="categoria"><span data-traductor="categoria"></span>: ${plato.categoria}</p>
-              <p class="precio"><span data-traductor="precio"></span>: ${plato.precio}€</p>
-              <p class="calorias"><span data-traductor="calorias"></span>: ${plato.calorias}</p>
-              <p class="vegano"><span data-traductor="vegano"></span>: ${plato.vegano}</p>
+              <p class="categoria"><span data-traductor="categoria">Categoría</span>: ${plato.categoria}</p>
+              <p class="precio"><span data-traductor="precio">Precio</span>: ${plato.precio}€</p>
+              <p class="calorias"><span data-traductor="calorias">Calorías</span>: ${plato.calorias}</p>
+              <p class="vegano"><span data-traductor="vegano">Vegano</span>: ${plato.vegano}</p>
           </div>
           <div class="product-counter" data-id="${plato.id}">
               <button class="counter-btn decrement">-</button>
@@ -175,7 +176,8 @@ function displayPlatos(platos) {
           </div>
       </div>
     `;
-
+      // Agrega el plato al DOM
+      gallery.appendChild(platoDiv);
     
     // Aplicar traducciones a los nuevos elementos dinámicos
     document.querySelectorAll("[data-traductor]").forEach(element => {
@@ -269,4 +271,5 @@ document.addEventListener("DOMContentLoaded", () => {
   loadPlatos(currentLanguage);
   updateCartCount();
   updateTotalPrice();
+
 });
