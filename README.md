@@ -14,30 +14,18 @@ Se prepará un diseño preliminar en FIGMA que se presenta al cliente con todas 
 <br>
 <br>
 **La estructura de la web cuenta con:**
-
-Una página principal de acceso donde se presenta la empresa y sus productos.
-
-![index](assets/img/readme/index.png)
-
-Una página de catálogo donde aparecen todos los platos que **Foodify** prepara para su distribución y desde donde se pueden ir añadiendo al pedido.
-
-![catalogo](assets/img/readme/platos.png)
-
-El pedido se mostrará en un carrito para su revisión por parte del cliente.
-
-[imagen]
-
-Y un checkout
-
-[imagen]
-
-Al ser un sitio de ecommerce deberá contar con un registro y login de usuarios que los identifique y guarde sus datos para la compra y futuro. Así mismo presentará las disposiciones legales necesarias para este tipo de sitios.
-
-![rgpd](assets/img/readme/rgpd.png)
-
+<ul>
+<li>Una página principal de acceso donde se presenta la empresa y sus productos.</li>
+<li>Una página de catálogo donde aparecen todos los platos que **Foodify** prepara para su distribución y desde donde se pueden ir añadiendo al pedido.</li>
+<li>El pedido se mostrará en un carrito para su revisión por parte del cliente.</li>
+<li>Y un checkout</li>
+<li>Al ser un sitio de ecommerce deberá contar con un registro y login de usuarios que los identifique y guarde sus datos para la compra y futuro.</li>
+<li> Así mismo presentará las disposiciones legales necesarias para este tipo de sitios.</li>
+</ul>
+<br>
 Los clientes están orgullosos de su historia y equipo por lo que han solicitado la inclusión de una página que presente la empresa, sus fundadores y sus empleados.
 
-![nosotros](assets/img/readme/nosotros.png)
+
 <br>
 <br>
 <br>

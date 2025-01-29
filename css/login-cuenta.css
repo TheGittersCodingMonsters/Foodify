@@ -1,14 +1,14 @@
 /*LOGIN*/
 .contenedorLogin {
-  background-color:  #ffffff;
-  margin: 3rem auto;
-  padding: 2rem;
-  border-radius: 1rem;
-  width: 100rem;
-  height: 70%;
-  text-align: center;
+  background-color: var(--fondoSection);
+  padding: 2.8rem;
   border-radius: 5rem;
+  width: 80%;
+  margin: 0 auto;
+  text-align: center;
 }
+  /*REVISAR EN CASA COPIANDO EL MAIN Y ESTA PARTE DEL CSS PARA VER SI ME RESPONDE (ABRIENDO ARCHIVO NUEVO)*/
+
   
   .contenedorLogin h1 {
     margin-bottom: 1.5rem;
@@ -23,8 +23,8 @@
   .contenedorLogin input {
     width: 50%;
     padding: 1rem;
-    margin-bottom: 1.5rem;
-    border: 1px solid var(--resalte);
+    margin-top: 0.5rem;
+    border: 1px solid  #88543b;
     border-radius: 4rem;
   }
   
@@ -39,43 +39,20 @@
     background-color: #b9668aff;
   }
   
-  .registro {
-    background-color:  #ffffff;
-    margin: 3rem auto;
-    padding: 2rem;
-    border-radius: 4rem;
-    width: 60%;
-    height: 70%;
-    text-align: center;
-    margin-top: 1.5rem;
-    }
-
-    .privacidad{
-      padding-top: 1rem;
-  }
   
-  .registro a {
-    color: #88543b;
-        font-weight: bold;
-        text-decoration: underline;
-        margin: 1rem;
-    }
- 
 
   
 
   /*CREAR CUENTA*/
   .contenedor-cuenta{
-    width: 100rem;
-    height: 70%;
-    background-color:  #ffffff;
-    margin: 3rem auto;
-    padding: 2rem;
-    border-radius: 1rem;
-    text-align: center;
-    border-radius: 5rem;
+   background-color: var(--fondoSection);
+   padding: 2.8rem;
+   border-radius: 5rem;
+   width: 80%;
+   margin: 0 auto;
+   text-align: center;
+}
   
-  }
 
     .contenedor-cuenta h1 {
         margin-bottom: 1.5rem;
@@ -83,9 +60,10 @@
     }
 
     .contenedor-cuenta label {
-        display: block;
-        margin: 1rem 0 0.5rem;
-    }
+      display: block;
+      margin: 1rem 0 0.5rem;
+     
+  }
 
     .contenedor-cuenta input[type="text"],
     .contenedor-cuenta input[type="password"],
@@ -93,7 +71,7 @@
         width: 50%;
         padding: 1rem;
         margin-top: 0.5rem;
-        border: 1px solid var(--resalte);
+        border: 1px solid  #88543b;
         border-radius: 4rem;
     }
 
@@ -119,16 +97,11 @@
         color: var #b9668aff;
         font-weight: bold;
     }
-
-    .link {
-        text-align: center;
-     margin: 1rem;
-    }
     
-    .link a {
-        color:#88543b;
-        font-weight: bold;
-        text-decoration: underline;
-        
-    }
+  .link a {
+    color:#88543b;
+    font-weight: bold;
+    text-decoration: underline;
     
+}
+  
