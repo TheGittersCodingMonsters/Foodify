@@ -60,9 +60,9 @@ function goToCheckout() {
     const cart = JSON.parse(window.localStorage.getItem("cart")) || {};
 
 if (location.href.indexOf("cart-en.html") !== -1) {
-        window.location.href = "../EN/checkout-en.html";
+        window.location.href = "../checkout-en.html";
 } else {
-        window.location.href = "../ES/checkout-es.html";
+        window.location.href = "../checkout-es.html";
 }
 }
 
