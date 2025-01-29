@@ -35,7 +35,7 @@ function renderCheckoutItems(cart) {
                         <p>Quantity: ${item.quantity}</p>
                     </div>
                 </div>
-                <p class="item-total">$${(item.precio * item.quantity).toFixed(2)}</p>
+                <p class="item-total">€${(item.precio * item.quantity).toFixed(2)}</p>
             </div>`;
 
         // Calculate total
@@ -45,11 +45,7 @@ function renderCheckoutItems(cart) {
     // Update the checkout page with items and total price
     document.getElementById('checkoutCartItems').innerHTML = checkoutItemsHTML;
     // Change the currency and it is between Dollar and Euro
-    if (location.href.indexOf("checkout-en.html") !== -1) {
-        document.getElementById('totalPrice').textContent = `$${total.toFixed(2)}`;
-    } else {
         document.getElementById('totalPrice').textContent = `€${total.toFixed(2)}`;
-    }
 }
 
 // Validate and confirm checkout
