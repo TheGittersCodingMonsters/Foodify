@@ -29,7 +29,9 @@ El pedido se mostrará en un carrito para su revisión por parte del cliente.
 
 Y un checkout
 
+
 ![checkout](assets/img/readme/checkout.png)
+
 
 Al ser un sitio de ecommerce deberá contar con un registro y login de usuarios que los identifique y guarde sus datos para la compra y futuro. Así mismo presentará las disposiciones legales necesarias para este tipo de sitios.
 
