@@ -36,6 +36,7 @@
 #plato .detalles{
     font-size:2rem;
     padding:0.5rem;
+    width: 80%;
 }
 #plato .descripcion-titulo, #plato .descripcion{
     margin: 1rem auto;
@@ -87,6 +88,10 @@
         flex-direction:column;
       
     }
-    
+    #plato .detalles{
+        font-size:1.5rem;
+        padding:0.5rem;
+        width: 100%;
+    }
 
 }
