@@ -1,7 +1,5 @@
 /* estilos para catalogo.html */
-*{
-  box-sizing: border-box;
-}
+ 
 #catalogo{
     margin-top:6rem;
 }
@@ -25,18 +23,19 @@
 
 #catalogo .gallery {
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 25px;
-    padding: 20px;
+    grid-template-columns: repeat(1, 1fr);
+    margin: 0 13rem;
 }
+
 #catalogo .productDetail {
   position: relative;
   display: flex; 
   flex-direction: column; 
   font-size: 2rem;
   height: 100%; /* Asegura que el contenedor use toda la altura disponible */
-
+  
 }
+
 #catalogo .productDetail p:last-child{
     font-size: 2rem;
     padding-bottom: 20px;
@@ -47,15 +46,15 @@
     cursor: pointer;
 	background-color:#ffffff; 
     border-radius:25px;
+    margin: 3rem;
 
 }
 
+
 #catalogo .img-plato{
-    text-align:center;
-    border-radius:25px;
-    overflow:hidden;
-    position:relative;
-    
+    position: relative;
+    text-align: center;
+    border-radius: 2.5rem;     
 }
 
 #catalogo .img-plato span{
@@ -65,60 +64,91 @@
     bottom: 4%;
     z-index: 2;
     padding:0.5rem;
-    border-radius:15px;
+    border-radius: 2.5rem;  
     color:white;
     font-size:2rem;
     font-weight:bold;
     background-color: rgba(22, 21, 21, 0.5);
-    
 }
 #catalogo .img-plato img{
     width: 100%;
-    border-radius:25px;
-    transition:transform 0.5s ease-out;
+    border-radius:2.5rem;
+    transition: transform 0.5s ease-out;
 }
 #catalogo .img-plato img:hover{
     transform: scale(1.2);
     
 }
 
+.infoPlato {
+  min-width: 33rem;
+
+}
+
+/** Estilos del texto de las tarjetas **/
+#catalogo .productDetail h4 {
+  margin: 1rem 0;
+  padding: 3rem 0;
+  background-color: var(--resalte);
+  font-size: 2rem;
+  color: var(--subtitulos);
+}
+
+#catalogo .productDetail p {
+  font-size: 1.7rem;
+  color: var(--subtitulos);
+  margin: 0.5rem 0;
+}
+
+
+
 /** estilos del contador de pedido bajo foto plato**/
 #catalogo .product-counter {
-    margin-top: auto; /* Empuja el contador al fondo del contenedor */
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    border-top: 1px solid #ccc;
-    background-color: #f9f9f9;
-	  height: 50px;
+  position: relative;
+  bottom: 2%;
+  right: 0%;
+  border-top: 1px solid #ccc;
+  background-color:var(--fondoBackground);
+  border-radius: 3rem;
+  margin: 0 auto;
+  padding: 0.8rem;
 }
 
 #catalogo .counter-btn {
-    flex: 1;
-    background-color: var(--verde);
-    color: #fff;
-    border: none;
-    font-size: 20px;
-    font-weight: bold;
-    cursor: pointer;
-    padding: 10px;
-    text-align: center;
-	user-select: none; /* Evita seleccionar texto al hacer clic */
+  cursor: pointer;
+  border: none;
+  border-radius: 100%;
+  color: var(--textoNormal);
+  font-size: 2rem;
+  width: 3rem;
+  height: 3rem;
+  text-align: center;
+  vertical-align: center;
+  box-shadow: 2px 2px 4px #46424280;
 }
-
-#catalogo .counter-btn:active {
-    background-color: var(--verdeClaro);
+#catalogo  .decrement {
+  background-color: var(--titulos);
+}
+#catalogo  .increment {
+  background-color: var(--verdeClaro);
 }
 
 #catalogo .counter-value {
-    flex: 2;
-    text-align: center;
-    font-size: 18px;
-    font-weight: bold;
-    color: #333;
-    padding: 10px;
-	user-select: none; /* Evita seleccionar texto */
+  padding:  1rem;
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
 /*  botones  desplegables de filtros **/
 /* Estilo general del nav y select */
 #catalogo nav.filter-nav {
@@ -148,10 +178,11 @@ background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/200
 background-repeat: no-repeat;
 background-position: right 1rem center;
 background-size: 3rem;
+border-radius: 2rem;
 }
 /* Cambio en el borde solo si la opción seleccionada es distinta de "all" */
 #catalogo select:not([value="all"]) {
-  border: 2px solid rgb(0, 117, 22);
+  border: 2px solid var(--verde);
 }
 
 /* Restaurar borde si la opción seleccionada es "all" */
@@ -167,7 +198,7 @@ background-size: 3rem;
 
 #catalogo option {
   background-color: white;
-  color: rgb(0, 117, 22);
+  color: var(--verde);
   font-size: 1.5rem;
   padding: 0.5rem;
 }
@@ -199,18 +230,26 @@ color: var(--verdeClaro);
 }
 
 /* Mediaqueries */
-@media (max-width: 768px) {
-    #catalogo .gallery {
-        grid-template-columns: repeat(2, 1fr);
-    }
-
-}
-
-@media (max-width: 480px) {
+@media (min-width: 480px) {
     #catalogo .gallery {
         grid-template-columns: 1fr;
     }
 }
+
+
+@media (min-width: 768px) {
+    #catalogo .gallery {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (min-width: 1024px){
+  #catalogo .gallery {
+    grid-template-columns: repeat(3, 1fr);
+}
+
+}
+
 
 
 
