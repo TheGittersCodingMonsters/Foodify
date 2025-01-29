@@ -271,5 +271,4 @@ document.addEventListener("DOMContentLoaded", () => {
   loadPlatos(currentLanguage);
   updateCartCount();
   updateTotalPrice();
-
 });

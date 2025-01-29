@@ -144,4 +144,5 @@ document.addEventListener("DOMContentLoaded", () => {
     loadMenu();
     loadProductDetail(currentLanguage);
     //updateCartCount();
+    
 });
