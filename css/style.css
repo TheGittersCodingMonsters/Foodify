@@ -1085,6 +1085,16 @@ ul.hero {
     padding: 3rem;
   }
 
+  .hero-action::before{
+    content: '';
+  position: absolute;
+  background: no-repeat center / contain url(../assets/img/elements/cocinero-color.png);
+  padding: 26rem;
+  top: -19rem;
+  right: -18rem;
+  z-index: 10;
+  }
+
   .hero-img {
     position: absolute;
     top: -10%;
