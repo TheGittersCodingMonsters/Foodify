@@ -1,9 +1,14 @@
+//javascript para variable cart, en localStorage, carrito que aparece en varias páginas
+//recupera la variable de sesión y devuelve un array
+// Object.values(cart) asegura que se guarde como array en caso de que este almacenado como objeto
 function getCart() {
-    cart = JSON.parse(localStorage.getItem("cart")) || [];
-    const cartArray = Object.values(cart);  
+    cart = JSON.parse(localStorage.getItem("cart")) || [];//cart es un array de objetos
+    const cartArray = Object.values(cart);  //cartArray es un array
     return  cartArray;
   }
-  
+ //guarda la variable cart en localStorage
+//con JSON.stringify(cart) se convierte en archivo de texto tipo json
+
   function saveCart(cart) {
     // Si el carrito está vacío, borramos la clave en lugar de guardar array vacío
     if (cart.length === 0) {
@@ -13,6 +18,9 @@ function getCart() {
     }
 }
   
+  //modifica el total de unidades pedidas en carrito
+  //.reduce((acc, item) => acc+item.quantity, 0), 
+  //comenzando en 0 acc va sumando el valor item.quantity de cada objeto en cart
   function updateCartCount() {
     cart = getCart();
     const totalCount = cart.reduce((acc, item) => acc + item.quantity, 0);
@@ -23,6 +31,7 @@ function getCart() {
     }
   }
   
+  // Añade un producto al carrito.
   function addToCart(product) {
     const cart = getCart();
     const existingProduct = cart.find(item => item.id == product.id);
@@ -45,6 +54,7 @@ function getCart() {
     return cart;
   }
   
+  // Elimina un producto del carrito.
   function removeFromCart(productId) {
     let cart = getCart();
     let updatedCart = cart.filter(item => item.id !== productId); // Filtramos el producto
@@ -60,6 +70,7 @@ function getCart() {
     renderCart(); // Forzar actualización del modal
 }
 
+//actualiza la cantidad total de prodcutos en carrito, en la interfaz del usuario
   function updateCartItemCounter(itemId) {
     const cart = getCart();
     let cartArray = Object.values(cart);
@@ -71,6 +82,7 @@ function getCart() {
     }
 }
 
+//actualiza precio total del carrito
 function updateTotalPrice() {
     const cart = getCart();
     let total = 0;
@@ -85,6 +97,7 @@ function updateTotalPrice() {
     } 
 }
 
+//incrementa producto segun el id recibido
 function handleIncrementClick(productId) { // Recibir el ID del producto
     const cart = getCart();
     const existingProduct = cart.find(item => item.id == productId); // Buscar en el carrito
@@ -96,7 +109,7 @@ function handleIncrementClick(productId) { // Recibir el ID del producto
         updateCartCount(); // Actualizar contador general
     }
 }
-
+//incrementa producto segun el id recibido
 function handleDecrementClick(productId) {
     const cart = getCart();
     const existingProduct = cart.find(item => item.id == productId);
@@ -117,7 +130,7 @@ function handleDecrementClick(productId) {
         updateCartCount();
     }
 }
-
+//actualiza la cantidad de productos comprados para un plato en su contador
 function updateProductCounter(platoId) {
     const cart = getCart();
     const plato = cart.find(item => item.id === platoId);
